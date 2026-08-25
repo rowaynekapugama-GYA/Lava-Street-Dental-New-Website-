@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 35 approved URLs. Superseded paths are 301-redirected in vercel.json and
+     are deliberately absent from this file. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://lava-street-dental.vercel.app/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/about/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/meet-the-team/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/meet-the-team/dr-meg-takiguchi/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/meet-the-team/our-support-team/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/general-dentistry/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/restorative-dentistry/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/dental-implants/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/cosmetic-dentistry/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/laser-digital-dentistry/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/general-dentistry/check-ups-and-cleans/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/general-dentistry/dental-fillings/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/general-dentistry/childrens-dentistry/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/general-dentistry/gum-disease-treatment/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/general-dentistry/custom-mouthguards/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/general-dentistry/night-guards-teeth-grinding/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/general-dentistry/emergency-dental-care/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/restorative-dentistry/dental-crowns/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/restorative-dentistry/dental-bridges/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/restorative-dentistry/root-canal-treatment/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/restorative-dentistry/partial-dentures/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/restorative-dentistry/tooth-extractions/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/dental-implants/single-tooth-implants/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/dental-implants/multiple-implants-implant-bridges/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/dental-implants/bone-grafting/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/cosmetic-dentistry/porcelain-veneers/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/laser-digital-dentistry/diode-laser-dentistry/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/services/laser-digital-dentistry/digital-scanning-cbct/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/contact/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/dentist-warrnambool/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/dentist-dennington/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/dentist-allansford/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/dentist-koroit/</loc></url>
+  <url><loc>https://lava-street-dental.vercel.app/dentist-port-fairy/</loc></url>
+</urlset>

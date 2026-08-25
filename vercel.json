@@ -1,0 +1,146 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/team",
+      "destination": "/meet-the-team",
+      "permanent": true
+    },
+    {
+      "source": "/team/",
+      "destination": "/meet-the-team/",
+      "permanent": true
+    },
+    {
+      "source": "/team/dr-meg-takiguchi",
+      "destination": "/meet-the-team/dr-meg-takiguchi",
+      "permanent": true
+    },
+    {
+      "source": "/team/dr-meg-takiguchi/",
+      "destination": "/meet-the-team/dr-meg-takiguchi/",
+      "permanent": true
+    },
+    {
+      "source": "/team/support-team",
+      "destination": "/meet-the-team/our-support-team",
+      "permanent": true
+    },
+    {
+      "source": "/team/support-team/",
+      "destination": "/meet-the-team/our-support-team/",
+      "permanent": true
+    },
+    {
+      "source": "/services/general-preventive-dentistry",
+      "destination": "/services/general-dentistry",
+      "permanent": true
+    },
+    {
+      "source": "/services/general-preventive-dentistry/",
+      "destination": "/services/general-dentistry/",
+      "permanent": true
+    },
+    {
+      "source": "/services/general-preventive-dentistry/check-ups-cleans",
+      "destination": "/services/general-dentistry/check-ups-and-cleans",
+      "permanent": true
+    },
+    {
+      "source": "/services/general-preventive-dentistry/check-ups-cleans/",
+      "destination": "/services/general-dentistry/check-ups-and-cleans/",
+      "permanent": true
+    },
+    {
+      "source": "/services/general-preventive-dentistry/dental-fillings",
+      "destination": "/services/general-dentistry/dental-fillings",
+      "permanent": true
+    },
+    {
+      "source": "/services/general-preventive-dentistry/dental-fillings/",
+      "destination": "/services/general-dentistry/dental-fillings/",
+      "permanent": true
+    },
+    {
+      "source": "/services/general-preventive-dentistry/childrens-dentistry",
+      "destination": "/services/general-dentistry/childrens-dentistry",
+      "permanent": true
+    },
+    {
+      "source": "/services/general-preventive-dentistry/childrens-dentistry/",
+      "destination": "/services/general-dentistry/childrens-dentistry/",
+      "permanent": true
+    },
+    {
+      "source": "/services/general-preventive-dentistry/gum-disease-treatment",
+      "destination": "/services/general-dentistry/gum-disease-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/services/general-preventive-dentistry/gum-disease-treatment/",
+      "destination": "/services/general-dentistry/gum-disease-treatment/",
+      "permanent": true
+    },
+    {
+      "source": "/services/general-preventive-dentistry/custom-mouthguards",
+      "destination": "/services/general-dentistry/custom-mouthguards",
+      "permanent": true
+    },
+    {
+      "source": "/services/general-preventive-dentistry/custom-mouthguards/",
+      "destination": "/services/general-dentistry/custom-mouthguards/",
+      "permanent": true
+    },
+    {
+      "source": "/services/general-preventive-dentistry/night-guards-teeth-grinding",
+      "destination": "/services/general-dentistry/night-guards-teeth-grinding",
+      "permanent": true
+    },
+    {
+      "source": "/services/general-preventive-dentistry/night-guards-teeth-grinding/",
+      "destination": "/services/general-dentistry/night-guards-teeth-grinding/",
+      "permanent": true
+    },
+    {
+      "source": "/services/general-preventive-dentistry/emergency-dental-care",
+      "destination": "/services/general-dentistry/emergency-dental-care",
+      "permanent": true
+    },
+    {
+      "source": "/services/general-preventive-dentistry/emergency-dental-care/",
+      "destination": "/services/general-dentistry/emergency-dental-care/",
+      "permanent": true
+    },
+    {
+      "source": "/services/general-dentistry/check-ups-cleans",
+      "destination": "/services/general-dentistry/check-ups-and-cleans",
+      "permanent": true
+    },
+    {
+      "source": "/services/general-dentistry/check-ups-cleans/",
+      "destination": "/services/general-dentistry/check-ups-and-cleans/",
+      "permanent": true
+    },
+    {
+      "source": "/services/dental-implants/bone-grafting-for-implants",
+      "destination": "/services/dental-implants/bone-grafting",
+      "permanent": true
+    },
+    {
+      "source": "/services/dental-implants/bone-grafting-for-implants/",
+      "destination": "/services/dental-implants/bone-grafting/",
+      "permanent": true
+    },
+    {
+      "source": "/services/laser-digital-dentistry/digital-scanning-cbct-imaging",
+      "destination": "/services/laser-digital-dentistry/digital-scanning-cbct",
+      "permanent": true
+    },
+    {
+      "source": "/services/laser-digital-dentistry/digital-scanning-cbct-imaging/",
+      "destination": "/services/laser-digital-dentistry/digital-scanning-cbct/",
+      "permanent": true
+    }
+  ]
+}

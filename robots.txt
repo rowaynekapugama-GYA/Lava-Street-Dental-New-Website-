@@ -1,0 +1,8 @@
+# LAUNCH-TODO: staging only — indexing is blocked while placeholder business
+# details are live. To go live: replace "Disallow: /" with "Allow: /", remove
+# the <meta name="robots" content="noindex, nofollow"> tag from every page
+# (search the build for LAUNCH-TODO), and update the Sitemap host below.
+User-agent: *
+Disallow: /
+
+Sitemap: https://lava-street-dental.vercel.app/sitemap.xml

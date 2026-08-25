@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lava Street Dental | Gentle, Modern Dentist in Warrnambool</title>
+<meta name="description" content="Personalised dental care in Warrnambool with Dr Meg Takiguchi. General dentistry, dental implants, root canal treatment, children’s care and modern digital technology.">
+<meta property="og:title" content="Lava Street Dental — Modern dentistry, with a gentler touch.">
+<meta property="og:type" content="website">
+<meta property="og:description" content="Personalised dental care in the heart of Warrnambool, combining thoughtful treatment, modern technology and a familiar dentist you can trust.">
+<!-- TODO: add og:url and a canonical link once the domain is confirmed, plus
+     og:image as an absolute URL to assets/images/hero-clinic-room.webp. -->
+<!-- TODO: add LocalBusiness / Dentist JSON-LD once the street address, phone number, opening hours and canonical domain are confirmed. Do not publish structured data containing placeholders. -->
+<!-- LAUNCH-TODO: staging only. Remove this tag and flip robots.txt to
+     Allow: / when the real domain and business details are confirmed. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://lava-street-dental.vercel.app/">
+<meta property="og:url" content="https://lava-street-dental.vercel.app/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Karla:ital,wght@0,300..700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Will my treatment hurt?", "acceptedAnswer": {"@type": "Answer", "text": "Every person and every procedure is different, so no dentist can promise treatment will be completely pain-free. Dr Meg uses gentle techniques, explains each step before it happens, and would much rather you spoke up than sat through something uncomfortable."}}, {"@type": "Question", "name": "I am nervous about the dentist. Is that a problem?", "acceptedAnswer": {"@type": "Answer", "text": "Not at all — it is more common than most people think. Dr Meg has spent years looking after nervous patients and takes an unhurried approach: we listen first, explain what to expect, and move at a pace that feels manageable to you."}}, {"@type": "Question", "name": "What will the practice offer?", "acceptedAnswer": {"@type": "Answer", "text": "General and preventive care, fillings, crowns and bridges, children’s dentistry, selected extractions, partial dentures, mouthguards, night guards, dental implants, root canal treatment and selected diode laser procedures. Your dentist will assess whether a particular treatment is appropriate for you."}}, {"@type": "Question", "name": "Do you provide dental implants?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — assessment, placement and restoration for suitable single and multiple implant cases. All-on-4 treatment is not currently on the list. Whether implants are right for you can only be confirmed after a clinical assessment."}}, {"@type": "Question", "name": "Will I see the same dentist each time?", "acceptedAnswer": {"@type": "Answer", "text": "That is the whole idea. Continuity sits at the centre of how Lava Street Dental is being set up: Dr Meg wants to be the dentist you know, who remembers your history and your family."}}, {"@type": "Question", "name": "Where did Dr Meg study?", "acceptedAnswer": {"@type": "Answer", "text": "A Bachelor of Science in Biochemistry at the University of Victoria in Canada, a PhD in Medical Oncology at the University of Oxford, and her Doctor of Dental Medicine at the University of Western Australia."}}, {"@type": "Question", "name": "Do you take private health insurance?", "acceptedAnswer": {"@type": "Answer", "text": "Lava Street Dental accepts all private health funds and is not restricted to a preferred-provider network. Eligible patients can also access treatment through CDBS and DVA arrangements. Afterpay and humm payment plans are available to eligible patients. Provider terms, eligibility requirements and conditions apply. We will explain what is involved and what it costs before treatment goes ahead."}}]}</script>
+</head>
+
+<body class="no-js" id="top">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="masthead" id="masthead">
+  <div class="wrap">
+    <a href="index.html" class="wordmark" aria-label="Lava Street Dental — home">Lava Street<span>Dental</span></a>
+    <nav class="mast-nav" aria-label="Primary">
+      <a href="about/index.html">About</a>
+      <a href="meet-the-team/index.html">Meet the Team</a>
+      <div class="navdrop" data-drop>
+        <button type="button" aria-expanded="false" aria-controls="dropServices">Services<i aria-hidden="true"></i></button>
+        <ul class="drop-panel" id="dropServices">
+          <li><a href="services/index.html">All services</a></li>
+          <li><a href="services/general-dentistry/index.html">General &amp; Preventive Dentistry</a></li><li><a href="services/restorative-dentistry/index.html">Restorative Dentistry</a></li><li><a href="services/dental-implants/index.html">Dental Implants</a></li><li><a href="services/cosmetic-dentistry/index.html">Cosmetic Dentistry</a></li><li><a href="services/laser-digital-dentistry/index.html">Laser &amp; Digital Dentistry</a></li>
+        </ul>
+      </div>
+      <a href="contact/index.html">Contact</a>
+    </nav>
+    <div class="mast-actions">
+      <!-- TODO: replace [PHONE NUMBER] and add a tel: href once the practice number is confirmed. -->
+      <a class="mast-phone" href="contact/index.html">[PHONE NUMBER]</a>
+      <a class="btn btn-primary" href="contact/index.html">Book an appointment</a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" hidden>
+  <nav aria-label="Mobile">
+    <a class="dnav" href="about/index.html">About</a>
+    <a class="dnav" href="meet-the-team/index.html">Meet the Team</a>
+    <details class="dgroup">
+      <summary>Services</summary>
+      <a href="services/index.html">All services</a>
+      <a href="services/general-dentistry/index.html">General &amp; Preventive Dentistry</a><a href="services/restorative-dentistry/index.html">Restorative Dentistry</a><a href="services/dental-implants/index.html">Dental Implants</a><a href="services/cosmetic-dentistry/index.html">Cosmetic Dentistry</a><a href="services/laser-digital-dentistry/index.html">Laser &amp; Digital Dentistry</a>
+    </details>
+    <details class="dgroup">
+      <summary>Areas we serve</summary>
+      <a href="dentist-warrnambool/index.html">Warrnambool</a><a href="dentist-dennington/index.html">Dennington</a><a href="dentist-allansford/index.html">Allansford</a><a href="dentist-koroit/index.html">Koroit</a><a href="dentist-port-fairy/index.html">Port Fairy</a>
+    </details>
+    <a class="dnav" href="contact/index.html">Contact</a>
+  </nav>
+  <a class="btn btn-primary" href="contact/index.html">Book an appointment</a>
+  <p class="drawer-foot small">Prefer to talk it through? <a class="textlink" href="contact/index.html">[PHONE NUMBER]</a></p>
+</div>
+
+<main id="main">
+
+  <!-- ======================= HERO ======================= -->
+  <section class="hero" id="hero">
+    <!-- Supplied practice photography. Decorative here: the room is described in the copy. -->
+    <div class="hero-bg" aria-hidden="true">
+      <img src="assets/images/hero-clinic-room.webp" alt="" width="1672" height="941" fetchpriority="high">
+    </div>
+
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="rule-eyebrow anim a1">Opening soon &middot; Warrnambool</p>
+        <h1 class="anim a2">Modern dentistry, with a gentler <em>touch</em>.</h1>
+        <p class="lead anim a3">A small practice in the middle of town, where you see the same dentist each visit and nobody rushes you through the door.</p>
+
+        <ul class="trust anim a4">
+          <li>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 13.4C6.1 12 2.6 9.7 2.6 6.9A2.9 2.9 0 0 1 8 5.4a2.9 2.9 0 0 1 5.4 1.5c0 2.8-3.5 5.1-5.4 6.5Z"/>
+            </svg>
+            <span>Gentle care</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 2.2 8.1 5 11 6.1 8.1 7.2 7 10 5.9 7.2 3 6.1 5.9 5Z"/>
+              <path d="M11.9 9.6l.5 1.3 1.3.5-1.3.5-.5 1.3-.5-1.3-1.3-.5 1.3-.5Z"/>
+            </svg>
+            <span>Modern comfort</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="8" cy="8" r="5.9"/>
+              <path d="M5.5 8.2 7.2 9.9l3.4-3.6"/>
+            </svg>
+            <span>Family focused</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="capture anim a5" id="waitlist">
+        <div id="captureInner">
+          <p class="badge">Founding patients waitlist</p>
+          <h2 class="capture-h">Be first through the <em>door</em>.</h2>
+          <p class="small">Leave your details and you will hear from us before the books open publicly.</p>
+
+          <!-- TODO: set action= to the practice's form endpoint (or [BOOKING URL]) and
+               remove the preventDefault branch in the script. Nothing is stored yet. -->
+          <form class="hero-form" id="heroForm" action="#" method="post" novalidate>
+            <div class="row2">
+              <div class="field">
+                <label class="visually-hidden" for="hFirst">First name</label>
+                <input id="hFirst" name="firstName" type="text" autocomplete="given-name" placeholder="First name" required aria-describedby="hFirstMsg">
+                <p class="msg" id="hFirstMsg"></p>
+              </div>
+              <div class="field">
+                <label class="visually-hidden" for="hLast">Last name</label>
+                <input id="hLast" name="lastName" type="text" autocomplete="family-name" placeholder="Last name" required aria-describedby="hLastMsg">
+                <p class="msg" id="hLastMsg"></p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="visually-hidden" for="hEmail">Email address</label>
+              <input id="hEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="Email address" required aria-describedby="hEmailMsg">
+              <p class="msg" id="hEmailMsg"></p>
+            </div>
+
+            <div class="field">
+              <label class="visually-hidden" for="hPhone">Mobile number</label>
+              <input id="hPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Mobile number" aria-describedby="hPhoneMsg">
+              <p class="msg" id="hPhoneMsg"></p>
+            </div>
+
+            <button class="btn-submit" type="submit">Reserve my place</button>
+            <p class="reassure">No spam &mdash; just opening news and your invitation.</p>
+            <p class="form-preview-note" role="note"><strong>Preview only.</strong> This form is not connected yet &mdash; nothing you type is sent or stored. Please do not include detailed health information.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= WELCOME / ABOUT ======================= -->
+  <section class="band" id="welcome">
+    <div class="wrap welcome-grid">
+      <figure class="welcome-media rise">
+        <div class="frame r-tall">
+          <img src="assets/images/dr-meg.webp"
+               alt="Dr Meg Takiguchi, principal dentist at Lava Street Dental."
+               width="856" height="1070" loading="lazy">
+        </div>
+        <figcaption>Dr Meg Takiguchi<span>Principal dentist</span></figcaption>
+      </figure>
+
+      <div class="welcome-copy rise">
+        <p class="eyebrow">Welcome to Lava Street Dental</p>
+        <h2 class="d2">A country dentist, with a <em>modern</em> twist.</h2>
+        <p>Lava Street Dental brings the warmth and familiarity of regional dental care together with modern clinical technology. The approach is personal and considered, and it is built around knowing the people we look after.</p>
+        <p>Whether you are in for a routine check-up or something more involved, Dr Meg takes the time to understand what is worrying you, talks through your options in plain language, and helps you feel comfortable at every stage.</p>
+
+        <div class="meg">
+          <h3 class="d3">Meet <em>Dr Meg</em></h3>
+          <p>Dr Meg Takiguchi grew up on the outskirts of Tokyo and has spent the last ten years in dentistry, most of it in regional Western Australia. She graduated with a Doctor of Dental Medicine from the University of Western Australia in 2016, after a Bachelor of Science in Biochemistry in Canada and a PhD in Medical Oncology at the University of Oxford.</p>
+          <p>Working in towns with limited access to specialists shaped how she practises. She is comfortable across a broad range of dentistry — implants, root canal treatment, difficult extractions, crowns, bridges and dentures — and she is known for a gentle hand and a very light touch with injections.</p>
+          <p>Her hope for Lava Street Dental is simple: to become the dentist you keep coming back to, year after year.</p>
+          <ul class="chips">
+            <li>DMD, UWA</li>
+            <li>PhD, Oxford</li>
+            <li>10 years in dentistry</li>
+            <li>Regional experience</li>
+            <li>ADA Victoria member</li>
+          </ul>
+          <p class="fine">Dr Meg is a general dentist. Her PhD in Medical Oncology is a research qualification and is not a dental specialist registration.</p>
+          <!-- TODO: link to a dedicated Dr Meg profile page once it exists. -->
+          <a class="textlink" href="#waitlist">Join the waitlist to meet her</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= SERVICES ======================= -->
+  <section class="band services" id="care">
+    <div class="wrap">
+      <div class="head split rise">
+        <p class="eyebrow">What to expect</p>
+        <h2 class="d2">Considered care, <em>closer</em> to home.</h2>
+        <p class="lead">From routine visits to more involved treatment, for families across Warrnambool, Port Fairy and the districts in between.</p>
+      </div>
+
+      <div class="cards rise">
+        <article class="card">
+          <span class="num">01</span>
+          <h3>Check-ups &amp; gentle cleans</h3>
+          <p>A proper look at how things are tracking, then a clean using warm water, air and a fine powder — far kinder than the old scrape.</p>
+        </article>
+        <article class="card">
+          <span class="num">02</span>
+          <h3>Fillings, crowns &amp; bridges</h3>
+          <p>Careful restorative work, with laboratory-made crowns and bridges planned to bring back comfort, function and the look of your smile.</p>
+        </article>
+        <article class="card">
+          <span class="num">03</span>
+          <h3>Dental implants</h3>
+          <p>Assessment, placement and restoration of single or multiple implants, using implant systems chosen for the long haul.</p>
+        </article>
+        <article class="card">
+          <span class="num">04</span>
+          <h3>Root canal treatment</h3>
+          <p>Treatment aimed at keeping a tooth you would rather not lose, with referral to an endodontist when a case calls for specialist care.</p>
+        </article>
+        <article class="card">
+          <span class="num">05</span>
+          <h3>Children’s dentistry</h3>
+          <p>Calm, age-appropriate visits that help children build good habits early and feel at home in the chair.</p>
+        </article>
+        <article class="card">
+          <span class="num">06</span>
+          <h3>Extractions &amp; surgical care</h3>
+          <p>Planned extractions, including more involved surgical cases, where that is the right call clinically.</p>
+        </article>
+      </div>
+
+      <p class="also small rise"><strong>Also available:</strong> diode laser treatment for selected gum procedures, plus custom mouthguards and night guards. Suitability for implants, root canal treatment, laser procedures and extractions can only be confirmed after a clinical assessment with your dentist.</p>
+    </div>
+  </section>
+
+  <!-- ======================= OPENING TIMELINE ======================= -->
+  <section class="band timeline" id="opening">
+    <div class="wrap">
+      <div class="head split rise">
+        <p class="eyebrow">The countdown is on</p>
+        <h2 class="d2">Opening soon in <em>Warrnambool</em>.</h2>
+        <p class="lead">We are fitting out a space in the middle of town, close to Coles, with parking a short walk away.</p>
+      </div>
+
+      <ol class="steps rise">
+        <li>
+          <span class="when">Now</span>
+          <h3>Join the waitlist</h3>
+          <p>Leave your email and you will be among the first to hear when the books open. No obligation, and nothing else in your inbox.</p>
+        </li>
+        <li>
+          <span class="when">Before opening</span>
+          <h3>Choose your time</h3>
+          <p>Waitlist patients get first pick of appointments, including the after-school and early-morning slots that go quickly.</p>
+        </li>
+        <li>
+          <span class="when">Opening day</span>
+          <h3>[OPENING DATE]</h3>
+          <p>Doors open at [STREET ADDRESS], Warrnambool. We will confirm the date by email as soon as the fit-out is signed off.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ======================= WHY JOIN ======================= -->
+  <section class="band why">
+    <div class="wrap why-grid">
+      <div class="rise">
+        <div class="head">
+          <p class="eyebrow">Founding patients</p>
+          <h2 class="d2">Why join the <em>waitlist</em>?</h2>
+        </div>
+        <ul class="benefits">
+          <li>
+            <h3>First pick of appointments</h3>
+            <p>Waitlist patients are contacted before the books open publicly, so you can choose a time that fits around school and work.</p>
+          </li>
+          <li>
+            <h3>A proper introduction</h3>
+            <p>You will hear directly from Dr Meg about how the practice runs, what to expect at a first visit, and how to bring an anxious family member along.</p>
+          </li>
+          <li>
+            <h3>Quiet updates, nothing more</h3>
+            <p>A short note as the fit-out progresses and when the opening date is locked in. No marketing, and you can unsubscribe any time.</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="why-media rise">
+        <div class="frame r-tall">
+          <img src="assets/images/why-join-detail.webp"
+               alt="The waiting area: two soft armchairs either side of a round travertine table, beneath a tall arched window looking onto trees."
+               width="451" height="563" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= QUESTIONS ======================= -->
+  <section class="band faqs" id="questions">
+    <div class="wrap">
+      <div class="head rise">
+        <p class="eyebrow">Before you come in</p>
+        <h2 class="d2">The questions we are <em>asked most</em>.</h2>
+      </div>
+
+      <div class="faq-list rise">
+        <div class="faq">
+          <h3>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="q1">
+              <span>Will my treatment hurt?</span><span class="pm" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="q1"><p>Every person and every procedure is different, so no dentist can promise treatment will be completely pain-free. Dr Meg uses gentle techniques, explains each step before it happens, and would much rather you spoke up than sat through something uncomfortable.</p></div>
+        </div>
+
+        <div class="faq">
+          <h3>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="q2">
+              <span>I am nervous about the dentist. Is that a problem?</span><span class="pm" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="q2"><p>Not at all — it is more common than most people think. Dr Meg has spent years looking after nervous patients and takes an unhurried approach: we listen first, explain what to expect, and move at a pace that feels manageable to you.</p></div>
+        </div>
+
+        <div class="faq">
+          <h3>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="q3">
+              <span>What will the practice offer?</span><span class="pm" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="q3"><p>General and preventive care, fillings, crowns and bridges, children’s dentistry, selected extractions, partial dentures, mouthguards, night guards, dental implants, root canal treatment and selected diode laser procedures. Your dentist will assess whether a particular treatment is appropriate for you.</p></div>
+        </div>
+
+        <div class="faq">
+          <h3>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="q4">
+              <span>Do you provide dental implants?</span><span class="pm" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="q4"><p>Yes — assessment, placement and restoration for suitable single and multiple implant cases. All-on-4 treatment is not currently on the list. Whether implants are right for you can only be confirmed after a clinical assessment.</p></div>
+        </div>
+
+        <div class="faq">
+          <h3>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="q5">
+              <span>Will I see the same dentist each time?</span><span class="pm" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="q5"><p>That is the whole idea. Continuity sits at the centre of how Lava Street Dental is being set up: Dr Meg wants to be the dentist you know, who remembers your history and your family.</p></div>
+        </div>
+
+        <div class="faq">
+          <h3>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="q6">
+              <span>Where did Dr Meg study?</span><span class="pm" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="q6"><p>A Bachelor of Science in Biochemistry at the University of Victoria in Canada, a PhD in Medical Oncology at the University of Oxford, and her Doctor of Dental Medicine at the University of Western Australia.</p></div>
+        </div>
+
+        <div class="faq">
+          <h3>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="q7">
+              <span>Do you take private health insurance?</span><span class="pm" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="q7"><p>Lava Street Dental accepts all private health funds and is not restricted to a preferred-provider network. Eligible patients can also access treatment through CDBS and DVA arrangements. Afterpay and humm payment plans are available to eligible patients. Provider terms, eligibility requirements and conditions apply. We will explain what is involved and what it costs before treatment goes ahead.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= IMAGE CTA + WORDMARK ======================= -->
+  <section class="band closer" id="contact">
+    <div class="wrap">
+      <div class="stage on-dark rise">
+        <img src="assets/images/cta-reception.webp"
+             alt="Reception and waiting area at Lava Street Dental: a curved bouclé sofa, olive tree and navy reception desk beneath the practice signage."
+             width="1672" height="941" loading="lazy">
+        <div>
+          <p class="eyebrow centred">Warrnambool &amp; Port Fairy</p>
+          <h2 class="big">Lava Street<span>Dental</span></h2>
+          <p>A new practice in the middle of Warrnambool, taking names now. We would love to look after your family.</p>
+          <div class="row">
+            <a class="btn btn-cream" href="#waitlist">Join the waitlist</a>
+            <!-- TODO: replace with tel:[PHONE NUMBER] once confirmed. -->
+            <a class="btn btn-ghost-light" href="#waitlist">Call [PHONE NUMBER]</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="index.html" class="wordmark" aria-label="Lava Street Dental — home">Lava Street<span>Dental</span></a>
+        <p class="blurb">A dental practice in the middle of Warrnambool, looking after families across Warrnambool, Port Fairy and the surrounding districts.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about/index.html">About</a></li>
+          <li><a href="meet-the-team/index.html">Meet the Team</a></li>
+          <li><a href="services/index.html">Services</a></li>
+          <li><a href="contact/index.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Care</h4>
+        <ul>
+          <li><a href="services/general-dentistry/check-ups-and-cleans/index.html">Check-ups &amp; cleans</a></li><li><a href="services/general-dentistry/dental-fillings/index.html">Fillings</a></li><li><a href="services/dental-implants/index.html">Dental implants</a></li><li><a href="services/restorative-dentistry/root-canal-treatment/index.html">Root canal treatment</a></li><li><a href="services/general-dentistry/childrens-dentistry/index.html">Children’s dentistry</a></li><li><a href="services/restorative-dentistry/tooth-extractions/index.html">Extractions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Areas We Serve</h4>
+        <ul>
+          <li><a href="dentist-warrnambool/index.html">Warrnambool</a></li><li><a href="dentist-dennington/index.html">Dennington</a></li><li><a href="dentist-allansford/index.html">Allansford</a></li><li><a href="dentist-koroit/index.html">Koroit</a></li><li><a href="dentist-port-fairy/index.html">Port Fairy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li>[STREET ADDRESS]</li>
+          <li>Warrnambool VIC 3280</li>
+          <li>[PHONE NUMBER]</li>
+          <li>[EMAIL ADDRESS]</li>
+          <li>[OPENING HOURS]</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <p class="disclaimer">The information on this website is general in nature and does not constitute personal dental or medical advice. Treatment suitability, risks, benefits and outcomes vary between individuals. Please consult an appropriately qualified dental practitioner for advice specific to your circumstances.</p>
+      <div class="foot-legal">
+        <span>Copyright 2026 Lava Street Dental</span>
+        <span>
+          <!-- TODO: link the Privacy Policy page once written. -->
+          <a href="#">Privacy Policy</a> — placeholder
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/site.js" defer></script>
+
+<script>
+(function () {
+  'use strict';
+  var body = document.body;
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Hero capture form ----------
+       Inline validation, then the card swaps to a confirmation. Wire the
+       action= above and delete the preventDefault branch to go live. */
+  var heroForm = document.getElementById('heroForm');
+  var captureInner = document.getElementById('captureInner');
+
+  var RULES = [
+    { id: 'hFirst', msg: 'We just need a first name.', test: function (v) { return v.length > 0; } },
+    { id: 'hLast', msg: 'And a last name.', test: function (v) { return v.length > 0; } },
+    { id: 'hEmail', msg: 'Could you check that email address?', test: function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); } },
+    { id: 'hPhone', msg: 'That mobile number looks a little short.', test: function (v) { return v === '' || v.replace(/[^0-9]/g, '').length >= 8; } }
+  ];
+
+  function mark(rule, ok) {
+    var input = document.getElementById(rule.id);
+    var msg = document.getElementById(rule.id + 'Msg');
+    input.setAttribute('aria-invalid', ok ? 'false' : 'true');
+    msg.textContent = ok ? '' : rule.msg;
+    return ok;
+  }
+
+  RULES.forEach(function (rule) {
+    var input = document.getElementById(rule.id);
+    input.addEventListener('blur', function () {
+      if (input.value.trim() !== '' || input.getAttribute('aria-invalid') === 'true') {
+        mark(rule, rule.test(input.value.trim()));
+      }
+    });
+    input.addEventListener('input', function () {
+      if (input.getAttribute('aria-invalid') === 'true' && rule.test(input.value.trim())) { mark(rule, true); }
+    });
+  });
+
+  heroForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var firstBad = null;
+    RULES.forEach(function (rule) {
+      var input = document.getElementById(rule.id);
+      var ok = mark(rule, rule.test(input.value.trim()));
+      if (!ok && !firstBad) { firstBad = input; }
+    });
+    if (firstBad) { firstBad.focus(); return; }
+
+    var name = document.getElementById('hFirst').value.trim();
+    captureInner.innerHTML = '';
+    var done = document.createElement('div');
+    done.className = 'capture-done';
+    var h = document.createElement('h2');
+    h.className = 'capture-h';
+    h.textContent = 'Preview only, ' + name + '.';
+    var p1 = document.createElement('p');
+    p1.className = 'small';
+    p1.textContent = 'This form is not connected to a live system yet, so nothing was sent or saved. Once the practice\'s form endpoint is live, this is where the waitlist confirmation will appear.';
+    var p2 = document.createElement('p');
+    p2.className = 'reassure';
+    p2.textContent = 'Developer TODO: connect the waitlist endpoint, then restore the approved confirmation copy.';
+    done.appendChild(h);
+    done.appendChild(p1);
+    done.appendChild(p2);
+    captureInner.appendChild(done);
+    captureInner.setAttribute('role', 'status');
+    h.setAttribute('tabindex', '-1');
+    h.focus({ preventScroll: true });
+  });
+
+  /* ---------- Smooth anchors, offset for the sticky masthead ---------- */
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href^="#"]');
+    if (!link) { return; }
+    var id = link.getAttribute('href');
+    if (id === '#') { e.preventDefault(); return; }
+    var target = document.querySelector(id);
+    if (!target) { return; }
+    e.preventDefault();
+    var y = target === body ? 0 : target.getBoundingClientRect().top + window.scrollY - 84;
+    window.scrollTo({ top: Math.max(y, 0), behavior: still ? 'auto' : 'smooth' });
+    if (id !== '#top') { history.replaceState(null, '', id); }
+    if (target !== body) {
+      if (!target.hasAttribute('tabindex')) { target.setAttribute('tabindex', '-1'); }
+      target.focus({ preventScroll: true });
+    }
+  });
+
+  /* ---------- Image slots: hide a missing file so the warm placeholder behind it
+       reads cleanly. Delete once assets/images/ is populated. ---------- */
+  function hideIfBroken(img) {
+    if (img.complete && img.naturalWidth === 0) { img.style.visibility = 'hidden'; }
+  }
+  document.addEventListener('error', function (e) {
+    if (e.target.tagName === 'IMG') { e.target.style.visibility = 'hidden'; }
+  }, true);
+  Array.prototype.forEach.call(document.images, hideIfBroken);
+}());
+</script>
+</body>
+</html>
