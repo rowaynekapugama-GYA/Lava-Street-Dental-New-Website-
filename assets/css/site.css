@@ -1204,3 +1204,76 @@ p { max-width: 62ch; }
 }
 .map-pending p { max-width: 46ch; color: var(--text-body); font-size: 0.9rem; line-height: 1.7; }
 .map-pending .eyebrow { margin-bottom: 0.6rem; }
+
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS FIXES
+   ========================================================================== */
+
+/* 1. Masthead children were all flex-shrinkable, so below 414px the browser
+      squeezed them horizontally. That distorted the logo (2.42:1 became
+      1.78:1 at 320px) and narrowed the burger to 30px. Lock all three. */
+.masthead .wordmark,
+.masthead .mast-actions,
+.burger { flex: 0 0 auto; }
+.burger { min-width: 44px; min-height: 44px; }
+
+/* 2. "Book an appointment" cannot fit on one line beside the logo and burger
+      on a 320-414px screen — it wrapped to two lines and made the header 73px
+      tall, crowding everything. Below 400px the header CTA is hidden and the
+      drawer carries it instead (see 3). From 400px up it fits on one line
+      with tighter padding. */
+@media (max-width: 399px) {
+  .mast-actions .btn { display: none; }
+  .masthead .wrap { min-height: 64px; }
+}
+/* 400-859px: compact, single line. */
+@media (min-width: 400px) and (max-width: 859px) {
+  .mast-actions .btn { white-space: nowrap; padding: 0.7rem 0.95rem; font-size: 0.8125rem; }
+}
+
+/* 3. With the header CTA hidden on small screens the drawer's CTA becomes the
+      primary booking route, so pin it to the bottom of the drawer. Previously
+      it sat below the fold on a 320x568 screen and needed scrolling to reach. */
+.drawer > .btn {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  margin-top: 1.5rem;
+  /* Cream spread masks the drawer's 1.25rem side padding and a band above the
+     button, so items scroll cleanly behind the bar instead of being half-cut. */
+  box-shadow: 0 0 0 1.25rem var(--cream), 0 -18px 18px -14px rgba(30, 51, 63, 0.2);
+}
+
+/* 4. Touch target size (WCAG 2.5.8 asks for 24x24 minimum). Footer nav links
+      were 17px tall and breadcrumb links 21px. Padding lifts both clear of the
+      threshold on touch-sized screens without altering the desktop footer. */
+@media (max-width: 859px) {
+  .foot nav a,
+  .foot li > a { display: inline-block; padding-block: 0.4rem; }
+  .crumbs li { min-height: 24px; }
+  .crumbs a { display: inline-flex; align-items: center; min-height: 24px; }
+}
+
+/* 5. Burger icon geometry. `display:grid; place-items:center` gave the three
+      bars three auto rows spanning the whole 44px button, so they sat ~15px
+      apart and the `translateY(5.5px)` close-state left two offset diagonals
+      instead of a clean X. A centred flex column with a real 4px gap makes the
+      pitch 5.5px, which is exactly what the existing transforms expect. */
+.burger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.burger i + i { margin-top: 0; }
+/* 2px bars on a 6px pitch land on whole pixels at every device ratio; the 1.5px
+   originals rendered unevenly (middle bar looked heavier). */
+.burger i { height: 2px; }
+.burger[aria-expanded="true"] i:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.burger[aria-expanded="true"] i:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* 6. The sticky drawer CTA overlapped the last nav link ("Contact"). Reserve
+      room beneath the nav so every item can scroll clear of it. */
+.drawer nav { padding-bottom: 4.5rem; }
