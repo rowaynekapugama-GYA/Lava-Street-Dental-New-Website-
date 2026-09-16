@@ -133,6 +133,28 @@ p { max-width: 62ch; }
 }
 .wordmark span { display: block; letter-spacing: 0.34em; font-size: 0.72em; color: var(--blue); }
 
+/* --- Logo ---------------------------------------------------------------- */
+/* Vector mark. The supplied artwork had its keyline flush with the file edge and
+   a 4px stroke that fell below one device pixel once scaled to header size, which
+   read as a clipped box. Tracing it to SVG and giving the viewBox its own padding
+   fixes both: the keyline is now crisp at any size and can never be cropped. */
+.wordmark img {
+  display: block;
+  width: auto;
+  height: 46px;
+  aspect-ratio: 1000 / 414;   /* reserves the right space before the SVG paints */
+}
+@media (min-width: 860px) { .wordmark img { height: 56px; } }
+.foot .wordmark img { height: 52px; }
+
+/* Large lock-up in the homepage closing band, reversed out of the photograph. */
+.closer .big-logo { display: flex; justify-content: center; }
+.closer .big-logo img {
+  display: block;
+  width: min(100%, 27rem);
+  height: auto;
+}
+
 /* --- Eyebrow ------------------------------------------------------------ */
 .eyebrow {
   display: flex;
