@@ -115,7 +115,7 @@
         return;
       }
       note.className = 'wl-note ok';
-      note.textContent = 'Preview only — this form is not connected yet, so nothing was sent or saved. Developer TODO: wire the practice form endpoint, then restore the approved confirmation copy.';
+      note.textContent = 'Preview only: this form is not connected yet, so nothing was sent or saved. Developer TODO: wire the practice form endpoint, then restore the approved confirmation copy.';
       enquiry.reset();
     });
   }
