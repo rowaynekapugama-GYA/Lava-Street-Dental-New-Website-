@@ -1,5 +1,53 @@
 # Changelog
 
+## 2026-10-21: client revision round (pre-launch)
+
+Client revision round from Dr Meg Takiguchi, 21 Oct 2026. No design changes.
+
+- Project now builds: `npm run build` renders `src/` into `dist/` from
+  `site.config.mjs`, the single source of truth for name, phone, emails,
+  address, hours, opening date, socials and the form recipient. Vercel runs
+  the build (see `vercel.json`).
+- Canonical domain https://lavastreetdental.com.au on every canonical tag,
+  og:url, sitemap.xml, robots.txt and JSON-LD. Internal links stay relative,
+  so the Vercel preview address keeps working.
+- Public email info@lavastreetdental.com.au in the footer, contact page and
+  mailto links. Dr Meg's address (meg@lavastreetdental.com.au) is held in the
+  config; the old .com address did not appear anywhere in the build.
+- Phone is empty in the config, so tel: links, Call buttons and phone lines
+  are hidden. Address and hours follow the same rule: the site shows
+  "Lava Street, Warrnambool VIC 3280" until the street number is confirmed,
+  and hides hours until they are supplied.
+- Stock clinic interiors replaced with the client's three practice images,
+  served as WebP with srcset, per-placement focal points, lazy loading below
+  the fold and a priority hero. Six stock files removed.
+- Pre-launch SEO: robots meta tags and the robots.txt block removed; sitemap.xml
+  and robots.txt generated for the .com.au domain; Open Graph and Twitter tags
+  with a 1200x630 reception share image; Dentist JSON-LD built from the
+  config on the home, contact and location pages (no address number, hours,
+  phone or reviews invented); "Opening December 2026" in the home hero line
+  and timeline; new 404 page.
+- Build checks fail the deploy on unrendered tokens, contact placeholders,
+  the domain without .au, preview addresses, no-index directives, filler or
+  to-be-announced text, invalid JSON-LD, duplicate titles or descriptions, missing canonicals, more or
+  fewer than one H1, images without dimensions, and broken internal links.
+
+## 2026-10-21: practice manager profile
+
+Client change request from Dr Meg Takiguchi, 21 Oct 2026.
+
+- Our Support Team page: the practice manager placeholder card is now
+  Jaimee Griffiths, Practice Manager. Credentials line and bio as supplied
+  by the client, bio verbatim in first person.
+- Headshot placeholder: JG initials on Fuscous Gray at
+  `assets/images/team/jaimee-griffiths.webp` (800x1000, 4:5). Overwrite that
+  file with the professional headshot in November; no markup change needed.
+- Contact page: the feedback line now names Jaimee Griffiths in place of the
+  practice manager placeholder.
+- Removed from the card with the placeholder: the "Relocated from New South
+  Wales" line and the agency written role paragraphs, pending client
+  confirmation.
+
 ## 2026-10-20: favicon and typography
 
 - Favicon set built from the supplied monogram: ico, svg, 16 and 32 png,
