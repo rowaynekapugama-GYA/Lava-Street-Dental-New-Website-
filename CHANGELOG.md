@@ -1,5 +1,50 @@
 # Changelog
 
+## 2026-11-05: practice phone number
+
+- Phone 03 5208 9006 set in `site.config.mjs`. It now shows in the header,
+  mobile menu, footer and contact page, on the "Call" buttons, and in the
+  emergency wording, with tel: links to +61352089006 (142 links across 36
+  pages).
+- Dentist JSON-LD `telephone` uses the international format (+61352089006).
+- Contact page pre-opening line now offers the phone as well as the form.
+- Still hidden until `preOpening` is false: the "Ready to book?" lines on the
+  location pages and the emergency page "Call us now" button.
+
+## 2026-10-22: client updates (address, hours, waitlist, team, payments, emergency)
+
+Client feedback from Dr Meg Takiguchi, 22 Oct 2026. No design changes.
+
+- Address 116 Lava Street, Warrnambool VIC 3280 set in `site.config.mjs`:
+  footer, contact page, location pages, map embed (contact and location
+  pages) and Dentist JSON-LD streetAddress. Phone still empty and hidden.
+- Opening hours set in `site.config.mjs`: footer, contact page, all five
+  location pages and JSON-LD openingHours. Saturday and Sunday show Closed.
+- New `preOpening` flag in `site.config.mjs` (true). Every "Book ..." button
+  (97 across 36 pages) reads "Join the waitlist" with the same link, and
+  copy that described the practice as already open now reads as pre-opening.
+  Setting the flag to false restores the open-practice wording everywhere.
+- Our Support Team: Dilla Shauqy, Senior Dental Assistant, with a DS
+  initials placeholder at `assets/images/team/dilla-shauqy.webp` and a
+  "bio coming soon" line.
+- Parking: paid street parking and free two-hour parking at the nearby
+  shopping centre, on the contact page and location pages.
+- Payments: on-the-spot health fund claiming with a Tyro terminal; card
+  payments, Afterpay and humm. Contact page, home FAQ (visible and JSON-LD),
+  JSON-LD paymentAccepted.
+- Straumann named on the dental implants and single tooth implants pages.
+- Emergency: two same-day emergency appointments each day, call first thing
+  in the morning, not bookable online. After-hours care is not offered; go
+  to the Emergency Department. Emergency page, contact page, general
+  dentistry page and location page FAQs. The emergency call panel shows only
+  when the practice is open and has a phone number.
+- Practice images replaced with the client's HD versions of the same shots:
+  waiting area (2111x745), reception desk and corridor (2100x749) and
+  treatment room (2112x745). Same file names, placements and crops. WebP
+  srcset 480 to 2112px, every file under 150KB. Width, height and srcset
+  updated; alt text unchanged. New 1200x630 share image from the HD waiting
+  area.
+
 ## 2026-10-21: client revision round (pre-launch)
 
 Client revision round from Dr Meg Takiguchi, 21 Oct 2026. No design changes.

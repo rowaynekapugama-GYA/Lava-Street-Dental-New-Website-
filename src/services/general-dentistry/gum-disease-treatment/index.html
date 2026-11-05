@@ -46,7 +46,7 @@
     </nav>
     <div class="mast-actions">
       {{#phone}}<a class="mast-phone" href="{{phoneHref}}">{{phone}}</a>{{/phone}}
-      <a class="btn btn-primary" href="../../../contact/index.html">Book an appointment</a>
+      <a class="btn btn-primary" href="../../../contact/index.html">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
       <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
         <i></i><i></i><i></i>
       </button>
@@ -69,7 +69,7 @@
     </details>
     <a class="dnav" href="../../../contact/index.html">Contact</a>
   </nav>
-  <a class="btn btn-primary" href="../../../contact/index.html">Book an appointment</a>
+  <a class="btn btn-primary" href="../../../contact/index.html">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
   {{#phone}}<p class="drawer-foot small">Prefer to talk it through? <a class="textlink" href="{{phoneHref}}">{{phone}}</a></p>{{/phone}}
 </div>
 <main id="main">
@@ -132,7 +132,7 @@
 <section class="band cta-close">
   <div class="wrap">
     <div class="cta-panel rise">
-      <div class="cta-row"><a class="btn btn-primary" href="../../../contact/index.html">Book a gum assessment</a>{{#phone}}<a class="btn btn-outline" href="{{phoneHref}}">Call {{phone}}</a>{{/phone}}</div>
+      <div class="cta-row"><a class="btn btn-primary" href="../../../contact/index.html">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book a gum assessment{{/preOpening}}</a>{{#phone}}<a class="btn btn-outline" href="{{phoneHref}}">Call {{phone}}</a>{{/phone}}</div>
     </div>
   </div>
 </section>

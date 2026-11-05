@@ -27,10 +27,22 @@ hours: ["Monday to Thursday, 8am to 5.30pm", "Friday, 8am to 4pm"],
 
 Empty values hide what depends on them. Nothing placeholder-like is shown.
 
+### Opening day
+
+`preOpening: true` keeps the site in pre-opening mode: booking buttons read
+"Join the waitlist" and copy says the practice opens in December 2026. When
+the practice opens, set `preOpening: false` and push. Buttons return to their
+original "Book ..." wording, pre-opening sentences switch back, and the
+"Ready to book?" and emergency call lines appear once a phone number is set.
+The home page waitlist section itself is separate copy and needs its own
+update at opening.
+
 ## Template tokens (in `src/`)
 
 `{{phone}}` value, `{{{hoursHtml}}}` raw HTML, `{{#phone}}...{{/phone}}`
 shown only when set, `{{^phone}}...{{/phone}}` shown only when empty.
+`{{#preOpening}}...{{/preOpening}}` and `{{^preOpening}}...{{/preOpening}}`
+switch pre-opening and open-practice wording.
 Unknown tokens fail the build.
 
 ## Build locally
@@ -62,14 +74,17 @@ environment variables and the recipient comes from `forms.recipient` in
 
 ## Go-live checklist (open items)
 
-- [ ] Phone number into `site.config.mjs` (`phone`)
-- [ ] Street number into `site.config.mjs` (`address.streetAddress`), then add the map
-- [ ] Opening hours into `site.config.mjs` (`hours`, and `hoursSchema` for JSON-LD)
+- [x] Phone number (03 5208 9006)
+- [x] Street address (116 Lava Street) and map embed
+- [x] Opening hours
 - [ ] Wire the enquiry and waitlist forms (currently preview mode, nothing is sent)
 - [ ] Set `forms.recipient` once info@ is confirmed working
 - [ ] Privacy Policy page (footer link is a placeholder)
 - [ ] Remaining editorial placeholders listed by `npm run build`
-- [ ] Booking CTA and "opened" wording reviewed for pre-opening
+- [x] Booking CTAs and "opened" wording switched to pre-opening (`preOpening`)
+- [ ] Dilla Shauqy's bio, and team headshots (Jaimee due November)
+- [ ] Wisdom tooth wording on the extractions page (client to confirm)
+- [ ] Set `preOpening: false` on opening day, and update the home waitlist section
 - [ ] Adobe Fonts kit ID (LAUNCH-TODO in each page head)
 - [ ] Domain connected in Vercel and DNS set at GoDaddy
 - [ ] Search Console property and sitemap submitted

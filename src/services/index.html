@@ -45,7 +45,7 @@
     </nav>
     <div class="mast-actions">
       {{#phone}}<a class="mast-phone" href="{{phoneHref}}">{{phone}}</a>{{/phone}}
-      <a class="btn btn-primary" href="../contact/index.html">Book an appointment</a>
+      <a class="btn btn-primary" href="../contact/index.html">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
       <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
         <i></i><i></i><i></i>
       </button>
@@ -68,7 +68,7 @@
     </details>
     <a class="dnav" href="../contact/index.html">Contact</a>
   </nav>
-  <a class="btn btn-primary" href="../contact/index.html">Book an appointment</a>
+  <a class="btn btn-primary" href="../contact/index.html">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
   {{#phone}}<p class="drawer-foot small">Prefer to talk it through? <a class="textlink" href="{{phoneHref}}">{{phone}}</a></p>{{/phone}}
 </div>
 <main id="main">
@@ -81,7 +81,7 @@
         <h1 class="ph-h1">What we do <em>here</em>.</h1>
         <p class="lead">A general practice with a wider than usual range. Years spent in regional towns, where referral was rarely simple, mean Dr Meg handles a good deal of work in-house that many practices send elsewhere — implants, molar root canal treatment, surgical extractions.</p><p class="lead">That said, not everything belongs in a general practice. Where a case genuinely calls for a specialist, we will tell you and organise the referral.</p><p class="lead">Suitability for any treatment on this site can only be confirmed after a clinical assessment. Costs are explained in writing before treatment begins.</p>
       </div>
-      <div class="ph-side rise"><figure class="photo-fig"><img src="../assets/images/lava-street-dental-treatment-room.webp" srcset="../assets/images/lava-street-dental-treatment-room-480.webp 480w, ../assets/images/lava-street-dental-treatment-room-800.webp 800w, ../assets/images/lava-street-dental-treatment-room-1200.webp 1200w, ../assets/images/lava-street-dental-treatment-room-1600.webp 1600w, ../assets/images/lava-street-dental-treatment-room.webp 2109w" sizes="(min-width: 900px) 770px, 159vw" alt="Treatment room at Lava Street Dental with dental chair and sage cabinetry" width="2109" height="746" class="pano" style="--pos: 60% 50%" loading="eager" decoding="async" fetchpriority="high"></figure></div>
+      <div class="ph-side rise"><figure class="photo-fig"><img src="../assets/images/lava-street-dental-treatment-room.webp" srcset="../assets/images/lava-street-dental-treatment-room-480.webp 480w, ../assets/images/lava-street-dental-treatment-room-800.webp 800w, ../assets/images/lava-street-dental-treatment-room-1200.webp 1200w, ../assets/images/lava-street-dental-treatment-room-1600.webp 1600w, ../assets/images/lava-street-dental-treatment-room-2000.webp 2000w, ../assets/images/lava-street-dental-treatment-room.webp 2112w" sizes="(min-width: 900px) 770px, 159vw" alt="Treatment room with dental chair and sage cabinetry at Lava Street Dental, Warrnambool" width="2112" height="745" class="pano" style="--pos: 60% 50%" loading="eager" decoding="async" fetchpriority="high"></figure></div>
     </div>
   </div>
 </section>
@@ -89,7 +89,7 @@
 <section class="band cta-close">
   <div class="wrap">
     <div class="cta-panel rise">
-      <div class="cta-row"><a class="btn btn-primary" href="../contact/index.html">Book an appointment</a>{{#phone}}<a class="btn btn-outline" href="{{phoneHref}}">Call {{phone}}</a>{{/phone}}</div>
+      <div class="cta-row"><a class="btn btn-primary" href="../contact/index.html">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>{{#phone}}<a class="btn btn-outline" href="{{phoneHref}}">Call {{phone}}</a>{{/phone}}</div>
     </div>
   </div>
 </section>

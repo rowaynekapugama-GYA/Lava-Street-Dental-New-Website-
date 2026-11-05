@@ -46,7 +46,7 @@
     </nav>
     <div class="mast-actions">
       {{#phone}}<a class="mast-phone" href="{{phoneHref}}">{{phone}}</a>{{/phone}}
-      <a class="btn btn-primary" href="../../../contact/index.html">Book an appointment</a>
+      <a class="btn btn-primary" href="../../../contact/index.html">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
       <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
         <i></i><i></i><i></i>
       </button>
@@ -69,7 +69,7 @@
     </details>
     <a class="dnav" href="../../../contact/index.html">Contact</a>
   </nav>
-  <a class="btn btn-primary" href="../../../contact/index.html">Book an appointment</a>
+  <a class="btn btn-primary" href="../../../contact/index.html">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
   {{#phone}}<p class="drawer-foot small">Prefer to talk it through? <a class="textlink" href="{{phoneHref}}">{{phone}}</a></p>{{/phone}}
 </div>
 <main id="main">
@@ -86,7 +86,7 @@
     </div>
   </div>
 </section>
-<section class="band"><div class="wrap flow"><h3 class="d3 sec-h3">Placed and restored here</h3><p>Dr Meg both places implants and makes the crown that goes on top. In many practices those stages are split between a surgeon and a general dentist, with a handover in between. Keeping it together means the implant is positioned from the outset with the finished crown in mind, and one clinician is accountable for the result.</p><p>She has undertaken extensive implant training, including a six-day implant immersion intensive and advanced work in bone augmentation and flap surgery, and has placed and restored implants throughout her regional career.</p><p class="note-fine">Dr Meg is a general dentist and is not registered as a specialist in implant dentistry.</p><h3 class="d3 sec-h3">Assessment comes first</h3><p>Not everyone is a candidate, and that assessment is done honestly.</p><p>Dr Meg examines the site, the gum health, the opposing tooth and your bite, then takes 3D CBCT imaging to assess bone volume and locate the nerve and sinus. Your medical history matters too — diabetes control, medications including bone medications, smoking and grinding all affect how an implant is likely to perform.</p><p>Where there is not enough bone, grafting may be able to build the site up first. Where an implant is not a sensible option, she will say so and go through the alternatives.</p><h3 class="d3 sec-h3">The implant system</h3><p>We use [IMPLANT BRAND — PENDING CLIENT SIGN-OFF] implant systems, manufactured in Switzerland. It is a long-established system with a substantial published research base and readily available components, which matters years down the track if anything ever needs servicing.</p><!-- CLIENT/COMPLIANCE NOTE (not public copy): [CLIENT SIGN-OFF REQUIRED on naming the implant brand.] --><h3 class="d3 sec-h3">The process</h3><p>Placement is done under local anaesthetic and generally takes around an hour. The implant is placed into prepared bone and the site closed. Healing follows over several months while the bone fuses to the implant, and you are not left with a visible gap in the meantime where the tooth shows.</p><p>Once healing is confirmed, a digital scan is taken and the crown made by a dental laboratory, then fitted and adjusted.</p><h2 class="d2 sec-h">Frequently asked <em>questions</em></h2><div class="faq-list rise"><div class="faq">
+<section class="band"><div class="wrap flow"><h3 class="d3 sec-h3">Placed and restored here</h3><p>Dr Meg both places implants and makes the crown that goes on top. In many practices those stages are split between a surgeon and a general dentist, with a handover in between. Keeping it together means the implant is positioned from the outset with the finished crown in mind, and one clinician is accountable for the result.</p><p>She has undertaken extensive implant training, including a six-day implant immersion intensive and advanced work in bone augmentation and flap surgery, and has placed and restored implants throughout her regional career.</p><p class="note-fine">Dr Meg is a general dentist and is not registered as a specialist in implant dentistry.</p><h3 class="d3 sec-h3">Assessment comes first</h3><p>Not everyone is a candidate, and that assessment is done honestly.</p><p>Dr Meg examines the site, the gum health, the opposing tooth and your bite, then takes 3D CBCT imaging to assess bone volume and locate the nerve and sinus. Your medical history matters too — diabetes control, medications including bone medications, smoking and grinding all affect how an implant is likely to perform.</p><p>Where there is not enough bone, grafting may be able to build the site up first. Where an implant is not a sensible option, she will say so and go through the alternatives.</p><h3 class="d3 sec-h3">The implant system</h3><p>We use Straumann implant systems, manufactured in Switzerland. It is a long-established system with a substantial published research base and readily available components, which matters years down the track if anything ever needs servicing.</p><h3 class="d3 sec-h3">The process</h3><p>Placement is done under local anaesthetic and generally takes around an hour. The implant is placed into prepared bone and the site closed. Healing follows over several months while the bone fuses to the implant, and you are not left with a visible gap in the meantime where the tooth shows.</p><p>Once healing is confirmed, a digital scan is taken and the crown made by a dental laboratory, then fitted and adjusted.</p><h2 class="d2 sec-h">Frequently asked <em>questions</em></h2><div class="faq-list rise"><div class="faq">
   <h3>
     <button class="faq-q" type="button" aria-expanded="false" aria-controls="q1">
       <span>How long does the whole process take?</span><span class="pm" aria-hidden="true"></span>
@@ -132,7 +132,7 @@
 <section class="band cta-close">
   <div class="wrap">
     <div class="cta-panel rise">
-      <div class="cta-row"><a class="btn btn-primary" href="../../../contact/index.html">Book an implant assessment</a>{{#phone}}<a class="btn btn-outline" href="{{phoneHref}}">Call {{phone}}</a>{{/phone}}</div>
+      <div class="cta-row"><a class="btn btn-primary" href="../../../contact/index.html">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an implant assessment{{/preOpening}}</a>{{#phone}}<a class="btn btn-outline" href="{{phoneHref}}">Call {{phone}}</a>{{/phone}}</div>
     </div>
   </div>
 </section>

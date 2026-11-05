@@ -46,7 +46,7 @@
     </nav>
     <div class="mast-actions">
       {{#phone}}<a class="mast-phone" href="{{phoneHref}}">{{phone}}</a>{{/phone}}
-      <a class="btn btn-primary" href="../../contact/index.html">Book an appointment</a>
+      <a class="btn btn-primary" href="../../contact/index.html">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
       <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
         <i></i><i></i><i></i>
       </button>
@@ -69,7 +69,7 @@
     </details>
     <a class="dnav" href="../../contact/index.html">Contact</a>
   </nav>
-  <a class="btn btn-primary" href="../../contact/index.html">Book an appointment</a>
+  <a class="btn btn-primary" href="../../contact/index.html">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
   {{#phone}}<p class="drawer-foot small">Prefer to talk it through? <a class="textlink" href="{{phoneHref}}">{{phone}}</a></p>{{/phone}}
 </div>
 <main id="main">
@@ -86,7 +86,7 @@
     </div>
   </div>
 </section>
-<section class="band"><div class="wrap flow"><h3 class="d3 sec-h3">Our cleans</h3><p>We clean using an air-polishing system that combines warm water, compressed air and a very fine powder. For most people it is more comfortable than the traditional scrape, particularly if you get cold sensitivity, and it lifts surface staining well. Where heavier deposits need removing, ultrasonic scaling is used as well.</p><h3 class="d3 sec-h3">Looking after children</h3><p>Children are welcome from their first teeth. Early appointments are short and low-key, largely about getting comfortable with the chair and the people in the room. Eligible children may be able to access care through the Child Dental Benefits Schedule — ask us and we will check.</p><h3 class="d3 sec-h3">When something goes wrong</h3><p>Toothache, a broken tooth, a lost filling or a knock to the mouth. We keep room for urgent problems and will get you seen as soon as we reasonably can.</p><h3 class="d3 sec-h3">What sits under general and preventive care</h3><div class="linkcard-grid rise"><a class="linkcard" href="../../services/general-dentistry/check-ups-and-cleans/index.html">
+<section class="band"><div class="wrap flow"><h3 class="d3 sec-h3">Our cleans</h3><p>We clean using an air-polishing system that combines warm water, compressed air and a very fine powder. For most people it is more comfortable than the traditional scrape, particularly if you get cold sensitivity, and it lifts surface staining well. Where heavier deposits need removing, ultrasonic scaling is used as well.</p><h3 class="d3 sec-h3">Looking after children</h3><p>Children are welcome from their first teeth. Early appointments are short and low-key, largely about getting comfortable with the chair and the people in the room. Eligible children may be able to access care through the Child Dental Benefits Schedule — ask us and we will check.</p><h3 class="d3 sec-h3">When something goes wrong</h3><p>Toothache, a broken tooth, a lost filling or a knock to the mouth. {{#preOpening}}From opening in December 2026, we will hold two same-day emergency appointments each day. Call{{#phone}} <a class="textlink" href="{{phoneHref}}">{{phone}}</a>{{/phone}} first thing in the morning to secure one. Emergency appointments cannot be booked online.{{/preOpening}}{{^preOpening}}We hold two same-day emergency appointments each day. Call{{#phone}} <a class="textlink" href="{{phoneHref}}">{{phone}}</a>{{/phone}} first thing in the morning to secure one. Emergency appointments cannot be booked online.{{/preOpening}}</p><h3 class="d3 sec-h3">What sits under general and preventive care</h3><div class="linkcard-grid rise"><a class="linkcard" href="../../services/general-dentistry/check-ups-and-cleans/index.html">
   <h3>Dental Check-ups &amp; Cleans</h3>
   <p>— examination, air-polishing clean, X-rays where clinically indicated</p>
   <span class="lc-more" aria-hidden="true">Read more</span>

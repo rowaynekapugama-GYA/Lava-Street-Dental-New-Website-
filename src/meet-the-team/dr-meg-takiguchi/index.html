@@ -46,7 +46,7 @@
     </nav>
     <div class="mast-actions">
       {{#phone}}<a class="mast-phone" href="{{phoneHref}}">{{phone}}</a>{{/phone}}
-      <a class="btn btn-primary" href="../../contact/index.html">Book an appointment</a>
+      <a class="btn btn-primary" href="../../contact/index.html">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
       <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
         <i></i><i></i><i></i>
       </button>
@@ -69,7 +69,7 @@
     </details>
     <a class="dnav" href="../../contact/index.html">Contact</a>
   </nav>
-  <a class="btn btn-primary" href="../../contact/index.html">Book an appointment</a>
+  <a class="btn btn-primary" href="../../contact/index.html">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
   {{#phone}}<p class="drawer-foot small">Prefer to talk it through? <a class="textlink" href="{{phoneHref}}">{{phone}}</a></p>{{/phone}}
 </div>
 <main id="main">
@@ -86,7 +86,7 @@
     </div>
   </div>
 </section>
-<section class="band"><div class="wrap flow"><p>She takes particular care with injections and works at a pace anxious patients can manage, explaining each step before it happens and stopping when asked. Everyone is different, and no dentist can promise a completely pain-free appointment.</p><p>Continuity is the reason she opened her own practice. She would rather be the one dentist a family sees over the long term than another name on a file.</p><h3 class="d3 sec-h3">Areas of particular interest</h3><ul class="chips"><li>Dental implants</li><li>Root canal treatment including molars</li><li>Surgical and complicated extractions</li><li>Crowns, bridges and full-mouth rehabilitation</li><li>Diode laser for selected gum procedures</li><li>Partial dentures</li></ul><p class="note-fine">Dr Meg is a general dentist and is not registered as a specialist in any of these areas. Her PhD in Medical Oncology is a research qualification, not a dental one. Suitability for any treatment is determined after a clinical assessment.</p><p>Away from the practice, weekends usually involve the two kelpies and a stretch of beach.</p><h2 class="d2 sec-h">Two questions she is asked <em>most</em></h2><div class="faq-list rise"><div class="faq">
+<section class="band"><div class="wrap flow"><p>She takes particular care with injections and works at a pace anxious patients can manage, explaining each step before it happens and stopping when asked. Everyone is different, and no dentist can promise a completely pain-free appointment.</p><p>{{#preOpening}}Continuity is the reason she is opening her own practice.{{/preOpening}}{{^preOpening}}Continuity is the reason she opened her own practice.{{/preOpening}} She would rather be the one dentist a family sees over the long term than another name on a file.</p><h3 class="d3 sec-h3">Areas of particular interest</h3><ul class="chips"><li>Dental implants</li><li>Root canal treatment including molars</li><li>Surgical and complicated extractions</li><li>Crowns, bridges and full-mouth rehabilitation</li><li>Diode laser for selected gum procedures</li><li>Partial dentures</li></ul><p class="note-fine">Dr Meg is a general dentist and is not registered as a specialist in any of these areas. Her PhD in Medical Oncology is a research qualification, not a dental one. Suitability for any treatment is determined after a clinical assessment.</p><p>Away from the practice, weekends usually involve the two kelpies and a stretch of beach.</p><h2 class="d2 sec-h">Two questions she is asked <em>most</em></h2><div class="faq-list rise"><div class="faq">
   <h3>
     <button class="faq-q" type="button" aria-expanded="false" aria-controls="q1">
       <span>Is treatment going to hurt?</span><span class="pm" aria-hidden="true"></span>
@@ -104,7 +104,7 @@
 <section class="band cta-close">
   <div class="wrap">
     <div class="cta-panel rise">
-      <div class="cta-row"><a class="btn btn-primary" href="../../contact/index.html">Book with Dr Meg</a>{{#phone}}<a class="btn btn-outline" href="{{phoneHref}}">Call {{phone}}</a>{{/phone}}</div>
+      <div class="cta-row"><a class="btn btn-primary" href="../../contact/index.html">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book with Dr Meg{{/preOpening}}</a>{{#phone}}<a class="btn btn-outline" href="{{phoneHref}}">Call {{phone}}</a>{{/phone}}</div>
     </div>
   </div>
 </section>

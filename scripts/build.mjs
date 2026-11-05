@@ -81,6 +81,8 @@ const ctx = {
   hours: hours.length ? "yes" : "",
   hoursHtml: hours.map(escHtml).join("<br>"),
   openingDate: String(config.openingDate || "").trim(),
+  preOpening: config.preOpening ? "yes" : "",
+  mapQuery: encodeURIComponent(`${addressStreet}, ${a.locality} ${a.region} ${a.postcode}`),
 };
 if (phone && !/\d{6,}/.test(phone.replace(/\D/g, ""))) err(`site.config.mjs: phone must be a number or empty, not "${phone}"`);
 if (ctx.email && !/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(ctx.email)) err(`site.config.mjs: emails.public is not a valid address`);
@@ -143,10 +145,11 @@ function dentistJsonLd() {
     image: `${siteUrl}${config.shareImage.path}`,
     logo: `${siteUrl}${config.logo}`,
     ...(ctx.email ? { email: ctx.email } : {}),
-    ...(phone ? { telephone: phone } : {}),
+    ...(phone ? { telephone: ctx.phoneHref.replace(/^tel:/, "") } : {}),
     address,
     areaServed: (config.areaServed || []).map((n) => ({ "@type": "City", name: n })),
     ...((config.hoursSchema || []).length ? { openingHours: config.hoursSchema } : {}),
+    ...((config.paymentAccepted || []).length ? { paymentAccepted: config.paymentAccepted.join(", ") } : {}),
     ...(sameAs.length ? { sameAs } : {}),
   };
   return `<script type="application/ld+json">${JSON.stringify(data)}</script>`;
