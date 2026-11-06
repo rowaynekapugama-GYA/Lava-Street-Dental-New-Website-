@@ -1,0 +1,92 @@
+[
+ {
+  "rule": "best",
+  "contains": "work best between",
+  "note": "Dashboard help about title length."
+ },
+ {
+  "rule": "best",
+  "contains": "Best at 1200 by 630",
+  "note": "Dashboard help about share image size."
+ },
+ {
+  "rule": "best",
+  "contains": "best-effort",
+  "note": "Code comment and README: a best-effort rate limit."
+ },
+ {
+  "rule": "best",
+  "contains": "best effort",
+  "note": "Code comment: best effort storage."
+ },
+ {
+  "rule": "pain-free",
+  "contains": "No &quot;pain-free&quot;",
+  "note": "The advertising rules reminder in the page editor."
+ },
+ {
+  "rule": "guarantee",
+  "contains": "&quot;guaranteed&quot;",
+  "note": "The advertising rules reminder in the page editor."
+ },
+ {
+  "rule": "best",
+  "contains": "&quot;best&quot;",
+  "note": "The advertising rules reminder in the page editor."
+ },
+ {
+  "rule": "expert",
+  "contains": "&quot;expert&quot;",
+  "note": "The advertising rules reminder in the page editor."
+ },
+ {
+  "rule": "specialist",
+  "contains": "as a specialist",
+  "note": "The reminder never to describe Dr Meg as a specialist."
+ },
+ {
+  "rule": "specialist",
+  "contains": "dental specialist registration",
+  "note": "The reminder that her PhD is not a dental specialist registration."
+ },
+ {
+  "rule": "specialist",
+  "contains": "never &quot;specialist&quot;",
+  "note": "Team screen reminder."
+ },
+ {
+  "rule": "specialist",
+  "contains": "registered specialist|",
+  "note": "The pattern that finds the compliance wording to lock."
+ },
+ {
+  "rule": "pain-free",
+  "contains": "clinical assessment|pain-free|",
+  "note": "The pattern that finds the compliance wording to lock."
+ },
+ {
+  "rule": "pain-free",
+  "contains": "no \"pain-free\"",
+  "note": "The advertising rules reminder in the docs."
+ },
+ {
+  "rule": "guarantee",
+  "contains": "\"guaranteed\", \"best\"",
+  "note": "The advertising rules reminder in the docs."
+ },
+ {
+  "rule": "best",
+  "contains": "\"guaranteed\", \"best\"",
+  "note": "The advertising rules reminder in the docs."
+ },
+ {
+  "rule": "expert",
+  "contains": "\"best\" or \"expert\"",
+  "note": "The advertising rules reminder in the docs."
+ },
+ {
+  "rule": "pain-free",
+  "contains": "\"pain-free\" sentence",
+  "note": "Docs naming the locked FAQ wording."
+ }
+]

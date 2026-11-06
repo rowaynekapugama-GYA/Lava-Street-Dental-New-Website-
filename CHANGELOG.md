@@ -1,5 +1,39 @@
 # Changelog
 
+## 2026-11-06: Blob photo columns migration (v1.3.1)
+
+- Fix: on Vercel (with `BLOB_READ_WRITE_TOKEN` set) the Blob storage plugin adds two columns to the
+  photos table (`prefix`, `_objectKey`) that the first migration did not have, because it was made
+  without a token. Pulling content from the dashboard failed with `column "_objectkey" does not exist`,
+  so the build fell back to the repository files and dashboard edits would not have been published.
+- `alwaysInsertFields: true` on the Blob plugin, so the database schema is the same with or without a
+  token, and a new migration `20261106_073918_blob_storage_fields` adds the two columns
+  (`IF NOT EXISTS`). It runs by itself on the next build. Nothing else changes.
+
+## 2026-11-06: website dashboard (v1.3.0)
+
+Update to the existing repo. Adds the GYA client dashboard at `/admin`; the website looks and reads
+exactly as v1.2.2 (byte for byte, 0.0000% pixel difference).
+
+- Dashboard: sign in, Dashboard home (Before opening day list, stats, quick actions, latest sign-ups,
+  recently edited), Pages, visual page editor (words in place, links with a section picker, photos
+  with a focal point, Sections with repeating items, SEO), Team, Waitlist, Media Library, SEO, Site
+  Settings, Redirects and Users. Lava Street Dental colours, type, corners and shadows.
+- Backend: Payload 3.92 on Neon Postgres, photos on Vercel Blob, Payload's own screens at `/cms` (GYA
+  only). Publish website calls the Vercel deploy hook; the build pulls the dashboard into `content/`.
+- The site is now built from `content/` (the v1.2.2 templates as a content model) by
+  `scripts/render-site.ts`, and served by Next.js with the same clean addresses and redirects.
+  The v1.2.2 templates and build are kept in `tools/v122/` for the parity check.
+- Forms: same addresses and emails; each sign-up and enquiry is also kept in the dashboard.
+- Opening mode, recipients, tracking IDs (GA4, Meta Pixel) and the website address are in Site
+  Settings for GYA. Blog and Before & After stay switched off.
+- New env vars: `DATABASE_URL`, `BLOB_READ_WRITE_TOKEN`, `PAYLOAD_SECRET`, `PUBLISH_HOOK_URL`,
+  `NEXT_PUBLIC_SERVER_URL`, and `ALLOW_FIRST_USER` once. See README-CMS.md.
+- Moved: `src/assets` to `public/assets`; `api/` to `src/app/api` and `src/forms`; the redirects from
+  `vercel.json` to `content/redirects.json`.
+- Docs: README-CMS.md, docs/HOW-TO-UPDATE.md, docs/VERIFICATION.md, docs/screenshots/.
+  Terminal rollout: `scripts/push-to-github.sh`.
+
 ## 2026-11-06: forms use the SMTP2GO API (v1.2.2)
 
 - The waitlist and contact forms send through the SMTP2GO HTTP API with an

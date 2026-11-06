@@ -1,0 +1,331 @@
+{
+ "slug": "services",
+ "name": "Services",
+ "path": "/services/",
+ "file": "services/index.html",
+ "group": "Main pages",
+ "meta": {
+  "title": "Dental Services in Warrnambool | Lava Street Dental",
+  "description": "General, restorative, implant, cosmetic and laser dentistry in Warrnambool. See the full range of treatments available at Lava Street Dental with Dr Meg Takiguchi."
+ },
+ "head": "<!DOCTYPE html>\n<html lang=\"en-AU\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"icon\" href=\"../favicon.ico\" sizes=\"48x48\">\n<link rel=\"icon\" href=\"../assets/icons/favicon.svg\" type=\"image/svg+xml\">\n<link rel=\"apple-touch-icon\" href=\"../assets/icons/apple-touch-icon.png\">\n<link rel=\"manifest\" href=\"../site.webmanifest\">\n<meta name=\"theme-color\" content=\"#575A4D\">\n<title>{{seo:title}}</title>\n<meta name=\"description\" content=\"{{seo:description}}\">\n<meta property=\"og:title\" content=\"{{seo:ogTitle}}\">\n<meta property=\"og:description\" content=\"{{seo:ogDescription}}\">\n<!-- @seo: canonical, Open Graph, Twitter and JSON-LD tags are added here by scripts/build.mjs from site.config.mjs -->\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<!-- LAUNCH-TODO: brand typefaces. Neue Haas Grotesk and Acumin Condensed are\n     Adobe Fonts families. Create a web project at fonts.adobe.com containing\n     neue-haas-grotesk-text, neue-haas-grotesk-display and acumin-pro-condensed,\n     then uncomment the line below with the kit ID. The CSS already names those\n     families first, so nothing else changes. Until then the Google Fonts line\n     serves the closest open faces. -->\n<!-- <link rel=\"stylesheet\" href=\"https://use.typekit.net/XXXXXXX.css\"> -->\n<link href=\"https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Roboto+Condensed:wght@300;500&display=swap\" rel=\"stylesheet\">\n<link rel=\"stylesheet\" href=\"../assets/css/site.css\">\n\n</head>\n<body id=\"top\">\n<a class=\"skip-link\" href=\"#main\">Skip to main content</a>\n<header class=\"masthead\" id=\"masthead\">\n  <div class=\"wrap\">\n    <a href=\"../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../assets/images/logo.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n    <nav class=\"mast-nav\" aria-label=\"Primary\">\n      <a href=\"../about/index.html\">About</a>\n      <a href=\"../meet-the-team/index.html\">Meet the Team</a>\n      <div class=\"navdrop\" data-drop>\n        <button type=\"button\" aria-expanded=\"false\" aria-controls=\"dropServices\">Services<i aria-hidden=\"true\"></i></button>\n        <ul class=\"drop-panel\" id=\"dropServices\">\n          <li><a href=\"../services/index.html\">All services</a></li>\n          <li><a href=\"../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a></li><li><a href=\"../services/restorative-dentistry/index.html\">Restorative Dentistry</a></li><li><a href=\"../services/dental-implants/index.html\">Dental Implants</a></li><li><a href=\"../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a></li><li><a href=\"../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a></li>\n        </ul>\n      </div>\n      <a href=\"../contact/index.html\">Contact</a>\n    </nav>\n    <div class=\"mast-actions\">\n      {{#phone}}<a class=\"mast-phone\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}}\n      <a class=\"btn btn-primary\" href=\"{{#preOpening}}../index.html#waitlist{{/preOpening}}{{^preOpening}}../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n      <button class=\"burger\" id=\"burger\" type=\"button\" aria-expanded=\"false\" aria-controls=\"drawer\" aria-label=\"Open menu\">\n        <i></i><i></i><i></i>\n      </button>\n    </div>\n  </div>\n</header>\n\n<div class=\"drawer\" id=\"drawer\" hidden>\n  <nav aria-label=\"Mobile\">\n    <a class=\"dnav\" href=\"../about/index.html\">About</a>\n    <a class=\"dnav\" href=\"../meet-the-team/index.html\">Meet the Team</a>\n    <details class=\"dgroup\">\n      <summary>Services</summary>\n      <a href=\"../services/index.html\">All services</a>\n      <a href=\"../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a><a href=\"../services/restorative-dentistry/index.html\">Restorative Dentistry</a><a href=\"../services/dental-implants/index.html\">Dental Implants</a><a href=\"../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a><a href=\"../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a>\n    </details>\n    <details class=\"dgroup\">\n      <summary>Areas we serve</summary>\n      <a href=\"../dentist-warrnambool/index.html\">Warrnambool</a><a href=\"../dentist-dennington/index.html\">Dennington</a><a href=\"../dentist-allansford/index.html\">Allansford</a><a href=\"../dentist-koroit/index.html\">Koroit</a><a href=\"../dentist-port-fairy/index.html\">Port Fairy</a>\n    </details>\n    <a class=\"dnav\" href=\"../contact/index.html\">Contact</a>\n  </nav>\n  <a class=\"btn btn-primary\" href=\"{{#preOpening}}../index.html#waitlist{{/preOpening}}{{^preOpening}}../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n  {{#phone}}<p class=\"drawer-foot small\">Prefer to talk it through? <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a></p>{{/phone}}\n</div>\n<main id=\"main\">",
+ "sections": [
+  {
+   "key": "s1",
+   "kind": "hero",
+   "label": "Page header",
+   "tag": "section",
+   "attrs": {
+    "class": "page-hero"
+   },
+   "before": "\n",
+   "template": "\n  <div class=\"wrap\">\n    <nav class=\"crumbs\" aria-label=\"Breadcrumb\"><ol><li>{{f1}}</li><li aria-current=\"page\">{{f2}}</li></ol></nav>\n    <div class=\"ph-grid has-side\">\n      <div>\n        <p class=\"eyebrow\">{{f3}}</p>\n        <h1 class=\"ph-h1\">{{f4}}</h1>\n        <p class=\"lead\">{{f5}}</p><p class=\"lead\">{{f6}}</p><p class=\"lead\">{{f7}}</p>\n      </div>\n      <div class=\"ph-side rise\"><figure class=\"photo-fig\"><img src=\"{{f8}}\" srcset=\"{{f10}}\" sizes=\"(min-width: 900px) 770px, 159vw\" alt=\"{{f9}}\" width=\"2112\" height=\"745\" class=\"pano\" style=\"--pos: 60% 50%\" loading=\"eager\" decoding=\"async\" fetchpriority=\"high\"></figure></div>\n    </div>\n  </div>\n",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../index.html\">Home</a>"
+    },
+    {
+     "id": "f2",
+     "label": "List item",
+     "type": "richtext",
+     "value": "Services"
+    },
+    {
+     "id": "f3",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "Our services"
+    },
+    {
+     "id": "f4",
+     "label": "Main heading",
+     "type": "richtext",
+     "value": "What we do <em>here</em>."
+    },
+    {
+     "id": "f5",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "A general practice with a wider than usual range. Years spent in regional towns, where referral was rarely simple, mean Dr Meg handles a good deal of work in-house that many practices send elsewhere — implants, molar root canal treatment, surgical extractions."
+    },
+    {
+     "id": "f6",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "That said, not everything belongs in a general practice. Where a case genuinely calls for a specialist, we will tell you and organise the referral."
+    },
+    {
+     "id": "f7",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "Suitability for any treatment on this site can only be confirmed after a clinical assessment. Costs are explained in writing before treatment begins."
+    },
+    {
+     "id": "f8",
+     "label": "Photo",
+     "type": "image",
+     "value": "../assets/images/lava-street-dental-treatment-room.webp",
+     "original": "../assets/images/lava-street-dental-treatment-room.webp",
+     "width": "2112",
+     "height": "745"
+    },
+    {
+     "id": "f9",
+     "label": "Photo description",
+     "type": "alt",
+     "value": "Treatment room with dental chair and sage cabinetry at Lava Street Dental, Warrnambool"
+    },
+    {
+     "id": "f10",
+     "label": "Photo sizes",
+     "type": "srcset",
+     "value": "../assets/images/lava-street-dental-treatment-room-480.webp 480w, ../assets/images/lava-street-dental-treatment-room-800.webp 800w, ../assets/images/lava-street-dental-treatment-room-1200.webp 1200w, ../assets/images/lava-street-dental-treatment-room-1600.webp 1600w, ../assets/images/lava-street-dental-treatment-room-2000.webp 2000w, ../assets/images/lava-street-dental-treatment-room.webp 2112w",
+     "of": "f8"
+    }
+   ]
+  },
+  {
+   "key": "s2",
+   "kind": "content",
+   "label": "General &amp; Preventive Dentistry",
+   "tag": "section",
+   "attrs": {
+    "class": "band"
+   },
+   "before": "\n",
+   "template": "<div class=\"wrap flow\">{{[L1]}}<div class=\"hubcard rise\"><h2>{{f1}}</h2><p>{{f2}}</p><p class=\"pillrow-label\">{{f3}}</p><div class=\"pillrow\">{{f4}}</div><a class=\"cardlink\" href=\"{{f5}}\">{{f6}}</a></div>{{[/L1]}}{{[L1]}}<div class=\"hubcard rise\"><h2>{{f7}}</h2><p>{{f8}}</p><p class=\"pillrow-label\">{{f9}}</p><div class=\"pillrow\">{{f10}}</div><a class=\"cardlink\" href=\"{{f11}}\">{{f12}}</a></div>{{[/L1]}}{{[L1]}}<div class=\"hubcard rise\"><h2>{{f13}}</h2><p>{{f14}}</p><p class=\"pillrow-label\">{{f15}}</p><div class=\"pillrow\">{{f16}}</div><a class=\"cardlink\" href=\"{{f17}}\">{{f18}}</a></div>{{[/L1]}}{{[L1]}}<div class=\"hubcard rise\"><h2>{{f19}}</h2><p>{{f20}}</p><p class=\"pillrow-label\">{{f21}}</p><div class=\"pillrow\">{{f22}}</div><a class=\"cardlink\" href=\"{{f23}}\">{{f24}}</a></div>{{[/L1]}}{{[L1]}}<div class=\"hubcard rise\"><h2>{{f25}}</h2><p>{{f26}}</p><p class=\"pillrow-label\">{{f27}}</p><div class=\"pillrow\">{{f28}}</div><a class=\"cardlink\" href=\"{{f29}}\">{{f30}}</a></div>{{[/L1]}}</div>",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "<a href=\"../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a>"
+    },
+    {
+     "id": "f2",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "The regular care that keeps problems small: check-ups, cleans, fillings, gum treatment, children’s appointments, mouthguards and night guards, and same-day help when something goes wrong."
+    },
+    {
+     "id": "f3",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Explore"
+    },
+    {
+     "id": "f4",
+     "label": "Words",
+     "type": "richtext",
+     "value": "<a href=\"../services/general-dentistry/check-ups-and-cleans/index.html\">Check-ups &amp; Cleans</a><a href=\"../services/general-dentistry/dental-fillings/index.html\">Fillings</a><a href=\"../services/general-dentistry/childrens-dentistry/index.html\">Children’s Dentistry</a><a href=\"../services/general-dentistry/gum-disease-treatment/index.html\">Gum Disease Treatment</a><a href=\"../services/general-dentistry/custom-mouthguards/index.html\">Custom Mouthguards</a><a href=\"../services/general-dentistry/night-guards-teeth-grinding/index.html\">Night Guards</a><a href=\"../services/general-dentistry/emergency-dental-care/index.html\">Emergency Dental Care</a>"
+    },
+    {
+     "id": "f5",
+     "label": "Link address",
+     "type": "href",
+     "value": "../services/general-dentistry/index.html"
+    },
+    {
+     "id": "f6",
+     "label": "Link words",
+     "type": "text",
+     "value": "View General &amp; Preventive Dentistry →"
+    },
+    {
+     "id": "f7",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "<a href=\"../services/restorative-dentistry/index.html\">Restorative Dentistry</a>"
+    },
+    {
+     "id": "f8",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Rebuilding teeth that are damaged, decayed or missing — crowns, bridges, root canal treatment, partial dentures and extractions. Crowns and bridges are made by a dental laboratory rather than milled chairside."
+    },
+    {
+     "id": "f9",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Explore"
+    },
+    {
+     "id": "f10",
+     "label": "Words",
+     "type": "richtext",
+     "value": "<a href=\"../services/restorative-dentistry/dental-crowns/index.html\">Dental Crowns</a><a href=\"../services/restorative-dentistry/dental-bridges/index.html\">Dental Bridges</a><a href=\"../services/restorative-dentistry/root-canal-treatment/index.html\">Root Canal Treatment</a><a href=\"../services/restorative-dentistry/partial-dentures/index.html\">Partial Dentures</a><a href=\"../services/restorative-dentistry/tooth-extractions/index.html\">Tooth Extractions</a>"
+    },
+    {
+     "id": "f11",
+     "label": "Link address",
+     "type": "href",
+     "value": "../services/restorative-dentistry/index.html"
+    },
+    {
+     "id": "f12",
+     "label": "Link words",
+     "type": "text",
+     "value": "View Restorative Dentistry →"
+    },
+    {
+     "id": "f13",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "<a href=\"../services/dental-implants/index.html\">Dental Implants</a>"
+    },
+    {
+     "id": "f14",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Assessment, placement and restoration of single and multiple implants, planned with 3D CBCT imaging. Dr Meg has undertaken extensive implant and bone grafting training and places implants herself."
+    },
+    {
+     "id": "f15",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Explore"
+    },
+    {
+     "id": "f16",
+     "label": "Words",
+     "type": "richtext",
+     "value": "<a href=\"../services/dental-implants/single-tooth-implants/index.html\">Single Tooth Implants</a><a href=\"../services/dental-implants/multiple-implants-implant-bridges/index.html\">Multiple Implants &amp; Implant Bridges</a><a href=\"../services/dental-implants/bone-grafting/index.html\">Bone Grafting for Implants</a>"
+    },
+    {
+     "id": "f17",
+     "label": "Link address",
+     "type": "href",
+     "value": "../services/dental-implants/index.html"
+    },
+    {
+     "id": "f18",
+     "label": "Link words",
+     "type": "text",
+     "value": "View Dental Implants →"
+    },
+    {
+     "id": "f19",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "<a href=\"../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a>"
+    },
+    {
+     "id": "f20",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Treatment aimed at the appearance of your teeth, discussed honestly. We will tell you when a conservative option would serve you better than an irreversible one."
+    },
+    {
+     "id": "f21",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Explore"
+    },
+    {
+     "id": "f22",
+     "label": "Words",
+     "type": "richtext",
+     "value": "<a href=\"../services/cosmetic-dentistry/porcelain-veneers/index.html\">Porcelain Veneers</a>"
+    },
+    {
+     "id": "f23",
+     "label": "Link address",
+     "type": "href",
+     "value": "../services/cosmetic-dentistry/index.html"
+    },
+    {
+     "id": "f24",
+     "label": "Link words",
+     "type": "text",
+     "value": "View Cosmetic Dentistry →"
+    },
+    {
+     "id": "f25",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "<a href=\"../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a>"
+    },
+    {
+     "id": "f26",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "A diode laser for selected gum procedures, digital intra-oral scanning in place of putty impressions, and 3D CBCT imaging for planning."
+    },
+    {
+     "id": "f27",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Explore"
+    },
+    {
+     "id": "f28",
+     "label": "Words",
+     "type": "richtext",
+     "value": "<a href=\"../services/laser-digital-dentistry/diode-laser-dentistry/index.html\">Diode Laser Dentistry</a><a href=\"../services/laser-digital-dentistry/digital-scanning-cbct/index.html\">Digital Scanning &amp; 3D CBCT Imaging</a>"
+    },
+    {
+     "id": "f29",
+     "label": "Link address",
+     "type": "href",
+     "value": "../services/laser-digital-dentistry/index.html"
+    },
+    {
+     "id": "f30",
+     "label": "Link words",
+     "type": "text",
+     "value": "View Laser &amp; Digital Dentistry →"
+    }
+   ],
+   "lists": [
+    {
+     "id": "L1",
+     "label": "Service groups",
+     "item": "Service group"
+    }
+   ]
+  },
+  {
+   "key": "s3",
+   "kind": "content",
+   "label": "Section 3",
+   "tag": "section",
+   "attrs": {
+    "class": "band cta-close"
+   },
+   "before": "\n",
+   "template": "\n  <div class=\"wrap\">\n    <div class=\"cta-panel rise\">\n      <div class=\"cta-row\"><a class=\"btn btn-primary\" href=\"{{#preOpening}}../index.html#waitlist{{/preOpening}}{{^preOpening}}../contact/index.html{{/preOpening}}\">{{#preOpening}}{{f1}}{{/preOpening}}{{^preOpening}}{{f2}}{{/preOpening}}</a>{{#phone}}<a class=\"btn btn-outline\" href=\"{{phoneHref}}\">{{f3}}</a>{{/phone}}</div>\n    </div>\n  </div>\n",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Words",
+     "type": "text",
+     "value": "Join the waitlist"
+    },
+    {
+     "id": "f2",
+     "label": "Words",
+     "type": "text",
+     "value": "Book an appointment"
+    },
+    {
+     "id": "f3",
+     "label": "Button words",
+     "type": "text",
+     "value": "Call {{phone}}"
+    }
+   ]
+  }
+ ],
+ "order": [
+  "section:0",
+  "section:1",
+  "section:2"
+ ],
+ "mainEnd": "\n",
+ "afterMain": "</main>\n",
+ "footer": "<footer class=\"foot\">\n  <div class=\"wrap\">\n    <div class=\"foot-grid\">\n      {{[L1]}}<div>\n        <a href=\"../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../assets/images/logo-light.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n        <p class=\"blurb\">{{f1}}</p>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f2}}</h2>\n        <ul>\n          {{[L2]}}<li><a href=\"../about/index.html\">{{f3}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../meet-the-team/index.html\">{{f4}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../services/index.html\">{{f5}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../contact/index.html\">{{f6}}</a></li>{{[/L2]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f7}}</h2>\n        <ul>\n          {{[L3]}}<li><a href=\"../services/general-dentistry/check-ups-and-cleans/index.html\">{{f8}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../services/general-dentistry/dental-fillings/index.html\">{{f9}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../services/dental-implants/index.html\">{{f10}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../services/restorative-dentistry/root-canal-treatment/index.html\">{{f11}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../services/general-dentistry/childrens-dentistry/index.html\">{{f12}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../services/restorative-dentistry/tooth-extractions/index.html\">{{f13}}</a></li>{{[/L3]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f14}}</h2>\n        <ul>\n          {{[L4]}}<li><a href=\"../dentist-warrnambool/index.html\">{{f15}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../dentist-dennington/index.html\">{{f16}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../dentist-allansford/index.html\">{{f17}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../dentist-koroit/index.html\">{{f18}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../dentist-port-fairy/index.html\">{{f19}}</a></li>{{[/L4]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f20}}</h2>\n        <ul>\n          <li>{{addressStreet}}</li>\n          <li>{{localityLine}}</li>\n          {{#phone}}<li><a href=\"{{phoneHref}}\">{{phone}}</a></li>{{/phone}}\n          {{#email}}<li><a href=\"mailto:{{email}}\">{{email}}</a></li>{{/email}}\n          {{#hours}}<li>{{{hoursHtml}}}</li>{{/hours}}\n        </ul>\n      </div>{{[/L1]}}\n    </div>\n    <div class=\"foot-base\">\n      <p class=\"disclaimer\">{{f21}}</p>\n      <div class=\"foot-legal\">\n        <span>{{f22}}</span>\n        <span>\n          <a href=\"../privacy-policy/index.html\">{{f23}}</a>\n        </span>\n      </div>\n    </div>\n  </div>\n</footer>",
+ "tail": "\n<script src=\"../assets/js/site.js\" defer></script>\n</body>\n</html>"
+}

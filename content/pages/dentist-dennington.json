@@ -1,0 +1,310 @@
+{
+ "slug": "dentist-dennington",
+ "name": "Dentist Dennington",
+ "path": "/dentist-dennington/",
+ "file": "dentist-dennington/index.html",
+ "group": "Areas we serve",
+ "meta": {
+  "title": "Dentist for Dennington | Lava Street Dental Warrnambool",
+  "description": "Dental care for Dennington families, five minutes away in the Warrnambool CBD. Check-ups, children’s dentistry and restorative care with Dr Meg."
+ },
+ "head": "<!DOCTYPE html>\n<html lang=\"en-AU\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"icon\" href=\"../favicon.ico\" sizes=\"48x48\">\n<link rel=\"icon\" href=\"../assets/icons/favicon.svg\" type=\"image/svg+xml\">\n<link rel=\"apple-touch-icon\" href=\"../assets/icons/apple-touch-icon.png\">\n<link rel=\"manifest\" href=\"../site.webmanifest\">\n<meta name=\"theme-color\" content=\"#575A4D\">\n<title>{{seo:title}}</title>\n<meta name=\"description\" content=\"{{seo:description}}\">\n<meta property=\"og:title\" content=\"{{seo:ogTitle}}\">\n<meta property=\"og:description\" content=\"{{seo:ogDescription}}\">\n<!-- @seo: canonical, Open Graph, Twitter and JSON-LD tags are added here by scripts/build.mjs from site.config.mjs -->\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<!-- LAUNCH-TODO: brand typefaces. Neue Haas Grotesk and Acumin Condensed are\n     Adobe Fonts families. Create a web project at fonts.adobe.com containing\n     neue-haas-grotesk-text, neue-haas-grotesk-display and acumin-pro-condensed,\n     then uncomment the line below with the kit ID. The CSS already names those\n     families first, so nothing else changes. Until then the Google Fonts line\n     serves the closest open faces. -->\n<!-- <link rel=\"stylesheet\" href=\"https://use.typekit.net/XXXXXXX.css\"> -->\n<link href=\"https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Roboto+Condensed:wght@300;500&display=swap\" rel=\"stylesheet\">\n<link rel=\"stylesheet\" href=\"../assets/css/site.css\">\n\n{{gen:faqSchema}}\n<!-- Technical SEO: link the Google Business Profile to this page; name, address and phone must match character for character. -->\n</head>\n<body id=\"top\">\n<a class=\"skip-link\" href=\"#main\">Skip to main content</a>\n<header class=\"masthead\" id=\"masthead\">\n  <div class=\"wrap\">\n    <a href=\"../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../assets/images/logo.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n    <nav class=\"mast-nav\" aria-label=\"Primary\">\n      <a href=\"../about/index.html\">About</a>\n      <a href=\"../meet-the-team/index.html\">Meet the Team</a>\n      <div class=\"navdrop\" data-drop>\n        <button type=\"button\" aria-expanded=\"false\" aria-controls=\"dropServices\">Services<i aria-hidden=\"true\"></i></button>\n        <ul class=\"drop-panel\" id=\"dropServices\">\n          <li><a href=\"../services/index.html\">All services</a></li>\n          <li><a href=\"../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a></li><li><a href=\"../services/restorative-dentistry/index.html\">Restorative Dentistry</a></li><li><a href=\"../services/dental-implants/index.html\">Dental Implants</a></li><li><a href=\"../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a></li><li><a href=\"../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a></li>\n        </ul>\n      </div>\n      <a href=\"../contact/index.html\">Contact</a>\n    </nav>\n    <div class=\"mast-actions\">\n      {{#phone}}<a class=\"mast-phone\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}}\n      <a class=\"btn btn-primary\" href=\"{{#preOpening}}../index.html#waitlist{{/preOpening}}{{^preOpening}}../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n      <button class=\"burger\" id=\"burger\" type=\"button\" aria-expanded=\"false\" aria-controls=\"drawer\" aria-label=\"Open menu\">\n        <i></i><i></i><i></i>\n      </button>\n    </div>\n  </div>\n</header>\n\n<div class=\"drawer\" id=\"drawer\" hidden>\n  <nav aria-label=\"Mobile\">\n    <a class=\"dnav\" href=\"../about/index.html\">About</a>\n    <a class=\"dnav\" href=\"../meet-the-team/index.html\">Meet the Team</a>\n    <details class=\"dgroup\">\n      <summary>Services</summary>\n      <a href=\"../services/index.html\">All services</a>\n      <a href=\"../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a><a href=\"../services/restorative-dentistry/index.html\">Restorative Dentistry</a><a href=\"../services/dental-implants/index.html\">Dental Implants</a><a href=\"../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a><a href=\"../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a>\n    </details>\n    <details class=\"dgroup\">\n      <summary>Areas we serve</summary>\n      <a href=\"../dentist-warrnambool/index.html\">Warrnambool</a><a href=\"../dentist-dennington/index.html\">Dennington</a><a href=\"../dentist-allansford/index.html\">Allansford</a><a href=\"../dentist-koroit/index.html\">Koroit</a><a href=\"../dentist-port-fairy/index.html\">Port Fairy</a>\n    </details>\n    <a class=\"dnav\" href=\"../contact/index.html\">Contact</a>\n  </nav>\n  <a class=\"btn btn-primary\" href=\"{{#preOpening}}../index.html#waitlist{{/preOpening}}{{^preOpening}}../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n  {{#phone}}<p class=\"drawer-foot small\">Prefer to talk it through? <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a></p>{{/phone}}\n</div>\n<main id=\"main\">",
+ "faqSchema": {
+  "literal": "<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Can you fit the whole family in on one morning?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Usually. Tell us how many and roughly what ages when you phone and we will block the time together.\"}}, {\"@type\": \"Question\", \"name\": \"How early should I bring my child in?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Around their first birthday, or whenever the first teeth appear.\"}}, {\"@type\": \"Question\", \"name\": \"Do you do school-hours appointments?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Mid-morning and early afternoon are usually easiest to get.\"}}, {\"@type\": \"Question\", \"name\": \"What if a tooth gets knocked out at footy?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Phone us straight away. If it is an adult tooth, hold it by the crown, keep it in milk and get to us fast — time matters enormously.\"}}]}</script>",
+  "source": "<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q1\">\n      <span>Can you fit the whole family in on one morning?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q1\"><p>Usually. Tell us how many and roughly what ages when you phone and we will block the time together.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q2\">\n      <span>How early should I bring my child in?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q2\"><p>Around their first birthday, or whenever the first teeth appear.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q3\">\n      <span>Do you do school-hours appointments?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q3\"><p>Mid-morning and early afternoon are usually easiest to get.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q4\">\n      <span>What if a tooth gets knocked out at footy?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q4\"><p>Phone us straight away. If it is an adult tooth, hold it by the crown, keep it in milk and get to us fast — time matters enormously.</p></div>\n</div>"
+ },
+ "sections": [
+  {
+   "key": "s1",
+   "kind": "hero",
+   "label": "Page header",
+   "tag": "section",
+   "attrs": {
+    "class": "page-hero"
+   },
+   "before": "\n",
+   "template": "\n  <div class=\"wrap\">\n    <nav class=\"crumbs\" aria-label=\"Breadcrumb\"><ol><li>{{f1}}</li><li aria-current=\"page\">{{f2}}</li></ol></nav>\n    <div class=\"ph-grid has-side\">\n      <div>\n        <p class=\"eyebrow\">{{f3}}</p>\n        <h1 class=\"ph-h1\">{{f4}}</h1>\n        <p class=\"lead\">{{f5}}</p><p class=\"lead\">{{f6}}</p>\n      </div>\n      <div class=\"ph-side rise\"><figure class=\"photo-fig\"><img src=\"{{f7}}\" srcset=\"{{f9}}\" sizes=\"(min-width: 900px) 770px, 159vw\" alt=\"{{f8}}\" width=\"2112\" height=\"745\" class=\"pano\" style=\"--pos: 60% 50%\" loading=\"eager\" decoding=\"async\" fetchpriority=\"high\"></figure></div>\n    </div>\n  </div>\n",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../index.html\">Home</a>"
+    },
+    {
+     "id": "f2",
+     "label": "List item",
+     "type": "richtext",
+     "value": "Dentist for Dennington"
+    },
+    {
+     "id": "f3",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "Dentist for Dennington"
+    },
+    {
+     "id": "f4",
+     "label": "Main heading",
+     "type": "richtext",
+     "value": "A dentist for Dennington, five minutes up the <em>road</em>."
+    },
+    {
+     "id": "f5",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "Dennington sits close enough to the Warrnambool CBD that getting to the dentist should never be the hard part of the day. For most households the drive is over before the radio has finished a song."
+    },
+    {
+     "id": "f6",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "That proximity changes how you can use a dental practice. School-hours appointments become practical, and so does bringing three children in on the same morning."
+    },
+    {
+     "id": "f7",
+     "label": "Photo",
+     "type": "image",
+     "value": "../assets/images/lava-street-dental-treatment-room.webp",
+     "original": "../assets/images/lava-street-dental-treatment-room.webp",
+     "width": "2112",
+     "height": "745"
+    },
+    {
+     "id": "f8",
+     "label": "Photo description",
+     "type": "alt",
+     "value": "Treatment room with dental chair and sage cabinetry at Lava Street Dental, Warrnambool"
+    },
+    {
+     "id": "f9",
+     "label": "Photo sizes",
+     "type": "srcset",
+     "value": "../assets/images/lava-street-dental-treatment-room-480.webp 480w, ../assets/images/lava-street-dental-treatment-room-800.webp 800w, ../assets/images/lava-street-dental-treatment-room-1200.webp 1200w, ../assets/images/lava-street-dental-treatment-room-1600.webp 1600w, ../assets/images/lava-street-dental-treatment-room-2000.webp 2000w, ../assets/images/lava-street-dental-treatment-room.webp 2112w",
+     "of": "f7"
+    }
+   ]
+  },
+  {
+   "key": "s2",
+   "kind": "content",
+   "label": "What we offer",
+   "tag": "section",
+   "attrs": {
+    "class": "band"
+   },
+   "before": "\n",
+   "template": "<div class=\"wrap flow\"><h3 class=\"d3 sec-h3\">{{f1}}</h3><ul class=\"ticklist\">{{[L1]}}<li>{{f2}}</li>{{[/L1]}}{{[L1]}}<li>{{f3}}</li>{{[/L1]}}{{[L1]}}<li>{{f4}}</li>{{[/L1]}}{{[L1]}}<li>{{f5}}</li>{{[/L1]}}{{[L1]}}<li>{{f6}}</li>{{[/L1]}}{{[L1]}}<li>{{f7}}</li>{{[/L1]}}{{[L1]}}<li>{{f8}}</li>{{[/L1]}}</ul><p>{{f9}}</p>{{^preOpening}}{{#phone}}<p>{{f10}}</p>{{/phone}}{{/preOpening}}<h3 class=\"d3 sec-h3\">{{f11}}</h3><p class=\"note-fine\">{{addressLine}}</p>{{#hours}}<p class=\"note-fine\">{{{hoursHtml}}}</p>{{/hours}}<p>{{f12}}</p><p>{{f13}}</p><p>{{f14}}</p><p>{{f15}}</p>{{^streetAddress}}<div class=\"map-embed map-pending\" role=\"note\">\n  <div>\n    <p class=\"eyebrow\">{{f16}}</p>\n    <p>{{f17}}</p>\n  </div>\n</div>{{/streetAddress}}{{#streetAddress}}<div class=\"map-embed\"><iframe title=\"Map showing Lava Street Dental at {{addressLine}}\" src=\"https://www.google.com/maps?q={{mapQuery}}&amp;output=embed\" width=\"600\" height=\"340\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe></div>{{/streetAddress}}<h2 class=\"d2 sec-h\">{{f18}}</h2><div class=\"faq-list rise\">{{[L2]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q1\">{{f19}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q1\"><p>{{f20}}</p></div>\n</div>{{[/L2]}}{{[L2]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q2\">{{f21}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q2\"><p>{{f22}}</p></div>\n</div>{{[/L2]}}{{[L2]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q3\">{{f23}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q3\"><p>{{f24}}</p></div>\n</div>{{[/L2]}}{{[L2]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q4\">{{f25}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q4\"><p>{{f26}}</p></div>\n</div>{{[/L2]}}</div></div>",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "What we offer"
+    },
+    {
+     "id": "f2",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../services/general-dentistry/check-ups-and-cleans/index.html\">Family check-ups &amp; cleans</a> — booked together on one morning where we can"
+    },
+    {
+     "id": "f3",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../services/general-dentistry/childrens-dentistry/index.html\">Children’s dentistry</a> — first visits, fissure sealants and preventive advice"
+    },
+    {
+     "id": "f4",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../services/general-dentistry/dental-fillings/index.html\">Fillings</a> — tooth-coloured composite"
+    },
+    {
+     "id": "f5",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../services/general-dentistry/custom-mouthguards/index.html\">Custom mouthguards</a> — fitted before the football and netball season"
+    },
+    {
+     "id": "f6",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../services/general-dentistry/night-guards-teeth-grinding/index.html\">Night guards</a> — for grinding and clenching"
+    },
+    {
+     "id": "f7",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../services/general-dentistry/emergency-dental-care/index.html\">Emergency appointments</a> — knocks, breaks and toothache"
+    },
+    {
+     "id": "f8",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../services/restorative-dentistry/dental-crowns/index.html\">Crowns</a>, <a href=\"../services/restorative-dentistry/dental-bridges/index.html\">bridges</a>, root canal treatment, <a href=\"../services/restorative-dentistry/partial-dentures/index.html\">dentures</a> and <a href=\"../services/dental-implants/index.html\">implants</a> — available in the same practice when they are needed"
+    },
+    {
+     "id": "f9",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Some children qualify for a set amount of care under the Child Dental Benefits Schedule. Ask us and we will check. Lava Street Dental accepts eligible CDBS patients."
+    },
+    {
+     "id": "f10",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Ready to book? Give us a call on <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a>. We would love to look after your family."
+    },
+    {
+     "id": "f11",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Getting to us"
+    },
+    {
+     "id": "f12",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Driving — head east along Raglan Parade into Warrnambool, then into the CBD grid to Lava Street, one block north of Koroit Street. Around five kilometres, usually under ten minutes outside the school run."
+    },
+    {
+     "id": "f13",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Parking — the Warrnambool Shopping Centre car park is simplest, with entries from Lava Street and Koroit Street. Ozone and Parkers are nearby, and Banyan Street generally has free on-street parking within the signed limits. Street parking near the practice is paid, and the shopping centre car park is free for two hours."
+    },
+    {
+     "id": "f14",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Bus — town routes connect Dennington with the Lava Street Interchange, on our street."
+    },
+    {
+     "id": "f15",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Cycling — the Port Fairy to Warrnambool Rail Trail runs through Dennington, and the CBD is an easy ride from most of the suburb."
+    },
+    {
+     "id": "f16",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "Map"
+    },
+    {
+     "id": "f17",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "The practice address is not confirmed yet, so no map is shown here. Directions\n       and the exact location will be added once the street address is\n       final."
+    },
+    {
+     "id": "f18",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Common <em>questions</em>"
+    },
+    {
+     "id": "f19",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Can you fit the whole family in on one morning?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f20",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Usually. Tell us how many and roughly what ages when you phone and we will block the time together."
+    },
+    {
+     "id": "f21",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>How early should I bring my child in?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f22",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Around their first birthday, or whenever the first teeth appear."
+    },
+    {
+     "id": "f23",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Do you do school-hours appointments?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f24",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Mid-morning and early afternoon are usually easiest to get."
+    },
+    {
+     "id": "f25",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>What if a tooth gets knocked out at footy?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f26",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Phone us straight away. If it is an adult tooth, hold it by the crown, keep it in milk and get to us fast — time matters enormously."
+    }
+   ],
+   "lists": [
+    {
+     "id": "L1",
+     "label": "Points",
+     "item": "Point"
+    },
+    {
+     "id": "L2",
+     "label": "Questions",
+     "item": "Question"
+    }
+   ]
+  },
+  {
+   "key": "s3",
+   "kind": "content",
+   "label": "Section 3",
+   "tag": "section",
+   "attrs": {
+    "class": "band cta-close"
+   },
+   "before": "\n",
+   "template": "\n  <div class=\"wrap\">\n    <div class=\"cta-panel rise\">\n      <div class=\"cta-row\"><a class=\"btn btn-primary\" href=\"{{#preOpening}}../index.html#waitlist{{/preOpening}}{{^preOpening}}../contact/index.html{{/preOpening}}\">{{#preOpening}}{{f1}}{{/preOpening}}{{^preOpening}}{{f2}}{{/preOpening}}</a>{{#phone}}<a class=\"btn btn-outline\" href=\"{{phoneHref}}\">{{f3}}</a>{{/phone}}</div>\n    </div>\n  </div>\n",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Words",
+     "type": "text",
+     "value": "Join the waitlist"
+    },
+    {
+     "id": "f2",
+     "label": "Words",
+     "type": "text",
+     "value": "Book an appointment"
+    },
+    {
+     "id": "f3",
+     "label": "Button words",
+     "type": "text",
+     "value": "Call {{phone}}"
+    }
+   ]
+  }
+ ],
+ "order": [
+  "section:0",
+  "section:1",
+  "section:2"
+ ],
+ "mainEnd": "\n",
+ "afterMain": "</main>\n",
+ "footer": "<footer class=\"foot\">\n  <div class=\"wrap\">\n    <div class=\"foot-grid\">\n      {{[L1]}}<div>\n        <a href=\"../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../assets/images/logo-light.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n        <p class=\"blurb\">{{f1}}</p>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f2}}</h2>\n        <ul>\n          {{[L2]}}<li><a href=\"../about/index.html\">{{f3}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../meet-the-team/index.html\">{{f4}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../services/index.html\">{{f5}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../contact/index.html\">{{f6}}</a></li>{{[/L2]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f7}}</h2>\n        <ul>\n          {{[L3]}}<li><a href=\"../services/general-dentistry/check-ups-and-cleans/index.html\">{{f8}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../services/general-dentistry/dental-fillings/index.html\">{{f9}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../services/dental-implants/index.html\">{{f10}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../services/restorative-dentistry/root-canal-treatment/index.html\">{{f11}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../services/general-dentistry/childrens-dentistry/index.html\">{{f12}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../services/restorative-dentistry/tooth-extractions/index.html\">{{f13}}</a></li>{{[/L3]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f14}}</h2>\n        <ul>\n          {{[L4]}}<li><a href=\"../dentist-warrnambool/index.html\">{{f15}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../dentist-dennington/index.html\">{{f16}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../dentist-allansford/index.html\">{{f17}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../dentist-koroit/index.html\">{{f18}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../dentist-port-fairy/index.html\">{{f19}}</a></li>{{[/L4]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f20}}</h2>\n        <ul>\n          <li>{{addressStreet}}</li>\n          <li>{{localityLine}}</li>\n          {{#phone}}<li><a href=\"{{phoneHref}}\">{{phone}}</a></li>{{/phone}}\n          {{#email}}<li><a href=\"mailto:{{email}}\">{{email}}</a></li>{{/email}}\n          {{#hours}}<li>{{{hoursHtml}}}</li>{{/hours}}\n        </ul>\n      </div>{{[/L1]}}\n    </div>\n    <div class=\"foot-base\">\n      <p class=\"disclaimer\">{{f21}}</p>\n      <div class=\"foot-legal\">\n        <span>{{f22}}</span>\n        <span>\n          <a href=\"../privacy-policy/index.html\">{{f23}}</a>\n        </span>\n      </div>\n    </div>\n  </div>\n</footer>",
+ "tail": "\n<script src=\"../assets/js/site.js\" defer></script>\n</body>\n</html>"
+}

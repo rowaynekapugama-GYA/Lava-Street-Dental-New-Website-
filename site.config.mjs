@@ -1,9 +1,11 @@
-// Lava Street Dental: business details, single source of truth.
+// Lava Street Dental: business details, the defaults.
 //
-// Every page, the footer, the header, sitemap.xml, robots.txt, the canonical
-// and Open Graph tags and the Dentist JSON-LD are built from this file by
-// scripts/build.mjs. Change a value here, commit, and Vercel rebuilds the
-// whole site with it. No page needs editing.
+// Since v1.3.0 these are edited in the website dashboard (/admin, Site
+// Settings). This file holds the values the site was approved with: the build
+// starts from them and puts whatever the dashboard saved
+// (content/site-settings.json) on top. Every page, the footer, the header,
+// sitemap.xml, robots.txt, the canonical and Open Graph tags and the Dentist
+// JSON-LD are built from the result (src/lib/staticSite.ts).
 //
 // An empty value ("" or []) hides everything that depends on it: tel: links,
 // "Call" buttons, phone lines, the hours line, and the matching JSON-LD
@@ -75,11 +77,12 @@ export default {
     google: "",
   },
 
-  // Waitlist and enquiry forms are live: they post to api/waitlist.js and
-  // api/enquiry.js, which send email through the SMTP2GO API. The API key,
-  // sender and recipients are Vercel environment variables (SMTP2GO_API_KEY,
-  // FORM_FROM, FORM_TO), with fallbacks in api/_lib/forms.js. See README.md,
-  // "Forms and email".
+  // Waitlist and enquiry forms post to /api/waitlist/ and /api/enquiry/
+  // (src/app/api), which keep each sign-up in the dashboard and send email
+  // through the SMTP2GO API. The API key, sender and recipients are Vercel
+  // environment variables (SMTP2GO_API_KEY, FORM_FROM, FORM_TO), with
+  // fallbacks in src/forms/mail.ts. Recipients can also be set in the
+  // dashboard (Site Settings, GYA only). See README.md, "Forms and email".
 
   // Share image for Open Graph and Twitter cards, relative to the site root.
   shareImage: {
@@ -94,4 +97,22 @@ export default {
 
   // Suburbs named on the location pages. Used for JSON-LD areaServed.
   areaServed: ["Warrnambool", "Dennington", "Allansford", "Koroit", "Port Fairy"],
+
+  // ---- Added with the dashboard (v1.3.0). Empty values change nothing on the site.
+
+  // Postal address, if different from the street address. Not shown on the site yet.
+  postalAddress: "",
+  // Google Maps link for the practice. The contact page map is built from the
+  // street address; this link is kept for when a "Get directions" link is added.
+  mapsUrl: "",
+  // Online booking link, for after opening. Not shown on the site yet.
+  bookingUrl: "",
+  // Health funds and HICAPS wording. Leave empty until the practice confirms it.
+  healthFunds: "",
+  // Tracking, added to every page only when filled in (GYA only in the dashboard).
+  tracking: { ga4: "", metaPixel: "" },
+  // Form emails go to these. Empty uses FORM_TO, then the fallback list in src/forms/mail.ts.
+  formRecipients: [],
+  // Dashboard features that need an approved design before they are switched on.
+  features: { blog: false, beforeAfter: false },
 };

@@ -1,0 +1,149 @@
+{
+ "parts": {
+  "footer": {
+   "key": "footer",
+   "kind": "footer",
+   "label": "Footer",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "A dental practice in the middle of Warrnambool, looking after families across Warrnambool, Port Fairy and the surrounding districts."
+    },
+    {
+     "id": "f2",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Explore"
+    },
+    {
+     "id": "f3",
+     "label": "Link words",
+     "type": "text",
+     "value": "About"
+    },
+    {
+     "id": "f4",
+     "label": "Link words",
+     "type": "text",
+     "value": "Meet the Team"
+    },
+    {
+     "id": "f5",
+     "label": "Link words",
+     "type": "text",
+     "value": "Services"
+    },
+    {
+     "id": "f6",
+     "label": "Link words",
+     "type": "text",
+     "value": "Contact"
+    },
+    {
+     "id": "f7",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Care"
+    },
+    {
+     "id": "f8",
+     "label": "Link words",
+     "type": "text",
+     "value": "Check-ups &amp; cleans"
+    },
+    {
+     "id": "f9",
+     "label": "Link words",
+     "type": "text",
+     "value": "Fillings"
+    },
+    {
+     "id": "f10",
+     "label": "Link words",
+     "type": "text",
+     "value": "Dental implants"
+    },
+    {
+     "id": "f11",
+     "label": "Link words",
+     "type": "text",
+     "value": "Root canal treatment"
+    },
+    {
+     "id": "f12",
+     "label": "Link words",
+     "type": "text",
+     "value": "Children’s dentistry"
+    },
+    {
+     "id": "f13",
+     "label": "Link words",
+     "type": "text",
+     "value": "Extractions"
+    },
+    {
+     "id": "f14",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Areas We Serve"
+    },
+    {
+     "id": "f15",
+     "label": "Link words",
+     "type": "text",
+     "value": "Warrnambool"
+    },
+    {
+     "id": "f16",
+     "label": "Link words",
+     "type": "text",
+     "value": "Dennington"
+    },
+    {
+     "id": "f17",
+     "label": "Link words",
+     "type": "text",
+     "value": "Allansford"
+    },
+    {
+     "id": "f18",
+     "label": "Link words",
+     "type": "text",
+     "value": "Koroit"
+    },
+    {
+     "id": "f19",
+     "label": "Link words",
+     "type": "text",
+     "value": "Port Fairy"
+    },
+    {
+     "id": "f20",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Visit"
+    },
+    {
+     "id": "f21",
+     "label": "Fine print",
+     "type": "richtext",
+     "value": "The information on this website is general in nature and does not constitute personal dental or medical advice. Treatment suitability, risks, benefits and outcomes vary between individuals. Please consult an appropriately qualified dental practitioner for advice specific to your circumstances."
+    },
+    {
+     "id": "f22",
+     "label": "Words",
+     "type": "richtext",
+     "value": "Copyright 2026 Lava Street Dental"
+    },
+    {
+     "id": "f23",
+     "label": "Link words",
+     "type": "text",
+     "value": "Privacy Policy"
+    }
+   ]
+  }
+ }
+}

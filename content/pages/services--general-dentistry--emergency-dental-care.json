@@ -1,0 +1,374 @@
+{
+ "slug": "services--general-dentistry--emergency-dental-care",
+ "name": "Emergency Dental Care",
+ "path": "/services/general-dentistry/emergency-dental-care/",
+ "file": "services/general-dentistry/emergency-dental-care/index.html",
+ "group": "General dentistry",
+ "meta": {
+  "title": "Emergency Dentist in Warrnambool | Lava Street Dental",
+  "description": "Urgent dental appointments in Warrnambool for toothache, broken teeth, lost fillings and dental trauma. Contact Lava Street Dental for same-day assessment."
+ },
+ "head": "<!DOCTYPE html>\n<html lang=\"en-AU\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"icon\" href=\"../../../favicon.ico\" sizes=\"48x48\">\n<link rel=\"icon\" href=\"../../../assets/icons/favicon.svg\" type=\"image/svg+xml\">\n<link rel=\"apple-touch-icon\" href=\"../../../assets/icons/apple-touch-icon.png\">\n<link rel=\"manifest\" href=\"../../../site.webmanifest\">\n<meta name=\"theme-color\" content=\"#575A4D\">\n<title>{{seo:title}}</title>\n<meta name=\"description\" content=\"{{seo:description}}\">\n<meta property=\"og:title\" content=\"{{seo:ogTitle}}\">\n<meta property=\"og:description\" content=\"{{seo:ogDescription}}\">\n<!-- @seo: canonical, Open Graph, Twitter and JSON-LD tags are added here by scripts/build.mjs from site.config.mjs -->\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<!-- LAUNCH-TODO: brand typefaces. Neue Haas Grotesk and Acumin Condensed are\n     Adobe Fonts families. Create a web project at fonts.adobe.com containing\n     neue-haas-grotesk-text, neue-haas-grotesk-display and acumin-pro-condensed,\n     then uncomment the line below with the kit ID. The CSS already names those\n     families first, so nothing else changes. Until then the Google Fonts line\n     serves the closest open faces. -->\n<!-- <link rel=\"stylesheet\" href=\"https://use.typekit.net/XXXXXXX.css\"> -->\n<link href=\"https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Roboto+Condensed:wght@300;500&display=swap\" rel=\"stylesheet\">\n<link rel=\"stylesheet\" href=\"../../../assets/css/site.css\">\n\n<!-- FAQPage schema withheld: at least one visible answer on this page still contains an unconfirmed placeholder or an editorial note. Re-enable once the copy is final; the schema text must match the visible answer word for word. -->\n</head>\n<body id=\"top\">\n<a class=\"skip-link\" href=\"#main\">Skip to main content</a>\n<header class=\"masthead\" id=\"masthead\">\n  <div class=\"wrap\">\n    <a href=\"../../../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../../../assets/images/logo.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n    <nav class=\"mast-nav\" aria-label=\"Primary\">\n      <a href=\"../../../about/index.html\">About</a>\n      <a href=\"../../../meet-the-team/index.html\">Meet the Team</a>\n      <div class=\"navdrop\" data-drop>\n        <button type=\"button\" aria-expanded=\"false\" aria-controls=\"dropServices\">Services<i aria-hidden=\"true\"></i></button>\n        <ul class=\"drop-panel\" id=\"dropServices\">\n          <li><a href=\"../../../services/index.html\">All services</a></li>\n          <li><a href=\"../../../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a></li><li><a href=\"../../../services/restorative-dentistry/index.html\">Restorative Dentistry</a></li><li><a href=\"../../../services/dental-implants/index.html\">Dental Implants</a></li><li><a href=\"../../../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a></li><li><a href=\"../../../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a></li>\n        </ul>\n      </div>\n      <a href=\"../../../contact/index.html\">Contact</a>\n    </nav>\n    <div class=\"mast-actions\">\n      {{#phone}}<a class=\"mast-phone\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}}\n      <a class=\"btn btn-primary\" href=\"{{#preOpening}}../../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n      <button class=\"burger\" id=\"burger\" type=\"button\" aria-expanded=\"false\" aria-controls=\"drawer\" aria-label=\"Open menu\">\n        <i></i><i></i><i></i>\n      </button>\n    </div>\n  </div>\n</header>\n\n<div class=\"drawer\" id=\"drawer\" hidden>\n  <nav aria-label=\"Mobile\">\n    <a class=\"dnav\" href=\"../../../about/index.html\">About</a>\n    <a class=\"dnav\" href=\"../../../meet-the-team/index.html\">Meet the Team</a>\n    <details class=\"dgroup\">\n      <summary>Services</summary>\n      <a href=\"../../../services/index.html\">All services</a>\n      <a href=\"../../../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a><a href=\"../../../services/restorative-dentistry/index.html\">Restorative Dentistry</a><a href=\"../../../services/dental-implants/index.html\">Dental Implants</a><a href=\"../../../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a><a href=\"../../../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a>\n    </details>\n    <details class=\"dgroup\">\n      <summary>Areas we serve</summary>\n      <a href=\"../../../dentist-warrnambool/index.html\">Warrnambool</a><a href=\"../../../dentist-dennington/index.html\">Dennington</a><a href=\"../../../dentist-allansford/index.html\">Allansford</a><a href=\"../../../dentist-koroit/index.html\">Koroit</a><a href=\"../../../dentist-port-fairy/index.html\">Port Fairy</a>\n    </details>\n    <a class=\"dnav\" href=\"../../../contact/index.html\">Contact</a>\n  </nav>\n  <a class=\"btn btn-primary\" href=\"{{#preOpening}}../../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n  {{#phone}}<p class=\"drawer-foot small\">Prefer to talk it through? <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a></p>{{/phone}}\n</div>\n<main id=\"main\">",
+ "sections": [
+  {
+   "key": "s1",
+   "kind": "hero",
+   "label": "Page header",
+   "tag": "section",
+   "attrs": {
+    "class": "page-hero"
+   },
+   "before": "\n",
+   "template": "\n  <div class=\"wrap\">\n    <nav class=\"crumbs\" aria-label=\"Breadcrumb\"><ol><li>{{f1}}</li><li>{{f2}}</li><li>{{f3}}</li><li aria-current=\"page\">{{f4}}</li></ol></nav>\n    <div class=\"ph-grid has-side\">\n      <div>\n        <p class=\"eyebrow\">{{f5}}</p>\n        <h1 class=\"ph-h1\">{{f6}}</h1>\n        <p class=\"lead\">{{f7}}</p><p class=\"lead\">{{#preOpening}}{{f8}}{{#phone}} <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}} {{f9}}{{/preOpening}}{{^preOpening}}{{f10}}{{#phone}} <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}} {{f11}}{{/preOpening}}</p>\n      </div>\n      <div class=\"ph-side rise\"><figure class=\"photo-fig\"><img src=\"{{f12}}\" alt=\"{{f13}}\" width=\"1600\" height=\"900\" loading=\"eager\" decoding=\"async\" fetchpriority=\"high\"></figure></div>\n    </div>\n  </div>\n",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../../index.html\">Home</a>"
+    },
+    {
+     "id": "f2",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../../services/index.html\">Services</a>"
+    },
+    {
+     "id": "f3",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a>"
+    },
+    {
+     "id": "f4",
+     "label": "List item",
+     "type": "richtext",
+     "value": "Emergency Dental Care"
+    },
+    {
+     "id": "f5",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "General &amp; Preventive Dentistry"
+    },
+    {
+     "id": "f6",
+     "label": "Main heading",
+     "type": "richtext",
+     "value": "When something goes wrong, ring <em>us</em>."
+    },
+    {
+     "id": "f7",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "Dental problems do not wait for a convenient week. A tooth breaks on a Tuesday, a filling comes out the night before a trip, or a pain that was manageable on Friday becomes unbearable by Sunday."
+    },
+    {
+     "id": "f8",
+     "label": "Words",
+     "type": "text",
+     "value": "From opening in December 2026, we will hold two same-day emergency appointments each day. Call"
+    },
+    {
+     "id": "f9",
+     "label": "Words",
+     "type": "text",
+     "value": "first thing in the morning to secure one. Emergency appointments cannot be booked online."
+    },
+    {
+     "id": "f10",
+     "label": "Words",
+     "type": "text",
+     "value": "We hold two same-day emergency appointments each day. Call"
+    },
+    {
+     "id": "f11",
+     "label": "Words",
+     "type": "text",
+     "value": "first thing in the morning to secure one. Emergency appointments cannot be booked online."
+    },
+    {
+     "id": "f12",
+     "label": "Photo",
+     "type": "image",
+     "value": "../../../assets/images/toothache-consult.webp",
+     "original": "../../../assets/images/toothache-consult.webp",
+     "width": "1600",
+     "height": "900"
+    },
+    {
+     "id": "f13",
+     "label": "Photo description",
+     "type": "alt",
+     "value": "A patient in the dental chair holding her cheek while describing tooth pain to a clinician"
+    }
+   ]
+  },
+  {
+   "key": "s2",
+   "kind": "content",
+   "label": "Section 2",
+   "tag": "section",
+   "attrs": {
+    "class": "band band-tight"
+   },
+   "before": "\n",
+   "template": "<div class=\"wrap flow\"><p>{{f1}}</p></div>",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "We do not offer after-hours care. If you have a dental emergency outside our opening hours, please go to the Emergency Department at South West Healthcare."
+    }
+   ]
+  },
+  {
+   "key": "s3",
+   "kind": "content",
+   "label": "What counts as urgent",
+   "tag": "section",
+   "attrs": {
+    "class": "band"
+   },
+   "before": "\n",
+   "template": "<div class=\"wrap flow\"><h3 class=\"d3 sec-h3\">{{f1}}</h3><p>{{f2}}</p><p>{{f3}}</p><p>{{f4}}</p><p>{{f5}}</p><p>{{f6}}</p><p>{{f7}}</p><p>{{f8}}</p><h3 class=\"d3 sec-h3\">{{f9}}</h3><p>{{f10}}</p><p>{{f11}}</p><h3 class=\"d3 sec-h3\">{{f12}}</h3><p>{{f13}}</p><p>{{f14}}</p><h3 class=\"d3 sec-h3\">{{f15}}</h3><p>{{f16}}</p><p>{{f17}}</p><h2 class=\"d2 sec-h\">{{f18}}</h2><div class=\"faq-list rise\">{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q1\">{{f19}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q1\"><p>{{#preOpening}}{{f20}}{{#phone}} <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}} {{f21}}{{/preOpening}}{{^preOpening}}{{f22}}{{#phone}} <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}} {{f23}}{{/preOpening}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q2\">{{f24}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q2\"><p>{{f25}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q3\">{{f26}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q3\"><p>{{f27}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q4\">{{f28}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q4\"><p>{{f29}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q5\">{{f30}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q5\"><p>{{f31}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q6\">{{f32}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q6\"><p>{{f33}}</p></div>\n</div>{{[/L1]}}</div></div>",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "What counts as urgent"
+    },
+    {
+     "id": "f2",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Toothache. Particularly pain that keeps you awake, lingers after hot or cold, or is accompanied by swelling."
+    },
+    {
+     "id": "f3",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Facial or gum swelling. Swelling suggests infection and should be assessed promptly."
+    },
+    {
+     "id": "f4",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "A broken or chipped tooth. Even without pain, exposed dentine is vulnerable and sharp edges cut the tongue."
+    },
+    {
+     "id": "f5",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "A lost filling or crown. Keep the crown if you have it and bring it with you; it can sometimes be recemented."
+    },
+    {
+     "id": "f6",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "A knocked-out adult tooth. Handle it by the crown, not the root. If it is dirty, rinse it briefly in milk or saline — never scrub it. If you can, place it back in the socket and hold it there; otherwise keep it in milk. Get to us immediately. Time is the single biggest factor in whether the tooth can be saved."
+    },
+    {
+     "id": "f7",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Bleeding that will not settle after an extraction, or trauma to the lips, cheeks or gums."
+    },
+    {
+     "id": "f8",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Something stuck between teeth or under the gum that you cannot dislodge."
+    },
+    {
+     "id": "f9",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Go to hospital instead if"
+    },
+    {
+     "id": "f10",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Swelling is affecting your breathing or swallowing, is closing your eye, or is spreading down your neck. Bleeding is heavy and will not stop with firm pressure. You have had a significant facial injury or suspect a fractured jaw."
+    },
+    {
+     "id": "f11",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "In those situations go to the emergency department at South West Healthcare or call 000. These are the circumstances where a dental practice is not the right place to start."
+    },
+    {
+     "id": "f12",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "What to expect at an emergency appointment"
+    },
+    {
+     "id": "f13",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "The first priority is getting you comfortable and working out what is causing the problem. That usually means an examination, an X-ray of the tooth involved, and a clear explanation of what is going on."
+    },
+    {
+     "id": "f14",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Some problems are resolved on the day. Others need settling first — draining an infection, dressing a tooth, adjusting a bite — with definitive treatment planned once you are out of pain and able to think clearly about your options. We will tell you which situation you are in and what it costs before proceeding."
+    },
+    {
+     "id": "f15",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "While you wait to be seen"
+    },
+    {
+     "id": "f16",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Over-the-counter pain relief taken according to the packet directions, provided it is safe for you, is usually more effective than nothing. Do not hold aspirin against the gum; it burns the tissue. A cold compress on the outside of the face can help with swelling. Avoid very hot, very cold or very hard food on that side."
+    },
+    {
+     "id": "f17",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "If the tooth is sensitive to heat and eased by cold, that is worth mentioning when you call."
+    },
+    {
+     "id": "f18",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Frequently asked <em>questions</em>"
+    },
+    {
+     "id": "f19",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Can I be seen today?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f20",
+     "label": "Words",
+     "type": "text",
+     "value": "From opening in December 2026, we will hold two same-day emergency appointments each day. Call"
+    },
+    {
+     "id": "f21",
+     "label": "Words",
+     "type": "text",
+     "value": "first thing in the morning to secure one. Emergency appointments cannot be booked online."
+    },
+    {
+     "id": "f22",
+     "label": "Words",
+     "type": "text",
+     "value": "We hold two same-day emergency appointments each day. Call"
+    },
+    {
+     "id": "f23",
+     "label": "Words",
+     "type": "text",
+     "value": "first thing in the morning to secure one. Emergency appointments cannot be booked online."
+    },
+    {
+     "id": "f24",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Do I need to be an existing patient?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f25",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "No. Anyone in the Warrnambool and Port Fairy area is welcome to phone."
+    },
+    {
+     "id": "f26",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>What will it cost?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f27",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "It depends on what is required. You will be given the cost of the emergency appointment and any treatment before it goes ahead."
+    },
+    {
+     "id": "f28",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>My tooth stopped hurting on its own. Do I still need to come in?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f29",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Yes. Pain from an infected nerve often stops once the nerve dies, which is not the problem resolving — it is the problem progressing quietly."
+    },
+    {
+     "id": "f30",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Can antibiotics fix it?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f31",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Antibiotics may settle an infection temporarily, but they do not treat the cause. The tooth still needs attention, and antibiotics are prescribed only where clinically indicated."
+    },
+    {
+     "id": "f32",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>What about the weekend or after hours?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f33",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "We do not offer after-hours care. If you have a dental emergency outside our opening hours, please go to the Emergency Department at South West Healthcare. For a genuine medical emergency involving airway, uncontrolled bleeding or facial trauma, call 000."
+    }
+   ],
+   "lists": [
+    {
+     "id": "L1",
+     "label": "Questions",
+     "item": "Question"
+    }
+   ]
+  },
+  {
+   "key": "s4",
+   "kind": "content",
+   "label": "Section 4",
+   "tag": "section",
+   "attrs": {
+    "class": "band cta-close"
+   },
+   "before": "\n<!-- Emergency call panel: shown only once the practice is open and has a phone number. Emergency appointments are never booked online. -->\n{{^preOpening}}{{#phone}}",
+   "template": "\n  <div class=\"wrap\">\n    <div class=\"cta-panel rise\">\n      <div class=\"cta-row\"><a class=\"btn btn-outline\" href=\"{{phoneHref}}\">{{f1}}</a></div>\n    </div>\n  </div>\n",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Button words",
+     "type": "text",
+     "value": "Call us now on {{phone}}"
+    }
+   ]
+  }
+ ],
+ "order": [
+  "section:0",
+  "section:1",
+  "section:2",
+  "section:3"
+ ],
+ "mainEnd": "{{/phone}}{{/preOpening}}\n",
+ "afterMain": "</main>\n",
+ "footer": "<footer class=\"foot\">\n  <div class=\"wrap\">\n    <div class=\"foot-grid\">\n      {{[L1]}}<div>\n        <a href=\"../../../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../../../assets/images/logo-light.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n        <p class=\"blurb\">{{f1}}</p>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f2}}</h2>\n        <ul>\n          {{[L2]}}<li><a href=\"../../../about/index.html\">{{f3}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../../meet-the-team/index.html\">{{f4}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../../services/index.html\">{{f5}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../../contact/index.html\">{{f6}}</a></li>{{[/L2]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f7}}</h2>\n        <ul>\n          {{[L3]}}<li><a href=\"../../../services/general-dentistry/check-ups-and-cleans/index.html\">{{f8}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/general-dentistry/dental-fillings/index.html\">{{f9}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/dental-implants/index.html\">{{f10}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/restorative-dentistry/root-canal-treatment/index.html\">{{f11}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/general-dentistry/childrens-dentistry/index.html\">{{f12}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/restorative-dentistry/tooth-extractions/index.html\">{{f13}}</a></li>{{[/L3]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f14}}</h2>\n        <ul>\n          {{[L4]}}<li><a href=\"../../../dentist-warrnambool/index.html\">{{f15}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-dennington/index.html\">{{f16}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-allansford/index.html\">{{f17}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-koroit/index.html\">{{f18}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-port-fairy/index.html\">{{f19}}</a></li>{{[/L4]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f20}}</h2>\n        <ul>\n          <li>{{addressStreet}}</li>\n          <li>{{localityLine}}</li>\n          {{#phone}}<li><a href=\"{{phoneHref}}\">{{phone}}</a></li>{{/phone}}\n          {{#email}}<li><a href=\"mailto:{{email}}\">{{email}}</a></li>{{/email}}\n          {{#hours}}<li>{{{hoursHtml}}}</li>{{/hours}}\n        </ul>\n      </div>{{[/L1]}}\n    </div>\n    <div class=\"foot-base\">\n      <p class=\"disclaimer\">{{f21}}</p>\n      <div class=\"foot-legal\">\n        <span>{{f22}}</span>\n        <span>\n          <a href=\"../../../privacy-policy/index.html\">{{f23}}</a>\n        </span>\n      </div>\n    </div>\n  </div>\n</footer>",
+ "tail": "\n<script src=\"../../../assets/js/site.js\" defer></script>\n</body>\n</html>"
+}

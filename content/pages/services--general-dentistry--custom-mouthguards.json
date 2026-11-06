@@ -1,0 +1,298 @@
+{
+ "slug": "services--general-dentistry--custom-mouthguards",
+ "name": "Custom Mouthguards",
+ "path": "/services/general-dentistry/custom-mouthguards/",
+ "file": "services/general-dentistry/custom-mouthguards/index.html",
+ "group": "General dentistry",
+ "meta": {
+  "title": "Custom Sports Mouthguards in Warrnambool | Lava Street Dental",
+  "description": "Professionally fitted custom mouthguards for football, hockey, basketball and contact sport in Warrnambool. Made from a digital scan at Lava Street Dental."
+ },
+ "head": "<!DOCTYPE html>\n<html lang=\"en-AU\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"icon\" href=\"../../../favicon.ico\" sizes=\"48x48\">\n<link rel=\"icon\" href=\"../../../assets/icons/favicon.svg\" type=\"image/svg+xml\">\n<link rel=\"apple-touch-icon\" href=\"../../../assets/icons/apple-touch-icon.png\">\n<link rel=\"manifest\" href=\"../../../site.webmanifest\">\n<meta name=\"theme-color\" content=\"#575A4D\">\n<title>{{seo:title}}</title>\n<meta name=\"description\" content=\"{{seo:description}}\">\n<meta property=\"og:title\" content=\"{{seo:ogTitle}}\">\n<meta property=\"og:description\" content=\"{{seo:ogDescription}}\">\n<!-- @seo: canonical, Open Graph, Twitter and JSON-LD tags are added here by scripts/build.mjs from site.config.mjs -->\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<!-- LAUNCH-TODO: brand typefaces. Neue Haas Grotesk and Acumin Condensed are\n     Adobe Fonts families. Create a web project at fonts.adobe.com containing\n     neue-haas-grotesk-text, neue-haas-grotesk-display and acumin-pro-condensed,\n     then uncomment the line below with the kit ID. The CSS already names those\n     families first, so nothing else changes. Until then the Google Fonts line\n     serves the closest open faces. -->\n<!-- <link rel=\"stylesheet\" href=\"https://use.typekit.net/XXXXXXX.css\"> -->\n<link href=\"https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Roboto+Condensed:wght@300;500&display=swap\" rel=\"stylesheet\">\n<link rel=\"stylesheet\" href=\"../../../assets/css/site.css\">\n\n{{gen:faqSchema}}\n</head>\n<body id=\"top\">\n<a class=\"skip-link\" href=\"#main\">Skip to main content</a>\n<header class=\"masthead\" id=\"masthead\">\n  <div class=\"wrap\">\n    <a href=\"../../../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../../../assets/images/logo.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n    <nav class=\"mast-nav\" aria-label=\"Primary\">\n      <a href=\"../../../about/index.html\">About</a>\n      <a href=\"../../../meet-the-team/index.html\">Meet the Team</a>\n      <div class=\"navdrop\" data-drop>\n        <button type=\"button\" aria-expanded=\"false\" aria-controls=\"dropServices\">Services<i aria-hidden=\"true\"></i></button>\n        <ul class=\"drop-panel\" id=\"dropServices\">\n          <li><a href=\"../../../services/index.html\">All services</a></li>\n          <li><a href=\"../../../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a></li><li><a href=\"../../../services/restorative-dentistry/index.html\">Restorative Dentistry</a></li><li><a href=\"../../../services/dental-implants/index.html\">Dental Implants</a></li><li><a href=\"../../../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a></li><li><a href=\"../../../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a></li>\n        </ul>\n      </div>\n      <a href=\"../../../contact/index.html\">Contact</a>\n    </nav>\n    <div class=\"mast-actions\">\n      {{#phone}}<a class=\"mast-phone\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}}\n      <a class=\"btn btn-primary\" href=\"{{#preOpening}}../../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n      <button class=\"burger\" id=\"burger\" type=\"button\" aria-expanded=\"false\" aria-controls=\"drawer\" aria-label=\"Open menu\">\n        <i></i><i></i><i></i>\n      </button>\n    </div>\n  </div>\n</header>\n\n<div class=\"drawer\" id=\"drawer\" hidden>\n  <nav aria-label=\"Mobile\">\n    <a class=\"dnav\" href=\"../../../about/index.html\">About</a>\n    <a class=\"dnav\" href=\"../../../meet-the-team/index.html\">Meet the Team</a>\n    <details class=\"dgroup\">\n      <summary>Services</summary>\n      <a href=\"../../../services/index.html\">All services</a>\n      <a href=\"../../../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a><a href=\"../../../services/restorative-dentistry/index.html\">Restorative Dentistry</a><a href=\"../../../services/dental-implants/index.html\">Dental Implants</a><a href=\"../../../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a><a href=\"../../../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a>\n    </details>\n    <details class=\"dgroup\">\n      <summary>Areas we serve</summary>\n      <a href=\"../../../dentist-warrnambool/index.html\">Warrnambool</a><a href=\"../../../dentist-dennington/index.html\">Dennington</a><a href=\"../../../dentist-allansford/index.html\">Allansford</a><a href=\"../../../dentist-koroit/index.html\">Koroit</a><a href=\"../../../dentist-port-fairy/index.html\">Port Fairy</a>\n    </details>\n    <a class=\"dnav\" href=\"../../../contact/index.html\">Contact</a>\n  </nav>\n  <a class=\"btn btn-primary\" href=\"{{#preOpening}}../../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n  {{#phone}}<p class=\"drawer-foot small\">Prefer to talk it through? <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a></p>{{/phone}}\n</div>\n<main id=\"main\">",
+ "faqSchema": {
+  "literal": "<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Which sports need a mouthguard?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Any sport with a risk of contact or a hard projectile — football, rugby, hockey, netball, basketball, boxing, martial arts, cricket, lacrosse — plus skateboarding, BMX and similar. Many clubs and associations require them.\"}}, {\"@type\": \"Question\", \"name\": \"How long does a custom mouthguard last?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"An adult guard that is well looked after generally lasts a few seasons. Children’s guards need replacing more often as teeth erupt and jaws grow. Bring it in and we will check the fit.\"}}, {\"@type\": \"Question\", \"name\": \"Will I be able to talk and breathe in it?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Considerably better than in a boil-and-bite guard, though there is an adjustment period. Most people find a custom guard becomes unnoticeable within a session or two.\"}}, {\"@type\": \"Question\", \"name\": \"Can I wear one over braces?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes, and it is strongly advised. A guard for someone in braces is made differently to allow for tooth movement and to protect the lips and cheeks from the brackets. Tell us you are in treatment when you book.\"}}, {\"@type\": \"Question\", \"name\": \"How many appointments does it take?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Two — one short appointment for the scan, and one to fit it. Turnaround from the laboratory is usually one to two weeks, so allow time before the season starts.\"}}, {\"@type\": \"Question\", \"name\": \"Is a night guard the same thing?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"No. A sports mouthguard absorbs impact; a night guard protects teeth from grinding and clenching. They are made from different materials for different purposes and are not interchangeable.\"}}]}</script>",
+  "source": "<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q1\">\n      <span>Which sports need a mouthguard?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q1\"><p>Any sport with a risk of contact or a hard projectile — football, rugby, hockey, netball, basketball, boxing, martial arts, cricket, lacrosse — plus skateboarding, BMX and similar. Many clubs and associations require them.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q2\">\n      <span>How long does a custom mouthguard last?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q2\"><p>An adult guard that is well looked after generally lasts a few seasons. Children’s guards need replacing more often as teeth erupt and jaws grow. Bring it in and we will check the fit.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q3\">\n      <span>Will I be able to talk and breathe in it?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q3\"><p>Considerably better than in a boil-and-bite guard, though there is an adjustment period. Most people find a custom guard becomes unnoticeable within a session or two.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q4\">\n      <span>Can I wear one over braces?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q4\"><p>Yes, and it is strongly advised. A guard for someone in braces is made differently to allow for tooth movement and to protect the lips and cheeks from the brackets. Tell us you are in treatment when you book.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q5\">\n      <span>How many appointments does it take?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q5\"><p>Two — one short appointment for the scan, and one to fit it. Turnaround from the laboratory is usually one to two weeks, so allow time before the season starts.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q6\">\n      <span>Is a night guard the same thing?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q6\"><p>No. A sports mouthguard absorbs impact; a night guard protects teeth from grinding and clenching. They are made from different materials for different purposes and are not interchangeable.</p></div>\n</div>"
+ },
+ "sections": [
+  {
+   "key": "s1",
+   "kind": "hero",
+   "label": "Page header",
+   "tag": "section",
+   "attrs": {
+    "class": "page-hero"
+   },
+   "before": "\n",
+   "template": "\n  <div class=\"wrap\">\n    <nav class=\"crumbs\" aria-label=\"Breadcrumb\"><ol><li>{{f1}}</li><li>{{f2}}</li><li>{{f3}}</li><li aria-current=\"page\">{{f4}}</li></ol></nav>\n    <div class=\"ph-grid has-side\">\n      <div>\n        <p class=\"eyebrow\">{{f5}}</p>\n        <h1 class=\"ph-h1\">{{f6}}</h1>\n        <p class=\"lead\">{{f7}}</p><p class=\"lead\">{{f8}}</p>\n      </div>\n      <div class=\"ph-side rise\"><figure class=\"photo-fig\"><img src=\"{{f9}}\" alt=\"{{f10}}\" width=\"1600\" height=\"900\" loading=\"eager\" decoding=\"async\" fetchpriority=\"high\"></figure></div>\n    </div>\n  </div>\n",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../../index.html\">Home</a>"
+    },
+    {
+     "id": "f2",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../../services/index.html\">Services</a>"
+    },
+    {
+     "id": "f3",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a>"
+    },
+    {
+     "id": "f4",
+     "label": "List item",
+     "type": "richtext",
+     "value": "Custom Mouthguards"
+    },
+    {
+     "id": "f5",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "General &amp; Preventive Dentistry"
+    },
+    {
+     "id": "f6",
+     "label": "Main heading",
+     "type": "richtext",
+     "value": "The cheapest dental work you will ever pay <em>for</em>."
+    },
+    {
+     "id": "f7",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "A knocked-out front tooth is not a one-off cost. It is a lifetime of restorations — a replacement now, and further work every decade or so as materials age and the site changes. Set against that, a custom mouthguard is inexpensive."
+    },
+    {
+     "id": "f8",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "In a town where football, netball, hockey and basketball fill the weekend, this is worth taking seriously. Mouthguards are recommended for any sport with a risk of contact or a hard ball, and for skateboarding, BMX and similar."
+    },
+    {
+     "id": "f9",
+     "label": "Photo",
+     "type": "image",
+     "value": "../../../assets/images/clear-oral-appliance.webp",
+     "original": "../../../assets/images/clear-oral-appliance.webp",
+     "width": "1600",
+     "height": "900"
+    },
+    {
+     "id": "f10",
+     "label": "Photo description",
+     "type": "alt",
+     "value": "A clinician holding a clear custom-made oral appliance in front of a smiling patient"
+    }
+   ]
+  },
+  {
+   "key": "s2",
+   "kind": "content",
+   "label": "Why custom, rather than off the shelf",
+   "tag": "section",
+   "attrs": {
+    "class": "band"
+   },
+   "before": "\n",
+   "template": "<div class=\"wrap flow\"><h3 class=\"d3 sec-h3\">{{f1}}</h3><p>{{f2}}</p><p>{{f3}}</p><h3 class=\"d3 sec-h3\">{{f4}}</h3><p>{{f5}}</p><p>{{f6}}</p><h3 class=\"d3 sec-h3\">{{f7}}</h3><p>{{f8}}</p><p>{{f9}}</p><h3 class=\"d3 sec-h3\">{{f10}}</h3><p>{{f11}}</p><h2 class=\"d2 sec-h\">{{f12}}</h2><div class=\"faq-list rise\">{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q1\">{{f13}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q1\"><p>{{f14}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q2\">{{f15}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q2\"><p>{{f16}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q3\">{{f17}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q3\"><p>{{f18}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q4\">{{f19}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q4\"><p>{{f20}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q5\">{{f21}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q5\"><p>{{f22}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q6\">{{f23}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q6\"><p>{{f24}}</p></div>\n</div>{{[/L1]}}</div></div>",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Why custom, rather than off the shelf"
+    },
+    {
+     "id": "f2",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Boil-and-bite guards from a sports store are better than nothing, but not by as much as people assume. They are made from a generic shape, they rely on you clenching to hold them in place, and they tend to be bulky enough that talking and breathing are difficult. Guards that are uncomfortable get left in the bag."
+    },
+    {
+     "id": "f3",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "A custom mouthguard is made from a scan or impression of your own teeth. It fits closely without being held in place by biting, it is thicker where impact is likely and thinner where it is not, and it interferes far less with speech and breathing. Because it is comfortable, it gets worn."
+    },
+    {
+     "id": "f4",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "How it is made"
+    },
+    {
+     "id": "f5",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "We take a digital intra-oral scan, which takes a few minutes and avoids the tray of impression putty. The scan goes to a dental laboratory, where the guard is fabricated to the contours of your teeth. You choose the colour — club colours are the usual request."
+    },
+    {
+     "id": "f6",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "It is then fitted and checked in your mouth so nothing rubs and the bite is even."
+    },
+    {
+     "id": "f7",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Children and growing mouths"
+    },
+    {
+     "id": "f8",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Children and teenagers need their guards remade more often, because teeth are still erupting and jaws are still growing. A guard that fitted last season may not seat properly this season, and one that does not seat properly does not protect properly."
+    },
+    {
+     "id": "f9",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Have it checked at each check-up, and expect to replace it more often during the years when adult teeth are coming through."
+    },
+    {
+     "id": "f10",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Looking after it"
+    },
+    {
+     "id": "f11",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Rinse in cold water after use, let it dry, and keep it in its ventilated case rather than loose in a bag. Keep it out of hot water and out of a hot car, since heat distorts the material. Bring it to your check-up so we can look at the fit."
+    },
+    {
+     "id": "f12",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Frequently asked <em>questions</em>"
+    },
+    {
+     "id": "f13",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Which sports need a mouthguard?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f14",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Any sport with a risk of contact or a hard projectile — football, rugby, hockey, netball, basketball, boxing, martial arts, cricket, lacrosse — plus skateboarding, BMX and similar. Many clubs and associations require them."
+    },
+    {
+     "id": "f15",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>How long does a custom mouthguard last?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f16",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "An adult guard that is well looked after generally lasts a few seasons. Children’s guards need replacing more often as teeth erupt and jaws grow. Bring it in and we will check the fit."
+    },
+    {
+     "id": "f17",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Will I be able to talk and breathe in it?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f18",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Considerably better than in a boil-and-bite guard, though there is an adjustment period. Most people find a custom guard becomes unnoticeable within a session or two."
+    },
+    {
+     "id": "f19",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Can I wear one over braces?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f20",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Yes, and it is strongly advised. A guard for someone in braces is made differently to allow for tooth movement and to protect the lips and cheeks from the brackets. Tell us you are in treatment when you book."
+    },
+    {
+     "id": "f21",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>How many appointments does it take?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f22",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Two — one short appointment for the scan, and one to fit it. Turnaround from the laboratory is usually one to two weeks, so allow time before the season starts."
+    },
+    {
+     "id": "f23",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Is a night guard the same thing?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f24",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "No. A sports mouthguard absorbs impact; a night guard protects teeth from grinding and clenching. They are made from different materials for different purposes and are not interchangeable."
+    }
+   ],
+   "lists": [
+    {
+     "id": "L1",
+     "label": "Questions",
+     "item": "Question"
+    }
+   ]
+  },
+  {
+   "key": "s3",
+   "kind": "content",
+   "label": "Section 3",
+   "tag": "section",
+   "attrs": {
+    "class": "band cta-close"
+   },
+   "before": "\n",
+   "template": "\n  <div class=\"wrap\">\n    <div class=\"cta-panel rise\">\n      <div class=\"cta-row\"><a class=\"btn btn-primary\" href=\"{{#preOpening}}../../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../../contact/index.html{{/preOpening}}\">{{#preOpening}}{{f1}}{{/preOpening}}{{^preOpening}}{{f2}}{{/preOpening}}</a>{{#phone}}<a class=\"btn btn-outline\" href=\"{{phoneHref}}\">{{f3}}</a>{{/phone}}</div>\n    </div>\n  </div>\n",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Words",
+     "type": "text",
+     "value": "Join the waitlist"
+    },
+    {
+     "id": "f2",
+     "label": "Words",
+     "type": "text",
+     "value": "Book a mouthguard fitting"
+    },
+    {
+     "id": "f3",
+     "label": "Button words",
+     "type": "text",
+     "value": "Call {{phone}}"
+    }
+   ]
+  }
+ ],
+ "order": [
+  "section:0",
+  "section:1",
+  "section:2"
+ ],
+ "mainEnd": "\n",
+ "afterMain": "</main>\n",
+ "footer": "<footer class=\"foot\">\n  <div class=\"wrap\">\n    <div class=\"foot-grid\">\n      {{[L1]}}<div>\n        <a href=\"../../../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../../../assets/images/logo-light.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n        <p class=\"blurb\">{{f1}}</p>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f2}}</h2>\n        <ul>\n          {{[L2]}}<li><a href=\"../../../about/index.html\">{{f3}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../../meet-the-team/index.html\">{{f4}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../../services/index.html\">{{f5}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../../contact/index.html\">{{f6}}</a></li>{{[/L2]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f7}}</h2>\n        <ul>\n          {{[L3]}}<li><a href=\"../../../services/general-dentistry/check-ups-and-cleans/index.html\">{{f8}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/general-dentistry/dental-fillings/index.html\">{{f9}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/dental-implants/index.html\">{{f10}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/restorative-dentistry/root-canal-treatment/index.html\">{{f11}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/general-dentistry/childrens-dentistry/index.html\">{{f12}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/restorative-dentistry/tooth-extractions/index.html\">{{f13}}</a></li>{{[/L3]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f14}}</h2>\n        <ul>\n          {{[L4]}}<li><a href=\"../../../dentist-warrnambool/index.html\">{{f15}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-dennington/index.html\">{{f16}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-allansford/index.html\">{{f17}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-koroit/index.html\">{{f18}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-port-fairy/index.html\">{{f19}}</a></li>{{[/L4]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f20}}</h2>\n        <ul>\n          <li>{{addressStreet}}</li>\n          <li>{{localityLine}}</li>\n          {{#phone}}<li><a href=\"{{phoneHref}}\">{{phone}}</a></li>{{/phone}}\n          {{#email}}<li><a href=\"mailto:{{email}}\">{{email}}</a></li>{{/email}}\n          {{#hours}}<li>{{{hoursHtml}}}</li>{{/hours}}\n        </ul>\n      </div>{{[/L1]}}\n    </div>\n    <div class=\"foot-base\">\n      <p class=\"disclaimer\">{{f21}}</p>\n      <div class=\"foot-legal\">\n        <span>{{f22}}</span>\n        <span>\n          <a href=\"../../../privacy-policy/index.html\">{{f23}}</a>\n        </span>\n      </div>\n    </div>\n  </div>\n</footer>",
+ "tail": "\n<script src=\"../../../assets/js/site.js\" defer></script>\n</body>\n</html>"
+}

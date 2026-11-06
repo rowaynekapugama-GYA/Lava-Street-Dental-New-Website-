@@ -1,0 +1,428 @@
+{
+ "slug": "services--general-dentistry",
+ "name": "General Dentistry",
+ "path": "/services/general-dentistry/",
+ "file": "services/general-dentistry/index.html",
+ "group": "General dentistry",
+ "meta": {
+  "title": "General Dentistry in Warrnambool | Lava Street Dental",
+  "description": "Check-ups, cleans, fillings, children’s dentistry, gum treatment, mouthguards and emergency appointments in Warrnambool with Dr Meg Takiguchi."
+ },
+ "head": "<!DOCTYPE html>\n<html lang=\"en-AU\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"icon\" href=\"../../favicon.ico\" sizes=\"48x48\">\n<link rel=\"icon\" href=\"../../assets/icons/favicon.svg\" type=\"image/svg+xml\">\n<link rel=\"apple-touch-icon\" href=\"../../assets/icons/apple-touch-icon.png\">\n<link rel=\"manifest\" href=\"../../site.webmanifest\">\n<meta name=\"theme-color\" content=\"#575A4D\">\n<title>{{seo:title}}</title>\n<meta name=\"description\" content=\"{{seo:description}}\">\n<meta property=\"og:title\" content=\"{{seo:ogTitle}}\">\n<meta property=\"og:description\" content=\"{{seo:ogDescription}}\">\n<!-- @seo: canonical, Open Graph, Twitter and JSON-LD tags are added here by scripts/build.mjs from site.config.mjs -->\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<!-- LAUNCH-TODO: brand typefaces. Neue Haas Grotesk and Acumin Condensed are\n     Adobe Fonts families. Create a web project at fonts.adobe.com containing\n     neue-haas-grotesk-text, neue-haas-grotesk-display and acumin-pro-condensed,\n     then uncomment the line below with the kit ID. The CSS already names those\n     families first, so nothing else changes. Until then the Google Fonts line\n     serves the closest open faces. -->\n<!-- <link rel=\"stylesheet\" href=\"https://use.typekit.net/XXXXXXX.css\"> -->\n<link href=\"https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Roboto+Condensed:wght@300;500&display=swap\" rel=\"stylesheet\">\n<link rel=\"stylesheet\" href=\"../../assets/css/site.css\">\n\n{{gen:faqSchema}}\n</head>\n<body id=\"top\">\n<a class=\"skip-link\" href=\"#main\">Skip to main content</a>\n<header class=\"masthead\" id=\"masthead\">\n  <div class=\"wrap\">\n    <a href=\"../../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../../assets/images/logo.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n    <nav class=\"mast-nav\" aria-label=\"Primary\">\n      <a href=\"../../about/index.html\">About</a>\n      <a href=\"../../meet-the-team/index.html\">Meet the Team</a>\n      <div class=\"navdrop\" data-drop>\n        <button type=\"button\" aria-expanded=\"false\" aria-controls=\"dropServices\">Services<i aria-hidden=\"true\"></i></button>\n        <ul class=\"drop-panel\" id=\"dropServices\">\n          <li><a href=\"../../services/index.html\">All services</a></li>\n          <li><a href=\"../../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a></li><li><a href=\"../../services/restorative-dentistry/index.html\">Restorative Dentistry</a></li><li><a href=\"../../services/dental-implants/index.html\">Dental Implants</a></li><li><a href=\"../../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a></li><li><a href=\"../../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a></li>\n        </ul>\n      </div>\n      <a href=\"../../contact/index.html\">Contact</a>\n    </nav>\n    <div class=\"mast-actions\">\n      {{#phone}}<a class=\"mast-phone\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}}\n      <a class=\"btn btn-primary\" href=\"{{#preOpening}}../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n      <button class=\"burger\" id=\"burger\" type=\"button\" aria-expanded=\"false\" aria-controls=\"drawer\" aria-label=\"Open menu\">\n        <i></i><i></i><i></i>\n      </button>\n    </div>\n  </div>\n</header>\n\n<div class=\"drawer\" id=\"drawer\" hidden>\n  <nav aria-label=\"Mobile\">\n    <a class=\"dnav\" href=\"../../about/index.html\">About</a>\n    <a class=\"dnav\" href=\"../../meet-the-team/index.html\">Meet the Team</a>\n    <details class=\"dgroup\">\n      <summary>Services</summary>\n      <a href=\"../../services/index.html\">All services</a>\n      <a href=\"../../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a><a href=\"../../services/restorative-dentistry/index.html\">Restorative Dentistry</a><a href=\"../../services/dental-implants/index.html\">Dental Implants</a><a href=\"../../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a><a href=\"../../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a>\n    </details>\n    <details class=\"dgroup\">\n      <summary>Areas we serve</summary>\n      <a href=\"../../dentist-warrnambool/index.html\">Warrnambool</a><a href=\"../../dentist-dennington/index.html\">Dennington</a><a href=\"../../dentist-allansford/index.html\">Allansford</a><a href=\"../../dentist-koroit/index.html\">Koroit</a><a href=\"../../dentist-port-fairy/index.html\">Port Fairy</a>\n    </details>\n    <a class=\"dnav\" href=\"../../contact/index.html\">Contact</a>\n  </nav>\n  <a class=\"btn btn-primary\" href=\"{{#preOpening}}../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n  {{#phone}}<p class=\"drawer-foot small\">Prefer to talk it through? <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a></p>{{/phone}}\n</div>\n<main id=\"main\">",
+ "faqSchema": {
+  "literal": "<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"How often should I come in?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Six months suits most adults, but it depends on your gum health, decay risk and history. Some people are better off at three or four months, others can stretch to twelve. Dr Meg will recommend an interval that fits your situation rather than a blanket rule.\"}}, {\"@type\": \"Question\", \"name\": \"Do I need X-rays every visit?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"No. X-rays are taken when there is a clinical reason — checking between teeth, assessing a root, planning treatment — and the interval depends on your risk of decay. We will explain why before taking any.\"}}, {\"@type\": \"Question\", \"name\": \"It has been years since my last visit. Where do we start?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"With a look, a conversation and a plan. Anything painful gets dealt with first, then we work through the rest in an order that makes sense for you and your budget.\"}}, {\"@type\": \"Question\", \"name\": \"Do you take new patients of all ages?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes, from children with their first teeth through to older patients with more involved needs.\"}}, {\"@type\": \"Question\", \"name\": \"Will I see a hygienist or the dentist for my clean?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Dr Meg carries out examinations and cleans herself. It means the person doing the clean is the person who knows what your gums looked like last time.\"}}, {\"@type\": \"Question\", \"name\": \"What can I do at home to reduce my chance of needing fillings?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Brushing twice daily with fluoride toothpaste, cleaning between the teeth, and — the one most people underestimate — reducing how often you have sugar rather than how much. Frequency matters more than quantity.\"}}]}</script>",
+  "source": "<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q1\">\n      <span>How often should I come in?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q1\"><p>Six months suits most adults, but it depends on your gum health, decay risk and history. Some people are better off at three or four months, others can stretch to twelve. Dr Meg will recommend an interval that fits your situation rather than a blanket rule.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q2\">\n      <span>Do I need X-rays every visit?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q2\"><p>No. X-rays are taken when there is a clinical reason — checking between teeth, assessing a root, planning treatment — and the interval depends on your risk of decay. We will explain why before taking any.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q3\">\n      <span>It has been years since my last visit. Where do we start?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q3\"><p>With a look, a conversation and a plan. Anything painful gets dealt with first, then we work through the rest in an order that makes sense for you and your budget.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q4\">\n      <span>Do you take new patients of all ages?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q4\"><p>Yes, from children with their first teeth through to older patients with more involved needs.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q5\">\n      <span>Will I see a hygienist or the dentist for my clean?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q5\"><p>Dr Meg carries out examinations and cleans herself. It means the person doing the clean is the person who knows what your gums looked like last time.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q6\">\n      <span>What can I do at home to reduce my chance of needing fillings?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q6\"><p>Brushing twice daily with fluoride toothpaste, cleaning between the teeth, and — the one most people underestimate — reducing how often you have sugar rather than how much. Frequency matters more than quantity.</p></div>\n</div>"
+ },
+ "sections": [
+  {
+   "key": "s1",
+   "kind": "hero",
+   "label": "Page header",
+   "tag": "section",
+   "attrs": {
+    "class": "page-hero"
+   },
+   "before": "\n",
+   "template": "\n  <div class=\"wrap\">\n    <nav class=\"crumbs\" aria-label=\"Breadcrumb\"><ol><li>{{f1}}</li><li>{{f2}}</li><li aria-current=\"page\">{{f3}}</li></ol></nav>\n    <div class=\"ph-grid has-side\">\n      <div>\n        <p class=\"eyebrow\">{{f4}}</p>\n        <h1 class=\"ph-h1\">{{f5}}</h1>\n        <p class=\"lead\">{{f6}}</p><p class=\"lead\">{{f7}}</p>\n      </div>\n      <div class=\"ph-side rise\"><figure class=\"photo-fig\"><img src=\"{{f8}}\" alt=\"{{f9}}\" width=\"1600\" height=\"900\" loading=\"eager\" decoding=\"async\" fetchpriority=\"high\"></figure></div>\n    </div>\n  </div>\n",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../index.html\">Home</a>"
+    },
+    {
+     "id": "f2",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../services/index.html\">Services</a>"
+    },
+    {
+     "id": "f3",
+     "label": "List item",
+     "type": "richtext",
+     "value": "General &amp; Preventive Dentistry"
+    },
+    {
+     "id": "f4",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "Our services"
+    },
+    {
+     "id": "f5",
+     "label": "Main heading",
+     "type": "richtext",
+     "value": "The everyday care that keeps problems <em>small</em>."
+    },
+    {
+     "id": "f6",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "Most of dentistry is not dramatic. It is turning up regularly, catching things early, and dealing with a small problem while it is still small. That is what general and preventive care is for, and it is the bulk of what we do."
+    },
+    {
+     "id": "f7",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "A routine visit at Lava Street Dental means a proper examination — teeth, gums, bite, and a check of the soft tissues — followed by a clean and an honest conversation about what, if anything, needs attention. If everything is fine, we will tell you that. If something needs watching rather than treating, we will say that too."
+    },
+    {
+     "id": "f8",
+     "label": "Photo",
+     "type": "image",
+     "value": "../../assets/images/checkup-in-chair.webp",
+     "original": "../../assets/images/checkup-in-chair.webp",
+     "width": "1600",
+     "height": "900"
+    },
+    {
+     "id": "f9",
+     "label": "Photo description",
+     "type": "alt",
+     "value": "A dentist examining a patient reclined in the chair during a routine check-up"
+    }
+   ]
+  },
+  {
+   "key": "s2",
+   "kind": "content",
+   "label": "Our cleans",
+   "tag": "section",
+   "attrs": {
+    "class": "band"
+   },
+   "before": "\n",
+   "template": "<div class=\"wrap flow\"><h3 class=\"d3 sec-h3\">{{f1}}</h3><p>{{f2}}</p><h3 class=\"d3 sec-h3\">{{f3}}</h3><p>{{f4}}</p><h3 class=\"d3 sec-h3\">{{f5}}</h3><p>{{f6}} {{#preOpening}}{{f7}}{{#phone}} <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}} {{f8}}{{/preOpening}}{{^preOpening}}{{f9}}{{#phone}} <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}} {{f10}}{{/preOpening}}</p><h3 class=\"d3 sec-h3\">{{f11}}</h3><div class=\"linkcard-grid rise\"><a class=\"linkcard\" href=\"{{f12}}\">\n  <h3>{{f13}}</h3>\n  <p>{{f14}}</p>\n  <span class=\"lc-more\" aria-hidden=\"true\">{{f15}}</span>\n</a><a class=\"linkcard\" href=\"{{f16}}\">\n  <h3>{{f17}}</h3>\n  <p>{{f18}}</p>\n  <span class=\"lc-more\" aria-hidden=\"true\">{{f19}}</span>\n</a><a class=\"linkcard\" href=\"{{f20}}\">\n  <h3>{{f21}}</h3>\n  <p>{{f22}}</p>\n  <span class=\"lc-more\" aria-hidden=\"true\">{{f23}}</span>\n</a><a class=\"linkcard\" href=\"{{f24}}\">\n  <h3>{{f25}}</h3>\n  <p>{{f26}}</p>\n  <span class=\"lc-more\" aria-hidden=\"true\">{{f27}}</span>\n</a><a class=\"linkcard\" href=\"{{f28}}\">\n  <h3>{{f29}}</h3>\n  <p>{{f30}}</p>\n  <span class=\"lc-more\" aria-hidden=\"true\">{{f31}}</span>\n</a><a class=\"linkcard\" href=\"{{f32}}\">\n  <h3>{{f33}}</h3>\n  <p>{{f34}}</p>\n  <span class=\"lc-more\" aria-hidden=\"true\">{{f35}}</span>\n</a><a class=\"linkcard\" href=\"{{f36}}\">\n  <h3>{{f37}}</h3>\n  <p>{{f38}}</p>\n  <span class=\"lc-more\" aria-hidden=\"true\">{{f39}}</span>\n</a></div><h2 class=\"d2 sec-h\">{{f40}}</h2><div class=\"faq-list rise\">{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q1\">{{f41}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q1\"><p>{{f42}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q2\">{{f43}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q2\"><p>{{f44}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q3\">{{f45}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q3\"><p>{{f46}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q4\">{{f47}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q4\"><p>{{f48}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q5\">{{f49}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q5\"><p>{{f50}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q6\">{{f51}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q6\"><p>{{f52}}</p></div>\n</div>{{[/L1]}}</div></div>",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Our cleans"
+    },
+    {
+     "id": "f2",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "We clean using an air-polishing system that combines warm water, compressed air and a very fine powder. For most people it is more comfortable than the traditional scrape, particularly if you get cold sensitivity, and it lifts surface staining well. Where heavier deposits need removing, ultrasonic scaling is used as well."
+    },
+    {
+     "id": "f3",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Looking after children"
+    },
+    {
+     "id": "f4",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Children are welcome from their first teeth. Early appointments are short and low-key, largely about getting comfortable with the chair and the people in the room. Eligible children may be able to access care through the Child Dental Benefits Schedule — ask us and we will check."
+    },
+    {
+     "id": "f5",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "When something goes wrong"
+    },
+    {
+     "id": "f6",
+     "label": "Words",
+     "type": "text",
+     "value": "Toothache, a broken tooth, a lost filling or a knock to the mouth."
+    },
+    {
+     "id": "f7",
+     "label": "Words",
+     "type": "text",
+     "value": "From opening in December 2026, we will hold two same-day emergency appointments each day. Call"
+    },
+    {
+     "id": "f8",
+     "label": "Words",
+     "type": "text",
+     "value": "first thing in the morning to secure one. Emergency appointments cannot be booked online."
+    },
+    {
+     "id": "f9",
+     "label": "Words",
+     "type": "text",
+     "value": "We hold two same-day emergency appointments each day. Call"
+    },
+    {
+     "id": "f10",
+     "label": "Words",
+     "type": "text",
+     "value": "first thing in the morning to secure one. Emergency appointments cannot be booked online."
+    },
+    {
+     "id": "f11",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "What sits under general and preventive care"
+    },
+    {
+     "id": "f12",
+     "label": "Link address",
+     "type": "href",
+     "value": "../../services/general-dentistry/check-ups-and-cleans/index.html"
+    },
+    {
+     "id": "f13",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Dental Check-ups &amp; Cleans"
+    },
+    {
+     "id": "f14",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "— examination, air-polishing clean, X-rays where clinically indicated"
+    },
+    {
+     "id": "f15",
+     "label": "Words",
+     "type": "richtext",
+     "value": "Read more"
+    },
+    {
+     "id": "f16",
+     "label": "Link address",
+     "type": "href",
+     "value": "../../services/general-dentistry/dental-fillings/index.html"
+    },
+    {
+     "id": "f17",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Dental Fillings"
+    },
+    {
+     "id": "f18",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "— tooth-coloured composite restorations"
+    },
+    {
+     "id": "f19",
+     "label": "Words",
+     "type": "richtext",
+     "value": "Read more"
+    },
+    {
+     "id": "f20",
+     "label": "Link address",
+     "type": "href",
+     "value": "../../services/general-dentistry/childrens-dentistry/index.html"
+    },
+    {
+     "id": "f21",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Children’s Dentistry"
+    },
+    {
+     "id": "f22",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "— check-ups, cleans, fissure sealants and preventive advice"
+    },
+    {
+     "id": "f23",
+     "label": "Words",
+     "type": "richtext",
+     "value": "Read more"
+    },
+    {
+     "id": "f24",
+     "label": "Link address",
+     "type": "href",
+     "value": "../../services/general-dentistry/gum-disease-treatment/index.html"
+    },
+    {
+     "id": "f25",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Gum Disease Treatment"
+    },
+    {
+     "id": "f26",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "— assessment and treatment of gingivitis and periodontitis"
+    },
+    {
+     "id": "f27",
+     "label": "Words",
+     "type": "richtext",
+     "value": "Read more"
+    },
+    {
+     "id": "f28",
+     "label": "Link address",
+     "type": "href",
+     "value": "../../services/general-dentistry/custom-mouthguards/index.html"
+    },
+    {
+     "id": "f29",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Custom Mouthguards"
+    },
+    {
+     "id": "f30",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "— professionally fitted guards for sport"
+    },
+    {
+     "id": "f31",
+     "label": "Words",
+     "type": "richtext",
+     "value": "Read more"
+    },
+    {
+     "id": "f32",
+     "label": "Link address",
+     "type": "href",
+     "value": "../../services/general-dentistry/night-guards-teeth-grinding/index.html"
+    },
+    {
+     "id": "f33",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Night Guards &amp; Teeth Grinding"
+    },
+    {
+     "id": "f34",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "— splints for clenching and grinding"
+    },
+    {
+     "id": "f35",
+     "label": "Words",
+     "type": "richtext",
+     "value": "Read more"
+    },
+    {
+     "id": "f36",
+     "label": "Link address",
+     "type": "href",
+     "value": "../../services/general-dentistry/emergency-dental-care/index.html"
+    },
+    {
+     "id": "f37",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Emergency Dental Care"
+    },
+    {
+     "id": "f38",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "— same-day help for pain, breakage and dental trauma"
+    },
+    {
+     "id": "f39",
+     "label": "Words",
+     "type": "richtext",
+     "value": "Read more"
+    },
+    {
+     "id": "f40",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Common <em>questions</em>"
+    },
+    {
+     "id": "f41",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>How often should I come in?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f42",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Six months suits most adults, but it depends on your gum health, decay risk and history. Some people are better off at three or four months, others can stretch to twelve. Dr Meg will recommend an interval that fits your situation rather than a blanket rule."
+    },
+    {
+     "id": "f43",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Do I need X-rays every visit?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f44",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "No. X-rays are taken when there is a clinical reason — checking between teeth, assessing a root, planning treatment — and the interval depends on your risk of decay. We will explain why before taking any."
+    },
+    {
+     "id": "f45",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>It has been years since my last visit. Where do we start?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f46",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "With a look, a conversation and a plan. Anything painful gets dealt with first, then we work through the rest in an order that makes sense for you and your budget."
+    },
+    {
+     "id": "f47",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Do you take new patients of all ages?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f48",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Yes, from children with their first teeth through to older patients with more involved needs."
+    },
+    {
+     "id": "f49",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Will I see a hygienist or the dentist for my clean?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f50",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Dr Meg carries out examinations and cleans herself. It means the person doing the clean is the person who knows what your gums looked like last time."
+    },
+    {
+     "id": "f51",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>What can I do at home to reduce my chance of needing fillings?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f52",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Brushing twice daily with fluoride toothpaste, cleaning between the teeth, and — the one most people underestimate — reducing how often you have sugar rather than how much. Frequency matters more than quantity."
+    }
+   ],
+   "lists": [
+    {
+     "id": "L1",
+     "label": "Questions",
+     "item": "Question"
+    }
+   ]
+  }
+ ],
+ "order": [
+  "section:0",
+  "section:1"
+ ],
+ "mainEnd": "\n",
+ "afterMain": "</main>\n",
+ "footer": "<footer class=\"foot\">\n  <div class=\"wrap\">\n    <div class=\"foot-grid\">\n      {{[L1]}}<div>\n        <a href=\"../../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../../assets/images/logo-light.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n        <p class=\"blurb\">{{f1}}</p>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f2}}</h2>\n        <ul>\n          {{[L2]}}<li><a href=\"../../about/index.html\">{{f3}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../meet-the-team/index.html\">{{f4}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../services/index.html\">{{f5}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../contact/index.html\">{{f6}}</a></li>{{[/L2]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f7}}</h2>\n        <ul>\n          {{[L3]}}<li><a href=\"../../services/general-dentistry/check-ups-and-cleans/index.html\">{{f8}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../services/general-dentistry/dental-fillings/index.html\">{{f9}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../services/dental-implants/index.html\">{{f10}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../services/restorative-dentistry/root-canal-treatment/index.html\">{{f11}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../services/general-dentistry/childrens-dentistry/index.html\">{{f12}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../services/restorative-dentistry/tooth-extractions/index.html\">{{f13}}</a></li>{{[/L3]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f14}}</h2>\n        <ul>\n          {{[L4]}}<li><a href=\"../../dentist-warrnambool/index.html\">{{f15}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../dentist-dennington/index.html\">{{f16}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../dentist-allansford/index.html\">{{f17}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../dentist-koroit/index.html\">{{f18}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../dentist-port-fairy/index.html\">{{f19}}</a></li>{{[/L4]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f20}}</h2>\n        <ul>\n          <li>{{addressStreet}}</li>\n          <li>{{localityLine}}</li>\n          {{#phone}}<li><a href=\"{{phoneHref}}\">{{phone}}</a></li>{{/phone}}\n          {{#email}}<li><a href=\"mailto:{{email}}\">{{email}}</a></li>{{/email}}\n          {{#hours}}<li>{{{hoursHtml}}}</li>{{/hours}}\n        </ul>\n      </div>{{[/L1]}}\n    </div>\n    <div class=\"foot-base\">\n      <p class=\"disclaimer\">{{f21}}</p>\n      <div class=\"foot-legal\">\n        <span>{{f22}}</span>\n        <span>\n          <a href=\"../../privacy-policy/index.html\">{{f23}}</a>\n        </span>\n      </div>\n    </div>\n  </div>\n</footer>",
+ "tail": "\n<script src=\"../../assets/js/site.js\" defer></script>\n</body>\n</html>"
+}

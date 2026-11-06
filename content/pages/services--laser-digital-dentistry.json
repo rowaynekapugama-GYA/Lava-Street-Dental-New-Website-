@@ -1,0 +1,296 @@
+{
+ "slug": "services--laser-digital-dentistry",
+ "name": "Laser and Digital Dentistry",
+ "path": "/services/laser-digital-dentistry/",
+ "file": "services/laser-digital-dentistry/index.html",
+ "group": "Laser and digital dentistry",
+ "meta": {
+  "title": "Laser & Digital Dentistry in Warrnambool | Lava Street Dental",
+  "description": "Diode laser treatment for selected gum procedures, digital intra-oral scanning and 3D CBCT imaging at Lava Street Dental in Warrnambool."
+ },
+ "head": "<!DOCTYPE html>\n<html lang=\"en-AU\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"icon\" href=\"../../favicon.ico\" sizes=\"48x48\">\n<link rel=\"icon\" href=\"../../assets/icons/favicon.svg\" type=\"image/svg+xml\">\n<link rel=\"apple-touch-icon\" href=\"../../assets/icons/apple-touch-icon.png\">\n<link rel=\"manifest\" href=\"../../site.webmanifest\">\n<meta name=\"theme-color\" content=\"#575A4D\">\n<title>{{seo:title}}</title>\n<meta name=\"description\" content=\"{{seo:description}}\">\n<meta property=\"og:title\" content=\"{{seo:ogTitle}}\">\n<meta property=\"og:description\" content=\"{{seo:ogDescription}}\">\n<!-- @seo: canonical, Open Graph, Twitter and JSON-LD tags are added here by scripts/build.mjs from site.config.mjs -->\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<!-- LAUNCH-TODO: brand typefaces. Neue Haas Grotesk and Acumin Condensed are\n     Adobe Fonts families. Create a web project at fonts.adobe.com containing\n     neue-haas-grotesk-text, neue-haas-grotesk-display and acumin-pro-condensed,\n     then uncomment the line below with the kit ID. The CSS already names those\n     families first, so nothing else changes. Until then the Google Fonts line\n     serves the closest open faces. -->\n<!-- <link rel=\"stylesheet\" href=\"https://use.typekit.net/XXXXXXX.css\"> -->\n<link href=\"https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Roboto+Condensed:wght@300;500&display=swap\" rel=\"stylesheet\">\n<link rel=\"stylesheet\" href=\"../../assets/css/site.css\">\n\n{{gen:faqSchema}}\n</head>\n<body id=\"top\">\n<a class=\"skip-link\" href=\"#main\">Skip to main content</a>\n<header class=\"masthead\" id=\"masthead\">\n  <div class=\"wrap\">\n    <a href=\"../../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../../assets/images/logo.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n    <nav class=\"mast-nav\" aria-label=\"Primary\">\n      <a href=\"../../about/index.html\">About</a>\n      <a href=\"../../meet-the-team/index.html\">Meet the Team</a>\n      <div class=\"navdrop\" data-drop>\n        <button type=\"button\" aria-expanded=\"false\" aria-controls=\"dropServices\">Services<i aria-hidden=\"true\"></i></button>\n        <ul class=\"drop-panel\" id=\"dropServices\">\n          <li><a href=\"../../services/index.html\">All services</a></li>\n          <li><a href=\"../../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a></li><li><a href=\"../../services/restorative-dentistry/index.html\">Restorative Dentistry</a></li><li><a href=\"../../services/dental-implants/index.html\">Dental Implants</a></li><li><a href=\"../../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a></li><li><a href=\"../../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a></li>\n        </ul>\n      </div>\n      <a href=\"../../contact/index.html\">Contact</a>\n    </nav>\n    <div class=\"mast-actions\">\n      {{#phone}}<a class=\"mast-phone\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}}\n      <a class=\"btn btn-primary\" href=\"{{#preOpening}}../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n      <button class=\"burger\" id=\"burger\" type=\"button\" aria-expanded=\"false\" aria-controls=\"drawer\" aria-label=\"Open menu\">\n        <i></i><i></i><i></i>\n      </button>\n    </div>\n  </div>\n</header>\n\n<div class=\"drawer\" id=\"drawer\" hidden>\n  <nav aria-label=\"Mobile\">\n    <a class=\"dnav\" href=\"../../about/index.html\">About</a>\n    <a class=\"dnav\" href=\"../../meet-the-team/index.html\">Meet the Team</a>\n    <details class=\"dgroup\">\n      <summary>Services</summary>\n      <a href=\"../../services/index.html\">All services</a>\n      <a href=\"../../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a><a href=\"../../services/restorative-dentistry/index.html\">Restorative Dentistry</a><a href=\"../../services/dental-implants/index.html\">Dental Implants</a><a href=\"../../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a><a href=\"../../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a>\n    </details>\n    <details class=\"dgroup\">\n      <summary>Areas we serve</summary>\n      <a href=\"../../dentist-warrnambool/index.html\">Warrnambool</a><a href=\"../../dentist-dennington/index.html\">Dennington</a><a href=\"../../dentist-allansford/index.html\">Allansford</a><a href=\"../../dentist-koroit/index.html\">Koroit</a><a href=\"../../dentist-port-fairy/index.html\">Port Fairy</a>\n    </details>\n    <a class=\"dnav\" href=\"../../contact/index.html\">Contact</a>\n  </nav>\n  <a class=\"btn btn-primary\" href=\"{{#preOpening}}../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n  {{#phone}}<p class=\"drawer-foot small\">Prefer to talk it through? <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a></p>{{/phone}}\n</div>\n<main id=\"main\">",
+ "faqSchema": {
+  "literal": "<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Is laser treatment painful?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Soft-tissue laser procedures are usually carried out under local anaesthetic and most people find recovery straightforward. Experiences differ, and Dr Meg will explain what to expect for your specific procedure.\"}}, {\"@type\": \"Question\", \"name\": \"Why do I need a 3D scan rather than a normal X-ray?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Because some questions cannot be answered in two dimensions — how much bone is available for an implant, exactly where a nerve runs, how many roots a molar has. Where a standard X-ray will do, that is what we take.\"}}, {\"@type\": \"Question\", \"name\": \"Is a digital scan more accurate than an impression?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"For most restorative work a well-taken digital scan gives an excellent result and removes the discomfort of putty. In a small number of situations a conventional impression is still the better option, and we will use one where that is the case.\"}}, {\"@type\": \"Question\", \"name\": \"Does the laser replace the drill for fillings?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"No. A diode laser works on soft tissue only. It does not cut enamel or remove decay.\"}}, {\"@type\": \"Question\", \"name\": \"Is this equipment used on every patient?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"No. Scanning is used where something is being made for you. CBCT is used where a specific question cannot be answered with a standard X-ray. Laser is used for particular soft-tissue procedures. None of it is routine.\"}}, {\"@type\": \"Question\", \"name\": \"What if I have a strong gag reflex?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Mention it when you book. Digital scanning avoids the impression tray entirely, which is usually the part people struggle with most.\"}}]}</script>",
+  "source": "<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q1\">\n      <span>Is laser treatment painful?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q1\"><p>Soft-tissue laser procedures are usually carried out under local anaesthetic and most people find recovery straightforward. Experiences differ, and Dr Meg will explain what to expect for your specific procedure.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q2\">\n      <span>Why do I need a 3D scan rather than a normal X-ray?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q2\"><p>Because some questions cannot be answered in two dimensions — how much bone is available for an implant, exactly where a nerve runs, how many roots a molar has. Where a standard X-ray will do, that is what we take.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q3\">\n      <span>Is a digital scan more accurate than an impression?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q3\"><p>For most restorative work a well-taken digital scan gives an excellent result and removes the discomfort of putty. In a small number of situations a conventional impression is still the better option, and we will use one where that is the case.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q4\">\n      <span>Does the laser replace the drill for fillings?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q4\"><p>No. A diode laser works on soft tissue only. It does not cut enamel or remove decay.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q5\">\n      <span>Is this equipment used on every patient?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q5\"><p>No. Scanning is used where something is being made for you. CBCT is used where a specific question cannot be answered with a standard X-ray. Laser is used for particular soft-tissue procedures. None of it is routine.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q6\">\n      <span>What if I have a strong gag reflex?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q6\"><p>Mention it when you book. Digital scanning avoids the impression tray entirely, which is usually the part people struggle with most.</p></div>\n</div>"
+ },
+ "sections": [
+  {
+   "key": "s1",
+   "kind": "hero",
+   "label": "Page header",
+   "tag": "section",
+   "attrs": {
+    "class": "page-hero"
+   },
+   "before": "\n",
+   "template": "\n  <div class=\"wrap\">\n    <nav class=\"crumbs\" aria-label=\"Breadcrumb\"><ol><li>{{f1}}</li><li>{{f2}}</li><li aria-current=\"page\">{{f3}}</li></ol></nav>\n    <div class=\"ph-grid has-side\">\n      <div>\n        <p class=\"eyebrow\">{{f4}}</p>\n        <h1 class=\"ph-h1\">{{f5}}</h1>\n        <p class=\"lead\">{{f6}}</p>\n      </div>\n      <div class=\"ph-side rise\"><figure class=\"photo-fig\"><img src=\"{{f7}}\" alt=\"{{f8}}\" width=\"1600\" height=\"900\" loading=\"eager\" decoding=\"async\" fetchpriority=\"high\"></figure></div>\n    </div>\n  </div>\n",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../index.html\">Home</a>"
+    },
+    {
+     "id": "f2",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../services/index.html\">Services</a>"
+    },
+    {
+     "id": "f3",
+     "label": "List item",
+     "type": "richtext",
+     "value": "Laser &amp; Digital Dentistry"
+    },
+    {
+     "id": "f4",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "Our services"
+    },
+    {
+     "id": "f5",
+     "label": "Main heading",
+     "type": "richtext",
+     "value": "Technology that earns its <em>place</em>."
+    },
+    {
+     "id": "f6",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "Equipment is only worth having if it makes treatment better, faster or more comfortable for the person in the chair. Everything here is used because it does one of those three things — not because it looks impressive on a website."
+    },
+    {
+     "id": "f7",
+     "label": "Photo",
+     "type": "image",
+     "value": "../../assets/images/light-treatment-chairside.webp",
+     "original": "../../assets/images/light-treatment-chairside.webp",
+     "width": "1600",
+     "height": "900"
+    },
+    {
+     "id": "f8",
+     "label": "Photo description",
+     "type": "alt",
+     "value": "A patient wearing protective eyewear in the dental chair while a chairside light unit is positioned over her teeth"
+    }
+   ]
+  },
+  {
+   "key": "s2",
+   "kind": "content",
+   "label": "Digital intra-oral scanning",
+   "tag": "section",
+   "attrs": {
+    "class": "band"
+   },
+   "before": "\n",
+   "template": "<div class=\"wrap flow\"><h3 class=\"d3 sec-h3\">{{f1}}</h3><p>{{f2}}</p><p>{{f3}}</p><h3 class=\"d3 sec-h3\">{{f4}}</h3><p>{{f5}}</p><p>{{f6}}</p><h3 class=\"d3 sec-h3\">{{f7}}</h3><p>{{f8}}</p><p>{{f9}}</p><h3 class=\"d3 sec-h3\">{{f10}}</h3><div class=\"linkcard-grid rise\"><a class=\"linkcard\" href=\"{{f11}}\">\n  <h3>{{f12}}</h3>\n  <p>{{f13}}</p>\n  <span class=\"lc-more\" aria-hidden=\"true\">{{f14}}</span>\n</a><a class=\"linkcard\" href=\"{{f15}}\">\n  <h3>{{f16}}</h3>\n  <p>{{f17}}</p>\n  <span class=\"lc-more\" aria-hidden=\"true\">{{f18}}</span>\n</a></div><h2 class=\"d2 sec-h\">{{f19}}</h2><div class=\"faq-list rise\">{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q1\">{{f20}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q1\"><p>{{f21}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q2\">{{f22}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q2\"><p>{{f23}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q3\">{{f24}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q3\"><p>{{f25}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q4\">{{f26}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q4\"><p>{{f27}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q5\">{{f28}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q5\"><p>{{f29}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q6\">{{f30}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q6\"><p>{{f31}}</p></div>\n</div>{{[/L1]}}</div></div>",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Digital intra-oral scanning"
+    },
+    {
+     "id": "f2",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "A small handheld scanner builds a 3D model of your teeth in a few minutes. For most patients that replaces the tray of impression putty, which is a relief if you have a strong gag reflex. The scan is sent electronically to the laboratory, which removes a source of distortion in the fit of crowns, bridges and dentures."
+    },
+    {
+     "id": "f3",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "It also makes a useful record. Comparing a scan taken today with one from two years ago shows tooth wear and gum recession clearly."
+    },
+    {
+     "id": "f4",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "3D CBCT imaging"
+    },
+    {
+     "id": "f5",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Cone beam computed tomography produces a three-dimensional view of the jaw. It is used for planning implants — assessing bone volume and locating nerves and sinuses — and for assessing complicated roots before root canal treatment or surgical extraction."
+    },
+    {
+     "id": "f6",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "CBCT involves a higher radiation dose than a standard dental X-ray, so it is taken only where there is a clear clinical reason. Dr Meg will explain why a scan is being recommended before it is taken."
+    },
+    {
+     "id": "f7",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Diode laser"
+    },
+    {
+     "id": "f8",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "A diode laser is used for selected soft-tissue procedures, including reshaping gum tissue (gingivectomy) and as an adjunct in the treatment of gum disease. It is also used in some cases to help manage jaw joint discomfort, though the evidence for that application is still developing and Dr Meg will be frank with you about what it can and cannot be expected to do."
+    },
+    {
+     "id": "f9",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Laser treatment is not a substitute for conventional gum therapy. It is used alongside it, where it is appropriate."
+    },
+    {
+     "id": "f10",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "What sits under laser &amp; digital dentistry"
+    },
+    {
+     "id": "f11",
+     "label": "Link address",
+     "type": "href",
+     "value": "../../services/laser-digital-dentistry/diode-laser-dentistry/index.html"
+    },
+    {
+     "id": "f12",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Diode Laser Dentistry"
+    },
+    {
+     "id": "f13",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "— gingivectomy, adjunctive gum disease treatment, selected soft-tissue procedures"
+    },
+    {
+     "id": "f14",
+     "label": "Words",
+     "type": "richtext",
+     "value": "Read more"
+    },
+    {
+     "id": "f15",
+     "label": "Link address",
+     "type": "href",
+     "value": "../../services/laser-digital-dentistry/digital-scanning-cbct/index.html"
+    },
+    {
+     "id": "f16",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Digital Scanning &amp; 3D CBCT Imaging"
+    },
+    {
+     "id": "f17",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "— intra-oral scanning and cone beam imaging"
+    },
+    {
+     "id": "f18",
+     "label": "Words",
+     "type": "richtext",
+     "value": "Read more"
+    },
+    {
+     "id": "f19",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Common <em>questions</em>"
+    },
+    {
+     "id": "f20",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Is laser treatment painful?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f21",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Soft-tissue laser procedures are usually carried out under local anaesthetic and most people find recovery straightforward. Experiences differ, and Dr Meg will explain what to expect for your specific procedure."
+    },
+    {
+     "id": "f22",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Why do I need a 3D scan rather than a normal X-ray?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f23",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Because some questions cannot be answered in two dimensions — how much bone is available for an implant, exactly where a nerve runs, how many roots a molar has. Where a standard X-ray will do, that is what we take."
+    },
+    {
+     "id": "f24",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Is a digital scan more accurate than an impression?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f25",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "For most restorative work a well-taken digital scan gives an excellent result and removes the discomfort of putty. In a small number of situations a conventional impression is still the better option, and we will use one where that is the case."
+    },
+    {
+     "id": "f26",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Does the laser replace the drill for fillings?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f27",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "No. A diode laser works on soft tissue only. It does not cut enamel or remove decay."
+    },
+    {
+     "id": "f28",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Is this equipment used on every patient?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f29",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "No. Scanning is used where something is being made for you. CBCT is used where a specific question cannot be answered with a standard X-ray. Laser is used for particular soft-tissue procedures. None of it is routine."
+    },
+    {
+     "id": "f30",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>What if I have a strong gag reflex?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f31",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Mention it when you book. Digital scanning avoids the impression tray entirely, which is usually the part people struggle with most."
+    }
+   ],
+   "lists": [
+    {
+     "id": "L1",
+     "label": "Questions",
+     "item": "Question"
+    }
+   ]
+  }
+ ],
+ "order": [
+  "section:0",
+  "section:1"
+ ],
+ "mainEnd": "\n",
+ "afterMain": "</main>\n",
+ "footer": "<footer class=\"foot\">\n  <div class=\"wrap\">\n    <div class=\"foot-grid\">\n      {{[L1]}}<div>\n        <a href=\"../../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../../assets/images/logo-light.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n        <p class=\"blurb\">{{f1}}</p>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f2}}</h2>\n        <ul>\n          {{[L2]}}<li><a href=\"../../about/index.html\">{{f3}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../meet-the-team/index.html\">{{f4}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../services/index.html\">{{f5}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../contact/index.html\">{{f6}}</a></li>{{[/L2]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f7}}</h2>\n        <ul>\n          {{[L3]}}<li><a href=\"../../services/general-dentistry/check-ups-and-cleans/index.html\">{{f8}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../services/general-dentistry/dental-fillings/index.html\">{{f9}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../services/dental-implants/index.html\">{{f10}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../services/restorative-dentistry/root-canal-treatment/index.html\">{{f11}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../services/general-dentistry/childrens-dentistry/index.html\">{{f12}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../services/restorative-dentistry/tooth-extractions/index.html\">{{f13}}</a></li>{{[/L3]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f14}}</h2>\n        <ul>\n          {{[L4]}}<li><a href=\"../../dentist-warrnambool/index.html\">{{f15}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../dentist-dennington/index.html\">{{f16}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../dentist-allansford/index.html\">{{f17}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../dentist-koroit/index.html\">{{f18}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../dentist-port-fairy/index.html\">{{f19}}</a></li>{{[/L4]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f20}}</h2>\n        <ul>\n          <li>{{addressStreet}}</li>\n          <li>{{localityLine}}</li>\n          {{#phone}}<li><a href=\"{{phoneHref}}\">{{phone}}</a></li>{{/phone}}\n          {{#email}}<li><a href=\"mailto:{{email}}\">{{email}}</a></li>{{/email}}\n          {{#hours}}<li>{{{hoursHtml}}}</li>{{/hours}}\n        </ul>\n      </div>{{[/L1]}}\n    </div>\n    <div class=\"foot-base\">\n      <p class=\"disclaimer\">{{f21}}</p>\n      <div class=\"foot-legal\">\n        <span>{{f22}}</span>\n        <span>\n          <a href=\"../../privacy-policy/index.html\">{{f23}}</a>\n        </span>\n      </div>\n    </div>\n  </div>\n</footer>",
+ "tail": "\n<script src=\"../../assets/js/site.js\" defer></script>\n</body>\n</html>"
+}

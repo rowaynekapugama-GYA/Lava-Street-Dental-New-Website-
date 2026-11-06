@@ -1,0 +1,304 @@
+{
+ "slug": "services--laser-digital-dentistry--diode-laser-dentistry",
+ "name": "Diode Laser Dentistry",
+ "path": "/services/laser-digital-dentistry/diode-laser-dentistry/",
+ "file": "services/laser-digital-dentistry/diode-laser-dentistry/index.html",
+ "group": "Laser and digital dentistry",
+ "meta": {
+  "title": "Diode Laser Dentistry in Warrnambool | Lava Street Dental",
+  "description": "Diode laser treatment for selected gum procedures in Warrnambool, used alongside conventional care by Dr Meg Takiguchi at Lava Street Dental."
+ },
+ "head": "<!DOCTYPE html>\n<html lang=\"en-AU\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"icon\" href=\"../../../favicon.ico\" sizes=\"48x48\">\n<link rel=\"icon\" href=\"../../../assets/icons/favicon.svg\" type=\"image/svg+xml\">\n<link rel=\"apple-touch-icon\" href=\"../../../assets/icons/apple-touch-icon.png\">\n<link rel=\"manifest\" href=\"../../../site.webmanifest\">\n<meta name=\"theme-color\" content=\"#575A4D\">\n<title>{{seo:title}}</title>\n<meta name=\"description\" content=\"{{seo:description}}\">\n<meta property=\"og:title\" content=\"{{seo:ogTitle}}\">\n<meta property=\"og:description\" content=\"{{seo:ogDescription}}\">\n<!-- @seo: canonical, Open Graph, Twitter and JSON-LD tags are added here by scripts/build.mjs from site.config.mjs -->\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<!-- LAUNCH-TODO: brand typefaces. Neue Haas Grotesk and Acumin Condensed are\n     Adobe Fonts families. Create a web project at fonts.adobe.com containing\n     neue-haas-grotesk-text, neue-haas-grotesk-display and acumin-pro-condensed,\n     then uncomment the line below with the kit ID. The CSS already names those\n     families first, so nothing else changes. Until then the Google Fonts line\n     serves the closest open faces. -->\n<!-- <link rel=\"stylesheet\" href=\"https://use.typekit.net/XXXXXXX.css\"> -->\n<link href=\"https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Roboto+Condensed:wght@300;500&display=swap\" rel=\"stylesheet\">\n<link rel=\"stylesheet\" href=\"../../../assets/css/site.css\">\n\n{{gen:faqSchema}}\n</head>\n<body id=\"top\">\n<a class=\"skip-link\" href=\"#main\">Skip to main content</a>\n<header class=\"masthead\" id=\"masthead\">\n  <div class=\"wrap\">\n    <a href=\"../../../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../../../assets/images/logo.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n    <nav class=\"mast-nav\" aria-label=\"Primary\">\n      <a href=\"../../../about/index.html\">About</a>\n      <a href=\"../../../meet-the-team/index.html\">Meet the Team</a>\n      <div class=\"navdrop\" data-drop>\n        <button type=\"button\" aria-expanded=\"false\" aria-controls=\"dropServices\">Services<i aria-hidden=\"true\"></i></button>\n        <ul class=\"drop-panel\" id=\"dropServices\">\n          <li><a href=\"../../../services/index.html\">All services</a></li>\n          <li><a href=\"../../../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a></li><li><a href=\"../../../services/restorative-dentistry/index.html\">Restorative Dentistry</a></li><li><a href=\"../../../services/dental-implants/index.html\">Dental Implants</a></li><li><a href=\"../../../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a></li><li><a href=\"../../../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a></li>\n        </ul>\n      </div>\n      <a href=\"../../../contact/index.html\">Contact</a>\n    </nav>\n    <div class=\"mast-actions\">\n      {{#phone}}<a class=\"mast-phone\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}}\n      <a class=\"btn btn-primary\" href=\"{{#preOpening}}../../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n      <button class=\"burger\" id=\"burger\" type=\"button\" aria-expanded=\"false\" aria-controls=\"drawer\" aria-label=\"Open menu\">\n        <i></i><i></i><i></i>\n      </button>\n    </div>\n  </div>\n</header>\n\n<div class=\"drawer\" id=\"drawer\" hidden>\n  <nav aria-label=\"Mobile\">\n    <a class=\"dnav\" href=\"../../../about/index.html\">About</a>\n    <a class=\"dnav\" href=\"../../../meet-the-team/index.html\">Meet the Team</a>\n    <details class=\"dgroup\">\n      <summary>Services</summary>\n      <a href=\"../../../services/index.html\">All services</a>\n      <a href=\"../../../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a><a href=\"../../../services/restorative-dentistry/index.html\">Restorative Dentistry</a><a href=\"../../../services/dental-implants/index.html\">Dental Implants</a><a href=\"../../../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a><a href=\"../../../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a>\n    </details>\n    <details class=\"dgroup\">\n      <summary>Areas we serve</summary>\n      <a href=\"../../../dentist-warrnambool/index.html\">Warrnambool</a><a href=\"../../../dentist-dennington/index.html\">Dennington</a><a href=\"../../../dentist-allansford/index.html\">Allansford</a><a href=\"../../../dentist-koroit/index.html\">Koroit</a><a href=\"../../../dentist-port-fairy/index.html\">Port Fairy</a>\n    </details>\n    <a class=\"dnav\" href=\"../../../contact/index.html\">Contact</a>\n  </nav>\n  <a class=\"btn btn-primary\" href=\"{{#preOpening}}../../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n  {{#phone}}<p class=\"drawer-foot small\">Prefer to talk it through? <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a></p>{{/phone}}\n</div>\n<main id=\"main\">",
+ "faqSchema": {
+  "literal": "<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Is laser treatment painful?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Soft-tissue laser procedures are generally done under local anaesthetic and most people find recovery uncomplicated. No dentist can promise a completely pain-free procedure, and experiences vary.\"}}, {\"@type\": \"Question\", \"name\": \"Is laser better than a scalpel?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"It is better suited to some situations and not others. Where a laser offers an advantage, that is what we use. Where a conventional approach is more appropriate, we use that instead.\"}}, {\"@type\": \"Question\", \"name\": \"Can laser replace my gum treatment?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"No. It is used alongside conventional periodontal therapy in selected cases, not in place of it.\"}}, {\"@type\": \"Question\", \"name\": \"Will it fix my jaw pain?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"It may form part of managing jaw joint discomfort, but the evidence is still developing and no one can promise you a result. Dr Meg will assess your jaw and explain the realistic options, including referral where appropriate.\"}}, {\"@type\": \"Question\", \"name\": \"Is it safe?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Dental diode lasers are well established for soft-tissue use when operated by a trained clinician with appropriate protective measures. Dr Meg has used laser treatment throughout her regional career.\"}}, {\"@type\": \"Question\", \"name\": \"Does it cost more?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"It depends on the procedure. As with all treatment here, you will be given the cost before it goes ahead.\"}}]}</script>",
+  "source": "<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q1\">\n      <span>Is laser treatment painful?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q1\"><p>Soft-tissue laser procedures are generally done under local anaesthetic and most people find recovery uncomplicated. No dentist can promise a completely pain-free procedure, and experiences vary.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q2\">\n      <span>Is laser better than a scalpel?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q2\"><p>It is better suited to some situations and not others. Where a laser offers an advantage, that is what we use. Where a conventional approach is more appropriate, we use that instead.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q3\">\n      <span>Can laser replace my gum treatment?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q3\"><p>No. It is used alongside conventional periodontal therapy in selected cases, not in place of it.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q4\">\n      <span>Will it fix my jaw pain?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q4\"><p>It may form part of managing jaw joint discomfort, but the evidence is still developing and no one can promise you a result. Dr Meg will assess your jaw and explain the realistic options, including referral where appropriate.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q5\">\n      <span>Is it safe?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q5\"><p>Dental diode lasers are well established for soft-tissue use when operated by a trained clinician with appropriate protective measures. Dr Meg has used laser treatment throughout her regional career.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q6\">\n      <span>Does it cost more?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q6\"><p>It depends on the procedure. As with all treatment here, you will be given the cost before it goes ahead.</p></div>\n</div>"
+ },
+ "sections": [
+  {
+   "key": "s1",
+   "kind": "hero",
+   "label": "Page header",
+   "tag": "section",
+   "attrs": {
+    "class": "page-hero"
+   },
+   "before": "\n",
+   "template": "\n  <div class=\"wrap\">\n    <nav class=\"crumbs\" aria-label=\"Breadcrumb\"><ol><li>{{f1}}</li><li>{{f2}}</li><li>{{f3}}</li><li aria-current=\"page\">{{f4}}</li></ol></nav>\n    <div class=\"ph-grid has-side\">\n      <div>\n        <p class=\"eyebrow\">{{f5}}</p>\n        <h1 class=\"ph-h1\">{{f6}}</h1>\n        <p class=\"lead\">{{f7}}</p><p class=\"lead\">{{f8}}</p>\n      </div>\n      <div class=\"ph-side rise\"><figure class=\"photo-fig\"><img src=\"{{f9}}\" alt=\"{{f10}}\" width=\"1600\" height=\"900\" loading=\"eager\" decoding=\"async\" fetchpriority=\"high\"></figure></div>\n    </div>\n  </div>\n",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../../index.html\">Home</a>"
+    },
+    {
+     "id": "f2",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../../services/index.html\">Services</a>"
+    },
+    {
+     "id": "f3",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a>"
+    },
+    {
+     "id": "f4",
+     "label": "List item",
+     "type": "richtext",
+     "value": "Diode Laser Dentistry"
+    },
+    {
+     "id": "f5",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "Laser &amp; Digital Dentistry"
+    },
+    {
+     "id": "f6",
+     "label": "Main heading",
+     "type": "richtext",
+     "value": "A useful tool, used where it <em>helps</em>."
+    },
+    {
+     "id": "f7",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "A diode laser is a soft-tissue instrument. It works on gum and other soft tissue in the mouth, cutting and sealing at the same time, which means less bleeding during the procedure and often a cleaner field to work in."
+    },
+    {
+     "id": "f8",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "It is not a replacement for conventional dentistry, and we will not present it as one. It is used here for particular procedures where it offers a practical advantage over a scalpel or over conventional therapy alone."
+    },
+    {
+     "id": "f9",
+     "label": "Photo",
+     "type": "image",
+     "value": "../../../assets/images/diode-laser-treatment.webp",
+     "original": "../../../assets/images/diode-laser-treatment.webp",
+     "width": "1600",
+     "height": "900"
+    },
+    {
+     "id": "f10",
+     "label": "Photo description",
+     "type": "alt",
+     "value": "A patient wearing protective eyewear while a clinician treats the gum with a laser handpiece"
+    }
+   ]
+  },
+  {
+   "key": "s2",
+   "kind": "content",
+   "label": "Where we use it",
+   "tag": "section",
+   "attrs": {
+    "class": "band"
+   },
+   "before": "\n",
+   "template": "<div class=\"wrap flow\"><h3 class=\"d3 sec-h3\">{{f1}}</h3><p>{{f2}}</p><p>{{f3}}</p><p>{{f4}}</p><p>{{f5}}</p><p>{{f6}}</p><h3 class=\"d3 sec-h3\">{{f7}}</h3><p>{{f8}}</p><p>{{f9}}</p><h3 class=\"d3 sec-h3\">{{f10}}</h3><p>{{f11}}</p><p>{{f12}}</p><h2 class=\"d2 sec-h\">{{f13}}</h2><div class=\"faq-list rise\">{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q1\">{{f14}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q1\"><p>{{f15}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q2\">{{f16}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q2\"><p>{{f17}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q3\">{{f18}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q3\"><p>{{f19}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q4\">{{f20}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q4\"><p>{{f21}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q5\">{{f22}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q5\"><p>{{f23}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q6\">{{f24}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q6\"><p>{{f25}}</p></div>\n</div>{{[/L1]}}</div></div>",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Where we use it"
+    },
+    {
+     "id": "f2",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Gum reshaping (gingivectomy). Where gum tissue covers more of a tooth than it should — because of overgrowth, because tissue has grown over a partially erupted tooth, or because gum levels are uneven — a laser can reshape the tissue precisely with minimal bleeding."
+    },
+    {
+     "id": "f3",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "As an adjunct in gum disease treatment. In selected periodontal cases, laser may be used alongside conventional cleaning below the gum line. It is an addition to that treatment, not a substitute for it, and Dr Meg will be straightforward about what it contributes in your case."
+    },
+    {
+     "id": "f4",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Exposing tissue for restorative work. Where gum tissue is encroaching on the margin of a preparation, a small amount of laser recontouring can make a crown or filling easier to place and finish accurately."
+    },
+    {
+     "id": "f5",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Selected soft-tissue procedures, including minor lesions and tissue tags, assessed individually."
+    },
+    {
+     "id": "f6",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Jaw joint discomfort. Laser is used in some cases as part of managing temporomandibular discomfort. The evidence base for this application is still developing rather than settled, and Dr Meg will tell you plainly what it can and cannot be expected to do. It is offered as one part of a broader approach that may include a splint, habit advice and, in some cases, referral."
+    },
+    {
+     "id": "f7",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "What it is not"
+    },
+    {
+     "id": "f8",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "A diode laser does not cut hard tissue. It does not replace the drill for fillings, and it does not remove decay."
+    },
+    {
+     "id": "f9",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "It also does not cure gum disease on its own. Periodontal treatment depends on thorough mechanical cleaning below the gum line and on effective home care. Any practice presenting laser as a shortcut around either of those things is overstating it."
+    },
+    {
+     "id": "f10",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "What to expect"
+    },
+    {
+     "id": "f11",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Laser soft-tissue procedures are generally carried out under local anaesthetic. The procedure is usually quick, bleeding is typically minimal, and most people find recovery straightforward. Experiences differ between people and procedures, and Dr Meg will explain what to expect for your specific case, including any aftercare."
+    },
+    {
+     "id": "f12",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Protective eyewear is worn by everyone in the room while the laser is in use."
+    },
+    {
+     "id": "f13",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Frequently asked <em>questions</em>"
+    },
+    {
+     "id": "f14",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Is laser treatment painful?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f15",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Soft-tissue laser procedures are generally done under local anaesthetic and most people find recovery uncomplicated. No dentist can promise a completely pain-free procedure, and experiences vary."
+    },
+    {
+     "id": "f16",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Is laser better than a scalpel?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f17",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "It is better suited to some situations and not others. Where a laser offers an advantage, that is what we use. Where a conventional approach is more appropriate, we use that instead."
+    },
+    {
+     "id": "f18",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Can laser replace my gum treatment?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f19",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "No. It is used alongside conventional periodontal therapy in selected cases, not in place of it."
+    },
+    {
+     "id": "f20",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Will it fix my jaw pain?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f21",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "It may form part of managing jaw joint discomfort, but the evidence is still developing and no one can promise you a result. Dr Meg will assess your jaw and explain the realistic options, including referral where appropriate."
+    },
+    {
+     "id": "f22",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Is it safe?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f23",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Dental diode lasers are well established for soft-tissue use when operated by a trained clinician with appropriate protective measures. Dr Meg has used laser treatment throughout her regional career."
+    },
+    {
+     "id": "f24",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Does it cost more?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f25",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "It depends on the procedure. As with all treatment here, you will be given the cost before it goes ahead."
+    }
+   ],
+   "lists": [
+    {
+     "id": "L1",
+     "label": "Questions",
+     "item": "Question"
+    }
+   ]
+  },
+  {
+   "key": "s3",
+   "kind": "content",
+   "label": "Section 3",
+   "tag": "section",
+   "attrs": {
+    "class": "band cta-close"
+   },
+   "before": "\n",
+   "template": "\n  <div class=\"wrap\">\n    <div class=\"cta-panel rise\">\n      <div class=\"cta-row\"><a class=\"btn btn-primary\" href=\"{{#preOpening}}../../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../../contact/index.html{{/preOpening}}\">{{#preOpening}}{{f1}}{{/preOpening}}{{^preOpening}}{{f2}}{{/preOpening}}</a>{{#phone}}<a class=\"btn btn-outline\" href=\"{{phoneHref}}\">{{f3}}</a>{{/phone}}</div>\n    </div>\n  </div>\n",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Words",
+     "type": "text",
+     "value": "Join the waitlist"
+    },
+    {
+     "id": "f2",
+     "label": "Words",
+     "type": "text",
+     "value": "Book an assessment"
+    },
+    {
+     "id": "f3",
+     "label": "Button words",
+     "type": "text",
+     "value": "Call {{phone}}"
+    }
+   ]
+  }
+ ],
+ "order": [
+  "section:0",
+  "section:1",
+  "section:2"
+ ],
+ "mainEnd": "\n",
+ "afterMain": "</main>\n",
+ "footer": "<footer class=\"foot\">\n  <div class=\"wrap\">\n    <div class=\"foot-grid\">\n      {{[L1]}}<div>\n        <a href=\"../../../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../../../assets/images/logo-light.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n        <p class=\"blurb\">{{f1}}</p>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f2}}</h2>\n        <ul>\n          {{[L2]}}<li><a href=\"../../../about/index.html\">{{f3}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../../meet-the-team/index.html\">{{f4}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../../services/index.html\">{{f5}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../../contact/index.html\">{{f6}}</a></li>{{[/L2]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f7}}</h2>\n        <ul>\n          {{[L3]}}<li><a href=\"../../../services/general-dentistry/check-ups-and-cleans/index.html\">{{f8}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/general-dentistry/dental-fillings/index.html\">{{f9}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/dental-implants/index.html\">{{f10}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/restorative-dentistry/root-canal-treatment/index.html\">{{f11}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/general-dentistry/childrens-dentistry/index.html\">{{f12}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/restorative-dentistry/tooth-extractions/index.html\">{{f13}}</a></li>{{[/L3]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f14}}</h2>\n        <ul>\n          {{[L4]}}<li><a href=\"../../../dentist-warrnambool/index.html\">{{f15}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-dennington/index.html\">{{f16}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-allansford/index.html\">{{f17}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-koroit/index.html\">{{f18}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-port-fairy/index.html\">{{f19}}</a></li>{{[/L4]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f20}}</h2>\n        <ul>\n          <li>{{addressStreet}}</li>\n          <li>{{localityLine}}</li>\n          {{#phone}}<li><a href=\"{{phoneHref}}\">{{phone}}</a></li>{{/phone}}\n          {{#email}}<li><a href=\"mailto:{{email}}\">{{email}}</a></li>{{/email}}\n          {{#hours}}<li>{{{hoursHtml}}}</li>{{/hours}}\n        </ul>\n      </div>{{[/L1]}}\n    </div>\n    <div class=\"foot-base\">\n      <p class=\"disclaimer\">{{f21}}</p>\n      <div class=\"foot-legal\">\n        <span>{{f22}}</span>\n        <span>\n          <a href=\"../../../privacy-policy/index.html\">{{f23}}</a>\n        </span>\n      </div>\n    </div>\n  </div>\n</footer>",
+ "tail": "\n<script src=\"../../../assets/js/site.js\" defer></script>\n</body>\n</html>"
+}

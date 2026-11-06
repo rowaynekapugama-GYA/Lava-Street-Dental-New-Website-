@@ -1,0 +1,340 @@
+{
+ "slug": "contact",
+ "name": "Contact",
+ "path": "/contact/",
+ "file": "contact/index.html",
+ "group": "Main pages",
+ "meta": {
+  "title": "Contact Us | Dentist in Warrnambool | Lava Street Dental",
+  "description": "Contact Lava Street Dental in the Warrnambool CBD. Phone, email, opening hours, parking and appointment bookings for patients across Warrnambool and Port Fairy."
+ },
+ "head": "<!DOCTYPE html>\n<html lang=\"en-AU\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"icon\" href=\"../favicon.ico\" sizes=\"48x48\">\n<link rel=\"icon\" href=\"../assets/icons/favicon.svg\" type=\"image/svg+xml\">\n<link rel=\"apple-touch-icon\" href=\"../assets/icons/apple-touch-icon.png\">\n<link rel=\"manifest\" href=\"../site.webmanifest\">\n<meta name=\"theme-color\" content=\"#575A4D\">\n<title>{{seo:title}}</title>\n<meta name=\"description\" content=\"{{seo:description}}\">\n<meta property=\"og:title\" content=\"{{seo:ogTitle}}\">\n<meta property=\"og:description\" content=\"{{seo:ogDescription}}\">\n<!-- @seo: canonical, Open Graph, Twitter and JSON-LD tags are added here by scripts/build.mjs from site.config.mjs -->\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<!-- LAUNCH-TODO: brand typefaces. Neue Haas Grotesk and Acumin Condensed are\n     Adobe Fonts families. Create a web project at fonts.adobe.com containing\n     neue-haas-grotesk-text, neue-haas-grotesk-display and acumin-pro-condensed,\n     then uncomment the line below with the kit ID. The CSS already names those\n     families first, so nothing else changes. Until then the Google Fonts line\n     serves the closest open faces. -->\n<!-- <link rel=\"stylesheet\" href=\"https://use.typekit.net/XXXXXXX.css\"> -->\n<link href=\"https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Roboto+Condensed:wght@300;500&display=swap\" rel=\"stylesheet\">\n<link rel=\"stylesheet\" href=\"../assets/css/site.css\">\n\n</head>\n<body id=\"top\">\n<a class=\"skip-link\" href=\"#main\">Skip to main content</a>\n<header class=\"masthead\" id=\"masthead\">\n  <div class=\"wrap\">\n    <a href=\"../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../assets/images/logo.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n    <nav class=\"mast-nav\" aria-label=\"Primary\">\n      <a href=\"../about/index.html\">About</a>\n      <a href=\"../meet-the-team/index.html\">Meet the Team</a>\n      <div class=\"navdrop\" data-drop>\n        <button type=\"button\" aria-expanded=\"false\" aria-controls=\"dropServices\">Services<i aria-hidden=\"true\"></i></button>\n        <ul class=\"drop-panel\" id=\"dropServices\">\n          <li><a href=\"../services/index.html\">All services</a></li>\n          <li><a href=\"../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a></li><li><a href=\"../services/restorative-dentistry/index.html\">Restorative Dentistry</a></li><li><a href=\"../services/dental-implants/index.html\">Dental Implants</a></li><li><a href=\"../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a></li><li><a href=\"../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a></li>\n        </ul>\n      </div>\n      <a href=\"../contact/index.html\" aria-current=\"page\">Contact</a>\n    </nav>\n    <div class=\"mast-actions\">\n      {{#phone}}<a class=\"mast-phone\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}}\n      <a class=\"btn btn-primary\" href=\"{{#preOpening}}../index.html#waitlist{{/preOpening}}{{^preOpening}}../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n      <button class=\"burger\" id=\"burger\" type=\"button\" aria-expanded=\"false\" aria-controls=\"drawer\" aria-label=\"Open menu\">\n        <i></i><i></i><i></i>\n      </button>\n    </div>\n  </div>\n</header>\n\n<div class=\"drawer\" id=\"drawer\" hidden>\n  <nav aria-label=\"Mobile\">\n    <a class=\"dnav\" href=\"../about/index.html\">About</a>\n    <a class=\"dnav\" href=\"../meet-the-team/index.html\">Meet the Team</a>\n    <details class=\"dgroup\">\n      <summary>Services</summary>\n      <a href=\"../services/index.html\">All services</a>\n      <a href=\"../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a><a href=\"../services/restorative-dentistry/index.html\">Restorative Dentistry</a><a href=\"../services/dental-implants/index.html\">Dental Implants</a><a href=\"../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a><a href=\"../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a>\n    </details>\n    <details class=\"dgroup\">\n      <summary>Areas we serve</summary>\n      <a href=\"../dentist-warrnambool/index.html\">Warrnambool</a><a href=\"../dentist-dennington/index.html\">Dennington</a><a href=\"../dentist-allansford/index.html\">Allansford</a><a href=\"../dentist-koroit/index.html\">Koroit</a><a href=\"../dentist-port-fairy/index.html\">Port Fairy</a>\n    </details>\n    <a class=\"dnav\" href=\"../contact/index.html\">Contact</a>\n  </nav>\n  <a class=\"btn btn-primary\" href=\"{{#preOpening}}../index.html#waitlist{{/preOpening}}{{^preOpening}}../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n  {{#phone}}<p class=\"drawer-foot small\">Prefer to talk it through? <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a></p>{{/phone}}\n</div>\n<main id=\"main\">",
+ "sections": [
+  {
+   "key": "s1",
+   "kind": "hero",
+   "label": "Page header",
+   "tag": "section",
+   "attrs": {
+    "class": "page-hero"
+   },
+   "before": "\n",
+   "template": "\n  <div class=\"wrap\">\n    <nav class=\"crumbs\" aria-label=\"Breadcrumb\"><ol><li>{{f1}}</li><li aria-current=\"page\">{{f2}}</li></ol></nav>\n    <div class=\"ph-grid has-side\">\n      <div>\n        <p class=\"eyebrow\">{{f3}}</p>\n        <h1 class=\"ph-h1\">{{f4}}</h1>\n        <p class=\"lead\">{{f5}} {{#preOpening}}{{f6}}{{/preOpening}}{{^preOpening}}{{f7}}{{/preOpening}} {{f8}}</p>\n      </div>\n      <div class=\"ph-side rise\"><div class=\"photo\" style=\"border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line)\"><img src=\"{{f9}}\" srcset=\"{{f11}}\" sizes=\"(min-width: 900px) 770px, 159vw\" alt=\"{{f10}}\" width=\"2100\" height=\"749\" class=\"pano\" style=\"--pos: 39% 50%\" loading=\"eager\" decoding=\"async\" fetchpriority=\"high\"></div></div>\n    </div>\n  </div>\n",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../index.html\">Home</a>"
+    },
+    {
+     "id": "f2",
+     "label": "List item",
+     "type": "richtext",
+     "value": "Contact Us"
+    },
+    {
+     "id": "f3",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "Contact Us"
+    },
+    {
+     "id": "f4",
+     "label": "Main heading",
+     "type": "richtext",
+     "value": "Come and see <em>us</em>."
+    },
+    {
+     "id": "f5",
+     "label": "Words",
+     "type": "text",
+     "value": "We are in the middle of Warrnambool, and we would be glad to hear from you —"
+    },
+    {
+     "id": "f6",
+     "label": "Words",
+     "type": "text",
+     "value": "whether you are joining the waitlist, chasing a quote"
+    },
+    {
+     "id": "f7",
+     "label": "Words",
+     "type": "text",
+     "value": "whether you are booking a first appointment, chasing a quote"
+    },
+    {
+     "id": "f8",
+     "label": "Words",
+     "type": "text",
+     "value": "or just wanting to ask something before you commit."
+    },
+    {
+     "id": "f9",
+     "label": "Photo",
+     "type": "image",
+     "value": "../assets/images/lava-street-dental-reception-hallway.webp",
+     "original": "../assets/images/lava-street-dental-reception-hallway.webp",
+     "width": "2100",
+     "height": "749"
+    },
+    {
+     "id": "f10",
+     "label": "Photo description",
+     "type": "alt",
+     "value": "Curved tiled reception desk and corridor to the treatment rooms at Lava Street Dental, Warrnambool"
+    },
+    {
+     "id": "f11",
+     "label": "Photo sizes",
+     "type": "srcset",
+     "value": "../assets/images/lava-street-dental-reception-hallway-480.webp 480w, ../assets/images/lava-street-dental-reception-hallway-800.webp 800w, ../assets/images/lava-street-dental-reception-hallway-1200.webp 1200w, ../assets/images/lava-street-dental-reception-hallway-1600.webp 1600w, ../assets/images/lava-street-dental-reception-hallway-2000.webp 2000w, ../assets/images/lava-street-dental-reception-hallway.webp 2100w",
+     "of": "f9"
+    }
+   ]
+  },
+  {
+   "key": "s2",
+   "kind": "content",
+   "label": "Get in touch",
+   "tag": "section",
+   "attrs": {
+    "class": "band"
+   },
+   "before": "\n",
+   "template": "<div class=\"wrap flow\"><h3 class=\"d3 sec-h3\">{{f1}}</h3><ul class=\"kv kv-lines\">{{#phone}}<li>{{f2}}</li>{{/phone}}<li>{{f3}}</li><li>{{f4}}</li></ul>{{#hours}}<h3 class=\"d3 sec-h3\">{{f5}}</h3><p>{{{hoursHtml}}}</p>{{/hours}}<h3 class=\"d3 sec-h3\">{{f6}}</h3><p>{{f7}}</p><p>{{#preOpening}}{{f8}}{{/preOpening}}{{^preOpening}}{{f9}}{{/preOpening}} {{f10}}</p>{{^streetAddress}}<div class=\"map-embed map-pending\" role=\"note\">\n  <div>\n    <p class=\"eyebrow\">{{f11}}</p>\n    <p>{{f12}}</p>\n  </div>\n</div>{{/streetAddress}}{{#streetAddress}}<div class=\"map-embed\"><iframe title=\"Map showing Lava Street Dental at {{addressLine}}\" src=\"https://www.google.com/maps?q={{mapQuery}}&amp;output=embed\" width=\"600\" height=\"340\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe></div>{{/streetAddress}}<h3 class=\"d3 sec-h3\">{{#preOpening}}{{f13}}{{/preOpening}}{{^preOpening}}{{f14}}{{/preOpening}}</h3><p>{{#preOpening}}{{f15}} {{#phone}}{{f16}} <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a> {{f17}} {{/phone}}{{f18}}{{/preOpening}}{{^preOpening}}{{#phone}}{{f19}} <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a> {{f20}}{{/phone}}{{^phone}}{{f21}}{{/phone}} {{f22}}{{/preOpening}}</p><p>{{#preOpening}}{{f23}}{{#phone}} <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}} {{f24}}{{/preOpening}}{{^preOpening}}{{f25}}{{#phone}} <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}} {{f26}}{{/preOpening}}</p><h3 class=\"d3 sec-h3\">{{f27}}</h3><p>{{f28}}</p><h3 class=\"d3 sec-h3\">{{f29}}</h3><form class=\"hero-form enquiry\" id=\"enquiryForm\" action=\"/api/enquiry/\" method=\"post\" novalidate data-fallback=\" You can also email us at {{email}}{{#phone}} or call {{phone}}{{/phone}}.\">\n  <div class=\"row2\">\n    <div class=\"field\">\n      <label class=\"visually-hidden\" for=\"eqFirst\">First name</label>\n      <input id=\"eqFirst\" aria-describedby=\"eqFirstMsg\" name=\"firstName\" type=\"text\" autocomplete=\"given-name\" placeholder=\"First name\">\n      <p class=\"msg\" id=\"eqFirstMsg\"></p>\n    </div>\n    <div class=\"field\">\n      <label class=\"visually-hidden\" for=\"eqLast\">Last name</label>\n      <input id=\"eqLast\" aria-describedby=\"eqLastMsg\" name=\"lastName\" type=\"text\" autocomplete=\"family-name\" placeholder=\"Last name\">\n      <p class=\"msg\" id=\"eqLastMsg\"></p>\n    </div>\n  </div>\n  <div class=\"field\">\n    <label class=\"visually-hidden\" for=\"eqEmail\">Email address</label>\n    <input id=\"eqEmail\" aria-describedby=\"eqEmailMsg\" name=\"email\" type=\"email\" inputmode=\"email\" autocomplete=\"email\" placeholder=\"Email address\">\n    <p class=\"msg\" id=\"eqEmailMsg\"></p>\n  </div>\n  <div class=\"field\">\n    <label class=\"visually-hidden\" for=\"eqPhone\">Mobile number</label>\n    <input id=\"eqPhone\" aria-describedby=\"eqPhoneMsg\" name=\"phone\" type=\"tel\" inputmode=\"tel\" autocomplete=\"tel\" placeholder=\"Mobile number\">\n    <p class=\"msg\" id=\"eqPhoneMsg\"></p>\n  </div>\n  <div class=\"field\">\n    <label class=\"visually-hidden\" for=\"eqMsg\">How can we help?</label>\n    <textarea id=\"eqMsg\" aria-describedby=\"eqMsgMsg\" name=\"message\" placeholder=\"How can we help?\"></textarea>\n    <p class=\"msg\" id=\"eqMsgMsg\"></p>\n  </div>\n  <div class=\"field consent\">\n    <label class=\"check\" for=\"eqConsent\">\n      <input id=\"eqConsent\" name=\"consent\" type=\"checkbox\" required aria-describedby=\"eqConsentMsg\">\n      <span>{{f30}}</span>\n    </label>\n    <p class=\"msg\" id=\"eqConsentMsg\"></p>\n  </div>\n  <!-- Spam trap: hidden from people, filled in by bots. -->\n  <div class=\"hp\" aria-hidden=\"true\">\n    <label for=\"eqCompany\">Company</label>\n    <input id=\"eqCompany\" name=\"company\" type=\"text\" tabindex=\"-1\" autocomplete=\"off\">\n  </div>\n  <input type=\"hidden\" name=\"startedAt\" id=\"eqStartedAt\" value=\"\">\n  <button class=\"btn-submit\" type=\"submit\">{{f31}}</button>\n  <p class=\"form-status\" id=\"enquiryStatus\" role=\"alert\" aria-live=\"assertive\"></p>\n  <p class=\"wl-note\" id=\"enquiryNote\" role=\"status\" aria-live=\"polite\"></p>\n</form><p>{{f32}}</p><h3 class=\"d3 sec-h3\">{{f33}}</h3><p>{{f34}}</p><p>{{f35}}</p><h3 class=\"d3 sec-h3\">{{f36}}</h3><p>{{f37}}</p></div>",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Get in touch"
+    },
+    {
+     "id": "f2",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<strong>Phone</strong> — <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a>"
+    },
+    {
+     "id": "f3",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<strong>Email</strong> — <a class=\"textlink\" href=\"mailto:{{email}}\">{{email}}</a>"
+    },
+    {
+     "id": "f4",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<strong>Address</strong> — {{addressLine}}"
+    },
+    {
+     "id": "f5",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Opening hours"
+    },
+    {
+     "id": "f6",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Getting here and parking"
+    },
+    {
+     "id": "f7",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "We are in the Warrnambool CBD, a short walk from Coles, with paid street parking close by and free two-hour parking at the nearby shopping centre. Ground-floor access from the street."
+    },
+    {
+     "id": "f8",
+     "label": "Words",
+     "type": "text",
+     "value": "We look forward to welcoming patients from Port Fairy,"
+    },
+    {
+     "id": "f9",
+     "label": "Words",
+     "type": "text",
+     "value": "We regularly see patients travelling in from Port Fairy,"
+    },
+    {
+     "id": "f10",
+     "label": "Words",
+     "type": "text",
+     "value": "Koroit, Allansford, Dennington and the surrounding districts."
+    },
+    {
+     "id": "f11",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "Map"
+    },
+    {
+     "id": "f12",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "The practice address is not confirmed yet, so no map is shown here. Directions\n       and the exact location will be added once the street address is\n       final."
+    },
+    {
+     "id": "f13",
+     "label": "Words",
+     "type": "text",
+     "value": "Joining the waitlist"
+    },
+    {
+     "id": "f14",
+     "label": "Words",
+     "type": "text",
+     "value": "Booking an appointment"
+    },
+    {
+     "id": "f15",
+     "label": "Words",
+     "type": "text",
+     "value": "We open in December 2026. To join the waitlist, or to ask anything before then,"
+    },
+    {
+     "id": "f16",
+     "label": "Words",
+     "type": "text",
+     "value": "call"
+    },
+    {
+     "id": "f17",
+     "label": "Words",
+     "type": "text",
+     "value": "or"
+    },
+    {
+     "id": "f18",
+     "label": "Words",
+     "type": "text",
+     "value": "send us a message using the form below and we will get back to you."
+    },
+    {
+     "id": "f19",
+     "label": "Words",
+     "type": "text",
+     "value": "Call"
+    },
+    {
+     "id": "f20",
+     "label": "Words",
+     "type": "text",
+     "value": "during opening hours, or send"
+    },
+    {
+     "id": "f21",
+     "label": "Words",
+     "type": "text",
+     "value": "Send"
+    },
+    {
+     "id": "f22",
+     "label": "Words",
+     "type": "text",
+     "value": "us a message using the form below and we will get back to you on the next business day."
+    },
+    {
+     "id": "f23",
+     "label": "Words",
+     "type": "text",
+     "value": "From opening in December 2026, we will hold two same-day emergency appointments each day. Call"
+    },
+    {
+     "id": "f24",
+     "label": "Words",
+     "type": "text",
+     "value": "first thing in the morning to secure one. Emergency appointments cannot be booked online."
+    },
+    {
+     "id": "f25",
+     "label": "Words",
+     "type": "text",
+     "value": "If you are in pain, please phone rather than email. We hold two same-day emergency appointments each day. Call"
+    },
+    {
+     "id": "f26",
+     "label": "Words",
+     "type": "text",
+     "value": "first thing in the morning to secure one. Emergency appointments cannot be booked online."
+    },
+    {
+     "id": "f27",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "If you have a dental emergency outside our hours"
+    },
+    {
+     "id": "f28",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "We do not offer after-hours care. If you have a dental emergency outside our opening hours, please go to the Emergency Department at South West Healthcare. For a significant facial injury, swelling that is affecting your breathing or swallowing, or uncontrolled bleeding, call 000."
+    },
+    {
+     "id": "f29",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Enquiry form"
+    },
+    {
+     "id": "f30",
+     "label": "Words",
+     "type": "richtext",
+     "value": "I agree to Lava Street Dental contacting me about my enquiry, and I’ve read the <a href=\"../privacy-policy/index.html\">Privacy Policy</a>."
+    },
+    {
+     "id": "f31",
+     "label": "Button words",
+     "type": "text",
+     "value": "Send enquiry"
+    },
+    {
+     "id": "f32",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Please do not include detailed health information in this form. We will call you to discuss anything clinical."
+    },
+    {
+     "id": "f33",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Fees and health funds"
+    },
+    {
+     "id": "f34",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "We will explain what treatment involves and what it costs before it goes ahead, and provide a written plan for anything more involved than routine care."
+    },
+    {
+     "id": "f35",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Lava Street Dental accepts all private health funds and is not restricted to a preferred-provider network. Eligible patients can also access treatment through CDBS and DVA arrangements. Afterpay and humm payment plans are available to eligible patients. Provider terms, eligibility requirements and conditions apply. Health fund claims can be made on the spot with our Tyro terminal, and we accept card payments, Afterpay and humm."
+    },
+    {
+     "id": "f36",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Feedback"
+    },
+    {
+     "id": "f37",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "If something has not gone the way it should have, we would rather hear it from you directly. Speak to Jaimee Griffiths or email <a class=\"textlink\" href=\"mailto:{{email}}\">{{email}}</a> and we will look into it."
+    }
+   ]
+  }
+ ],
+ "order": [
+  "section:0",
+  "section:1"
+ ],
+ "mainEnd": "\n",
+ "afterMain": "</main>\n",
+ "footer": "<footer class=\"foot\">\n  <div class=\"wrap\">\n    <div class=\"foot-grid\">\n      {{[L1]}}<div>\n        <a href=\"../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../assets/images/logo-light.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n        <p class=\"blurb\">{{f1}}</p>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f2}}</h2>\n        <ul>\n          {{[L2]}}<li><a href=\"../about/index.html\">{{f3}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../meet-the-team/index.html\">{{f4}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../services/index.html\">{{f5}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../contact/index.html\">{{f6}}</a></li>{{[/L2]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f7}}</h2>\n        <ul>\n          {{[L3]}}<li><a href=\"../services/general-dentistry/check-ups-and-cleans/index.html\">{{f8}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../services/general-dentistry/dental-fillings/index.html\">{{f9}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../services/dental-implants/index.html\">{{f10}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../services/restorative-dentistry/root-canal-treatment/index.html\">{{f11}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../services/general-dentistry/childrens-dentistry/index.html\">{{f12}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../services/restorative-dentistry/tooth-extractions/index.html\">{{f13}}</a></li>{{[/L3]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f14}}</h2>\n        <ul>\n          {{[L4]}}<li><a href=\"../dentist-warrnambool/index.html\">{{f15}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../dentist-dennington/index.html\">{{f16}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../dentist-allansford/index.html\">{{f17}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../dentist-koroit/index.html\">{{f18}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../dentist-port-fairy/index.html\">{{f19}}</a></li>{{[/L4]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f20}}</h2>\n        <ul>\n          <li>{{addressStreet}}</li>\n          <li>{{localityLine}}</li>\n          {{#phone}}<li><a href=\"{{phoneHref}}\">{{phone}}</a></li>{{/phone}}\n          {{#email}}<li><a href=\"mailto:{{email}}\">{{email}}</a></li>{{/email}}\n          {{#hours}}<li>{{{hoursHtml}}}</li>{{/hours}}\n        </ul>\n      </div>{{[/L1]}}\n    </div>\n    <div class=\"foot-base\">\n      <p class=\"disclaimer\">{{f21}}</p>\n      <div class=\"foot-legal\">\n        <span>{{f22}}</span>\n        <span>\n          <a href=\"../privacy-policy/index.html\">{{f23}}</a>\n        </span>\n      </div>\n    </div>\n  </div>\n</footer>",
+ "tail": "\n<script src=\"../assets/js/site.js\" defer></script>\n</body>\n</html>"
+}

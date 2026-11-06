@@ -1,0 +1,72 @@
+[
+ {
+  "from": "/team/",
+  "to": "/meet-the-team/",
+  "type": "permanent"
+ },
+ {
+  "from": "/team/dr-meg-takiguchi/",
+  "to": "/meet-the-team/dr-meg-takiguchi/",
+  "type": "permanent"
+ },
+ {
+  "from": "/team/support-team/",
+  "to": "/meet-the-team/our-support-team/",
+  "type": "permanent"
+ },
+ {
+  "from": "/services/general-preventive-dentistry/",
+  "to": "/services/general-dentistry/",
+  "type": "permanent"
+ },
+ {
+  "from": "/services/general-preventive-dentistry/check-ups-cleans/",
+  "to": "/services/general-dentistry/check-ups-and-cleans/",
+  "type": "permanent"
+ },
+ {
+  "from": "/services/general-preventive-dentistry/dental-fillings/",
+  "to": "/services/general-dentistry/dental-fillings/",
+  "type": "permanent"
+ },
+ {
+  "from": "/services/general-preventive-dentistry/childrens-dentistry/",
+  "to": "/services/general-dentistry/childrens-dentistry/",
+  "type": "permanent"
+ },
+ {
+  "from": "/services/general-preventive-dentistry/gum-disease-treatment/",
+  "to": "/services/general-dentistry/gum-disease-treatment/",
+  "type": "permanent"
+ },
+ {
+  "from": "/services/general-preventive-dentistry/custom-mouthguards/",
+  "to": "/services/general-dentistry/custom-mouthguards/",
+  "type": "permanent"
+ },
+ {
+  "from": "/services/general-preventive-dentistry/night-guards-teeth-grinding/",
+  "to": "/services/general-dentistry/night-guards-teeth-grinding/",
+  "type": "permanent"
+ },
+ {
+  "from": "/services/general-preventive-dentistry/emergency-dental-care/",
+  "to": "/services/general-dentistry/emergency-dental-care/",
+  "type": "permanent"
+ },
+ {
+  "from": "/services/general-dentistry/check-ups-cleans/",
+  "to": "/services/general-dentistry/check-ups-and-cleans/",
+  "type": "permanent"
+ },
+ {
+  "from": "/services/dental-implants/bone-grafting-for-implants/",
+  "to": "/services/dental-implants/bone-grafting/",
+  "type": "permanent"
+ },
+ {
+  "from": "/services/laser-digital-dentistry/digital-scanning-cbct-imaging/",
+  "to": "/services/laser-digital-dentistry/digital-scanning-cbct/",
+  "type": "permanent"
+ }
+]

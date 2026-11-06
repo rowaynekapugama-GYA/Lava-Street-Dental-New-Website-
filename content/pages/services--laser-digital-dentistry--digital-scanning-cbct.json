@@ -1,0 +1,316 @@
+{
+ "slug": "services--laser-digital-dentistry--digital-scanning-cbct",
+ "name": "Digital Scanning and CBCT",
+ "path": "/services/laser-digital-dentistry/digital-scanning-cbct/",
+ "file": "services/laser-digital-dentistry/digital-scanning-cbct/index.html",
+ "group": "Laser and digital dentistry",
+ "meta": {
+  "title": "Digital Scanning & 3D CBCT Imaging in Warrnambool | Lava Street Dental",
+  "description": "Digital intra-oral scanning and 3D cone beam imaging in Warrnambool. Comfortable impressions and accurate planning at Lava Street Dental."
+ },
+ "head": "<!DOCTYPE html>\n<html lang=\"en-AU\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"icon\" href=\"../../../favicon.ico\" sizes=\"48x48\">\n<link rel=\"icon\" href=\"../../../assets/icons/favicon.svg\" type=\"image/svg+xml\">\n<link rel=\"apple-touch-icon\" href=\"../../../assets/icons/apple-touch-icon.png\">\n<link rel=\"manifest\" href=\"../../../site.webmanifest\">\n<meta name=\"theme-color\" content=\"#575A4D\">\n<title>{{seo:title}}</title>\n<meta name=\"description\" content=\"{{seo:description}}\">\n<meta property=\"og:title\" content=\"{{seo:ogTitle}}\">\n<meta property=\"og:description\" content=\"{{seo:ogDescription}}\">\n<!-- @seo: canonical, Open Graph, Twitter and JSON-LD tags are added here by scripts/build.mjs from site.config.mjs -->\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<!-- LAUNCH-TODO: brand typefaces. Neue Haas Grotesk and Acumin Condensed are\n     Adobe Fonts families. Create a web project at fonts.adobe.com containing\n     neue-haas-grotesk-text, neue-haas-grotesk-display and acumin-pro-condensed,\n     then uncomment the line below with the kit ID. The CSS already names those\n     families first, so nothing else changes. Until then the Google Fonts line\n     serves the closest open faces. -->\n<!-- <link rel=\"stylesheet\" href=\"https://use.typekit.net/XXXXXXX.css\"> -->\n<link href=\"https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Roboto+Condensed:wght@300;500&display=swap\" rel=\"stylesheet\">\n<link rel=\"stylesheet\" href=\"../../../assets/css/site.css\">\n\n{{gen:faqSchema}}\n</head>\n<body id=\"top\">\n<a class=\"skip-link\" href=\"#main\">Skip to main content</a>\n<header class=\"masthead\" id=\"masthead\">\n  <div class=\"wrap\">\n    <a href=\"../../../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../../../assets/images/logo.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n    <nav class=\"mast-nav\" aria-label=\"Primary\">\n      <a href=\"../../../about/index.html\">About</a>\n      <a href=\"../../../meet-the-team/index.html\">Meet the Team</a>\n      <div class=\"navdrop\" data-drop>\n        <button type=\"button\" aria-expanded=\"false\" aria-controls=\"dropServices\">Services<i aria-hidden=\"true\"></i></button>\n        <ul class=\"drop-panel\" id=\"dropServices\">\n          <li><a href=\"../../../services/index.html\">All services</a></li>\n          <li><a href=\"../../../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a></li><li><a href=\"../../../services/restorative-dentistry/index.html\">Restorative Dentistry</a></li><li><a href=\"../../../services/dental-implants/index.html\">Dental Implants</a></li><li><a href=\"../../../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a></li><li><a href=\"../../../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a></li>\n        </ul>\n      </div>\n      <a href=\"../../../contact/index.html\">Contact</a>\n    </nav>\n    <div class=\"mast-actions\">\n      {{#phone}}<a class=\"mast-phone\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}}\n      <a class=\"btn btn-primary\" href=\"{{#preOpening}}../../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n      <button class=\"burger\" id=\"burger\" type=\"button\" aria-expanded=\"false\" aria-controls=\"drawer\" aria-label=\"Open menu\">\n        <i></i><i></i><i></i>\n      </button>\n    </div>\n  </div>\n</header>\n\n<div class=\"drawer\" id=\"drawer\" hidden>\n  <nav aria-label=\"Mobile\">\n    <a class=\"dnav\" href=\"../../../about/index.html\">About</a>\n    <a class=\"dnav\" href=\"../../../meet-the-team/index.html\">Meet the Team</a>\n    <details class=\"dgroup\">\n      <summary>Services</summary>\n      <a href=\"../../../services/index.html\">All services</a>\n      <a href=\"../../../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a><a href=\"../../../services/restorative-dentistry/index.html\">Restorative Dentistry</a><a href=\"../../../services/dental-implants/index.html\">Dental Implants</a><a href=\"../../../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a><a href=\"../../../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a>\n    </details>\n    <details class=\"dgroup\">\n      <summary>Areas we serve</summary>\n      <a href=\"../../../dentist-warrnambool/index.html\">Warrnambool</a><a href=\"../../../dentist-dennington/index.html\">Dennington</a><a href=\"../../../dentist-allansford/index.html\">Allansford</a><a href=\"../../../dentist-koroit/index.html\">Koroit</a><a href=\"../../../dentist-port-fairy/index.html\">Port Fairy</a>\n    </details>\n    <a class=\"dnav\" href=\"../../../contact/index.html\">Contact</a>\n  </nav>\n  <a class=\"btn btn-primary\" href=\"{{#preOpening}}../../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n  {{#phone}}<p class=\"drawer-foot small\">Prefer to talk it through? <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a></p>{{/phone}}\n</div>\n<main id=\"main\">",
+ "faqSchema": {
+  "literal": "<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Does the scan hurt?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"No. The intra-oral scanner simply passes over the teeth. A CBCT scan involves sitting or standing still for under a minute and nothing touches you.\"}}, {\"@type\": \"Question\", \"name\": \"Is a digital scan more accurate than an impression?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"For most restorative work a well-taken digital scan gives an excellent result and removes the discomfort of putty. In a small number of situations a conventional impression remains the better option, and we will use one where that is the case.\"}}, {\"@type\": \"Question\", \"name\": \"Why do I need a 3D scan rather than a normal X-ray?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Because some questions cannot be answered in two dimensions — bone width, nerve position, root anatomy. Where a standard X-ray answers the question, we take one instead.\"}}, {\"@type\": \"Question\", \"name\": \"Is CBCT safe?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"It uses a higher dose than a standard dental X-ray, which is why it is taken only where clinically justified. The reason for any scan is explained to you first.\"}}, {\"@type\": \"Question\", \"name\": \"Can I have a scan if I am pregnant?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Tell us before any imaging. Non-urgent radiography is generally deferred during pregnancy, and we will discuss timing with you.\"}}, {\"@type\": \"Question\", \"name\": \"Can I get a copy of my scans?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. Records can be provided to you or sent to another practitioner on request.\"}}]}</script>",
+  "source": "<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q1\">\n      <span>Does the scan hurt?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q1\"><p>No. The intra-oral scanner simply passes over the teeth. A CBCT scan involves sitting or standing still for under a minute and nothing touches you.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q2\">\n      <span>Is a digital scan more accurate than an impression?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q2\"><p>For most restorative work a well-taken digital scan gives an excellent result and removes the discomfort of putty. In a small number of situations a conventional impression remains the better option, and we will use one where that is the case.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q3\">\n      <span>Why do I need a 3D scan rather than a normal X-ray?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q3\"><p>Because some questions cannot be answered in two dimensions — bone width, nerve position, root anatomy. Where a standard X-ray answers the question, we take one instead.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q4\">\n      <span>Is CBCT safe?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q4\"><p>It uses a higher dose than a standard dental X-ray, which is why it is taken only where clinically justified. The reason for any scan is explained to you first.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q5\">\n      <span>Can I have a scan if I am pregnant?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q5\"><p>Tell us before any imaging. Non-urgent radiography is generally deferred during pregnancy, and we will discuss timing with you.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q6\">\n      <span>Can I get a copy of my scans?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q6\"><p>Yes. Records can be provided to you or sent to another practitioner on request.</p></div>\n</div>"
+ },
+ "sections": [
+  {
+   "key": "s1",
+   "kind": "hero",
+   "label": "Page header",
+   "tag": "section",
+   "attrs": {
+    "class": "page-hero"
+   },
+   "before": "\n",
+   "template": "\n  <div class=\"wrap\">\n    <nav class=\"crumbs\" aria-label=\"Breadcrumb\"><ol><li>{{f1}}</li><li>{{f2}}</li><li>{{f3}}</li><li aria-current=\"page\">{{f4}}</li></ol></nav>\n    <div class=\"ph-grid has-side\">\n      <div>\n        <p class=\"eyebrow\">{{f5}}</p>\n        <h1 class=\"ph-h1\">{{f6}}</h1>\n        <p class=\"lead\">{{f7}}</p>\n      </div>\n      <div class=\"ph-side rise\"><figure class=\"photo-fig\"><img src=\"{{f8}}\" alt=\"{{f9}}\" width=\"1600\" height=\"900\" loading=\"eager\" decoding=\"async\" fetchpriority=\"high\"></figure></div>\n    </div>\n  </div>\n",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../../index.html\">Home</a>"
+    },
+    {
+     "id": "f2",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../../services/index.html\">Services</a>"
+    },
+    {
+     "id": "f3",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a>"
+    },
+    {
+     "id": "f4",
+     "label": "List item",
+     "type": "richtext",
+     "value": "Digital Scanning &amp; 3D CBCT Imaging"
+    },
+    {
+     "id": "f5",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "Laser &amp; Digital Dentistry"
+    },
+    {
+     "id": "f6",
+     "label": "Main heading",
+     "type": "richtext",
+     "value": "Better information, and no tray of <em>putty</em>."
+    },
+    {
+     "id": "f7",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "Two pieces of technology do most of the work behind the scenes here: an intra-oral scanner and a 3D cone beam scanner. Neither is treatment in itself. Both make treatment easier to plan, more accurate to deliver and, in the case of the scanner, considerably more comfortable to sit through."
+    },
+    {
+     "id": "f8",
+     "label": "Photo",
+     "type": "image",
+     "value": "../../../assets/images/cbct-planning-screen.webp",
+     "original": "../../../assets/images/cbct-planning-screen.webp",
+     "width": "1600",
+     "height": "900"
+    },
+    {
+     "id": "f9",
+     "label": "Photo description",
+     "type": "alt",
+     "value": "A clinician pointing at a screen showing a panoramic dental X-ray alongside cross-sectional 3D scan views of the jaw"
+    }
+   ]
+  },
+  {
+   "key": "s2",
+   "kind": "content",
+   "label": "Digital intra-oral scanning",
+   "tag": "section",
+   "attrs": {
+    "class": "band"
+   },
+   "before": "\n",
+   "template": "<div class=\"wrap flow\"><h3 class=\"d3 sec-h3\">{{f1}}</h3><p>{{f2}}</p><p>{{f3}}</p><p>{{f4}}</p><p>{{f5}}</p><p>{{f6}}</p><h3 class=\"d3 sec-h3\">{{f7}}</h3><p>{{f8}}</p><p>{{f9}}</p><p>{{f10}}</p><h3 class=\"d3 sec-h3\">{{f11}}</h3><p>{{f12}}</p><p>{{f13}}</p><h3 class=\"d3 sec-h3\">{{f14}}</h3><p>{{f15}}</p><h2 class=\"d2 sec-h\">{{f16}}</h2><div class=\"faq-list rise\">{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q1\">{{f17}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q1\"><p>{{f18}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q2\">{{f19}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q2\"><p>{{f20}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q3\">{{f21}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q3\"><p>{{f22}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q4\">{{f23}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q4\"><p>{{f24}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q5\">{{f25}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q5\"><p>{{f26}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q6\">{{f27}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q6\"><p>{{f28}}</p></div>\n</div>{{[/L1]}}</div></div>",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Digital intra-oral scanning"
+    },
+    {
+     "id": "f2",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "A small handheld wand is passed over your teeth and builds a three-dimensional model on screen in a few minutes. For most patients it replaces the tray of impression putty entirely."
+    },
+    {
+     "id": "f3",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "If you have a strong gag reflex, that alone is worth a great deal. There is no material setting in your mouth, no tray pressing against the palate, and the scan can be paused at any point."
+    },
+    {
+     "id": "f4",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Accuracy is the other benefit. A conventional impression can distort slightly as the material sets or as it travels to the laboratory. A digital scan is sent electronically without a physical model in between, which removes those variables from the fit of crowns, bridges, dentures, night guards and mouthguards."
+    },
+    {
+     "id": "f5",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "It also makes a useful record. Comparing a scan taken today with one from two years ago shows tooth wear, gum recession and drift far more clearly than memory or notes."
+    },
+    {
+     "id": "f6",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "We still use conventional impressions in the small number of situations where they give a better result, and we will tell you when that is the case."
+    },
+    {
+     "id": "f7",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "3D cone beam (CBCT) imaging"
+    },
+    {
+     "id": "f8",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Cone beam computed tomography produces a three-dimensional image of the jaw, teeth and surrounding structures."
+    },
+    {
+     "id": "f9",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "There are questions a flat X-ray cannot answer. How much bone width is available for an implant. Exactly where the nerve canal runs. Whether a root sits against the sinus. How many canals a molar has and what shape they are. Where an unerupted tooth is positioned relative to its neighbours."
+    },
+    {
+     "id": "f10",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Having that information before starting is what keeps procedures predictable. It is used here mainly for implant planning, for assessing complicated roots before root canal treatment, and for planning surgical extractions."
+    },
+    {
+     "id": "f11",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Radiation, and using it responsibly"
+    },
+    {
+     "id": "f12",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "CBCT delivers a higher radiation dose than a standard dental X-ray. That is the reason it is not used routinely."
+    },
+    {
+     "id": "f13",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "A scan is taken where there is a specific clinical question that a two-dimensional image cannot answer, and where the answer will change what we do. Dr Meg will explain what she is looking for and why before any scan is taken. Where a standard X-ray will do the job, that is what we take."
+    },
+    {
+     "id": "f14",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Seeing what we see"
+    },
+    {
+     "id": "f15",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Both scans display on screen, and you are welcome to look. Most people find a decision easier to make when they can see the problem rather than being told about it."
+    },
+    {
+     "id": "f16",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Frequently asked <em>questions</em>"
+    },
+    {
+     "id": "f17",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Does the scan hurt?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f18",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "No. The intra-oral scanner simply passes over the teeth. A CBCT scan involves sitting or standing still for under a minute and nothing touches you."
+    },
+    {
+     "id": "f19",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Is a digital scan more accurate than an impression?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f20",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "For most restorative work a well-taken digital scan gives an excellent result and removes the discomfort of putty. In a small number of situations a conventional impression remains the better option, and we will use one where that is the case."
+    },
+    {
+     "id": "f21",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Why do I need a 3D scan rather than a normal X-ray?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f22",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Because some questions cannot be answered in two dimensions — bone width, nerve position, root anatomy. Where a standard X-ray answers the question, we take one instead."
+    },
+    {
+     "id": "f23",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Is CBCT safe?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f24",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "It uses a higher dose than a standard dental X-ray, which is why it is taken only where clinically justified. The reason for any scan is explained to you first."
+    },
+    {
+     "id": "f25",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Can I have a scan if I am pregnant?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f26",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Tell us before any imaging. Non-urgent radiography is generally deferred during pregnancy, and we will discuss timing with you."
+    },
+    {
+     "id": "f27",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Can I get a copy of my scans?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f28",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Yes. Records can be provided to you or sent to another practitioner on request."
+    }
+   ],
+   "lists": [
+    {
+     "id": "L1",
+     "label": "Questions",
+     "item": "Question"
+    }
+   ]
+  },
+  {
+   "key": "s3",
+   "kind": "content",
+   "label": "Section 3",
+   "tag": "section",
+   "attrs": {
+    "class": "band cta-close"
+   },
+   "before": "\n",
+   "template": "\n  <div class=\"wrap\">\n    <div class=\"cta-panel rise\">\n      <div class=\"cta-row\"><a class=\"btn btn-primary\" href=\"{{#preOpening}}../../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../../contact/index.html{{/preOpening}}\">{{#preOpening}}{{f1}}{{/preOpening}}{{^preOpening}}{{f2}}{{/preOpening}}</a>{{#phone}}<a class=\"btn btn-outline\" href=\"{{phoneHref}}\">{{f3}}</a>{{/phone}}</div>\n    </div>\n  </div>\n",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Words",
+     "type": "text",
+     "value": "Join the waitlist"
+    },
+    {
+     "id": "f2",
+     "label": "Words",
+     "type": "text",
+     "value": "Book an appointment"
+    },
+    {
+     "id": "f3",
+     "label": "Button words",
+     "type": "text",
+     "value": "Call {{phone}}"
+    }
+   ]
+  }
+ ],
+ "order": [
+  "section:0",
+  "section:1",
+  "section:2"
+ ],
+ "mainEnd": "\n",
+ "afterMain": "</main>\n",
+ "footer": "<footer class=\"foot\">\n  <div class=\"wrap\">\n    <div class=\"foot-grid\">\n      {{[L1]}}<div>\n        <a href=\"../../../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../../../assets/images/logo-light.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n        <p class=\"blurb\">{{f1}}</p>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f2}}</h2>\n        <ul>\n          {{[L2]}}<li><a href=\"../../../about/index.html\">{{f3}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../../meet-the-team/index.html\">{{f4}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../../services/index.html\">{{f5}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../../contact/index.html\">{{f6}}</a></li>{{[/L2]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f7}}</h2>\n        <ul>\n          {{[L3]}}<li><a href=\"../../../services/general-dentistry/check-ups-and-cleans/index.html\">{{f8}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/general-dentistry/dental-fillings/index.html\">{{f9}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/dental-implants/index.html\">{{f10}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/restorative-dentistry/root-canal-treatment/index.html\">{{f11}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/general-dentistry/childrens-dentistry/index.html\">{{f12}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/restorative-dentistry/tooth-extractions/index.html\">{{f13}}</a></li>{{[/L3]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f14}}</h2>\n        <ul>\n          {{[L4]}}<li><a href=\"../../../dentist-warrnambool/index.html\">{{f15}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-dennington/index.html\">{{f16}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-allansford/index.html\">{{f17}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-koroit/index.html\">{{f18}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-port-fairy/index.html\">{{f19}}</a></li>{{[/L4]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f20}}</h2>\n        <ul>\n          <li>{{addressStreet}}</li>\n          <li>{{localityLine}}</li>\n          {{#phone}}<li><a href=\"{{phoneHref}}\">{{phone}}</a></li>{{/phone}}\n          {{#email}}<li><a href=\"mailto:{{email}}\">{{email}}</a></li>{{/email}}\n          {{#hours}}<li>{{{hoursHtml}}}</li>{{/hours}}\n        </ul>\n      </div>{{[/L1]}}\n    </div>\n    <div class=\"foot-base\">\n      <p class=\"disclaimer\">{{f21}}</p>\n      <div class=\"foot-legal\">\n        <span>{{f22}}</span>\n        <span>\n          <a href=\"../../../privacy-policy/index.html\">{{f23}}</a>\n        </span>\n      </div>\n    </div>\n  </div>\n</footer>",
+ "tail": "\n<script src=\"../../../assets/js/site.js\" defer></script>\n</body>\n</html>"
+}

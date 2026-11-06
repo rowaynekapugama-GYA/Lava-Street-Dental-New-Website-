@@ -1,0 +1,512 @@
+{
+ "slug": "privacy-policy",
+ "name": "Privacy Policy",
+ "path": "/privacy-policy/",
+ "file": "privacy-policy/index.html",
+ "group": "Legal and other pages",
+ "meta": {
+  "title": "Privacy Policy | Lava Street Dental Warrnambool",
+  "description": "How Lava Street Dental in Warrnambool collects, uses, stores and protects your personal and health information, and how to access, correct or ask about it."
+ },
+ "head": "<!DOCTYPE html>\n<html lang=\"en-AU\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"icon\" href=\"../favicon.ico\" sizes=\"48x48\">\n<link rel=\"icon\" href=\"../assets/icons/favicon.svg\" type=\"image/svg+xml\">\n<link rel=\"apple-touch-icon\" href=\"../assets/icons/apple-touch-icon.png\">\n<link rel=\"manifest\" href=\"../site.webmanifest\">\n<meta name=\"theme-color\" content=\"#575A4D\">\n<title>{{seo:title}}</title>\n<meta name=\"description\" content=\"{{seo:description}}\">\n<meta property=\"og:title\" content=\"{{seo:ogTitle}}\">\n<meta property=\"og:description\" content=\"{{seo:ogDescription}}\">\n<!-- @seo: canonical, Open Graph, Twitter and JSON-LD tags are added here by scripts/build.mjs from site.config.mjs -->\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<!-- LAUNCH-TODO: brand typefaces. Neue Haas Grotesk and Acumin Condensed are\n     Adobe Fonts families. Create a web project at fonts.adobe.com containing\n     neue-haas-grotesk-text, neue-haas-grotesk-display and acumin-pro-condensed,\n     then uncomment the line below with the kit ID. The CSS already names those\n     families first, so nothing else changes. Until then the Google Fonts line\n     serves the closest open faces. -->\n<!-- <link rel=\"stylesheet\" href=\"https://use.typekit.net/XXXXXXX.css\"> -->\n<link href=\"https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Roboto+Condensed:wght@300;500&display=swap\" rel=\"stylesheet\">\n<link rel=\"stylesheet\" href=\"../assets/css/site.css\">\n\n</head>\n<body id=\"top\">\n<a class=\"skip-link\" href=\"#main\">Skip to main content</a>\n<header class=\"masthead\" id=\"masthead\">\n  <div class=\"wrap\">\n    <a href=\"../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../assets/images/logo.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n    <nav class=\"mast-nav\" aria-label=\"Primary\">\n      <a href=\"../about/index.html\" aria-current=\"page\">About</a>\n      <a href=\"../meet-the-team/index.html\">Meet the Team</a>\n      <div class=\"navdrop\" data-drop>\n        <button type=\"button\" aria-expanded=\"false\" aria-controls=\"dropServices\">Services<i aria-hidden=\"true\"></i></button>\n        <ul class=\"drop-panel\" id=\"dropServices\">\n          <li><a href=\"../services/index.html\">All services</a></li>\n          <li><a href=\"../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a></li><li><a href=\"../services/restorative-dentistry/index.html\">Restorative Dentistry</a></li><li><a href=\"../services/dental-implants/index.html\">Dental Implants</a></li><li><a href=\"../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a></li><li><a href=\"../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a></li>\n        </ul>\n      </div>\n      <a href=\"../contact/index.html\">Contact</a>\n    </nav>\n    <div class=\"mast-actions\">\n      {{#phone}}<a class=\"mast-phone\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}}\n      <a class=\"btn btn-primary\" href=\"{{#preOpening}}../index.html#waitlist{{/preOpening}}{{^preOpening}}../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n      <button class=\"burger\" id=\"burger\" type=\"button\" aria-expanded=\"false\" aria-controls=\"drawer\" aria-label=\"Open menu\">\n        <i></i><i></i><i></i>\n      </button>\n    </div>\n  </div>\n</header>\n\n<div class=\"drawer\" id=\"drawer\" hidden>\n  <nav aria-label=\"Mobile\">\n    <a class=\"dnav\" href=\"../about/index.html\">About</a>\n    <a class=\"dnav\" href=\"../meet-the-team/index.html\">Meet the Team</a>\n    <details class=\"dgroup\">\n      <summary>Services</summary>\n      <a href=\"../services/index.html\">All services</a>\n      <a href=\"../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a><a href=\"../services/restorative-dentistry/index.html\">Restorative Dentistry</a><a href=\"../services/dental-implants/index.html\">Dental Implants</a><a href=\"../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a><a href=\"../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a>\n    </details>\n    <details class=\"dgroup\">\n      <summary>Areas we serve</summary>\n      <a href=\"../dentist-warrnambool/index.html\">Warrnambool</a><a href=\"../dentist-dennington/index.html\">Dennington</a><a href=\"../dentist-allansford/index.html\">Allansford</a><a href=\"../dentist-koroit/index.html\">Koroit</a><a href=\"../dentist-port-fairy/index.html\">Port Fairy</a>\n    </details>\n    <a class=\"dnav\" href=\"../contact/index.html\">Contact</a>\n  </nav>\n  <a class=\"btn btn-primary\" href=\"{{#preOpening}}../index.html#waitlist{{/preOpening}}{{^preOpening}}../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n  {{#phone}}<p class=\"drawer-foot small\">Prefer to talk it through? <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a></p>{{/phone}}\n</div>\n<main id=\"main\">",
+ "sections": [
+  {
+   "key": "s1",
+   "kind": "hero",
+   "label": "Page header",
+   "tag": "section",
+   "attrs": {
+    "class": "page-hero"
+   },
+   "before": "\n",
+   "template": "\n  <div class=\"wrap\">\n    <nav class=\"crumbs\" aria-label=\"Breadcrumb\"><ol><li>{{f1}}</li><li aria-current=\"page\">{{f2}}</li></ol></nav>\n    <div class=\"ph-grid\">\n      <div>\n        <p class=\"eyebrow\">{{f3}}</p>\n        <h1 class=\"ph-h1\">{{f4}}</h1>\n        <p class=\"lead\">{{f5}}</p>\n        <p class=\"note-fine\">{{f6}}</p>\n      </div>\n    </div>\n  </div>\n",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../index.html\">Home</a>"
+    },
+    {
+     "id": "f2",
+     "label": "List item",
+     "type": "richtext",
+     "value": "Privacy Policy"
+    },
+    {
+     "id": "f3",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "Privacy Policy"
+    },
+    {
+     "id": "f4",
+     "label": "Main heading",
+     "type": "richtext",
+     "value": "How we look after your <em>information</em>."
+    },
+    {
+     "id": "f5",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "This policy explains what personal information Lava Street Dental collects, why we collect it, how we keep it safe, and how you can see or correct it."
+    },
+    {
+     "id": "f6",
+     "label": "Fine print",
+     "type": "richtext",
+     "value": "Last updated: November 2026"
+    }
+   ]
+  },
+  {
+   "key": "s2",
+   "kind": "content",
+   "label": "Who we are",
+   "tag": "section",
+   "attrs": {
+    "class": "band"
+   },
+   "before": "\n",
+   "template": "<div class=\"wrap flow policy\">\n\n<h2 class=\"d3 sec-h3\" id=\"who-we-are\">{{f1}}</h2>\n<p>{{f2}}</p>\n<p>{{f3}}</p>\n<p><strong>{{f4}}</strong><br>{{f5}} <a class=\"textlink\" href=\"mailto:{{email}}\">{{email}}</a>{{#phone}}<br>{{f6}} <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}}<br>{{f7}}</p>\n\n<h2 class=\"d3 sec-h3\" id=\"what-we-collect\">{{f8}}</h2>\n<p>{{f9}}</p>\n<p>{{f10}}</p>\n<ul class=\"ticklist\">\n  {{[L1]}}<li>{{f11}}</li>{{[/L1]}}\n  {{[L1]}}<li>{{f12}}</li>{{[/L1]}}\n  {{[L1]}}<li>{{f13}}</li>{{[/L1]}}\n  {{[L1]}}<li>{{f14}}</li>{{[/L1]}}\n</ul>\n<p>{{f15}}</p>\n\n<h2 class=\"d3 sec-h3\" id=\"how-we-collect\">{{f16}}</h2>\n<p>{{f17}}</p>\n<p>{{f18}}</p>\n\n<h2 class=\"d3 sec-h3\" id=\"why-we-use-it\">{{f19}}</h2>\n<ul class=\"ticklist\">\n  {{[L2]}}<li>{{f20}}</li>{{[/L2]}}\n  {{[L2]}}<li>{{f21}}</li>{{[/L2]}}\n  {{[L2]}}<li>{{f22}}</li>{{[/L2]}}\n  {{[L2]}}<li>{{f23}}</li>{{[/L2]}}\n  {{[L2]}}<li>{{f24}}</li>{{[/L2]}}\n  {{[L2]}}<li>{{f25}}</li>{{[/L2]}}\n  {{[L2]}}<li>{{f26}}</li>{{[/L2]}}\n</ul>\n<p>{{f27}}</p>\n\n<h2 class=\"d3 sec-h3\" id=\"who-we-share-it-with\">{{f28}}</h2>\n<p>{{f29}}</p>\n<ul class=\"ticklist\">\n  {{[L3]}}<li>{{f30}}</li>{{[/L3]}}\n  {{[L3]}}<li>{{f31}}</li>{{[/L3]}}\n  {{[L3]}}<li>{{f32}}</li>{{[/L3]}}\n  {{[L3]}}<li>{{f33}}</li>{{[/L3]}}\n  {{[L3]}}<li>{{f34}}</li>{{[/L3]}}\n  {{[L3]}}<li>{{f35}}</li>{{[/L3]}}\n</ul>\n<p>{{f36}}</p>\n\n<h2 class=\"d3 sec-h3\" id=\"overseas\">{{f37}}</h2>\n<p>{{f38}}</p>\n<ul class=\"ticklist\">\n  {{[L4]}}<li>{{f39}}</li>{{[/L4]}}\n  {{[L4]}}<li>{{f40}}</li>{{[/L4]}}\n  {{[L4]}}<li>{{f41}}</li>{{[/L4]}}\n  {{[L4]}}<li>{{f42}}</li>{{[/L4]}}\n</ul>\n<p>{{f43}}</p>\n\n<h2 class=\"d3 sec-h3\" id=\"marketing\">{{f44}}</h2>\n<p>{{f45}}</p>\n\n<h2 class=\"d3 sec-h3\" id=\"cookies\">{{f46}}</h2>\n<p>{{f47}}</p>\n<ul class=\"ticklist\">\n  {{[L5]}}<li>{{f48}}</li>{{[/L5]}}\n  {{[L5]}}<li>{{f49}}</li>{{[/L5]}}\n  {{[L5]}}<li>{{f50}}</li>{{[/L5]}}\n</ul>\n<p>{{f51}}</p>\n\n<h2 class=\"d3 sec-h3\" id=\"security\">{{f52}}</h2>\n<p>{{f53}}</p>\n<p>{{f54}}</p>\n\n<h2 class=\"d3 sec-h3\" id=\"access\">{{f55}}</h2>\n<p>{{f56}}</p>\n\n<h2 class=\"d3 sec-h3\" id=\"data-breaches\">{{f57}}</h2>\n<p>{{f58}}</p>\n\n<h2 class=\"d3 sec-h3\" id=\"complaints\">{{f59}}</h2>\n<p>{{f60}}</p>\n<p>{{f61}}</p>\n<ul class=\"ticklist\">\n  {{[L6]}}<li>{{f62}}</li>{{[/L6]}}\n  {{[L6]}}<li>{{f63}}</li>{{[/L6]}}\n</ul>\n\n<h2 class=\"d3 sec-h3\" id=\"changes\">{{f64}}</h2>\n<p>{{f65}}</p>\n<p class=\"note-fine\">{{f66}}</p>\n</div>",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Who we are"
+    },
+    {
+     "id": "f2",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Lava Street Dental is a dental practice at {{addressLine}}, Australia, opening in December 2026. In this policy, “we”, “us” and “our” mean Lava Street Dental."
+    },
+    {
+     "id": "f3",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "As a health service provider, we must follow the <em>Privacy Act 1988</em> (Cth), including the Australian Privacy Principles, and the <em>Health Records Act 2001</em> (Vic), including the Health Privacy Principles. These laws apply to us whatever our size."
+    },
+    {
+     "id": "f4",
+     "label": "Words",
+     "type": "richtext",
+     "value": "Privacy contact"
+    },
+    {
+     "id": "f5",
+     "label": "Words",
+     "type": "text",
+     "value": "Email:"
+    },
+    {
+     "id": "f6",
+     "label": "Words",
+     "type": "text",
+     "value": "Phone:"
+    },
+    {
+     "id": "f7",
+     "label": "Words",
+     "type": "text",
+     "value": "Post: Privacy Officer, Lava Street Dental, {{addressLine}}"
+    },
+    {
+     "id": "f8",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "What we collect"
+    },
+    {
+     "id": "f9",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "<strong>Before we open.</strong> When you join our waitlist we collect your first and last name, email address, mobile number if you choose to give it, and your agreement to be contacted. When you use our contact form we also collect your message. Please do not include health information in website forms; we will talk to you about anything clinical directly."
+    },
+    {
+     "id": "f10",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "<strong>Once we open.</strong> To provide dental care we collect:"
+    },
+    {
+     "id": "f11",
+     "label": "List item",
+     "type": "richtext",
+     "value": "contact details, date of birth and an emergency contact"
+    },
+    {
+     "id": "f12",
+     "label": "List item",
+     "type": "richtext",
+     "value": "health information, such as your medical and dental history, medications, allergies, clinical notes, X-rays, scans, photographs and treatment plans"
+    },
+    {
+     "id": "f13",
+     "label": "List item",
+     "type": "richtext",
+     "value": "Medicare, Department of Veterans’ Affairs and private health fund details, and Child Dental Benefits Schedule eligibility"
+    },
+    {
+     "id": "f14",
+     "label": "List item",
+     "type": "richtext",
+     "value": "billing and payment information"
+    },
+    {
+     "id": "f15",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "You can make a general enquiry without giving your name. We cannot provide treatment anonymously, because we need to keep accurate clinical records."
+    },
+    {
+     "id": "f16",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "How we collect it"
+    },
+    {
+     "id": "f17",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Usually directly from you: through our website forms, in person, by phone or by email. Sometimes we receive information from other people, such as a referring dentist or doctor, a specialist, a parent or guardian, your health fund, Medicare or the Department of Veterans’ Affairs. We only do this with your consent or where the law allows it."
+    },
+    {
+     "id": "f18",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "When you visit our website, our hosting provider automatically records basic technical information, such as your IP address, browser type and the pages requested. See <a class=\"textlink\" href=\"#cookies\">Cookies and analytics</a> below."
+    },
+    {
+     "id": "f19",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Why we use it"
+    },
+    {
+     "id": "f20",
+     "label": "List item",
+     "type": "richtext",
+     "value": "to keep you updated about our opening if you have joined the waitlist"
+    },
+    {
+     "id": "f21",
+     "label": "List item",
+     "type": "richtext",
+     "value": "to reply to your enquiries"
+    },
+    {
+     "id": "f22",
+     "label": "List item",
+     "type": "richtext",
+     "value": "to assess, diagnose and treat you, and to keep accurate clinical records"
+    },
+    {
+     "id": "f23",
+     "label": "List item",
+     "type": "richtext",
+     "value": "to send appointment reminders and recall notices"
+    },
+    {
+     "id": "f24",
+     "label": "List item",
+     "type": "richtext",
+     "value": "to process payments and claims with Medicare, the Department of Veterans’ Affairs and health funds"
+    },
+    {
+     "id": "f25",
+     "label": "List item",
+     "type": "richtext",
+     "value": "to run the practice, including quality, safety and staff training"
+    },
+    {
+     "id": "f26",
+     "label": "List item",
+     "type": "richtext",
+     "value": "to meet our legal and professional obligations"
+    },
+    {
+     "id": "f27",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "We only use your information for another purpose if you agree, or if it is a related purpose you would reasonably expect, or if the law requires or allows it."
+    },
+    {
+     "id": "f28",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Who we share it with"
+    },
+    {
+     "id": "f29",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "We only share what is needed, with:"
+    },
+    {
+     "id": "f30",
+     "label": "List item",
+     "type": "richtext",
+     "value": "specialists, doctors and other health practitioners involved in your care, including when we refer you"
+    },
+    {
+     "id": "f31",
+     "label": "List item",
+     "type": "richtext",
+     "value": "dental laboratories that make crowns, bridges, dentures and appliances for you"
+    },
+    {
+     "id": "f32",
+     "label": "List item",
+     "type": "richtext",
+     "value": "Medicare, the Department of Veterans’ Affairs and your health fund, to process claims"
+    },
+    {
+     "id": "f33",
+     "label": "List item",
+     "type": "richtext",
+     "value": "payment providers you choose to use, such as our card terminal provider (Tyro), Afterpay and humm"
+    },
+    {
+     "id": "f34",
+     "label": "List item",
+     "type": "richtext",
+     "value": "service providers who help us run the practice, such as our practice management software provider, IT support, our website host (Vercel) and our email delivery service for website forms (SMTP2GO)"
+    },
+    {
+     "id": "f35",
+     "label": "List item",
+     "type": "richtext",
+     "value": "anyone we are required or authorised by law to tell, for example under a court order, to a regulator, or to lessen a serious threat to someone’s life, health or safety"
+    },
+    {
+     "id": "f36",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "We do not sell or rent your personal information."
+    },
+    {
+     "id": "f37",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Information stored outside Australia"
+    },
+    {
+     "id": "f38",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Some of our service providers store or process information outside Australia:"
+    },
+    {
+     "id": "f39",
+     "label": "List item",
+     "type": "richtext",
+     "value": "our website is hosted by Vercel, which uses servers in the United States and other countries"
+    },
+    {
+     "id": "f40",
+     "label": "List item",
+     "type": "richtext",
+     "value": "waitlist and contact form submissions are sent by email through our email delivery service, SMTP2GO, which may store or process data outside Australia"
+    },
+    {
+     "id": "f41",
+     "label": "List item",
+     "type": "richtext",
+     "value": "Google provides the fonts and maps on our website, from servers in the United States and elsewhere"
+    },
+    {
+     "id": "f42",
+     "label": "List item",
+     "type": "richtext",
+     "value": "patient records are managed by our practice at {{addressLine}}, using practice management software; ask our privacy contact if you would like to know where that software stores data"
+    },
+    {
+     "id": "f43",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "We take reasonable steps to make sure these providers protect your information in line with Australian privacy law."
+    },
+    {
+     "id": "f44",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Marketing and how to unsubscribe"
+    },
+    {
+     "id": "f45",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "We only send waitlist updates and practice news if you have agreed to receive them. Every email tells you how to stop them: reply with “remove”, or contact us using the details above. Appointment reminders and messages about your treatment are not marketing, and continue while you are a patient."
+    },
+    {
+     "id": "f46",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Cookies and analytics"
+    },
+    {
+     "id": "f47",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Our website does not set its own cookies and does not use analytics or advertising tracking. A few third-party services are involved:"
+    },
+    {
+     "id": "f48",
+     "label": "List item",
+     "type": "richtext",
+     "value": "our fonts load from Google Fonts, so Google receives your IP address; Google Fonts does not set cookies"
+    },
+    {
+     "id": "f49",
+     "label": "List item",
+     "type": "richtext",
+     "value": "the maps on our contact and location pages are embedded from Google Maps, and Google may set cookies when a map loads"
+    },
+    {
+     "id": "f50",
+     "label": "List item",
+     "type": "richtext",
+     "value": "our website host keeps short-term server logs (IP address, browser and pages visited) for security and to keep the site running"
+    },
+    {
+     "id": "f51",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "If we add analytics in the future, we will update this policy first."
+    },
+    {
+     "id": "f52",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Keeping it safe, and how long we keep it"
+    },
+    {
+     "id": "f53",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "We store information in secure systems with access limited to staff who need it, protected by passwords and other safeguards. Our team is bound by confidentiality. Paper records, if any, are kept secured. When information is no longer needed, we destroy it securely or de-identify it."
+    },
+    {
+     "id": "f54",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "We keep health records for as long as Victorian law requires: at least seven years after your last visit or, if you were under 18 at your last visit, at least until you turn 25. We keep waitlist details until we have contacted you about opening, or until you ask us to remove them."
+    },
+    {
+     "id": "f55",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Seeing and correcting your information"
+    },
+    {
+     "id": "f56",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "You can ask to see the information we hold about you, or ask us to correct it, by contacting our privacy contact. We will respond within 30 days. There is no fee to make a request. We may charge a reasonable fee for providing copies of records, as the law allows, and we will tell you the cost first. In limited circumstances the law allows us to refuse access; if so, we will explain why in writing."
+    },
+    {
+     "id": "f57",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Data breaches"
+    },
+    {
+     "id": "f58",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "If a data breach involving your information is likely to cause you serious harm, we will notify you and the Office of the Australian Information Commissioner, as required by the Notifiable Data Breaches scheme."
+    },
+    {
+     "id": "f59",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Questions and complaints"
+    },
+    {
+     "id": "f60",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "If you have a question or a concern about how we have handled your information, please contact our privacy contact first. We will acknowledge your complaint promptly and aim to resolve it within 30 days."
+    },
+    {
+     "id": "f61",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "If you are not satisfied with our response, you can contact:"
+    },
+    {
+     "id": "f62",
+     "label": "List item",
+     "type": "richtext",
+     "value": "the Office of the Australian Information Commissioner (OAIC): <a class=\"textlink\" href=\"https://www.oaic.gov.au\" rel=\"noopener\">www.oaic.gov.au</a>, 1300 363 992"
+    },
+    {
+     "id": "f63",
+     "label": "List item",
+     "type": "richtext",
+     "value": "the Victorian Health Complaints Commissioner: <a class=\"textlink\" href=\"https://hcc.vic.gov.au\" rel=\"noopener\">hcc.vic.gov.au</a>, 1300 582 113"
+    },
+    {
+     "id": "f64",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Changes to this policy"
+    },
+    {
+     "id": "f65",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "We may update this policy from time to time. The latest version is always on this page."
+    },
+    {
+     "id": "f66",
+     "label": "Fine print",
+     "type": "richtext",
+     "value": "Last updated: November 2026"
+    }
+   ],
+   "lists": [
+    {
+     "id": "L1",
+     "label": "Points",
+     "item": "Point"
+    },
+    {
+     "id": "L2",
+     "label": "Points",
+     "item": "Point"
+    },
+    {
+     "id": "L3",
+     "label": "Points",
+     "item": "Point"
+    },
+    {
+     "id": "L4",
+     "label": "Points",
+     "item": "Point"
+    },
+    {
+     "id": "L5",
+     "label": "Points",
+     "item": "Point"
+    },
+    {
+     "id": "L6",
+     "label": "Points",
+     "item": "Point"
+    }
+   ]
+  }
+ ],
+ "order": [
+  "section:0",
+  "section:1"
+ ],
+ "mainEnd": "\n",
+ "afterMain": "</main>\n",
+ "footer": "<footer class=\"foot\">\n  <div class=\"wrap\">\n    <div class=\"foot-grid\">\n      {{[L1]}}<div>\n        <a href=\"../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../assets/images/logo-light.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n        <p class=\"blurb\">{{f1}}</p>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f2}}</h2>\n        <ul>\n          {{[L2]}}<li><a href=\"../about/index.html\">{{f3}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../meet-the-team/index.html\">{{f4}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../services/index.html\">{{f5}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../contact/index.html\">{{f6}}</a></li>{{[/L2]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f7}}</h2>\n        <ul>\n          {{[L3]}}<li><a href=\"../services/general-dentistry/check-ups-and-cleans/index.html\">{{f8}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../services/general-dentistry/dental-fillings/index.html\">{{f9}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../services/dental-implants/index.html\">{{f10}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../services/restorative-dentistry/root-canal-treatment/index.html\">{{f11}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../services/general-dentistry/childrens-dentistry/index.html\">{{f12}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../services/restorative-dentistry/tooth-extractions/index.html\">{{f13}}</a></li>{{[/L3]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f14}}</h2>\n        <ul>\n          {{[L4]}}<li><a href=\"../dentist-warrnambool/index.html\">{{f15}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../dentist-dennington/index.html\">{{f16}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../dentist-allansford/index.html\">{{f17}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../dentist-koroit/index.html\">{{f18}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../dentist-port-fairy/index.html\">{{f19}}</a></li>{{[/L4]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f20}}</h2>\n        <ul>\n          <li>{{addressStreet}}</li>\n          <li>{{localityLine}}</li>\n          {{#phone}}<li><a href=\"{{phoneHref}}\">{{phone}}</a></li>{{/phone}}\n          {{#email}}<li><a href=\"mailto:{{email}}\">{{email}}</a></li>{{/email}}\n          {{#hours}}<li>{{{hoursHtml}}}</li>{{/hours}}\n        </ul>\n      </div>{{[/L1]}}\n    </div>\n    <div class=\"foot-base\">\n      <p class=\"disclaimer\">{{f21}}</p>\n      <div class=\"foot-legal\">\n        <span>{{f22}}</span>\n        <span>\n          <a href=\"../privacy-policy/index.html\">{{f23}}</a>\n        </span>\n      </div>\n    </div>\n  </div>\n</footer>",
+ "tail": "\n<script src=\"../assets/js/site.js\" defer></script>\n</body>\n</html>"
+}

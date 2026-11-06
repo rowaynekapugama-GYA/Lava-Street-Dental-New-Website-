@@ -1,7 +1,20 @@
 node_modules/
-dist/
+.next/
 .vercel/
-.env
-.env.*
+.env*
 !.env.example
 .DS_Store
+*.tsbuildinfo
+next-env.d.ts.bak
+
+# written by the build from content/ (scripts/render-site.ts); the site's assets stay committed
+/public/*.html
+/public/*/
+!/public/assets/
+/public/sitemap.xml
+/public/robots.txt
+/public/.generated.json
+# the v1.2.2 static build output, if it is ever run
+/dist/
+# uploads when there is no Vercel Blob (local testing only)
+/media/

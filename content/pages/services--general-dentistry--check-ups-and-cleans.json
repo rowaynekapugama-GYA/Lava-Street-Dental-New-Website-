@@ -1,0 +1,292 @@
+{
+ "slug": "services--general-dentistry--check-ups-and-cleans",
+ "name": "Check-ups and Cleans",
+ "path": "/services/general-dentistry/check-ups-and-cleans/",
+ "file": "services/general-dentistry/check-ups-and-cleans/index.html",
+ "group": "General dentistry",
+ "meta": {
+  "title": "Dental Check-up & Clean in Warrnambool | Lava Street Dental",
+  "description": "Gentle dental check-ups and air-polishing cleans in Warrnambool. Thorough examinations and comfortable cleans with Dr Meg Takiguchi at Lava Street Dental."
+ },
+ "head": "<!DOCTYPE html>\n<html lang=\"en-AU\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"icon\" href=\"../../../favicon.ico\" sizes=\"48x48\">\n<link rel=\"icon\" href=\"../../../assets/icons/favicon.svg\" type=\"image/svg+xml\">\n<link rel=\"apple-touch-icon\" href=\"../../../assets/icons/apple-touch-icon.png\">\n<link rel=\"manifest\" href=\"../../../site.webmanifest\">\n<meta name=\"theme-color\" content=\"#575A4D\">\n<title>{{seo:title}}</title>\n<meta name=\"description\" content=\"{{seo:description}}\">\n<meta property=\"og:title\" content=\"{{seo:ogTitle}}\">\n<meta property=\"og:description\" content=\"{{seo:ogDescription}}\">\n<!-- @seo: canonical, Open Graph, Twitter and JSON-LD tags are added here by scripts/build.mjs from site.config.mjs -->\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<!-- LAUNCH-TODO: brand typefaces. Neue Haas Grotesk and Acumin Condensed are\n     Adobe Fonts families. Create a web project at fonts.adobe.com containing\n     neue-haas-grotesk-text, neue-haas-grotesk-display and acumin-pro-condensed,\n     then uncomment the line below with the kit ID. The CSS already names those\n     families first, so nothing else changes. Until then the Google Fonts line\n     serves the closest open faces. -->\n<!-- <link rel=\"stylesheet\" href=\"https://use.typekit.net/XXXXXXX.css\"> -->\n<link href=\"https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Roboto+Condensed:wght@300;500&display=swap\" rel=\"stylesheet\">\n<link rel=\"stylesheet\" href=\"../../../assets/css/site.css\">\n\n{{gen:faqSchema}}\n</head>\n<body id=\"top\">\n<a class=\"skip-link\" href=\"#main\">Skip to main content</a>\n<header class=\"masthead\" id=\"masthead\">\n  <div class=\"wrap\">\n    <a href=\"../../../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../../../assets/images/logo.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n    <nav class=\"mast-nav\" aria-label=\"Primary\">\n      <a href=\"../../../about/index.html\">About</a>\n      <a href=\"../../../meet-the-team/index.html\">Meet the Team</a>\n      <div class=\"navdrop\" data-drop>\n        <button type=\"button\" aria-expanded=\"false\" aria-controls=\"dropServices\">Services<i aria-hidden=\"true\"></i></button>\n        <ul class=\"drop-panel\" id=\"dropServices\">\n          <li><a href=\"../../../services/index.html\">All services</a></li>\n          <li><a href=\"../../../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a></li><li><a href=\"../../../services/restorative-dentistry/index.html\">Restorative Dentistry</a></li><li><a href=\"../../../services/dental-implants/index.html\">Dental Implants</a></li><li><a href=\"../../../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a></li><li><a href=\"../../../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a></li>\n        </ul>\n      </div>\n      <a href=\"../../../contact/index.html\">Contact</a>\n    </nav>\n    <div class=\"mast-actions\">\n      {{#phone}}<a class=\"mast-phone\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}}\n      <a class=\"btn btn-primary\" href=\"{{#preOpening}}../../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n      <button class=\"burger\" id=\"burger\" type=\"button\" aria-expanded=\"false\" aria-controls=\"drawer\" aria-label=\"Open menu\">\n        <i></i><i></i><i></i>\n      </button>\n    </div>\n  </div>\n</header>\n\n<div class=\"drawer\" id=\"drawer\" hidden>\n  <nav aria-label=\"Mobile\">\n    <a class=\"dnav\" href=\"../../../about/index.html\">About</a>\n    <a class=\"dnav\" href=\"../../../meet-the-team/index.html\">Meet the Team</a>\n    <details class=\"dgroup\">\n      <summary>Services</summary>\n      <a href=\"../../../services/index.html\">All services</a>\n      <a href=\"../../../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a><a href=\"../../../services/restorative-dentistry/index.html\">Restorative Dentistry</a><a href=\"../../../services/dental-implants/index.html\">Dental Implants</a><a href=\"../../../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a><a href=\"../../../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a>\n    </details>\n    <details class=\"dgroup\">\n      <summary>Areas we serve</summary>\n      <a href=\"../../../dentist-warrnambool/index.html\">Warrnambool</a><a href=\"../../../dentist-dennington/index.html\">Dennington</a><a href=\"../../../dentist-allansford/index.html\">Allansford</a><a href=\"../../../dentist-koroit/index.html\">Koroit</a><a href=\"../../../dentist-port-fairy/index.html\">Port Fairy</a>\n    </details>\n    <a class=\"dnav\" href=\"../../../contact/index.html\">Contact</a>\n  </nav>\n  <a class=\"btn btn-primary\" href=\"{{#preOpening}}../../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n  {{#phone}}<p class=\"drawer-foot small\">Prefer to talk it through? <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a></p>{{/phone}}\n</div>\n<main id=\"main\">",
+ "faqSchema": {
+  "literal": "<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"What is included in a check-up and clean?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"A full examination of your teeth, existing fillings and crowns, gums, bite and soft tissues, followed by a clean, a polish and fluoride where appropriate. X-rays are taken where there is a clinical reason for them and are discussed with you first.\"}}, {\"@type\": \"Question\", \"name\": \"How long does the appointment take?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Usually around 45 minutes to an hour, depending on how long it has been and how much cleaning is needed. First appointments generally take longer because there is more history to go through.\"}}, {\"@type\": \"Question\", \"name\": \"Will the clean hurt?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Air polishing is more comfortable than traditional scaling for most people, particularly if you get cold sensitivity. That said, everyone is different, and inflamed gums can be tender regardless of the technique. Tell us if something is uncomfortable and we will adjust or stop.\"}}, {\"@type\": \"Question\", \"name\": \"Do I need X-rays at every visit?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"No. The interval depends on your decay risk and what can be seen clinically. Some patients need bitewings every two years, others more often. We will explain the reason before taking any.\"}}, {\"@type\": \"Question\", \"name\": \"It has been years since I saw a dentist. Will I be judged?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"No. Long gaps are common and there is usually a reasonable explanation behind them. We work out where things stand, deal with anything urgent first, and build a plan from there at a pace that works for you.\"}}, {\"@type\": \"Question\", \"name\": \"Are my gums checked as part of this?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. Gum measurements and bleeding points are recorded as part of the examination, because gum disease is the most common reason adults lose teeth and it is largely painless in its early stages.\"}}]}</script>",
+  "source": "<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q1\">\n      <span>What is included in a check-up and clean?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q1\"><p>A full examination of your teeth, existing fillings and crowns, gums, bite and soft tissues, followed by a clean, a polish and fluoride where appropriate. X-rays are taken where there is a clinical reason for them and are discussed with you first.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q2\">\n      <span>How long does the appointment take?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q2\"><p>Usually around 45 minutes to an hour, depending on how long it has been and how much cleaning is needed. First appointments generally take longer because there is more history to go through.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q3\">\n      <span>Will the clean hurt?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q3\"><p>Air polishing is more comfortable than traditional scaling for most people, particularly if you get cold sensitivity. That said, everyone is different, and inflamed gums can be tender regardless of the technique. Tell us if something is uncomfortable and we will adjust or stop.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q4\">\n      <span>Do I need X-rays at every visit?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q4\"><p>No. The interval depends on your decay risk and what can be seen clinically. Some patients need bitewings every two years, others more often. We will explain the reason before taking any.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q5\">\n      <span>It has been years since I saw a dentist. Will I be judged?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q5\"><p>No. Long gaps are common and there is usually a reasonable explanation behind them. We work out where things stand, deal with anything urgent first, and build a plan from there at a pace that works for you.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q6\">\n      <span>Are my gums checked as part of this?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q6\"><p>Yes. Gum measurements and bleeding points are recorded as part of the examination, because gum disease is the most common reason adults lose teeth and it is largely painless in its early stages.</p></div>\n</div>"
+ },
+ "sections": [
+  {
+   "key": "s1",
+   "kind": "hero",
+   "label": "Page header",
+   "tag": "section",
+   "attrs": {
+    "class": "page-hero"
+   },
+   "before": "\n",
+   "template": "\n  <div class=\"wrap\">\n    <nav class=\"crumbs\" aria-label=\"Breadcrumb\"><ol><li>{{f1}}</li><li>{{f2}}</li><li>{{f3}}</li><li aria-current=\"page\">{{f4}}</li></ol></nav>\n    <div class=\"ph-grid has-side\">\n      <div>\n        <p class=\"eyebrow\">{{f5}}</p>\n        <h1 class=\"ph-h1\">{{f6}}</h1>\n        <p class=\"lead\">{{f7}}</p><p class=\"lead\">{{f8}}</p><p class=\"lead\">{{f9}}</p>\n      </div>\n      <div class=\"ph-side rise\"><figure class=\"photo-fig\"><img src=\"{{f10}}\" alt=\"{{f11}}\" width=\"1600\" height=\"900\" loading=\"eager\" decoding=\"async\" fetchpriority=\"high\"></figure></div>\n    </div>\n  </div>\n",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../../index.html\">Home</a>"
+    },
+    {
+     "id": "f2",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../../services/index.html\">Services</a>"
+    },
+    {
+     "id": "f3",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a>"
+    },
+    {
+     "id": "f4",
+     "label": "List item",
+     "type": "richtext",
+     "value": "Dental Check-ups &amp; Cleans"
+    },
+    {
+     "id": "f5",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "General &amp; Preventive Dentistry"
+    },
+    {
+     "id": "f6",
+     "label": "Main heading",
+     "type": "richtext",
+     "value": "A proper look, and a clean that does not make you <em>flinch</em>."
+    },
+    {
+     "id": "f7",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "Most dental problems announce themselves late. Decay between two teeth, a crack running under a filling, early gum inflammation — none of it hurts until it has been going for a while. A regular check-up is the cheapest, least invasive way of catching those things while they are still small enough to be simple."
+    },
+    {
+     "id": "f8",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "At Lava Street Dental a routine visit is not a two-minute glance. Dr Meg examines each tooth and existing restoration, checks the health of your gums, looks at how your bite comes together and how your teeth are wearing, and checks the soft tissues of your mouth, tongue, cheeks and throat."
+    },
+    {
+     "id": "f9",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "If X-rays are needed to see between teeth or assess a root, she will explain why before taking them. If nothing needs doing, she will tell you that plainly rather than finding something."
+    },
+    {
+     "id": "f10",
+     "label": "Photo",
+     "type": "image",
+     "value": "../../../assets/images/checkup-examination.webp",
+     "original": "../../../assets/images/checkup-examination.webp",
+     "width": "1600",
+     "height": "900"
+    },
+    {
+     "id": "f11",
+     "label": "Photo description",
+     "type": "alt",
+     "value": "A dental clinician examining a patient’s teeth with a mirror and probe during a check-up"
+    }
+   ]
+  },
+  {
+   "key": "s2",
+   "kind": "content",
+   "label": "A clean that suits sensitive teeth",
+   "tag": "section",
+   "attrs": {
+    "class": "band"
+   },
+   "before": "\n",
+   "template": "<div class=\"wrap flow\"><h3 class=\"d3 sec-h3\">{{f1}}</h3><p>{{f2}}</p><p>{{f3}}</p><p>{{f4}}</p><h3 class=\"d3 sec-h3\">{{f5}}</h3><p>{{f6}}</p><p>{{f7}}</p><h3 class=\"d3 sec-h3\">{{f8}}</h3><p>{{f9}}</p><h2 class=\"d2 sec-h\">{{f10}}</h2><div class=\"faq-list rise\">{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q1\">{{f11}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q1\"><p>{{f12}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q2\">{{f13}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q2\"><p>{{f14}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q3\">{{f15}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q3\"><p>{{f16}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q4\">{{f17}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q4\"><p>{{f18}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q5\">{{f19}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q5\"><p>{{f20}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q6\">{{f21}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q6\"><p>{{f22}}</p></div>\n</div>{{[/L1]}}</div></div>",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "A clean that suits sensitive teeth"
+    },
+    {
+     "id": "f2",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "We clean using an air-polishing system that directs a stream of warm water, compressed air and a very fine powder across the tooth surface. It lifts plaque, biofilm and surface staining from tea, coffee, wine and smoking without the cold-water scrape that many people brace themselves for."
+    },
+    {
+     "id": "f3",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "For patients who dread cleans — particularly anyone with cold sensitivity or exposed root surfaces — it is usually a noticeably easier appointment. Where firmer deposits of tartar have built up under the gum, ultrasonic scaling is used as well, because air polishing alone will not shift hardened calculus."
+    },
+    {
+     "id": "f4",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "The clean finishes with a polish and, where appropriate, a fluoride application."
+    },
+    {
+     "id": "f5",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "What happens after the examination"
+    },
+    {
+     "id": "f6",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "You will get a straight account of where things stand. If treatment is needed, Dr Meg will explain what the problem is, what the options are, what each option costs and what is likely to happen if you leave it. Anything more involved than routine care is written up as a plan with staged costs before it begins."
+    },
+    {
+     "id": "f7",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Some findings are better watched than treated. A small area of early demineralisation, a shallow crack, a wearing filling that still seals — these can often be monitored and managed with prevention rather than a drill. We will say when that is the case."
+    },
+    {
+     "id": "f8",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "How often you should come in"
+    },
+    {
+     "id": "f9",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Six months suits a lot of adults, but it is a rule of thumb rather than a rule. Your gum health, decay history, diet, grinding habits, medications and dry mouth all affect the right interval. Some people are better served at three or four months, others can safely stretch to twelve. Dr Meg will recommend a recall interval based on your mouth."
+    },
+    {
+     "id": "f10",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Frequently asked <em>questions</em>"
+    },
+    {
+     "id": "f11",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>What is included in a check-up and clean?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f12",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "A full examination of your teeth, existing fillings and crowns, gums, bite and soft tissues, followed by a clean, a polish and fluoride where appropriate. X-rays are taken where there is a clinical reason for them and are discussed with you first."
+    },
+    {
+     "id": "f13",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>How long does the appointment take?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f14",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Usually around 45 minutes to an hour, depending on how long it has been and how much cleaning is needed. First appointments generally take longer because there is more history to go through."
+    },
+    {
+     "id": "f15",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Will the clean hurt?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f16",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Air polishing is more comfortable than traditional scaling for most people, particularly if you get cold sensitivity. That said, everyone is different, and inflamed gums can be tender regardless of the technique. Tell us if something is uncomfortable and we will adjust or stop."
+    },
+    {
+     "id": "f17",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Do I need X-rays at every visit?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f18",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "No. The interval depends on your decay risk and what can be seen clinically. Some patients need bitewings every two years, others more often. We will explain the reason before taking any."
+    },
+    {
+     "id": "f19",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>It has been years since I saw a dentist. Will I be judged?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f20",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "No. Long gaps are common and there is usually a reasonable explanation behind them. We work out where things stand, deal with anything urgent first, and build a plan from there at a pace that works for you."
+    },
+    {
+     "id": "f21",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Are my gums checked as part of this?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f22",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Yes. Gum measurements and bleeding points are recorded as part of the examination, because gum disease is the most common reason adults lose teeth and it is largely painless in its early stages."
+    }
+   ],
+   "lists": [
+    {
+     "id": "L1",
+     "label": "Questions",
+     "item": "Question"
+    }
+   ]
+  },
+  {
+   "key": "s3",
+   "kind": "content",
+   "label": "Section 3",
+   "tag": "section",
+   "attrs": {
+    "class": "band cta-close"
+   },
+   "before": "\n",
+   "template": "\n  <div class=\"wrap\">\n    <div class=\"cta-panel rise\">\n      <div class=\"cta-row\"><a class=\"btn btn-primary\" href=\"{{#preOpening}}../../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../../contact/index.html{{/preOpening}}\">{{#preOpening}}{{f1}}{{/preOpening}}{{^preOpening}}{{f2}}{{/preOpening}}</a>{{#phone}}<a class=\"btn btn-outline\" href=\"{{phoneHref}}\">{{f3}}</a>{{/phone}}</div>\n    </div>\n  </div>\n",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Words",
+     "type": "text",
+     "value": "Join the waitlist"
+    },
+    {
+     "id": "f2",
+     "label": "Words",
+     "type": "text",
+     "value": "Book a check-up"
+    },
+    {
+     "id": "f3",
+     "label": "Button words",
+     "type": "text",
+     "value": "Call {{phone}}"
+    }
+   ]
+  }
+ ],
+ "order": [
+  "section:0",
+  "section:1",
+  "section:2"
+ ],
+ "mainEnd": "\n",
+ "afterMain": "</main>\n",
+ "footer": "<footer class=\"foot\">\n  <div class=\"wrap\">\n    <div class=\"foot-grid\">\n      {{[L1]}}<div>\n        <a href=\"../../../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../../../assets/images/logo-light.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n        <p class=\"blurb\">{{f1}}</p>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f2}}</h2>\n        <ul>\n          {{[L2]}}<li><a href=\"../../../about/index.html\">{{f3}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../../meet-the-team/index.html\">{{f4}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../../services/index.html\">{{f5}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../../contact/index.html\">{{f6}}</a></li>{{[/L2]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f7}}</h2>\n        <ul>\n          {{[L3]}}<li><a href=\"../../../services/general-dentistry/check-ups-and-cleans/index.html\">{{f8}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/general-dentistry/dental-fillings/index.html\">{{f9}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/dental-implants/index.html\">{{f10}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/restorative-dentistry/root-canal-treatment/index.html\">{{f11}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/general-dentistry/childrens-dentistry/index.html\">{{f12}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/restorative-dentistry/tooth-extractions/index.html\">{{f13}}</a></li>{{[/L3]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f14}}</h2>\n        <ul>\n          {{[L4]}}<li><a href=\"../../../dentist-warrnambool/index.html\">{{f15}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-dennington/index.html\">{{f16}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-allansford/index.html\">{{f17}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-koroit/index.html\">{{f18}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-port-fairy/index.html\">{{f19}}</a></li>{{[/L4]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f20}}</h2>\n        <ul>\n          <li>{{addressStreet}}</li>\n          <li>{{localityLine}}</li>\n          {{#phone}}<li><a href=\"{{phoneHref}}\">{{phone}}</a></li>{{/phone}}\n          {{#email}}<li><a href=\"mailto:{{email}}\">{{email}}</a></li>{{/email}}\n          {{#hours}}<li>{{{hoursHtml}}}</li>{{/hours}}\n        </ul>\n      </div>{{[/L1]}}\n    </div>\n    <div class=\"foot-base\">\n      <p class=\"disclaimer\">{{f21}}</p>\n      <div class=\"foot-legal\">\n        <span>{{f22}}</span>\n        <span>\n          <a href=\"../../../privacy-policy/index.html\">{{f23}}</a>\n        </span>\n      </div>\n    </div>\n  </div>\n</footer>",
+ "tail": "\n<script src=\"../../../assets/js/site.js\" defer></script>\n</body>\n</html>"
+}

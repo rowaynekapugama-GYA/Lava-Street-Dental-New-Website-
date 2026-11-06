@@ -1,13 +1,51 @@
 {
   "name": "lava-street-dental",
-  "version": "1.2.2",
+  "version": "1.3.1",
   "private": true,
-  "description": "Lava Street Dental website. Static HTML built from src/ and site.config.mjs into dist/, plus Vercel functions in api/ that send the form emails through SMTP2GO.",
   "type": "module",
+  "description": "Lava Street Dental website: static pages built from content/ at deploy time, with the GYA website dashboard at /admin (Payload, Neon Postgres, Vercel Blob).",
   "scripts": {
-    "build": "node scripts/build.mjs"
+    "dev": "next dev",
+    "build": "node scripts/build.mjs",
+    "build:next": "next build",
+    "start": "next start",
+    "render": "tsx scripts/render-site.ts",
+    "pull": "tsx scripts/pull-content.ts",
+    "seed": "tsx scripts/seed.ts",
+    "typecheck": "tsc --noEmit",
+    "qa:parity": "tsx scripts/qa-parity.ts",
+    "qa:editor": "tsx scripts/qa-editor.ts",
+    "qa:banned": "node scripts/qa-banned.mjs",
+    "qa:secrets": "node scripts/qa-secrets.mjs",
+    "qa": "npm run typecheck && npm run qa:parity && npm run qa:editor && npm run qa:banned && npm run qa:secrets",
+    "payload": "payload",
+    "migrate": "payload migrate",
+    "migrate:create": "payload migrate:create"
+  },
+  "dependencies": {
+    "@dnd-kit/core": "6.3.1",
+    "@dnd-kit/sortable": "10.0.0",
+    "@dnd-kit/utilities": "3.2.2",
+    "@payloadcms/db-postgres": "3.92.1",
+    "@payloadcms/next": "3.92.1",
+    "@payloadcms/storage-vercel-blob": "3.92.1",
+    "@payloadcms/ui": "3.92.1",
+    "dotenv": "^18.0.4",
+    "graphql": "^16.8.1",
+    "next": "16.4.4",
+    "payload": "3.92.1",
+    "react": "19.2.9",
+    "react-dom": "19.2.9",
+    "sharp": "^0.35.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=20.9.0"
   }
 }

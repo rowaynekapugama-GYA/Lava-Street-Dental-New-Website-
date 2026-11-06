@@ -1,0 +1,899 @@
+{
+ "slug": "home",
+ "name": "Home",
+ "path": "/",
+ "file": "index.html",
+ "group": "Main pages",
+ "meta": {
+  "title": "Lava Street Dental | Gentle, Modern Dentist in Warrnambool",
+  "description": "Personalised dental care in Warrnambool with Dr Meg Takiguchi. General dentistry, dental implants, root canal treatment, children’s care and modern digital technology.",
+  "ogTitle": "Lava Street Dental — Modern dentistry, with a gentler touch.",
+  "ogDescription": "Personalised dental care in the heart of Warrnambool, combining thoughtful treatment, modern technology and a familiar dentist you can trust."
+ },
+ "head": "<!DOCTYPE html>\n<html lang=\"en-AU\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"icon\" href=\"favicon.ico\" sizes=\"48x48\">\n<link rel=\"icon\" href=\"assets/icons/favicon.svg\" type=\"image/svg+xml\">\n<link rel=\"apple-touch-icon\" href=\"assets/icons/apple-touch-icon.png\">\n<link rel=\"manifest\" href=\"site.webmanifest\">\n<meta name=\"theme-color\" content=\"#575A4D\">\n<title>{{seo:title}}</title>\n<meta name=\"description\" content=\"{{seo:description}}\">\n<meta property=\"og:title\" content=\"{{seo:ogTitle}}\">\n<meta property=\"og:description\" content=\"{{seo:ogDescription}}\">\n<!-- @seo: canonical, Open Graph, Twitter and JSON-LD tags are added here by scripts/build.mjs from site.config.mjs -->\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<!-- LAUNCH-TODO: brand typefaces. Neue Haas Grotesk and Acumin Condensed are\n     Adobe Fonts families. Create a web project at fonts.adobe.com containing\n     neue-haas-grotesk-text, neue-haas-grotesk-display and acumin-pro-condensed,\n     then uncomment the line below with the kit ID. The CSS already names those\n     families first, so nothing else changes. Until then the Google Fonts line\n     serves the closest open faces. -->\n<!-- <link rel=\"stylesheet\" href=\"https://use.typekit.net/XXXXXXX.css\"> -->\n<link href=\"https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Roboto+Condensed:wght@300;500&display=swap\" rel=\"stylesheet\">\n<link rel=\"stylesheet\" href=\"assets/css/site.css\">\n\n{{gen:faqSchema}}\n</head>\n\n<body class=\"no-js\" id=\"top\">\n<a class=\"skip-link\" href=\"#main\">Skip to main content</a>\n<header class=\"masthead\" id=\"masthead\">\n  <div class=\"wrap\">\n    <a href=\"index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"assets/images/logo.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n    <nav class=\"mast-nav\" aria-label=\"Primary\">\n      <a href=\"about/index.html\">About</a>\n      <a href=\"meet-the-team/index.html\">Meet the Team</a>\n      <div class=\"navdrop\" data-drop>\n        <button type=\"button\" aria-expanded=\"false\" aria-controls=\"dropServices\">Services<i aria-hidden=\"true\"></i></button>\n        <ul class=\"drop-panel\" id=\"dropServices\">\n          <li><a href=\"services/index.html\">All services</a></li>\n          <li><a href=\"services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a></li><li><a href=\"services/restorative-dentistry/index.html\">Restorative Dentistry</a></li><li><a href=\"services/dental-implants/index.html\">Dental Implants</a></li><li><a href=\"services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a></li><li><a href=\"services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a></li>\n        </ul>\n      </div>\n      <a href=\"contact/index.html\">Contact</a>\n    </nav>\n    <div class=\"mast-actions\">\n      {{#phone}}<a class=\"mast-phone\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}}\n      <a class=\"btn btn-primary\" href=\"{{#preOpening}}#waitlist{{/preOpening}}{{^preOpening}}contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n      <button class=\"burger\" id=\"burger\" type=\"button\" aria-expanded=\"false\" aria-controls=\"drawer\" aria-label=\"Open menu\">\n        <i></i><i></i><i></i>\n      </button>\n    </div>\n  </div>\n</header>\n\n<div class=\"drawer\" id=\"drawer\" hidden>\n  <nav aria-label=\"Mobile\">\n    <a class=\"dnav\" href=\"about/index.html\">About</a>\n    <a class=\"dnav\" href=\"meet-the-team/index.html\">Meet the Team</a>\n    <details class=\"dgroup\">\n      <summary>Services</summary>\n      <a href=\"services/index.html\">All services</a>\n      <a href=\"services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a><a href=\"services/restorative-dentistry/index.html\">Restorative Dentistry</a><a href=\"services/dental-implants/index.html\">Dental Implants</a><a href=\"services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a><a href=\"services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a>\n    </details>\n    <details class=\"dgroup\">\n      <summary>Areas we serve</summary>\n      <a href=\"dentist-warrnambool/index.html\">Warrnambool</a><a href=\"dentist-dennington/index.html\">Dennington</a><a href=\"dentist-allansford/index.html\">Allansford</a><a href=\"dentist-koroit/index.html\">Koroit</a><a href=\"dentist-port-fairy/index.html\">Port Fairy</a>\n    </details>\n    <a class=\"dnav\" href=\"contact/index.html\">Contact</a>\n  </nav>\n  <a class=\"btn btn-primary\" href=\"{{#preOpening}}#waitlist{{/preOpening}}{{^preOpening}}contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n  {{#phone}}<p class=\"drawer-foot small\">Prefer to talk it through? <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a></p>{{/phone}}\n</div>\n\n<main id=\"main\">",
+ "faqSchema": {
+  "literal": "<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Will my treatment hurt?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Every person and every procedure is different, so no dentist can promise treatment will be completely pain-free. Dr Meg uses gentle techniques, explains each step before it happens, and would much rather you spoke up than sat through something uncomfortable.\"}}, {\"@type\": \"Question\", \"name\": \"I am nervous about the dentist. Is that a problem?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Not at all — it is more common than most people think. Dr Meg has spent years looking after nervous patients and takes an unhurried approach: we listen first, explain what to expect, and move at a pace that feels manageable to you.\"}}, {\"@type\": \"Question\", \"name\": \"What will the practice offer?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"General and preventive care, fillings, crowns and bridges, children’s dentistry, selected extractions, partial dentures, mouthguards, night guards, dental implants, root canal treatment and selected diode laser procedures. Your dentist will assess whether a particular treatment is appropriate for you.\"}}, {\"@type\": \"Question\", \"name\": \"Do you provide dental implants?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes — assessment, placement and restoration for suitable single and multiple implant cases. All-on-4 treatment is not currently on the list. Whether implants are right for you can only be confirmed after a clinical assessment.\"}}, {\"@type\": \"Question\", \"name\": \"Will I see the same dentist each time?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"That is the whole idea. Continuity sits at the centre of how Lava Street Dental is being set up: Dr Meg wants to be the dentist you know, who remembers your history and your family.\"}}, {\"@type\": \"Question\", \"name\": \"Where did Dr Meg study?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"A Bachelor of Science in Biochemistry at the University of Victoria in Canada, a PhD in Medical Oncology at the University of Oxford, and her Doctor of Dental Medicine at the University of Western Australia.\"}}, {\"@type\": \"Question\", \"name\": \"Do you take private health insurance?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Lava Street Dental accepts all private health funds and is not restricted to a preferred-provider network. Eligible patients can also access treatment through CDBS and DVA arrangements. Afterpay and humm payment plans are available to eligible patients. Health fund claims can be made on the spot with our Tyro terminal, and we accept card payments. Provider terms, eligibility requirements and conditions apply. We will explain what is involved and what it costs before treatment goes ahead.\"}}]}</script>",
+  "source": "<div class=\"faq\">\n          <h3>\n            <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q1\">\n              <span>Will my treatment hurt?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n            </button>\n          </h3>\n          <div class=\"faq-a\" id=\"q1\"><p>Every person and every procedure is different, so no dentist can promise treatment will be completely pain-free. Dr Meg uses gentle techniques, explains each step before it happens, and would much rather you spoke up than sat through something uncomfortable.</p></div>\n        </div><div class=\"faq\">\n          <h3>\n            <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q2\">\n              <span>I am nervous about the dentist. Is that a problem?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n            </button>\n          </h3>\n          <div class=\"faq-a\" id=\"q2\"><p>Not at all — it is more common than most people think. Dr Meg has spent years looking after nervous patients and takes an unhurried approach: we listen first, explain what to expect, and move at a pace that feels manageable to you.</p></div>\n        </div><div class=\"faq\">\n          <h3>\n            <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q3\">\n              <span>What will the practice offer?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n            </button>\n          </h3>\n          <div class=\"faq-a\" id=\"q3\"><p>General and preventive care, fillings, crowns and bridges, children’s dentistry, selected extractions, partial dentures, mouthguards, night guards, dental implants, root canal treatment and selected diode laser procedures. Your dentist will assess whether a particular treatment is appropriate for you.</p></div>\n        </div><div class=\"faq\">\n          <h3>\n            <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q4\">\n              <span>Do you provide dental implants?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n            </button>\n          </h3>\n          <div class=\"faq-a\" id=\"q4\"><p>Yes — assessment, placement and restoration for suitable single and multiple implant cases. All-on-4 treatment is not currently on the list. Whether implants are right for you can only be confirmed after a clinical assessment.</p></div>\n        </div><div class=\"faq\">\n          <h3>\n            <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q5\">\n              <span>Will I see the same dentist each time?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n            </button>\n          </h3>\n          <div class=\"faq-a\" id=\"q5\"><p>That is the whole idea. Continuity sits at the centre of how Lava Street Dental is being set up: Dr Meg wants to be the dentist you know, who remembers your history and your family.</p></div>\n        </div><div class=\"faq\">\n          <h3>\n            <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q6\">\n              <span>Where did Dr Meg study?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n            </button>\n          </h3>\n          <div class=\"faq-a\" id=\"q6\"><p>A Bachelor of Science in Biochemistry at the University of Victoria in Canada, a PhD in Medical Oncology at the University of Oxford, and her Doctor of Dental Medicine at the University of Western Australia.</p></div>\n        </div><div class=\"faq\">\n          <h3>\n            <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q7\">\n              <span>Do you take private health insurance?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n            </button>\n          </h3>\n          <div class=\"faq-a\" id=\"q7\"><p>Lava Street Dental accepts all private health funds and is not restricted to a preferred-provider network. Eligible patients can also access treatment through CDBS and DVA arrangements. Afterpay and humm payment plans are available to eligible patients. Health fund claims can be made on the spot with our Tyro terminal, and we accept card payments. Provider terms, eligibility requirements and conditions apply. We will explain what is involved and what it costs before treatment goes ahead.</p></div>\n        </div>"
+ },
+ "sections": [
+  {
+   "key": "hero",
+   "kind": "hero",
+   "label": "Hero and waitlist form",
+   "tag": "section",
+   "attrs": {
+    "class": "hero",
+    "id": "hero"
+   },
+   "before": "\n\n  <!-- ======================= HERO ======================= -->\n  ",
+   "template": "\n    <!-- Client photography of the practice (Oct 2026). Background image, so the container is aria-hidden. -->\n    <div class=\"hero-bg\" aria-hidden=\"true\">\n      <img src=\"{{f1}}\" alt=\"{{f2}}\" width=\"2111\" height=\"745\" class=\"pano\" style=\"--pos: 48% 50%; --pos-m: 34% 50%\" loading=\"eager\" decoding=\"async\" fetchpriority=\"high\">\n    </div>\n\n    <div class=\"wrap hero-grid\">\n      <div class=\"hero-copy\">\n        <p class=\"rule-eyebrow anim a1\">{{#openingDate}}{{f3}}{{/openingDate}}{{^openingDate}}{{f4}}{{/openingDate}} {{f5}}</p>\n        <h1 class=\"anim a2\">{{f6}}</h1>\n        <!-- Mobile only: a real photo of the practice under the headline. Uses the same file as the\n             hero background, so phones download it once. Above the fold, so it is not lazy-loaded. -->\n        <figure class=\"hero-photo m-only anim a3\"><img src=\"{{f1}}\" alt=\"{{f2}}\" width=\"2111\" height=\"745\" class=\"pano\" style=\"--pos: 62% 50%\" loading=\"eager\" decoding=\"async\"></figure>\n        <p class=\"lead anim a3 m-hide\">{{f7}}</p>\n\n        <ul class=\"trust anim a4\">\n          {{[L1]}}<li>\n            <svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\n              <path d=\"M8 13.4C6.1 12 2.6 9.7 2.6 6.9A2.9 2.9 0 0 1 8 5.4a2.9 2.9 0 0 1 5.4 1.5c0 2.8-3.5 5.1-5.4 6.5Z\"/>\n            </svg>\n            <span>{{f8}}</span>\n          </li>{{[/L1]}}\n          {{[L1]}}<li>\n            <svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\n              <path d=\"M7 2.2 8.1 5 11 6.1 8.1 7.2 7 10 5.9 7.2 3 6.1 5.9 5Z\"/>\n              <path d=\"M11.9 9.6l.5 1.3 1.3.5-1.3.5-.5 1.3-.5-1.3-1.3-.5 1.3-.5Z\"/>\n            </svg>\n            <span>{{f9}}</span>\n          </li>{{[/L1]}}\n          {{[L1]}}<li>\n            <svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\n              <circle cx=\"8\" cy=\"8\" r=\"5.9\"/>\n              <path d=\"M5.5 8.2 7.2 9.9l3.4-3.6\"/>\n            </svg>\n            <span>{{f10}}</span>\n          </li>{{[/L1]}}\n        </ul>\n      </div>\n\n      <div class=\"capture anim a5\" id=\"waitlist\">\n        <div id=\"captureInner\">\n          <p class=\"badge\">{{f11}}</p>\n          <h2 class=\"capture-h\">{{f12}}</h2>\n          <p class=\"small\">{{f13}}</p>\n          <form class=\"hero-form\" id=\"heroForm\" action=\"/api/waitlist/\" method=\"post\" novalidate data-fallback=\" You can also email us at {{email}}{{#phone}} or call {{phone}}{{/phone}}.\">\n            <div class=\"row2\">\n              <div class=\"field\">\n                <label class=\"visually-hidden\" for=\"hFirst\">First name</label>\n                <input id=\"hFirst\" name=\"firstName\" type=\"text\" autocomplete=\"given-name\" placeholder=\"First name\" required aria-describedby=\"hFirstMsg\">\n                <p class=\"msg\" id=\"hFirstMsg\"></p>\n              </div>\n              <div class=\"field\">\n                <label class=\"visually-hidden\" for=\"hLast\">Last name</label>\n                <input id=\"hLast\" name=\"lastName\" type=\"text\" autocomplete=\"family-name\" placeholder=\"Last name\" required aria-describedby=\"hLastMsg\">\n                <p class=\"msg\" id=\"hLastMsg\"></p>\n              </div>\n            </div>\n\n            <div class=\"field\">\n              <label class=\"visually-hidden\" for=\"hEmail\">Email address</label>\n              <input id=\"hEmail\" name=\"email\" type=\"email\" inputmode=\"email\" autocomplete=\"email\" placeholder=\"Email address\" required aria-describedby=\"hEmailMsg\">\n              <p class=\"msg\" id=\"hEmailMsg\"></p>\n            </div>\n\n            <div class=\"field\">\n              <label class=\"visually-hidden\" for=\"hPhone\">Mobile number</label>\n              <input id=\"hPhone\" name=\"phone\" type=\"tel\" inputmode=\"tel\" autocomplete=\"tel\" placeholder=\"Mobile number\" aria-describedby=\"hPhoneMsg\">\n              <p class=\"msg\" id=\"hPhoneMsg\"></p>\n            </div>\n\n            <div class=\"field consent\">\n              <label class=\"check\" for=\"hConsent\">\n                <input id=\"hConsent\" name=\"consent\" type=\"checkbox\" required aria-describedby=\"hConsentMsg\">\n                <span>{{f14}}</span>\n              </label>\n              <p class=\"msg\" id=\"hConsentMsg\"></p>\n            </div>\n\n            <!-- Spam trap: hidden from people, filled in by bots. -->\n            <div class=\"hp\" aria-hidden=\"true\">\n              <label for=\"hCompany\">Company</label>\n              <input id=\"hCompany\" name=\"company\" type=\"text\" tabindex=\"-1\" autocomplete=\"off\">\n            </div>\n            <input type=\"hidden\" name=\"startedAt\" id=\"hStartedAt\" value=\"\">\n\n            <button class=\"btn-submit\" type=\"submit\">{{f15}}</button>\n            <p class=\"form-status\" id=\"heroStatus\" role=\"alert\" aria-live=\"assertive\"></p>\n            <p class=\"reassure\">{{f16}}</p>\n          </form>\n        </div>\n      </div>\n    </div>\n  ",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Photo",
+     "type": "image",
+     "value": "assets/images/lava-street-dental-reception-waiting-area.webp",
+     "original": "assets/images/lava-street-dental-reception-waiting-area.webp",
+     "width": "2111",
+     "height": "745"
+    },
+    {
+     "id": "f2",
+     "label": "Photo description",
+     "type": "alt",
+     "value": "Reception and waiting area at Lava Street Dental, Warrnambool"
+    },
+    {
+     "id": "f3",
+     "label": "Words",
+     "type": "text",
+     "value": "Opening {{openingDate}}"
+    },
+    {
+     "id": "f4",
+     "label": "Words",
+     "type": "text",
+     "value": "Opening soon"
+    },
+    {
+     "id": "f5",
+     "label": "Words",
+     "type": "text",
+     "value": "&middot; Warrnambool"
+    },
+    {
+     "id": "f6",
+     "label": "Main heading",
+     "type": "richtext",
+     "value": "Modern dentistry, with a gentler <em>touch</em>."
+    },
+    {
+     "id": "f7",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "A small practice in the middle of town, where you see the same dentist each visit and nobody rushes you through the door."
+    },
+    {
+     "id": "f8",
+     "label": "Words",
+     "type": "richtext",
+     "value": "Gentle care"
+    },
+    {
+     "id": "f9",
+     "label": "Words",
+     "type": "richtext",
+     "value": "Modern comfort"
+    },
+    {
+     "id": "f10",
+     "label": "Words",
+     "type": "richtext",
+     "value": "Family focused"
+    },
+    {
+     "id": "f11",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "Founding patients waitlist"
+    },
+    {
+     "id": "f12",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Be first through the <em>door</em>."
+    },
+    {
+     "id": "f13",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "<span class=\"m-hide\">Leave your details and you will hear from us before the books open publicly.</span><span class=\"m-only\">Be first to hear when the books open.</span>"
+    },
+    {
+     "id": "f14",
+     "label": "Words",
+     "type": "richtext",
+     "value": "I agree to Lava Street Dental contacting me about opening and appointments, and I’ve read the <a href=\"privacy-policy/index.html\">Privacy Policy</a>."
+    },
+    {
+     "id": "f15",
+     "label": "Button words",
+     "type": "text",
+     "value": "Reserve my place"
+    },
+    {
+     "id": "f16",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "No spam, just opening news and your invitation."
+    }
+   ],
+   "lists": [
+    {
+     "id": "L1",
+     "label": "Hero points",
+     "item": "Point"
+    }
+   ]
+  },
+  {
+   "key": "welcome",
+   "kind": "content",
+   "label": "Meet Dr Meg",
+   "tag": "section",
+   "attrs": {
+    "class": "band",
+    "id": "welcome"
+   },
+   "before": "\n\n  <!-- ======================= WELCOME / ABOUT ======================= -->\n  ",
+   "template": "\n    <div class=\"wrap welcome-grid\">\n      <figure class=\"welcome-media rise\">\n        <div class=\"frame r-tall\">\n          <img src=\"{{f1}}\"\n               alt=\"{{f2}}\"\n               width=\"856\" height=\"1070\" loading=\"lazy\">\n        </div>\n        <figcaption>{{f3}}</figcaption>\n      </figure>\n\n      <div class=\"welcome-copy rise\">\n        <p class=\"eyebrow\">{{f4}}</p>\n        <h2 class=\"d2\">{{f5}}</h2>\n        <p>{{f6}}</p>\n        <p>{{f7}}</p>\n\n        <figure class=\"m-photo m-only\"><img src=\"{{f8}}\" srcset=\"{{f10}}\" sizes=\"189vw\" alt=\"{{f9}}\" width=\"2112\" height=\"745\" class=\"pano\" style=\"--pos: 60% 50%\" loading=\"lazy\" decoding=\"async\"></figure>\n        <div class=\"meg\">\n          <h3 class=\"d3\">{{f11}}</h3>\n          <p class=\"m-hide\">{{f12}}</p>\n          <p class=\"m-hide\">{{f13}}</p>\n          <p>{{f14}}</p>\n          <ul class=\"chips\">\n            {{[L1]}}<li>{{f15}}</li>{{[/L1]}}\n            {{[L1]}}<li>{{f16}}</li>{{[/L1]}}\n            {{[L1]}}<li>{{f17}}</li>{{[/L1]}}\n            {{[L1]}}<li>{{f18}}</li>{{[/L1]}}\n            {{[L1]}}<li>{{f19}}</li>{{[/L1]}}\n          </ul>\n          <p class=\"fine\">{{f20}}</p>\n          <a class=\"textlink m-only\" href=\"{{f21}}\">{{f22}}</a>\n          <a class=\"textlink m-hide\" href=\"{{f23}}\">{{f24}}</a>\n        </div>\n      </div>\n    </div>\n  ",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Photo",
+     "type": "image",
+     "value": "assets/images/dr-meg.webp",
+     "original": "assets/images/dr-meg.webp",
+     "width": "856",
+     "height": "1070"
+    },
+    {
+     "id": "f2",
+     "label": "Photo description",
+     "type": "alt",
+     "value": "Dr Meg Takiguchi, principal dentist at Lava Street Dental."
+    },
+    {
+     "id": "f3",
+     "label": "Caption",
+     "type": "richtext",
+     "value": "Dr Meg Takiguchi<span>Principal dentist</span>"
+    },
+    {
+     "id": "f4",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "Welcome to Lava Street Dental"
+    },
+    {
+     "id": "f5",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "A country dentist, with a <em>modern</em> twist."
+    },
+    {
+     "id": "f6",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Lava Street Dental brings the warmth and familiarity of regional dental care together with modern clinical technology. The approach is personal and considered, and it is built around knowing the people we look after."
+    },
+    {
+     "id": "f7",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Whether you are in for a routine check-up or something more involved, Dr Meg takes the time to understand what is worrying you, talks through your options in plain language, and helps you feel comfortable at every stage."
+    },
+    {
+     "id": "f8",
+     "label": "Photo",
+     "type": "image",
+     "value": "assets/images/lava-street-dental-treatment-room.webp",
+     "original": "assets/images/lava-street-dental-treatment-room.webp",
+     "width": "2112",
+     "height": "745"
+    },
+    {
+     "id": "f9",
+     "label": "Photo description",
+     "type": "alt",
+     "value": "Treatment room with dental chair and sage cabinetry at Lava Street Dental, Warrnambool"
+    },
+    {
+     "id": "f10",
+     "label": "Photo sizes",
+     "type": "srcset",
+     "value": "assets/images/lava-street-dental-treatment-room-480.webp 480w, assets/images/lava-street-dental-treatment-room-800.webp 800w, assets/images/lava-street-dental-treatment-room-1200.webp 1200w, assets/images/lava-street-dental-treatment-room-1600.webp 1600w, assets/images/lava-street-dental-treatment-room-2000.webp 2000w, assets/images/lava-street-dental-treatment-room.webp 2112w",
+     "of": "f8"
+    },
+    {
+     "id": "f11",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Meet <em>Dr Meg</em>"
+    },
+    {
+     "id": "f12",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Dr Meg Takiguchi grew up on the outskirts of Tokyo and has spent the last ten years in dentistry, most of it in regional Western Australia. She graduated with a Doctor of Dental Medicine from the University of Western Australia in 2016, after a Bachelor of Science in Biochemistry in Canada and a PhD in Medical Oncology at the University of Oxford."
+    },
+    {
+     "id": "f13",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Working in towns with limited access to specialists shaped how she practises. She is comfortable across a broad range of dentistry — implants, root canal treatment, difficult extractions, crowns, bridges and dentures — and she is known for a gentle hand and a very light touch with injections."
+    },
+    {
+     "id": "f14",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Her hope for Lava Street Dental is simple: to become the dentist you keep coming back to, year after year."
+    },
+    {
+     "id": "f15",
+     "label": "List item",
+     "type": "richtext",
+     "value": "DMD, UWA"
+    },
+    {
+     "id": "f16",
+     "label": "List item",
+     "type": "richtext",
+     "value": "PhD, Oxford"
+    },
+    {
+     "id": "f17",
+     "label": "List item",
+     "type": "richtext",
+     "value": "10 years in dentistry"
+    },
+    {
+     "id": "f18",
+     "label": "List item",
+     "type": "richtext",
+     "value": "Regional experience"
+    },
+    {
+     "id": "f19",
+     "label": "List item",
+     "type": "richtext",
+     "value": "ADA Victoria member"
+    },
+    {
+     "id": "f20",
+     "label": "Fine print",
+     "type": "richtext",
+     "value": "Dr Meg is a general dentist. Her PhD in Medical Oncology is a research qualification and is not a dental specialist registration."
+    },
+    {
+     "id": "f21",
+     "label": "Link address",
+     "type": "href",
+     "value": "meet-the-team/dr-meg-takiguchi/index.html"
+    },
+    {
+     "id": "f22",
+     "label": "Link words",
+     "type": "text",
+     "value": "Read Dr Meg’s story"
+    },
+    {
+     "id": "f23",
+     "label": "Link address",
+     "type": "href",
+     "value": "#waitlist"
+    },
+    {
+     "id": "f24",
+     "label": "Link words",
+     "type": "text",
+     "value": "Join the waitlist to meet her"
+    }
+   ],
+   "lists": [
+    {
+     "id": "L1",
+     "label": "Credential tags",
+     "item": "Tag"
+    }
+   ]
+  },
+  {
+   "key": "care",
+   "kind": "content",
+   "label": "Our care",
+   "tag": "section",
+   "attrs": {
+    "class": "band services",
+    "id": "care"
+   },
+   "before": "\n\n  <!-- ======================= SERVICES ======================= -->\n  ",
+   "template": "\n    <div class=\"wrap\">\n      <div class=\"head split rise\">\n        <p class=\"eyebrow\">{{f1}}</p>\n        <h2 class=\"d2\">{{f2}}</h2>\n        <p class=\"lead\">{{f3}}</p>\n      </div>\n\n      <div class=\"cards rise\">\n        {{[L1]}}<article class=\"card\">\n          <span class=\"num\">{{f4}}</span>\n          <h3>{{f5}}</h3>\n          <p>{{f6}}</p>\n        </article>{{[/L1]}}\n        {{[L1]}}<article class=\"card\">\n          <span class=\"num\">{{f7}}</span>\n          <h3>{{f8}}</h3>\n          <p>{{f9}}</p>\n        </article>{{[/L1]}}\n        {{[L1]}}<article class=\"card\">\n          <span class=\"num\">{{f10}}</span>\n          <h3>{{f11}}</h3>\n          <p>{{f12}}</p>\n        </article>{{[/L1]}}\n        {{[L1]}}<article class=\"card\">\n          <span class=\"num\">{{f13}}</span>\n          <h3>{{f14}}</h3>\n          <p>{{f15}}</p>\n        </article>{{[/L1]}}\n        {{[L1]}}<article class=\"card\">\n          <span class=\"num\">{{f16}}</span>\n          <h3>{{f17}}</h3>\n          <p>{{f18}}</p>\n        </article>{{[/L1]}}\n        {{[L1]}}<article class=\"card\">\n          <span class=\"num\">{{f19}}</span>\n          <h3>{{f20}}</h3>\n          <p>{{f21}}</p>\n        </article>{{[/L1]}}\n      </div>\n\n      <p class=\"also small rise\">{{f22}}</p>\n    </div>\n  ",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "What to expect"
+    },
+    {
+     "id": "f2",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Considered care, <em>closer</em> to home."
+    },
+    {
+     "id": "f3",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "From routine visits to more involved treatment, for families across Warrnambool, Port Fairy and the districts in between."
+    },
+    {
+     "id": "f4",
+     "label": "Words",
+     "type": "richtext",
+     "value": "01"
+    },
+    {
+     "id": "f5",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Check-ups &amp; gentle cleans"
+    },
+    {
+     "id": "f6",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "A proper look at how things are tracking, then a clean using warm water, air and a fine powder — far kinder than the old scrape."
+    },
+    {
+     "id": "f7",
+     "label": "Words",
+     "type": "richtext",
+     "value": "02"
+    },
+    {
+     "id": "f8",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Fillings, crowns &amp; bridges"
+    },
+    {
+     "id": "f9",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Careful restorative work, with laboratory-made crowns and bridges planned to bring back comfort, function and the look of your smile."
+    },
+    {
+     "id": "f10",
+     "label": "Words",
+     "type": "richtext",
+     "value": "03"
+    },
+    {
+     "id": "f11",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Dental implants"
+    },
+    {
+     "id": "f12",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Assessment, placement and restoration of single or multiple implants, using implant systems chosen for the long haul."
+    },
+    {
+     "id": "f13",
+     "label": "Words",
+     "type": "richtext",
+     "value": "04"
+    },
+    {
+     "id": "f14",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Root canal treatment"
+    },
+    {
+     "id": "f15",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Treatment aimed at keeping a tooth you would rather not lose, with referral to an endodontist when a case calls for specialist care."
+    },
+    {
+     "id": "f16",
+     "label": "Words",
+     "type": "richtext",
+     "value": "05"
+    },
+    {
+     "id": "f17",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Children’s dentistry"
+    },
+    {
+     "id": "f18",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Calm, age-appropriate visits that help children build good habits early and feel at home in the chair."
+    },
+    {
+     "id": "f19",
+     "label": "Words",
+     "type": "richtext",
+     "value": "06"
+    },
+    {
+     "id": "f20",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Extractions &amp; surgical care"
+    },
+    {
+     "id": "f21",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Planned extractions, including more involved surgical cases, where that is the right call clinically."
+    },
+    {
+     "id": "f22",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "<strong>Also available:</strong> diode laser treatment for selected gum procedures, plus custom mouthguards and night guards. Suitability for implants, root canal treatment, laser procedures and extractions can only be confirmed after a clinical assessment with your dentist."
+    }
+   ],
+   "lists": [
+    {
+     "id": "L1",
+     "label": "Care cards",
+     "item": "Card"
+    }
+   ]
+  },
+  {
+   "key": "opening",
+   "kind": "content",
+   "label": "Opening timeline",
+   "tag": "section",
+   "attrs": {
+    "class": "band timeline",
+    "id": "opening"
+   },
+   "before": "\n\n  <!-- ======================= OPENING TIMELINE ======================= -->\n  ",
+   "template": "\n    <div class=\"wrap\">\n      <div class=\"head split rise\">\n        <p class=\"eyebrow\">{{f1}}</p>\n        <h2 class=\"d2\">{{f2}}</h2>\n        <p class=\"lead\">{{f3}}</p>\n      </div>\n\n      <figure class=\"m-photo m-only rise\"><img src=\"{{f4}}\" srcset=\"{{f6}}\" sizes=\"189vw\" alt=\"{{f5}}\" width=\"2100\" height=\"749\" class=\"pano\" style=\"--pos: 36% 50%\" loading=\"lazy\" decoding=\"async\"></figure>\n\n      <ol class=\"steps rise\">\n        {{[L1]}}<li>\n          <span class=\"when\">{{f7}}</span>\n          <h3>{{f8}}</h3>\n          <p>{{f9}}</p>\n        </li>{{[/L1]}}\n        {{[L1]}}<li>\n          <span class=\"when\">{{f10}}</span>\n          <h3>{{f11}}</h3>\n          <p>{{f12}}</p>\n        </li>{{[/L1]}}\n        {{[L1]}}<li>\n          <span class=\"when\">{{f13}}</span>\n          <h3>{{#openingDate}}{{openingDate}}{{/openingDate}}{{^openingDate}}{{f14}}{{/openingDate}}</h3>\n          <p>{{f15}} {{#streetAddress}}{{f16}}{{/streetAddress}}{{^streetAddress}}{{f17}}{{/streetAddress}}{{f18}}</p>\n        </li>{{[/L1]}}\n      </ol>\n    </div>\n  ",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "The countdown is on"
+    },
+    {
+     "id": "f2",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Opening soon in <em>Warrnambool</em>."
+    },
+    {
+     "id": "f3",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "We are fitting out a space in the middle of town, close to Coles, with parking a short walk away."
+    },
+    {
+     "id": "f4",
+     "label": "Photo",
+     "type": "image",
+     "value": "assets/images/lava-street-dental-reception-hallway.webp",
+     "original": "assets/images/lava-street-dental-reception-hallway.webp",
+     "width": "2100",
+     "height": "749"
+    },
+    {
+     "id": "f5",
+     "label": "Photo description",
+     "type": "alt",
+     "value": "Curved tiled reception desk and corridor to the treatment rooms at Lava Street Dental, Warrnambool"
+    },
+    {
+     "id": "f6",
+     "label": "Photo sizes",
+     "type": "srcset",
+     "value": "assets/images/lava-street-dental-reception-hallway-480.webp 480w, assets/images/lava-street-dental-reception-hallway-800.webp 800w, assets/images/lava-street-dental-reception-hallway-1200.webp 1200w, assets/images/lava-street-dental-reception-hallway-1600.webp 1600w, assets/images/lava-street-dental-reception-hallway-2000.webp 2000w, assets/images/lava-street-dental-reception-hallway.webp 2100w",
+     "of": "f4"
+    },
+    {
+     "id": "f7",
+     "label": "Words",
+     "type": "richtext",
+     "value": "Now"
+    },
+    {
+     "id": "f8",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Join the waitlist"
+    },
+    {
+     "id": "f9",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Leave your email and you will be among the first to hear when the books open. No obligation, and nothing else in your inbox."
+    },
+    {
+     "id": "f10",
+     "label": "Words",
+     "type": "richtext",
+     "value": "Before opening"
+    },
+    {
+     "id": "f11",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Choose your time"
+    },
+    {
+     "id": "f12",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Waitlist patients get first pick of appointments, including the after-school and early-morning slots that go quickly."
+    },
+    {
+     "id": "f13",
+     "label": "Words",
+     "type": "richtext",
+     "value": "Opening day"
+    },
+    {
+     "id": "f14",
+     "label": "Words",
+     "type": "text",
+     "value": "Opening soon"
+    },
+    {
+     "id": "f15",
+     "label": "Words",
+     "type": "text",
+     "value": "Doors open"
+    },
+    {
+     "id": "f16",
+     "label": "Words",
+     "type": "text",
+     "value": "at {{streetAddress}}"
+    },
+    {
+     "id": "f17",
+     "label": "Words",
+     "type": "text",
+     "value": "on Lava Street"
+    },
+    {
+     "id": "f18",
+     "label": "Words",
+     "type": "text",
+     "value": ", Warrnambool. We will confirm the date by email as soon as the fit-out is signed off."
+    }
+   ],
+   "lists": [
+    {
+     "id": "L1",
+     "label": "Timeline steps",
+     "item": "Step"
+    }
+   ]
+  },
+  {
+   "key": "s5",
+   "kind": "content",
+   "label": "Why join",
+   "tag": "section",
+   "attrs": {
+    "class": "band why"
+   },
+   "before": "\n\n  <!-- ======================= WHY JOIN ======================= -->\n  ",
+   "template": "\n    <div class=\"wrap why-grid\">\n      <div class=\"rise\">\n        <div class=\"head\">\n          <p class=\"eyebrow\">{{f1}}</p>\n          <h2 class=\"d2\">{{f2}}</h2>\n        </div>\n        <ul class=\"benefits\">\n          {{[L1]}}<li>\n            <h3>{{f3}}</h3>\n            <p>{{f4}}</p>\n          </li>{{[/L1]}}\n          {{[L1]}}<li>\n            <h3>{{f5}}</h3>\n            <p>{{f6}}</p>\n          </li>{{[/L1]}}\n          {{[L1]}}<li>\n            <h3>{{f7}}</h3>\n            <p>{{f8}}</p>\n          </li>{{[/L1]}}\n        </ul>\n      </div>\n\n      <div class=\"why-media rise\">\n        <div class=\"frame r-tall\">\n          <img src=\"{{f9}}\" srcset=\"{{f11}}\" sizes=\"(min-width: 860px) 1780px, (min-width: 600px) 1640px, 760px\" alt=\"{{f10}}\" width=\"2111\" height=\"745\" class=\"pano\" style=\"--pos: 78% 50%; --pos-m: 72% 50%\" loading=\"lazy\" decoding=\"async\">\n        </div>\n      </div>\n    </div>\n  ",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "Founding patients"
+    },
+    {
+     "id": "f2",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Why join the <em>waitlist</em>?"
+    },
+    {
+     "id": "f3",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "First pick of appointments"
+    },
+    {
+     "id": "f4",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Waitlist patients are contacted before the books open publicly, so you can choose a time that fits around school and work."
+    },
+    {
+     "id": "f5",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "A proper introduction"
+    },
+    {
+     "id": "f6",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "You will hear directly from Dr Meg about how the practice runs, what to expect at a first visit, and how to bring an anxious family member along."
+    },
+    {
+     "id": "f7",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Quiet updates, nothing more"
+    },
+    {
+     "id": "f8",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "A short note as the fit-out progresses and when the opening date is locked in. No marketing, and you can unsubscribe any time."
+    },
+    {
+     "id": "f9",
+     "label": "Photo",
+     "type": "image",
+     "value": "assets/images/lava-street-dental-reception-waiting-area.webp",
+     "original": "assets/images/lava-street-dental-reception-waiting-area.webp",
+     "width": "2111",
+     "height": "745"
+    },
+    {
+     "id": "f10",
+     "label": "Photo description",
+     "type": "alt",
+     "value": "Reception and waiting area at Lava Street Dental, Warrnambool"
+    },
+    {
+     "id": "f11",
+     "label": "Photo sizes",
+     "type": "srcset",
+     "value": "assets/images/lava-street-dental-reception-waiting-area-480.webp 480w, assets/images/lava-street-dental-reception-waiting-area-800.webp 800w, assets/images/lava-street-dental-reception-waiting-area-1200.webp 1200w, assets/images/lava-street-dental-reception-waiting-area-1600.webp 1600w, assets/images/lava-street-dental-reception-waiting-area-2000.webp 2000w, assets/images/lava-street-dental-reception-waiting-area.webp 2111w",
+     "of": "f9"
+    }
+   ],
+   "lists": [
+    {
+     "id": "L1",
+     "label": "Reasons",
+     "item": "Reason"
+    }
+   ]
+  },
+  {
+   "key": "questions",
+   "kind": "faq",
+   "label": "Questions",
+   "tag": "section",
+   "attrs": {
+    "class": "band faqs",
+    "id": "questions"
+   },
+   "before": "\n\n  <!-- ======================= QUESTIONS ======================= -->\n  ",
+   "template": "\n    <div class=\"wrap\">\n      <div class=\"head rise\">\n        <p class=\"eyebrow\">{{f1}}</p>\n        <h2 class=\"d2\">{{f2}}</h2>\n      </div>\n\n      <div class=\"faq-list rise\">\n        {{[L1]}}<div class=\"faq\">\n          <h3>\n            <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q1\">{{f3}}</button>\n          </h3>\n          <div class=\"faq-a\" id=\"q1\"><p>{{f4}}</p></div>\n        </div>{{[/L1]}}\n\n        {{[L1]}}<div class=\"faq\">\n          <h3>\n            <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q2\">{{f5}}</button>\n          </h3>\n          <div class=\"faq-a\" id=\"q2\"><p>{{f6}}</p></div>\n        </div>{{[/L1]}}\n\n        {{[L1]}}<div class=\"faq\">\n          <h3>\n            <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q3\">{{f7}}</button>\n          </h3>\n          <div class=\"faq-a\" id=\"q3\"><p>{{f8}}</p></div>\n        </div>{{[/L1]}}\n\n        {{[L1]}}<div class=\"faq\">\n          <h3>\n            <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q4\">{{f9}}</button>\n          </h3>\n          <div class=\"faq-a\" id=\"q4\"><p>{{f10}}</p></div>\n        </div>{{[/L1]}}\n\n        {{[L1]}}<div class=\"faq\">\n          <h3>\n            <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q5\">{{f11}}</button>\n          </h3>\n          <div class=\"faq-a\" id=\"q5\"><p>{{f12}}</p></div>\n        </div>{{[/L1]}}\n\n        {{[L1]}}<div class=\"faq\">\n          <h3>\n            <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q6\">{{f13}}</button>\n          </h3>\n          <div class=\"faq-a\" id=\"q6\"><p>{{f14}}</p></div>\n        </div>{{[/L1]}}\n\n        {{[L1]}}<div class=\"faq\">\n          <h3>\n            <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q7\">{{f15}}</button>\n          </h3>\n          <div class=\"faq-a\" id=\"q7\"><p>{{f16}}</p></div>\n        </div>{{[/L1]}}\n      </div>\n    </div>\n  ",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "Before you come in"
+    },
+    {
+     "id": "f2",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "The questions we are <em>asked most</em>."
+    },
+    {
+     "id": "f3",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n              <span>Will my treatment hurt?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n            "
+    },
+    {
+     "id": "f4",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Every person and every procedure is different, so no dentist can promise treatment will be completely pain-free. Dr Meg uses gentle techniques, explains each step before it happens, and would much rather you spoke up than sat through something uncomfortable."
+    },
+    {
+     "id": "f5",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n              <span>I am nervous about the dentist. Is that a problem?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n            "
+    },
+    {
+     "id": "f6",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Not at all — it is more common than most people think. Dr Meg has spent years looking after nervous patients and takes an unhurried approach: we listen first, explain what to expect, and move at a pace that feels manageable to you."
+    },
+    {
+     "id": "f7",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n              <span>What will the practice offer?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n            "
+    },
+    {
+     "id": "f8",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "General and preventive care, fillings, crowns and bridges, children’s dentistry, selected extractions, partial dentures, mouthguards, night guards, dental implants, root canal treatment and selected diode laser procedures. Your dentist will assess whether a particular treatment is appropriate for you."
+    },
+    {
+     "id": "f9",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n              <span>Do you provide dental implants?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n            "
+    },
+    {
+     "id": "f10",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Yes — assessment, placement and restoration for suitable single and multiple implant cases. All-on-4 treatment is not currently on the list. Whether implants are right for you can only be confirmed after a clinical assessment."
+    },
+    {
+     "id": "f11",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n              <span>Will I see the same dentist each time?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n            "
+    },
+    {
+     "id": "f12",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "That is the whole idea. Continuity sits at the centre of how Lava Street Dental is being set up: Dr Meg wants to be the dentist you know, who remembers your history and your family."
+    },
+    {
+     "id": "f13",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n              <span>Where did Dr Meg study?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n            "
+    },
+    {
+     "id": "f14",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "A Bachelor of Science in Biochemistry at the University of Victoria in Canada, a PhD in Medical Oncology at the University of Oxford, and her Doctor of Dental Medicine at the University of Western Australia."
+    },
+    {
+     "id": "f15",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n              <span>Do you take private health insurance?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n            "
+    },
+    {
+     "id": "f16",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Lava Street Dental accepts all private health funds and is not restricted to a preferred-provider network. Eligible patients can also access treatment through CDBS and DVA arrangements. Afterpay and humm payment plans are available to eligible patients. Health fund claims can be made on the spot with our Tyro terminal, and we accept card payments. Provider terms, eligibility requirements and conditions apply. We will explain what is involved and what it costs before treatment goes ahead."
+    }
+   ],
+   "lists": [
+    {
+     "id": "L1",
+     "label": "Questions",
+     "item": "Question"
+    }
+   ]
+  },
+  {
+   "key": "contact",
+   "kind": "content",
+   "label": "Closing message",
+   "tag": "section",
+   "attrs": {
+    "class": "band closer",
+    "id": "contact"
+   },
+   "before": "\n\n  <!-- ======================= IMAGE CTA + WORDMARK ======================= -->\n  ",
+   "template": "\n    <div class=\"wrap\">\n      <div class=\"stage on-dark rise\">\n        <img src=\"{{f1}}\" srcset=\"{{f3}}\" sizes=\"(max-width: 767px) 1590px, 1610px\" alt=\"{{f2}}\" width=\"2100\" height=\"749\" class=\"pano\" style=\"--pos: 22% 50%; --pos-m: 36% 50%\" loading=\"lazy\" decoding=\"async\">\n        <div>\n          <p class=\"eyebrow centred\">{{f4}}</p>\n          <h2 class=\"big big-logo\"><img src=\"{{f5}}\" alt=\"{{f6}}\" width=\"1000\" height=\"414\" loading=\"lazy\" decoding=\"async\"></h2>\n          <p>{{f7}}</p>\n          <div class=\"row\">\n            <a class=\"btn btn-cream\" href=\"{{f8}}\">{{f9}}</a>\n                        {{#phone}}<a class=\"btn btn-ghost-light\" href=\"{{phoneHref}}\">{{f10}}</a>{{/phone}}\n          </div>\n        </div>\n      </div>\n    </div>\n  ",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Photo",
+     "type": "image",
+     "value": "assets/images/lava-street-dental-reception-hallway.webp",
+     "original": "assets/images/lava-street-dental-reception-hallway.webp",
+     "width": "2100",
+     "height": "749"
+    },
+    {
+     "id": "f2",
+     "label": "Photo description",
+     "type": "alt",
+     "value": "Curved tiled reception desk and corridor to the treatment rooms at Lava Street Dental, Warrnambool"
+    },
+    {
+     "id": "f3",
+     "label": "Photo sizes",
+     "type": "srcset",
+     "value": "assets/images/lava-street-dental-reception-hallway-480.webp 480w, assets/images/lava-street-dental-reception-hallway-800.webp 800w, assets/images/lava-street-dental-reception-hallway-1200.webp 1200w, assets/images/lava-street-dental-reception-hallway-1600.webp 1600w, assets/images/lava-street-dental-reception-hallway-2000.webp 2000w, assets/images/lava-street-dental-reception-hallway.webp 2100w",
+     "of": "f1"
+    },
+    {
+     "id": "f4",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "Warrnambool &amp; Port Fairy"
+    },
+    {
+     "id": "f5",
+     "label": "Photo",
+     "type": "image",
+     "value": "assets/images/logo-light.svg",
+     "original": "assets/images/logo-light.svg",
+     "width": "1000",
+     "height": "414"
+    },
+    {
+     "id": "f6",
+     "label": "Photo description",
+     "type": "alt",
+     "value": "Lava Street Dental"
+    },
+    {
+     "id": "f7",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "A new practice in the middle of Warrnambool, taking names now. We would love to look after your family."
+    },
+    {
+     "id": "f8",
+     "label": "Button link",
+     "type": "href",
+     "value": "#waitlist"
+    },
+    {
+     "id": "f9",
+     "label": "Button words",
+     "type": "text",
+     "value": "Join the waitlist"
+    },
+    {
+     "id": "f10",
+     "label": "Button words",
+     "type": "text",
+     "value": "Call {{phone}}"
+    }
+   ]
+  }
+ ],
+ "order": [
+  "section:0",
+  "section:1",
+  "section:2",
+  "section:3",
+  "section:4",
+  "section:5",
+  "section:6"
+ ],
+ "mainEnd": "\n\n",
+ "afterMain": "</main>\n\n<!-- ======================= FOOTER ======================= -->\n",
+ "footer": "<footer class=\"foot\">\n  <div class=\"wrap\">\n    <div class=\"foot-grid\">\n      {{[L1]}}<div>\n        <a href=\"index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"assets/images/logo-light.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n        <p class=\"blurb\">{{f1}}</p>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f2}}</h2>\n        <ul>\n          {{[L2]}}<li><a href=\"about/index.html\">{{f3}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"meet-the-team/index.html\">{{f4}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"services/index.html\">{{f5}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"contact/index.html\">{{f6}}</a></li>{{[/L2]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f7}}</h2>\n        <ul>\n          {{[L3]}}<li><a href=\"services/general-dentistry/check-ups-and-cleans/index.html\">{{f8}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"services/general-dentistry/dental-fillings/index.html\">{{f9}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"services/dental-implants/index.html\">{{f10}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"services/restorative-dentistry/root-canal-treatment/index.html\">{{f11}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"services/general-dentistry/childrens-dentistry/index.html\">{{f12}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"services/restorative-dentistry/tooth-extractions/index.html\">{{f13}}</a></li>{{[/L3]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f14}}</h2>\n        <ul>\n          {{[L4]}}<li><a href=\"dentist-warrnambool/index.html\">{{f15}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"dentist-dennington/index.html\">{{f16}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"dentist-allansford/index.html\">{{f17}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"dentist-koroit/index.html\">{{f18}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"dentist-port-fairy/index.html\">{{f19}}</a></li>{{[/L4]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f20}}</h2>\n        <ul>\n          <li>{{addressStreet}}</li>\n          <li>{{localityLine}}</li>\n          {{#phone}}<li><a href=\"{{phoneHref}}\">{{phone}}</a></li>{{/phone}}\n          {{#email}}<li><a href=\"mailto:{{email}}\">{{email}}</a></li>{{/email}}\n          {{#hours}}<li>{{{hoursHtml}}}</li>{{/hours}}\n        </ul>\n      </div>{{[/L1]}}\n    </div>\n    <div class=\"foot-base\">\n      <p class=\"disclaimer\">{{f21}}</p>\n      <div class=\"foot-legal\">\n        <span>{{f22}}</span>\n        <span>\n          <a href=\"privacy-policy/index.html\">{{f23}}</a>\n        </span>\n      </div>\n    </div>\n  </div>\n</footer>",
+ "tail": "\n<script src=\"assets/js/site.js\" defer></script>\n\n<script>\n(function () {\n  'use strict';\n  var body = document.body;\n  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;\n\n  /* ---------- Hero capture form ----------\n       Inline validation, then a POST to /api/waitlist/ (Vercel function, emails\n       via SMTP2GO). On success the card swaps to a confirmation. */\n  var heroForm = document.getElementById('heroForm');\n  var captureInner = document.getElementById('captureInner');\n  var heroStatus = document.getElementById('heroStatus');\n  var started = document.getElementById('hStartedAt');\n  if (started) { started.value = String(Date.now()); }\n\n  function auPhone(v) {\n    var d = v.replace(/[\\s().-]/g, '');\n    if (d.indexOf('+61') === 0) { d = '0' + d.slice(3); }\n    return /^0[2-478]\\d{8}$/.test(d);\n  }\n  var RULES = [\n    { id: 'hFirst', key: 'firstName', msg: 'We just need a first name.', test: function (v) { return v.length > 0; } },\n    { id: 'hLast', key: 'lastName', msg: 'And a last name.', test: function (v) { return v.length > 0; } },\n    { id: 'hEmail', key: 'email', msg: 'Could you check that email address?', test: function (v) { return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/.test(v); } },\n    { id: 'hPhone', key: 'phone', msg: 'Please enter an Australian number, for example 0412 345 678.', test: function (v) { return v === '' || auPhone(v); } },\n    { id: 'hConsent', key: 'consent', msg: 'Please tick the box so we can contact you.', check: true, test: function () { return document.getElementById('hConsent').checked; } }\n  ];\n  function valueOf(rule) { var el = document.getElementById(rule.id); return rule.check ? '' : el.value.trim(); }\n  function mark(rule, ok, text) {\n    var input = document.getElementById(rule.id);\n    var msg = document.getElementById(rule.id + 'Msg');\n    input.setAttribute('aria-invalid', ok ? 'false' : 'true');\n    msg.textContent = ok ? '' : (text || rule.msg);\n    return ok;\n  }\n  RULES.forEach(function (rule) {\n    var input = document.getElementById(rule.id);\n    input.addEventListener(rule.check ? 'change' : 'blur', function () {\n      if (rule.check || input.value.trim() !== '' || input.getAttribute('aria-invalid') === 'true') {\n        mark(rule, rule.test(valueOf(rule)));\n      }\n    });\n    if (!rule.check) {\n      input.addEventListener('input', function () {\n        if (input.getAttribute('aria-invalid') === 'true' && rule.test(valueOf(rule))) { mark(rule, true); }\n      });\n    }\n  });\n\n  function showDone(name) {\n    captureInner.innerHTML = '';\n    var done = document.createElement('div');\n    done.className = 'capture-done';\n    var h = document.createElement('h2');\n    h.className = 'capture-h';\n    h.textContent = 'You\\u2019re on the list, ' + name + '.';\n    var p1 = document.createElement('p');\n    p1.className = 'small';\n    p1.textContent = 'Thank you. We have sent a confirmation to your email, and you will hear from us before the books open publicly.';\n    done.appendChild(h);\n    done.appendChild(p1);\n    captureInner.appendChild(done);\n    captureInner.setAttribute('role', 'status');\n    h.setAttribute('tabindex', '-1');\n    h.focus({ preventScroll: true });\n  }\n\n  var sending = false;\n  heroForm.addEventListener('submit', function (e) {\n    e.preventDefault();\n    if (sending) { return; }\n    heroStatus.textContent = '';\n    var firstBad = null;\n    RULES.forEach(function (rule) {\n      var ok = mark(rule, rule.test(valueOf(rule)));\n      if (!ok && !firstBad) { firstBad = document.getElementById(rule.id); }\n    });\n    if (firstBad) { firstBad.focus(); return; }\n\n    var button = heroForm.querySelector('.btn-submit');\n    var label = button.textContent;\n    sending = true;\n    button.disabled = true;\n    button.setAttribute('aria-busy', 'true');\n    button.textContent = 'Sending\\u2026';\n    var payload = {\n      firstName: document.getElementById('hFirst').value.trim(),\n      lastName: document.getElementById('hLast').value.trim(),\n      email: document.getElementById('hEmail').value.trim(),\n      phone: document.getElementById('hPhone').value.trim(),\n      consent: document.getElementById('hConsent').checked,\n      company: document.getElementById('hCompany').value,\n      startedAt: started ? started.value : ''\n    };\n    fetch('/api/waitlist/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })\n      .then(function (r) { return r.json().catch(function () { return { ok: false }; }).then(function (data) { data.status = r.status; return data; }); })\n      .then(function (data) {\n        if (data.ok) { showDone(payload.firstName); return; }\n        if (data.fields) {\n          var first = null;\n          RULES.forEach(function (rule) {\n            if (data.fields[rule.key]) { mark(rule, false, data.fields[rule.key]); if (!first) { first = document.getElementById(rule.id); } }\n          });\n          if (first) { first.focus(); }\n        }\n        heroStatus.textContent = (data.error || 'Sorry, something went wrong.') + FALLBACK;\n      })\n      .catch(function () {\n        heroStatus.textContent = 'We could not reach the server. Please check your connection and try again.' + FALLBACK;\n      })\n      .then(function () {\n        sending = false;\n        if (document.body.contains(button)) {\n          button.disabled = false;\n          button.removeAttribute('aria-busy');\n          button.textContent = label;\n        }\n      });\n  });\n  var FALLBACK = heroForm.getAttribute('data-fallback') || '';\n\n  /* ---------- Smooth anchors, offset for the sticky masthead ---------- */\n  document.addEventListener('click', function (e) {\n    var link = e.target.closest('a[href^=\"#\"]');\n    if (!link) { return; }\n    var id = link.getAttribute('href');\n    if (id === '#') { e.preventDefault(); return; }\n    var target = document.querySelector(id);\n    if (!target) { return; }\n    e.preventDefault();\n    var y = target === body ? 0 : target.getBoundingClientRect().top + window.scrollY - 84;\n    window.scrollTo({ top: Math.max(y, 0), behavior: still ? 'auto' : 'smooth' });\n    if (id !== '#top') { history.replaceState(null, '', id); }\n    if (target !== body) {\n      if (!target.hasAttribute('tabindex')) { target.setAttribute('tabindex', '-1'); }\n      target.focus({ preventScroll: true });\n    }\n  });\n\n  /* ---------- Image slots: hide a missing file so the warm placeholder behind it\n       reads cleanly. Delete once assets/images/ is populated. ---------- */\n  function hideIfBroken(img) {\n    if (img.complete && img.naturalWidth === 0) { img.style.visibility = 'hidden'; }\n  }\n  document.addEventListener('error', function (e) {\n    if (e.target.tagName === 'IMG') { e.target.style.visibility = 'hidden'; }\n  }, true);\n  Array.prototype.forEach.call(document.images, hideIfBroken);\n}());\n</script>\n</body>\n</html>\n"
+}

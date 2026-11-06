@@ -1,0 +1,345 @@
+{
+ "slug": "services--restorative-dentistry--root-canal-treatment",
+ "name": "Root Canal Treatment",
+ "path": "/services/restorative-dentistry/root-canal-treatment/",
+ "file": "services/restorative-dentistry/root-canal-treatment/index.html",
+ "group": "Restorative dentistry",
+ "meta": {
+  "title": "Root Canal Treatment in Warrnambool | Lava Street Dental",
+  "description": "Root canal treatment in Warrnambool, including molars, with Dr Meg Takiguchi at Lava Street Dental. Careful treatment aimed at saving your natural tooth."
+ },
+ "head": "<!DOCTYPE html>\n<html lang=\"en-AU\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"icon\" href=\"../../../favicon.ico\" sizes=\"48x48\">\n<link rel=\"icon\" href=\"../../../assets/icons/favicon.svg\" type=\"image/svg+xml\">\n<link rel=\"apple-touch-icon\" href=\"../../../assets/icons/apple-touch-icon.png\">\n<link rel=\"manifest\" href=\"../../../site.webmanifest\">\n<meta name=\"theme-color\" content=\"#575A4D\">\n<title>{{seo:title}}</title>\n<meta name=\"description\" content=\"{{seo:description}}\">\n<meta property=\"og:title\" content=\"{{seo:ogTitle}}\">\n<meta property=\"og:description\" content=\"{{seo:ogDescription}}\">\n<!-- @seo: canonical, Open Graph, Twitter and JSON-LD tags are added here by scripts/build.mjs from site.config.mjs -->\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<!-- LAUNCH-TODO: brand typefaces. Neue Haas Grotesk and Acumin Condensed are\n     Adobe Fonts families. Create a web project at fonts.adobe.com containing\n     neue-haas-grotesk-text, neue-haas-grotesk-display and acumin-pro-condensed,\n     then uncomment the line below with the kit ID. The CSS already names those\n     families first, so nothing else changes. Until then the Google Fonts line\n     serves the closest open faces. -->\n<!-- <link rel=\"stylesheet\" href=\"https://use.typekit.net/XXXXXXX.css\"> -->\n<link href=\"https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Roboto+Condensed:wght@300;500&display=swap\" rel=\"stylesheet\">\n<link rel=\"stylesheet\" href=\"../../../assets/css/site.css\">\n\n{{gen:faqSchema}}\n</head>\n<body id=\"top\">\n<a class=\"skip-link\" href=\"#main\">Skip to main content</a>\n<header class=\"masthead\" id=\"masthead\">\n  <div class=\"wrap\">\n    <a href=\"../../../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../../../assets/images/logo.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n    <nav class=\"mast-nav\" aria-label=\"Primary\">\n      <a href=\"../../../about/index.html\">About</a>\n      <a href=\"../../../meet-the-team/index.html\">Meet the Team</a>\n      <div class=\"navdrop\" data-drop>\n        <button type=\"button\" aria-expanded=\"false\" aria-controls=\"dropServices\">Services<i aria-hidden=\"true\"></i></button>\n        <ul class=\"drop-panel\" id=\"dropServices\">\n          <li><a href=\"../../../services/index.html\">All services</a></li>\n          <li><a href=\"../../../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a></li><li><a href=\"../../../services/restorative-dentistry/index.html\">Restorative Dentistry</a></li><li><a href=\"../../../services/dental-implants/index.html\">Dental Implants</a></li><li><a href=\"../../../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a></li><li><a href=\"../../../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a></li>\n        </ul>\n      </div>\n      <a href=\"../../../contact/index.html\">Contact</a>\n    </nav>\n    <div class=\"mast-actions\">\n      {{#phone}}<a class=\"mast-phone\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}}\n      <a class=\"btn btn-primary\" href=\"{{#preOpening}}../../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n      <button class=\"burger\" id=\"burger\" type=\"button\" aria-expanded=\"false\" aria-controls=\"drawer\" aria-label=\"Open menu\">\n        <i></i><i></i><i></i>\n      </button>\n    </div>\n  </div>\n</header>\n\n<div class=\"drawer\" id=\"drawer\" hidden>\n  <nav aria-label=\"Mobile\">\n    <a class=\"dnav\" href=\"../../../about/index.html\">About</a>\n    <a class=\"dnav\" href=\"../../../meet-the-team/index.html\">Meet the Team</a>\n    <details class=\"dgroup\">\n      <summary>Services</summary>\n      <a href=\"../../../services/index.html\">All services</a>\n      <a href=\"../../../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a><a href=\"../../../services/restorative-dentistry/index.html\">Restorative Dentistry</a><a href=\"../../../services/dental-implants/index.html\">Dental Implants</a><a href=\"../../../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a><a href=\"../../../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a>\n    </details>\n    <details class=\"dgroup\">\n      <summary>Areas we serve</summary>\n      <a href=\"../../../dentist-warrnambool/index.html\">Warrnambool</a><a href=\"../../../dentist-dennington/index.html\">Dennington</a><a href=\"../../../dentist-allansford/index.html\">Allansford</a><a href=\"../../../dentist-koroit/index.html\">Koroit</a><a href=\"../../../dentist-port-fairy/index.html\">Port Fairy</a>\n    </details>\n    <a class=\"dnav\" href=\"../../../contact/index.html\">Contact</a>\n  </nav>\n  <a class=\"btn btn-primary\" href=\"{{#preOpening}}../../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n  {{#phone}}<p class=\"drawer-foot small\">Prefer to talk it through? <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a></p>{{/phone}}\n</div>\n<main id=\"main\">",
+ "faqSchema": {
+  "literal": "<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Does root canal treatment hurt?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"The treatment is done under local anaesthetic and most people find the appointment much easier than the toothache that brought them in. Everyone is different and no dentist can promise a completely pain-free appointment, but the procedure itself is not the ordeal its reputation suggests.\"}}, {\"@type\": \"Question\", \"name\": \"How many appointments will I need?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"One or two for the root canal itself, depending on the tooth and the degree of infection, plus a further appointment if a crown is planned. Molars generally take longer than front teeth.\"}}, {\"@type\": \"Question\", \"name\": \"Would it be cheaper to just pull the tooth out?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Extraction costs less on the day. Replacing the tooth afterwards with an implant or a bridge usually costs more than the root canal treatment would have. Keeping your own tooth is generally the better long-term option where it is realistic.\"}}, {\"@type\": \"Question\", \"name\": \"Will the tooth go dark?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Front teeth occasionally discolour after root canal treatment. Where that happens, there are options to address it, which Dr Meg can discuss.\"}}, {\"@type\": \"Question\", \"name\": \"How successful is root canal treatment?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Outcomes depend heavily on the individual tooth, the anatomy of the canals, how much infection is present and how the tooth is restored afterwards. Dr Meg will give you a realistic assessment for your tooth rather than a general figure.\"}}, {\"@type\": \"Question\", \"name\": \"Do I definitely need a crown afterwards?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Often on back teeth, less often on front teeth. It is assessed case by case based on how much sound tooth structure remains.\"}}]}</script>",
+  "source": "<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q1\">\n      <span>Does root canal treatment hurt?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q1\"><p>The treatment is done under local anaesthetic and most people find the appointment much easier than the toothache that brought them in. Everyone is different and no dentist can promise a completely pain-free appointment, but the procedure itself is not the ordeal its reputation suggests.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q2\">\n      <span>How many appointments will I need?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q2\"><p>One or two for the root canal itself, depending on the tooth and the degree of infection, plus a further appointment if a crown is planned. Molars generally take longer than front teeth.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q3\">\n      <span>Would it be cheaper to just pull the tooth out?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q3\"><p>Extraction costs less on the day. Replacing the tooth afterwards with an implant or a bridge usually costs more than the root canal treatment would have. Keeping your own tooth is generally the better long-term option where it is realistic.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q4\">\n      <span>Will the tooth go dark?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q4\"><p>Front teeth occasionally discolour after root canal treatment. Where that happens, there are options to address it, which Dr Meg can discuss.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q5\">\n      <span>How successful is root canal treatment?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q5\"><p>Outcomes depend heavily on the individual tooth, the anatomy of the canals, how much infection is present and how the tooth is restored afterwards. Dr Meg will give you a realistic assessment for your tooth rather than a general figure.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q6\">\n      <span>Do I definitely need a crown afterwards?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q6\"><p>Often on back teeth, less often on front teeth. It is assessed case by case based on how much sound tooth structure remains.</p></div>\n</div>"
+ },
+ "sections": [
+  {
+   "key": "s1",
+   "kind": "hero",
+   "label": "Page header",
+   "tag": "section",
+   "attrs": {
+    "class": "page-hero"
+   },
+   "before": "\n",
+   "template": "\n  <div class=\"wrap\">\n    <nav class=\"crumbs\" aria-label=\"Breadcrumb\"><ol><li>{{f1}}</li><li>{{f2}}</li><li>{{f3}}</li><li aria-current=\"page\">{{f4}}</li></ol></nav>\n    <div class=\"ph-grid has-side\">\n      <div>\n        <p class=\"eyebrow\">{{f5}}</p>\n        <h1 class=\"ph-h1\">{{f6}}</h1>\n        <p class=\"lead\">{{f7}}</p><p class=\"lead\">{{f8}}</p>\n      </div>\n      <div class=\"ph-side rise\"><figure class=\"photo-fig\"><img src=\"{{f9}}\" alt=\"{{f10}}\" width=\"1600\" height=\"900\" loading=\"eager\" decoding=\"async\" fetchpriority=\"high\"></figure></div>\n    </div>\n  </div>\n",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../../index.html\">Home</a>"
+    },
+    {
+     "id": "f2",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../../services/index.html\">Services</a>"
+    },
+    {
+     "id": "f3",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../../services/restorative-dentistry/index.html\">Restorative Dentistry</a>"
+    },
+    {
+     "id": "f4",
+     "label": "List item",
+     "type": "richtext",
+     "value": "Root Canal Treatment"
+    },
+    {
+     "id": "f5",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "Restorative Dentistry"
+    },
+    {
+     "id": "f6",
+     "label": "Main heading",
+     "type": "richtext",
+     "value": "Keeping a tooth you would rather not <em>lose</em>."
+    },
+    {
+     "id": "f7",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "Root canal treatment has an unfortunate reputation, largely built on how the procedure was done decades ago and on the pain people were in before they had it. In practice it is the treatment that saves teeth that would otherwise have to come out."
+    },
+    {
+     "id": "f8",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "Inside every tooth is a chamber containing nerve and blood vessels. When bacteria reach that chamber — through deep decay, a crack, trauma, or under a failing restoration — the tissue becomes inflamed and then infected. It does not recover on its own. Root canal treatment removes the infected tissue, disinfects and shapes the canals, and seals them so bacteria cannot re-establish."
+    },
+    {
+     "id": "f9",
+     "label": "Photo",
+     "type": "image",
+     "value": "../../../assets/images/tooth-cutaway-decay.webp",
+     "original": "../../../assets/images/tooth-cutaway-decay.webp",
+     "width": "1600",
+     "height": "900"
+    },
+    {
+     "id": "f10",
+     "label": "Photo description",
+     "type": "alt",
+     "value": "A cutaway dental teaching model of a molar showing decay reaching the pulp chamber and the root canals running down into the jawbone"
+    }
+   ]
+  },
+  {
+   "key": "s2",
+   "kind": "content",
+   "label": "Signs you may need it",
+   "tag": "section",
+   "attrs": {
+    "class": "band"
+   },
+   "before": "\n",
+   "template": "<div class=\"wrap flow\"><h3 class=\"d3 sec-h3\">{{f1}}</h3><ul class=\"ticklist\">{{[L1]}}<li>{{f2}}</li>{{[/L1]}}{{[L1]}}<li>{{f3}}</li>{{[/L1]}}{{[L1]}}<li>{{f4}}</li>{{[/L1]}}{{[L1]}}<li>{{f5}}</li>{{[/L1]}}{{[L1]}}<li>{{f6}}</li>{{[/L1]}}{{[L1]}}<li>{{f7}}</li>{{[/L1]}}</ul><p>{{f8}}</p><h3 class=\"d3 sec-h3\">{{f9}}</h3><p>{{f10}}</p><p>{{f11}}</p><p>{{f12}}</p><h3 class=\"d3 sec-h3\">{{f13}}</h3><p>{{f14}}</p><p>{{f15}}</p><h3 class=\"d3 sec-h3\">{{f16}}</h3><p>{{f17}}</p><p>{{f18}}</p><h2 class=\"d2 sec-h\">{{f19}}</h2><div class=\"faq-list rise\">{{[L2]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q1\">{{f20}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q1\"><p>{{f21}}</p></div>\n</div>{{[/L2]}}{{[L2]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q2\">{{f22}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q2\"><p>{{f23}}</p></div>\n</div>{{[/L2]}}{{[L2]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q3\">{{f24}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q3\"><p>{{f25}}</p></div>\n</div>{{[/L2]}}{{[L2]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q4\">{{f26}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q4\"><p>{{f27}}</p></div>\n</div>{{[/L2]}}{{[L2]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q5\">{{f28}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q5\"><p>{{f29}}</p></div>\n</div>{{[/L2]}}{{[L2]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q6\">{{f30}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q6\"><p>{{f31}}</p></div>\n</div>{{[/L2]}}</div></div>",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Signs you may need it"
+    },
+    {
+     "id": "f2",
+     "label": "List item",
+     "type": "richtext",
+     "value": "Severe or throbbing toothache, particularly at night"
+    },
+    {
+     "id": "f3",
+     "label": "List item",
+     "type": "richtext",
+     "value": "Pain that lingers well after something hot or cold"
+    },
+    {
+     "id": "f4",
+     "label": "List item",
+     "type": "richtext",
+     "value": "Pain on biting or when the tooth is touched"
+    },
+    {
+     "id": "f5",
+     "label": "List item",
+     "type": "richtext",
+     "value": "A tooth that has darkened"
+    },
+    {
+     "id": "f6",
+     "label": "List item",
+     "type": "richtext",
+     "value": "A tender swelling or a small pimple on the gum near the tooth"
+    },
+    {
+     "id": "f7",
+     "label": "List item",
+     "type": "richtext",
+     "value": "Facial swelling, which should be seen promptly"
+    },
+    {
+     "id": "f8",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Pain that stops on its own is not reassurance. It often means the nerve has died, and the infection is continuing without a nerve to signal it."
+    },
+    {
+     "id": "f9",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Treatment here"
+    },
+    {
+     "id": "f10",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Dr Meg carries out root canal treatment including on molars, which are more complex because of the number and curvature of their canals. That capability came from years in regional practice, where referring every case to an endodontist in a capital city was not realistic for patients."
+    },
+    {
+     "id": "f11",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Some cases are genuinely better handled by an endodontist — unusual anatomy, calcified canals, a previously treated tooth that needs redoing, or a case with complications. Where that is true, she will tell you and arrange the referral rather than pressing on."
+    },
+    {
+     "id": "f12",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Where a 3D view of the roots is needed for planning, CBCT imaging is available on site."
+    },
+    {
+     "id": "f13",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "What is involved"
+    },
+    {
+     "id": "f14",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Treatment is carried out under local anaesthetic. The tooth is isolated with a rubber dam to keep it clean and dry, an opening is made, and the canals are cleaned, shaped and disinfected. Depending on the tooth and how much infection is present, this may be completed in one appointment or across two, sometimes with a medicated dressing in between."
+    },
+    {
+     "id": "f15",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Once the canals are clean, they are sealed and the tooth is restored. A back tooth that has had root canal treatment has usually lost a good deal of structure and becomes more brittle, so a crown is often recommended to protect it from fracture."
+    },
+    {
+     "id": "f16",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Afterwards"
+    },
+    {
+     "id": "f17",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Tenderness on biting for a few days is common as the surrounding tissue settles, and ordinary pain relief usually manages it. Severe or increasing pain, or swelling, is worth phoning about."
+    },
+    {
+     "id": "f18",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "The tooth is then reviewed to confirm the surrounding bone is healing."
+    },
+    {
+     "id": "f19",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Frequently asked <em>questions</em>"
+    },
+    {
+     "id": "f20",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Does root canal treatment hurt?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f21",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "The treatment is done under local anaesthetic and most people find the appointment much easier than the toothache that brought them in. Everyone is different and no dentist can promise a completely pain-free appointment, but the procedure itself is not the ordeal its reputation suggests."
+    },
+    {
+     "id": "f22",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>How many appointments will I need?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f23",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "One or two for the root canal itself, depending on the tooth and the degree of infection, plus a further appointment if a crown is planned. Molars generally take longer than front teeth."
+    },
+    {
+     "id": "f24",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Would it be cheaper to just pull the tooth out?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f25",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Extraction costs less on the day. Replacing the tooth afterwards with an implant or a bridge usually costs more than the root canal treatment would have. Keeping your own tooth is generally the better long-term option where it is realistic."
+    },
+    {
+     "id": "f26",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Will the tooth go dark?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f27",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Front teeth occasionally discolour after root canal treatment. Where that happens, there are options to address it, which Dr Meg can discuss."
+    },
+    {
+     "id": "f28",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>How successful is root canal treatment?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f29",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Outcomes depend heavily on the individual tooth, the anatomy of the canals, how much infection is present and how the tooth is restored afterwards. Dr Meg will give you a realistic assessment for your tooth rather than a general figure."
+    },
+    {
+     "id": "f30",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Do I definitely need a crown afterwards?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f31",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Often on back teeth, less often on front teeth. It is assessed case by case based on how much sound tooth structure remains."
+    }
+   ],
+   "lists": [
+    {
+     "id": "L1",
+     "label": "Points",
+     "item": "Point"
+    },
+    {
+     "id": "L2",
+     "label": "Questions",
+     "item": "Question"
+    }
+   ]
+  },
+  {
+   "key": "s3",
+   "kind": "content",
+   "label": "Section 3",
+   "tag": "section",
+   "attrs": {
+    "class": "band cta-close"
+   },
+   "before": "\n",
+   "template": "\n  <div class=\"wrap\">\n    <div class=\"cta-panel rise\">\n      <div class=\"cta-row\"><a class=\"btn btn-primary\" href=\"{{#preOpening}}../../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../../contact/index.html{{/preOpening}}\">{{#preOpening}}{{f1}}{{/preOpening}}{{^preOpening}}{{f2}}{{/preOpening}}</a>{{#phone}}<a class=\"btn btn-outline\" href=\"{{phoneHref}}\">{{f3}}</a>{{/phone}}</div>\n    </div>\n  </div>\n",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Words",
+     "type": "text",
+     "value": "Join the waitlist"
+    },
+    {
+     "id": "f2",
+     "label": "Words",
+     "type": "text",
+     "value": "Book an assessment"
+    },
+    {
+     "id": "f3",
+     "label": "Button words",
+     "type": "text",
+     "value": "Call {{phone}}"
+    }
+   ]
+  }
+ ],
+ "order": [
+  "section:0",
+  "section:1",
+  "section:2"
+ ],
+ "mainEnd": "\n",
+ "afterMain": "</main>\n",
+ "footer": "<footer class=\"foot\">\n  <div class=\"wrap\">\n    <div class=\"foot-grid\">\n      {{[L1]}}<div>\n        <a href=\"../../../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../../../assets/images/logo-light.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n        <p class=\"blurb\">{{f1}}</p>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f2}}</h2>\n        <ul>\n          {{[L2]}}<li><a href=\"../../../about/index.html\">{{f3}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../../meet-the-team/index.html\">{{f4}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../../services/index.html\">{{f5}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../../contact/index.html\">{{f6}}</a></li>{{[/L2]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f7}}</h2>\n        <ul>\n          {{[L3]}}<li><a href=\"../../../services/general-dentistry/check-ups-and-cleans/index.html\">{{f8}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/general-dentistry/dental-fillings/index.html\">{{f9}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/dental-implants/index.html\">{{f10}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/restorative-dentistry/root-canal-treatment/index.html\">{{f11}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/general-dentistry/childrens-dentistry/index.html\">{{f12}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../../services/restorative-dentistry/tooth-extractions/index.html\">{{f13}}</a></li>{{[/L3]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f14}}</h2>\n        <ul>\n          {{[L4]}}<li><a href=\"../../../dentist-warrnambool/index.html\">{{f15}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-dennington/index.html\">{{f16}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-allansford/index.html\">{{f17}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-koroit/index.html\">{{f18}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../../dentist-port-fairy/index.html\">{{f19}}</a></li>{{[/L4]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f20}}</h2>\n        <ul>\n          <li>{{addressStreet}}</li>\n          <li>{{localityLine}}</li>\n          {{#phone}}<li><a href=\"{{phoneHref}}\">{{phone}}</a></li>{{/phone}}\n          {{#email}}<li><a href=\"mailto:{{email}}\">{{email}}</a></li>{{/email}}\n          {{#hours}}<li>{{{hoursHtml}}}</li>{{/hours}}\n        </ul>\n      </div>{{[/L1]}}\n    </div>\n    <div class=\"foot-base\">\n      <p class=\"disclaimer\">{{f21}}</p>\n      <div class=\"foot-legal\">\n        <span>{{f22}}</span>\n        <span>\n          <a href=\"../../../privacy-policy/index.html\">{{f23}}</a>\n        </span>\n      </div>\n    </div>\n  </div>\n</footer>",
+ "tail": "\n<script src=\"../../../assets/js/site.js\" defer></script>\n</body>\n</html>"
+}

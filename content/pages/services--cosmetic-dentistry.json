@@ -1,0 +1,254 @@
+{
+ "slug": "services--cosmetic-dentistry",
+ "name": "Cosmetic Dentistry",
+ "path": "/services/cosmetic-dentistry/",
+ "file": "services/cosmetic-dentistry/index.html",
+ "group": "Cosmetic dentistry",
+ "meta": {
+  "title": "Cosmetic Dentistry in Warrnambool | Lava Street Dental",
+  "description": "Porcelain veneers in Warrnambool. Honest, conservative advice on cosmetic dental treatment from Dr Meg Takiguchi at Lava Street Dental."
+ },
+ "head": "<!DOCTYPE html>\n<html lang=\"en-AU\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"icon\" href=\"../../favicon.ico\" sizes=\"48x48\">\n<link rel=\"icon\" href=\"../../assets/icons/favicon.svg\" type=\"image/svg+xml\">\n<link rel=\"apple-touch-icon\" href=\"../../assets/icons/apple-touch-icon.png\">\n<link rel=\"manifest\" href=\"../../site.webmanifest\">\n<meta name=\"theme-color\" content=\"#575A4D\">\n<title>{{seo:title}}</title>\n<meta name=\"description\" content=\"{{seo:description}}\">\n<meta property=\"og:title\" content=\"{{seo:ogTitle}}\">\n<meta property=\"og:description\" content=\"{{seo:ogDescription}}\">\n<!-- @seo: canonical, Open Graph, Twitter and JSON-LD tags are added here by scripts/build.mjs from site.config.mjs -->\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<!-- LAUNCH-TODO: brand typefaces. Neue Haas Grotesk and Acumin Condensed are\n     Adobe Fonts families. Create a web project at fonts.adobe.com containing\n     neue-haas-grotesk-text, neue-haas-grotesk-display and acumin-pro-condensed,\n     then uncomment the line below with the kit ID. The CSS already names those\n     families first, so nothing else changes. Until then the Google Fonts line\n     serves the closest open faces. -->\n<!-- <link rel=\"stylesheet\" href=\"https://use.typekit.net/XXXXXXX.css\"> -->\n<link href=\"https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Roboto+Condensed:wght@300;500&display=swap\" rel=\"stylesheet\">\n<link rel=\"stylesheet\" href=\"../../assets/css/site.css\">\n\n{{gen:faqSchema}}\n</head>\n<body id=\"top\">\n<a class=\"skip-link\" href=\"#main\">Skip to main content</a>\n<header class=\"masthead\" id=\"masthead\">\n  <div class=\"wrap\">\n    <a href=\"../../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../../assets/images/logo.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n    <nav class=\"mast-nav\" aria-label=\"Primary\">\n      <a href=\"../../about/index.html\">About</a>\n      <a href=\"../../meet-the-team/index.html\">Meet the Team</a>\n      <div class=\"navdrop\" data-drop>\n        <button type=\"button\" aria-expanded=\"false\" aria-controls=\"dropServices\">Services<i aria-hidden=\"true\"></i></button>\n        <ul class=\"drop-panel\" id=\"dropServices\">\n          <li><a href=\"../../services/index.html\">All services</a></li>\n          <li><a href=\"../../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a></li><li><a href=\"../../services/restorative-dentistry/index.html\">Restorative Dentistry</a></li><li><a href=\"../../services/dental-implants/index.html\">Dental Implants</a></li><li><a href=\"../../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a></li><li><a href=\"../../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a></li>\n        </ul>\n      </div>\n      <a href=\"../../contact/index.html\">Contact</a>\n    </nav>\n    <div class=\"mast-actions\">\n      {{#phone}}<a class=\"mast-phone\" href=\"{{phoneHref}}\">{{phone}}</a>{{/phone}}\n      <a class=\"btn btn-primary\" href=\"{{#preOpening}}../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n      <button class=\"burger\" id=\"burger\" type=\"button\" aria-expanded=\"false\" aria-controls=\"drawer\" aria-label=\"Open menu\">\n        <i></i><i></i><i></i>\n      </button>\n    </div>\n  </div>\n</header>\n\n<div class=\"drawer\" id=\"drawer\" hidden>\n  <nav aria-label=\"Mobile\">\n    <a class=\"dnav\" href=\"../../about/index.html\">About</a>\n    <a class=\"dnav\" href=\"../../meet-the-team/index.html\">Meet the Team</a>\n    <details class=\"dgroup\">\n      <summary>Services</summary>\n      <a href=\"../../services/index.html\">All services</a>\n      <a href=\"../../services/general-dentistry/index.html\">General &amp; Preventive Dentistry</a><a href=\"../../services/restorative-dentistry/index.html\">Restorative Dentistry</a><a href=\"../../services/dental-implants/index.html\">Dental Implants</a><a href=\"../../services/cosmetic-dentistry/index.html\">Cosmetic Dentistry</a><a href=\"../../services/laser-digital-dentistry/index.html\">Laser &amp; Digital Dentistry</a>\n    </details>\n    <details class=\"dgroup\">\n      <summary>Areas we serve</summary>\n      <a href=\"../../dentist-warrnambool/index.html\">Warrnambool</a><a href=\"../../dentist-dennington/index.html\">Dennington</a><a href=\"../../dentist-allansford/index.html\">Allansford</a><a href=\"../../dentist-koroit/index.html\">Koroit</a><a href=\"../../dentist-port-fairy/index.html\">Port Fairy</a>\n    </details>\n    <a class=\"dnav\" href=\"../../contact/index.html\">Contact</a>\n  </nav>\n  <a class=\"btn btn-primary\" href=\"{{#preOpening}}../../index.html#waitlist{{/preOpening}}{{^preOpening}}../../contact/index.html{{/preOpening}}\">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>\n  {{#phone}}<p class=\"drawer-foot small\">Prefer to talk it through? <a class=\"textlink\" href=\"{{phoneHref}}\">{{phone}}</a></p>{{/phone}}\n</div>\n<main id=\"main\">",
+ "faqSchema": {
+  "literal": "<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Will veneers look fake?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"They should not. Shade, shape and translucency are chosen with you and made by a technician. The most common cause of an obvious result is going several shades brighter than the face around them, and Dr Meg will give you her honest opinion on that.\"}}, {\"@type\": \"Question\", \"name\": \"Do veneers damage the tooth underneath?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Preparing a tooth for a porcelain veneer removes some enamel permanently. That is the trade-off, and it is one to understand fully before committing. We will discuss it properly at your consultation.\"}}, {\"@type\": \"Question\", \"name\": \"How much does cosmetic treatment cost?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"It depends entirely on what is involved and how many teeth. You will be given a written plan with itemised costs before anything begins.\"}}, {\"@type\": \"Question\", \"name\": \"Will you tell me if you think I do not need treatment?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. That is a legitimate outcome of a cosmetic consultation and it happens reasonably often.\"}}, {\"@type\": \"Question\", \"name\": \"Does anything need fixing before cosmetic work?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Usually. Active decay and gum disease are treated first, because appearance-driven work placed on unhealthy teeth is a short-term result. Grinding is assessed too, since it chips porcelain.\"}}, {\"@type\": \"Question\", \"name\": \"How long does the process take?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"A consultation, then a preparation appointment, then fitting once the laboratory work is back. Allow a few weeks rather than a few days.\"}}]}</script>",
+  "source": "<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q1\">\n      <span>Will veneers look fake?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q1\"><p>They should not. Shade, shape and translucency are chosen with you and made by a technician. The most common cause of an obvious result is going several shades brighter than the face around them, and Dr Meg will give you her honest opinion on that.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q2\">\n      <span>Do veneers damage the tooth underneath?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q2\"><p>Preparing a tooth for a porcelain veneer removes some enamel permanently. That is the trade-off, and it is one to understand fully before committing. We will discuss it properly at your consultation.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q3\">\n      <span>How much does cosmetic treatment cost?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q3\"><p>It depends entirely on what is involved and how many teeth. You will be given a written plan with itemised costs before anything begins.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q4\">\n      <span>Will you tell me if you think I do not need treatment?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q4\"><p>Yes. That is a legitimate outcome of a cosmetic consultation and it happens reasonably often.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q5\">\n      <span>Does anything need fixing before cosmetic work?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q5\"><p>Usually. Active decay and gum disease are treated first, because appearance-driven work placed on unhealthy teeth is a short-term result. Grinding is assessed too, since it chips porcelain.</p></div>\n</div><div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q6\">\n      <span>How long does the process take?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    </button>\n  </h3>\n  <div class=\"faq-a\" id=\"q6\"><p>A consultation, then a preparation appointment, then fitting once the laboratory work is back. Allow a few weeks rather than a few days.</p></div>\n</div>"
+ },
+ "sections": [
+  {
+   "key": "s1",
+   "kind": "hero",
+   "label": "Page header",
+   "tag": "section",
+   "attrs": {
+    "class": "page-hero"
+   },
+   "before": "\n",
+   "template": "\n  <div class=\"wrap\">\n    <nav class=\"crumbs\" aria-label=\"Breadcrumb\"><ol><li>{{f1}}</li><li>{{f2}}</li><li aria-current=\"page\">{{f3}}</li></ol></nav>\n    <div class=\"ph-grid has-side\">\n      <div>\n        <p class=\"eyebrow\">{{f4}}</p>\n        <h1 class=\"ph-h1\">{{f5}}</h1>\n        <p class=\"lead\">{{f6}}</p><p class=\"lead\">{{f7}}</p><p class=\"lead\">{{f8}}</p>\n      </div>\n      <div class=\"ph-side rise\"><figure class=\"photo-fig\"><img src=\"{{f9}}\" alt=\"{{f10}}\" width=\"1600\" height=\"900\" loading=\"eager\" decoding=\"async\" fetchpriority=\"high\"></figure></div>\n    </div>\n  </div>\n",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../index.html\">Home</a>"
+    },
+    {
+     "id": "f2",
+     "label": "List item",
+     "type": "richtext",
+     "value": "<a href=\"../../services/index.html\">Services</a>"
+    },
+    {
+     "id": "f3",
+     "label": "List item",
+     "type": "richtext",
+     "value": "Cosmetic Dentistry"
+    },
+    {
+     "id": "f4",
+     "label": "Small heading above",
+     "type": "richtext",
+     "value": "Our services"
+    },
+    {
+     "id": "f5",
+     "label": "Main heading",
+     "type": "richtext",
+     "value": "Changing how your teeth look, without overselling <em>it</em>."
+    },
+    {
+     "id": "f6",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "Plenty of people would like to change something about their smile. That is a legitimate reason to see a dentist, and we are happy to talk it through."
+    },
+    {
+     "id": "f7",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "What we will not do is talk you into work you do not need. Some cosmetic treatment is irreversible — porcelain veneers involve permanently reshaping the tooth underneath, and that cannot be undone. Before recommending anything of that kind, Dr Meg will make sure you understand what is being removed, what the likely lifespan is, and what happens when the restoration eventually needs replacing."
+    },
+    {
+     "id": "f8",
+     "label": "Introduction",
+     "type": "richtext",
+     "value": "Often there is a more conservative option worth considering first: repairing a chip with composite, treating gum inflammation so the gum line settles, straightening rather than covering, or simply doing nothing."
+    },
+    {
+     "id": "f9",
+     "label": "Photo",
+     "type": "image",
+     "value": "../../assets/images/smile-mirror-cosmetic.webp",
+     "original": "../../assets/images/smile-mirror-cosmetic.webp",
+     "width": "1600",
+     "height": "900"
+    },
+    {
+     "id": "f10",
+     "label": "Photo description",
+     "type": "alt",
+     "value": "A patient in the dental chair smiling as she looks at her teeth in a hand mirror"
+    }
+   ]
+  },
+  {
+   "key": "s2",
+   "kind": "content",
+   "label": "Health first",
+   "tag": "section",
+   "attrs": {
+    "class": "band"
+   },
+   "before": "\n",
+   "template": "<div class=\"wrap flow\"><h3 class=\"d3 sec-h3\">{{f1}}</h3><p>{{f2}}</p><h3 class=\"d3 sec-h3\">{{f3}}</h3><p>{{f4}}</p><h3 class=\"d3 sec-h3\">{{f5}}</h3><div class=\"linkcard-grid rise\"><a class=\"linkcard\" href=\"{{f6}}\">\n  <h3>{{f7}}</h3>\n  <p>{{f8}}</p>\n  <span class=\"lc-more\" aria-hidden=\"true\">{{f9}}</span>\n</a></div><h2 class=\"d2 sec-h\">{{f10}}</h2><div class=\"faq-list rise\">{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q1\">{{f11}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q1\"><p>{{f12}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q2\">{{f13}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q2\"><p>{{f14}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q3\">{{f15}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q3\"><p>{{f16}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q4\">{{f17}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q4\"><p>{{f18}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q5\">{{f19}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q5\"><p>{{f20}}</p></div>\n</div>{{[/L1]}}{{[L1]}}<div class=\"faq\">\n  <h3>\n    <button class=\"faq-q\" type=\"button\" aria-expanded=\"false\" aria-controls=\"q6\">{{f21}}</button>\n  </h3>\n  <div class=\"faq-a\" id=\"q6\"><p>{{f22}}</p></div>\n</div>{{[/L1]}}</div></div>",
+   "fields": [
+    {
+     "id": "f1",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Health first"
+    },
+    {
+     "id": "f2",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Cosmetic work sits on top of healthy foundations. Active decay and gum disease are treated before appearance-driven treatment goes ahead, because a veneer on an unhealthy tooth is a short-term result at best."
+    },
+    {
+     "id": "f3",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Realistic expectations"
+    },
+    {
+     "id": "f4",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Results vary between people, and no dentist can promise a particular outcome. Tooth colour, gum position, bite, existing restorations and how your teeth are shaped all affect what is achievable. Dr Meg will show you what is realistic for your mouth rather than a stock photograph of someone else’s."
+    },
+    {
+     "id": "f5",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "What sits under cosmetic dentistry"
+    },
+    {
+     "id": "f6",
+     "label": "Link address",
+     "type": "href",
+     "value": "../../services/cosmetic-dentistry/porcelain-veneers/index.html"
+    },
+    {
+     "id": "f7",
+     "label": "Small heading",
+     "type": "richtext",
+     "value": "Porcelain Veneers"
+    },
+    {
+     "id": "f8",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "— thin laboratory-made porcelain facings, bonded to the front of prepared teeth"
+    },
+    {
+     "id": "f9",
+     "label": "Words",
+     "type": "richtext",
+     "value": "Read more"
+    },
+    {
+     "id": "f10",
+     "label": "Heading",
+     "type": "richtext",
+     "value": "Common <em>questions</em>"
+    },
+    {
+     "id": "f11",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Will veneers look fake?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f12",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "They should not. Shade, shape and translucency are chosen with you and made by a technician. The most common cause of an obvious result is going several shades brighter than the face around them, and Dr Meg will give you her honest opinion on that."
+    },
+    {
+     "id": "f13",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Do veneers damage the tooth underneath?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f14",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Preparing a tooth for a porcelain veneer removes some enamel permanently. That is the trade-off, and it is one to understand fully before committing. We will discuss it properly at your consultation."
+    },
+    {
+     "id": "f15",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>How much does cosmetic treatment cost?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f16",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "It depends entirely on what is involved and how many teeth. You will be given a written plan with itemised costs before anything begins."
+    },
+    {
+     "id": "f17",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Will you tell me if you think I do not need treatment?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f18",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Yes. That is a legitimate outcome of a cosmetic consultation and it happens reasonably often."
+    },
+    {
+     "id": "f19",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>Does anything need fixing before cosmetic work?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f20",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "Usually. Active decay and gum disease are treated first, because appearance-driven work placed on unhealthy teeth is a short-term result. Grinding is assessed too, since it chips porcelain."
+    },
+    {
+     "id": "f21",
+     "label": "Button words",
+     "type": "richtext",
+     "value": "\n      <span>How long does the process take?</span><span class=\"pm\" aria-hidden=\"true\"></span>\n    "
+    },
+    {
+     "id": "f22",
+     "label": "Paragraph",
+     "type": "richtext",
+     "value": "A consultation, then a preparation appointment, then fitting once the laboratory work is back. Allow a few weeks rather than a few days."
+    }
+   ],
+   "lists": [
+    {
+     "id": "L1",
+     "label": "Questions",
+     "item": "Question"
+    }
+   ]
+  }
+ ],
+ "order": [
+  "section:0",
+  "section:1"
+ ],
+ "mainEnd": "\n",
+ "afterMain": "</main>\n",
+ "footer": "<footer class=\"foot\">\n  <div class=\"wrap\">\n    <div class=\"foot-grid\">\n      {{[L1]}}<div>\n        <a href=\"../../index.html\" class=\"wordmark\" aria-label=\"Lava Street Dental — home\"><img src=\"../../assets/images/logo-light.svg\" alt=\"\" width=\"1000\" height=\"414\" decoding=\"async\"></a>\n        <p class=\"blurb\">{{f1}}</p>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f2}}</h2>\n        <ul>\n          {{[L2]}}<li><a href=\"../../about/index.html\">{{f3}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../meet-the-team/index.html\">{{f4}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../services/index.html\">{{f5}}</a></li>{{[/L2]}}\n          {{[L2]}}<li><a href=\"../../contact/index.html\">{{f6}}</a></li>{{[/L2]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f7}}</h2>\n        <ul>\n          {{[L3]}}<li><a href=\"../../services/general-dentistry/check-ups-and-cleans/index.html\">{{f8}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../services/general-dentistry/dental-fillings/index.html\">{{f9}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../services/dental-implants/index.html\">{{f10}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../services/restorative-dentistry/root-canal-treatment/index.html\">{{f11}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../services/general-dentistry/childrens-dentistry/index.html\">{{f12}}</a></li>{{[/L3]}}{{[L3]}}<li><a href=\"../../services/restorative-dentistry/tooth-extractions/index.html\">{{f13}}</a></li>{{[/L3]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f14}}</h2>\n        <ul>\n          {{[L4]}}<li><a href=\"../../dentist-warrnambool/index.html\">{{f15}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../dentist-dennington/index.html\">{{f16}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../dentist-allansford/index.html\">{{f17}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../dentist-koroit/index.html\">{{f18}}</a></li>{{[/L4]}}{{[L4]}}<li><a href=\"../../dentist-port-fairy/index.html\">{{f19}}</a></li>{{[/L4]}}\n        </ul>\n      </div>{{[/L1]}}\n      {{[L1]}}<div>\n        <h2 class=\"foot-h\">{{f20}}</h2>\n        <ul>\n          <li>{{addressStreet}}</li>\n          <li>{{localityLine}}</li>\n          {{#phone}}<li><a href=\"{{phoneHref}}\">{{phone}}</a></li>{{/phone}}\n          {{#email}}<li><a href=\"mailto:{{email}}\">{{email}}</a></li>{{/email}}\n          {{#hours}}<li>{{{hoursHtml}}}</li>{{/hours}}\n        </ul>\n      </div>{{[/L1]}}\n    </div>\n    <div class=\"foot-base\">\n      <p class=\"disclaimer\">{{f21}}</p>\n      <div class=\"foot-legal\">\n        <span>{{f22}}</span>\n        <span>\n          <a href=\"../../privacy-policy/index.html\">{{f23}}</a>\n        </span>\n      </div>\n    </div>\n  </div>\n</footer>",
+ "tail": "\n<script src=\"../../assets/js/site.js\" defer></script>\n</body>\n</html>"
+}
