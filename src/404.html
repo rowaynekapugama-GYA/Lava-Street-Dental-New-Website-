@@ -42,7 +42,7 @@
     </nav>
     <div class="mast-actions">
       {{#phone}}<a class="mast-phone" href="{{phoneHref}}">{{phone}}</a>{{/phone}}
-      <a class="btn btn-primary" href="/contact/">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
+      <a class="btn btn-primary" href="{{#preOpening}}/#waitlist{{/preOpening}}{{^preOpening}}/contact/{{/preOpening}}">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
       <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
         <i></i><i></i><i></i>
       </button>
@@ -65,7 +65,7 @@
     </details>
     <a class="dnav" href="/contact/">Contact</a>
   </nav>
-  <a class="btn btn-primary" href="/contact/">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
+  <a class="btn btn-primary" href="{{#preOpening}}/#waitlist{{/preOpening}}{{^preOpening}}/contact/{{/preOpening}}">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
   {{#phone}}<p class="drawer-foot small">Prefer to talk it through? <a class="textlink" href="{{phoneHref}}">{{phone}}</a></p>{{/phone}}
 </div>
 <main id="main">
@@ -90,7 +90,7 @@
         <p class="blurb">A dental practice in the middle of Warrnambool, looking after families across Warrnambool, Port Fairy and the surrounding districts.</p>
       </div>
       <div>
-        <h4>Explore</h4>
+        <h2 class="foot-h">Explore</h2>
         <ul>
           <li><a href="/about/">About</a></li>
           <li><a href="/meet-the-team/">Meet the Team</a></li>
@@ -99,19 +99,19 @@
         </ul>
       </div>
       <div>
-        <h4>Care</h4>
+        <h2 class="foot-h">Care</h2>
         <ul>
           <li><a href="/services/general-dentistry/check-ups-and-cleans/">Check-ups &amp; cleans</a></li><li><a href="/services/general-dentistry/dental-fillings/">Fillings</a></li><li><a href="/services/dental-implants/">Dental implants</a></li><li><a href="/services/restorative-dentistry/root-canal-treatment/">Root canal treatment</a></li><li><a href="/services/general-dentistry/childrens-dentistry/">Children’s dentistry</a></li><li><a href="/services/restorative-dentistry/tooth-extractions/">Extractions</a></li>
         </ul>
       </div>
       <div>
-        <h4>Areas We Serve</h4>
+        <h2 class="foot-h">Areas We Serve</h2>
         <ul>
           <li><a href="/dentist-warrnambool/">Warrnambool</a></li><li><a href="/dentist-dennington/">Dennington</a></li><li><a href="/dentist-allansford/">Allansford</a></li><li><a href="/dentist-koroit/">Koroit</a></li><li><a href="/dentist-port-fairy/">Port Fairy</a></li>
         </ul>
       </div>
       <div>
-        <h4>Visit</h4>
+        <h2 class="foot-h">Visit</h2>
         <ul>
           <li>{{addressStreet}}</li>
           <li>Warrnambool VIC 3280</li>
@@ -126,8 +126,7 @@
       <div class="foot-legal">
         <span>Copyright 2026 Lava Street Dental</span>
         <span>
-          <!-- TODO: link the Privacy Policy page once written. -->
-          <a href="#">Privacy Policy</a> — placeholder
+          <a href="/privacy-policy/">Privacy Policy</a>
         </span>
       </div>
     </div>

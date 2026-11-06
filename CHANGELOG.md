@@ -1,5 +1,42 @@
 # Changelog
 
+## 2026-11-06: go-live (v1.2.0): working forms, privacy policy, mobile refresh
+
+- Forms now send email. Before this, both forms were front-end only and
+  nothing was sent or stored.
+  - `api/waitlist.js` (home page waitlist) and `api/enquiry.js` (contact
+    form) are Vercel functions that send over SMTP (SMTP2GO, via
+    nodemailer 10.2.1): a notification to the practice and a confirmation
+    to the person.
+  - Shared code in `api/_lib/forms.js`.
+  - Env vars only: `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`,
+    `WAITLIST_TO_EMAIL`, `WAITLIST_FROM_EMAIL` (see `.env.example` and
+    README).
+  - Server-side validation (names, email, Australian phone, consent),
+    honeypot, two-second timing check and per-IP rate limit.
+  - Required consent tick box linking to the Privacy Policy.
+  - Inline success and error states, and the button is disabled while
+    sending.
+  - "Preview only" notices removed.
+- "Join the waitlist" buttons now go to the waitlist form on the home page
+  (smooth scroll on the home page). Open-mode links are unchanged.
+- New Privacy Policy page at `/privacy-policy/`, linked in every footer and
+  from both consent boxes. Highlighted placeholders: legal name, ABN, privacy
+  contact email, practice software data location.
+- Mobile (768px and below):
+  - a practice photo under the hero headline
+  - the hero paragraph hidden
+  - trust tags on one row
+  - a shorter waitlist intro and a tighter card
+  - photos added in the welcome and opening sections
+  - a shorter Dr Meg bio with a link to her profile
+  - anchor and focus offsets for the sticky header and Safari's toolbar
+  - the mobile menu sized to the visible viewport
+- Accessibility:
+  - footer headings are now h2, with the same look
+  - links inside lists are underlined
+- Build notice now also flags short placeholders like [ABN].
+
 ## 2026-11-05: practice phone number
 
 - Phone 03 5208 9006 set in `site.config.mjs`. It now shows in the header,

@@ -740,7 +740,8 @@ p { max-width: 62ch; }
   margin-top: var(--band);
 }
 .foot-grid { display: grid; gap: 2.5rem; }
-.foot h4 {
+.foot h4,
+.foot .foot-h {
   font-family: var(--font-accent);
   font-size: 0.8125rem;
   font-weight: var(--w-medium);
@@ -1361,3 +1362,140 @@ p { max-width: 62ch; }
 /* Keep the approved 16:9 boxes for the side and full-width figures. */
 .photo-fig img.pano,
 .photo img.pano { width: 100%; height: auto; aspect-ratio: 16 / 9; }
+
+/* --- Live forms (waitlist and enquiry) ---------------------------------------
+   Consent checkbox, spam trap, inline status and the sending state. */
+.field.consent { margin-top: 0.35rem; }
+.check {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.7rem;
+  align-items: start;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--ink);
+  cursor: pointer;
+}
+.check input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.375rem;
+  height: 1.375rem;
+  margin: 0.05rem 0 0;
+  border: 1px solid var(--olive);
+  border-radius: 5px;
+  background: var(--surface);
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+.check input::before {
+  content: "";
+  width: 0.7rem;
+  height: 0.7rem;
+  transform: scale(0);
+  transition: transform 0.15s ease;
+  background: var(--olive);
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+.check input:checked::before { transform: scale(1); }
+.check input:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--olive); }
+.check input[aria-invalid="true"] { border-color: var(--clay); }
+.check a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.hp { position: absolute !important; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.hero-form, .enquiry { position: relative; }
+.form-status { font-size: 0.875rem; line-height: 1.5; color: var(--ink); text-align: center; margin-top: 0.5rem; }
+.form-status:empty { display: none; }
+.form-status:not(:empty) { padding: 0.7rem 0.85rem; border: 1px solid var(--clay); border-radius: var(--r-xs); background: var(--surface); }
+.wl-note { font-size: 0.9375rem; line-height: 1.55; margin-top: 0.75rem; }
+.wl-note:empty { display: none; }
+.wl-note.ok { padding: 0.8rem 1rem; border: 1px solid var(--olive); border-radius: var(--r-xs); background: var(--surface); color: var(--ink); }
+.btn-submit:disabled { opacity: 0.7; cursor: progress; }
+.enquiry textarea[aria-invalid="true"] { border-color: var(--clay); }
+
+/* --- Privacy policy ----------------------------------------------------------- */
+.policy { max-width: 46rem; }
+.policy .ticklist { max-width: none; }
+/* Placeholders still to be filled in by the practice. */
+mark.ph {
+  background: rgb(var(--rgb-santa-fe) / 0.16);
+  color: var(--ink);
+  border: 1px dashed var(--clay);
+  border-radius: 4px;
+  padding: 0 0.25em;
+}
+@media (min-width: 769px) { #waitlist { scroll-margin-top: 96px; } }
+
+/* --- Mobile refresh (Nov 2026) -------------------------------------------------
+   Phones and small tablets only. Desktop layout is unchanged. */
+.m-only { display: none !important; }
+.hero-photo, .m-photo { margin: 0; }
+.hero-photo img, .m-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  background: var(--surface-soft);
+}
+.hero-photo img.pano, .m-photo img.pano { object-position: var(--pos, 50% 50%); }
+.hero-photo { margin-top: 1.25rem; }
+.m-photo { margin-top: 1.5rem; }
+.timeline .m-photo { margin: 0 0 1.75rem; }
+
+@media (max-width: 768px) {
+  .m-only { display: block !important; }
+  span.m-only { display: inline !important; }
+  a.m-only { display: inline-block !important; }
+  .m-hide { display: none !important; }
+
+  /* Hero: headline, photo, one row of tags, then the waitlist card. */
+  .hero { padding-block: 1.75rem 2.25rem; }
+  .hero h1 { margin-bottom: 0; }
+  .trust {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-top: 1.1rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .trust::-webkit-scrollbar { display: none; }
+  .trust li { gap: 0.35rem; flex: none; }
+  .trust svg { width: 14px; height: 14px; }
+  .trust span { font-size: 0.6875rem; letter-spacing: 0.06em; white-space: nowrap; }
+
+  .capture { padding: 1.25rem 1.1rem 1.35rem; border-radius: 16px; }
+  .badge { margin-bottom: 0.9rem; padding: 0.45rem 0.95rem; font-size: 0.6875rem; }
+  .capture-h { font-size: 1.6rem; margin-bottom: 0.4rem; }
+  .hero-form { margin-top: 1rem; gap: 0.2rem; }
+
+  /* Breathing room between stacked sections and text blocks. */
+  .welcome-copy > p + p { margin-top: 1rem; }
+  .meg { margin-top: 1.75rem; }
+
+  /* Keep anchor jumps and focused fields clear of the sticky header and of
+     Safari's bottom toolbar. */
+  html { scroll-padding-top: 88px; scroll-padding-bottom: 96px; }
+  input, textarea, select, .btn-submit { scroll-margin-bottom: 96px; }
+  .drawer { bottom: auto; height: calc(100vh - 72px); height: calc(100dvh - 72px); }
+  .foot { padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px)); }
+}
+@media (max-width: 768px) {
+  .hero-grid > * { min-width: 0; }
+}
+/* Tag row: the label size follows the screen width so all three fit on one
+   row from 375px up; narrower phones scroll the row sideways instead. */
+@media (max-width: 768px) {
+  .trust { gap: 0.4rem; }
+  .trust li { gap: 0.3rem; }
+  .trust span { font-size: clamp(0.5625rem, calc((100vw - 38px) / 34), 0.75rem); letter-spacing: 0.04em; }
+}
+.hp input { font-size: 16px; }
+/* The generic .field input sizing must not reach the consent checkbox. */
+.field .check input { width: 1.375rem; height: 1.375rem; min-height: 0; padding: 0; border-radius: 5px; flex: none; }
+.field .check input:focus { box-shadow: 0 0 0 2px var(--olive); }
+/* Links inside list copy need more than colour to stand out (WCAG 1.4.1). */
+.ticklist a:not(.btn) { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: var(--clay); }

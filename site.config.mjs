@@ -75,14 +75,11 @@ export default {
     google: "",
   },
 
-  // Enquiry and waitlist forms.
-  // The forms are still in preview mode: nothing is sent or stored, and there
-  // is no recipient yet. When a form relay is wired (GYA standard: SMTP2GO
-  // serverless function), it reads its recipient from here. Do not set this to
-  // info@ until that inbox is confirmed working.
-  forms: {
-    recipient: "",
-  },
+  // Waitlist and enquiry forms are live: they post to api/waitlist.js and
+  // api/enquiry.js, which send email over SMTP (SMTP2GO). The SMTP login,
+  // recipients and sender are Vercel environment variables (SMTP_HOST,
+  // SMTP_PORT, SMTP_USER, SMTP_PASS, WAITLIST_TO_EMAIL, WAITLIST_FROM_EMAIL),
+  // never values in this file. See README.md, "Forms and email".
 
   // Share image for Open Graph and Twitter cards, relative to the site root.
   shareImage: {

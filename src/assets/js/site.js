@@ -98,25 +98,85 @@
     Array.prototype.forEach.call(rising, function (el) { io.observe(el); });
   }
 
-  /* ---------- Enquiry form: PREVIEW MODE. No endpoint supplied, so submission is
-     always cancelled and the confirmation says plainly that nothing was sent.
-     LAUNCH-TODO: wire the real endpoint before removing preventDefault(). ---------- */
+  /* ---------- Contact enquiry form ----------
+     Inline validation, then a POST to /api/enquiry (Vercel function, emails
+     over SMTP). Errors show inline; the button is disabled while sending. */
   var enquiry = document.getElementById('enquiryForm');
   if (enquiry) {
     var note = document.getElementById('enquiryNote');
+    var status = document.getElementById('enquiryStatus');
+    var startedAt = document.getElementById('eqStartedAt');
+    if (startedAt) { startedAt.value = String(Date.now()); }
+    var fallback = enquiry.getAttribute('data-fallback') || '';
+    var isAuPhone = function (v) {
+      var d = v.replace(/[\s().-]/g, '');
+      if (d.indexOf('+61') === 0) { d = '0' + d.slice(3); }
+      return /^0[2-478]\d{8}$/.test(d);
+    };
+    var rules = [
+      { id: 'eqFirst', key: 'firstName', msg: 'We just need a first name.', test: function (v) { return v.length > 0; } },
+      { id: 'eqEmail', key: 'email', msg: 'Could you check that email address?', test: function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); } },
+      { id: 'eqPhone', key: 'phone', msg: 'Please enter an Australian number, for example 0412 345 678.', test: function (v) { return v === '' || isAuPhone(v); } },
+      { id: 'eqMsg', key: 'message', msg: 'Let us know how we can help.', test: function (v) { return v.length > 0; } },
+      { id: 'eqConsent', key: 'consent', msg: 'Please tick the box so we can reply.', check: true, test: function () { return document.getElementById('eqConsent').checked; } }
+    ];
+    var val = function (r) { return r.check ? '' : document.getElementById(r.id).value.trim(); };
+    var setMark = function (r, ok, text) {
+      var input = document.getElementById(r.id);
+      var msg = document.getElementById(r.id + 'Msg');
+      input.setAttribute('aria-invalid', ok ? 'false' : 'true');
+      if (msg) { msg.textContent = ok ? '' : (text || r.msg); }
+      return ok;
+    };
+    var busy = false;
     enquiry.addEventListener('submit', function (e) {
       e.preventDefault();
-      var email = document.getElementById('eqEmail');
-      var value = email.value.trim();
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)) {
-        note.className = 'wl-note err';
-        note.textContent = 'Could you check that email address for us?';
-        email.focus();
-        return;
-      }
-      note.className = 'wl-note ok';
-      note.textContent = 'Preview only: this form is not connected yet, so nothing was sent or saved. Developer TODO: wire the practice form endpoint, then restore the approved confirmation copy.';
-      enquiry.reset();
+      if (busy) { return; }
+      status.textContent = '';
+      note.textContent = '';
+      var firstBad = null;
+      rules.forEach(function (r) { if (!setMark(r, r.test(val(r))) && !firstBad) { firstBad = document.getElementById(r.id); } });
+      if (firstBad) { firstBad.focus(); return; }
+      var button = enquiry.querySelector('.btn-submit');
+      var label = button.textContent;
+      busy = true;
+      button.disabled = true;
+      button.setAttribute('aria-busy', 'true');
+      button.textContent = 'Sending\u2026';
+      var payload = {
+        firstName: document.getElementById('eqFirst').value.trim(),
+        lastName: document.getElementById('eqLast').value.trim(),
+        email: document.getElementById('eqEmail').value.trim(),
+        phone: document.getElementById('eqPhone').value.trim(),
+        message: document.getElementById('eqMsg').value.trim(),
+        consent: document.getElementById('eqConsent').checked,
+        company: document.getElementById('eqCompany').value,
+        startedAt: startedAt ? startedAt.value : ''
+      };
+      fetch('/api/enquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+        .then(function (r) { return r.json().catch(function () { return { ok: false }; }); })
+        .then(function (data) {
+          if (data.ok) {
+            enquiry.reset();
+            rules.forEach(function (r) { setMark(r, true); });
+            note.className = 'wl-note ok';
+            note.textContent = 'Thanks, ' + payload.firstName + '. Your message is on its way and we will be in touch soon.';
+            return;
+          }
+          if (data.fields) {
+            var first = null;
+            rules.forEach(function (r) { if (data.fields[r.key]) { setMark(r, false, data.fields[r.key]); if (!first) { first = document.getElementById(r.id); } } });
+            if (first) { first.focus(); }
+          }
+          status.textContent = (data.error || 'Sorry, something went wrong.') + fallback;
+        })
+        .catch(function () { status.textContent = 'We could not reach the server. Please check your connection and try again.' + fallback; })
+        .then(function () {
+          busy = false;
+          button.disabled = false;
+          button.removeAttribute('aria-busy');
+          button.textContent = label;
+        });
     });
   }
 }());

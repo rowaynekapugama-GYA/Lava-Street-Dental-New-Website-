@@ -47,7 +47,7 @@
     </nav>
     <div class="mast-actions">
       {{#phone}}<a class="mast-phone" href="{{phoneHref}}">{{phone}}</a>{{/phone}}
-      <a class="btn btn-primary" href="contact/index.html">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
+      <a class="btn btn-primary" href="{{#preOpening}}#waitlist{{/preOpening}}{{^preOpening}}contact/index.html{{/preOpening}}">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
       <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
         <i></i><i></i><i></i>
       </button>
@@ -70,7 +70,7 @@
     </details>
     <a class="dnav" href="contact/index.html">Contact</a>
   </nav>
-  <a class="btn btn-primary" href="contact/index.html">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
+  <a class="btn btn-primary" href="{{#preOpening}}#waitlist{{/preOpening}}{{^preOpening}}contact/index.html{{/preOpening}}">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
   {{#phone}}<p class="drawer-foot small">Prefer to talk it through? <a class="textlink" href="{{phoneHref}}">{{phone}}</a></p>{{/phone}}
 </div>
 
@@ -87,7 +87,10 @@
       <div class="hero-copy">
         <p class="rule-eyebrow anim a1">{{#openingDate}}Opening {{openingDate}}{{/openingDate}}{{^openingDate}}Opening soon{{/openingDate}} &middot; Warrnambool</p>
         <h1 class="anim a2">Modern dentistry, with a gentler <em>touch</em>.</h1>
-        <p class="lead anim a3">A small practice in the middle of town, where you see the same dentist each visit and nobody rushes you through the door.</p>
+        <!-- Mobile only: a real photo of the practice under the headline. Uses the same file as the
+             hero background, so phones download it once. Above the fold, so it is not lazy-loaded. -->
+        <figure class="hero-photo m-only anim a3"><img src="assets/images/lava-street-dental-reception-waiting-area.webp" alt="Reception and waiting area at Lava Street Dental, Warrnambool" width="2111" height="745" class="pano" style="--pos: 62% 50%" loading="eager" decoding="async"></figure>
+        <p class="lead anim a3 m-hide">A small practice in the middle of town, where you see the same dentist each visit and nobody rushes you through the door.</p>
 
         <ul class="trust anim a4">
           <li>
@@ -117,11 +120,8 @@
         <div id="captureInner">
           <p class="badge">Founding patients waitlist</p>
           <h2 class="capture-h">Be first through the <em>door</em>.</h2>
-          <p class="small">Leave your details and you will hear from us before the books open publicly.</p>
-
-          <!-- TODO: set action= to the practice's form endpoint (or [BOOKING URL]) and
-               remove the preventDefault branch in the script. Nothing is stored yet. -->
-          <form class="hero-form" id="heroForm" action="#" method="post" novalidate>
+          <p class="small"><span class="m-hide">Leave your details and you will hear from us before the books open publicly.</span><span class="m-only">Be first to hear when the books open.</span></p>
+          <form class="hero-form" id="heroForm" action="/api/waitlist" method="post" novalidate data-fallback=" You can also email us at {{email}}{{#phone}} or call {{phone}}{{/phone}}.">
             <div class="row2">
               <div class="field">
                 <label class="visually-hidden" for="hFirst">First name</label>
@@ -147,9 +147,24 @@
               <p class="msg" id="hPhoneMsg"></p>
             </div>
 
+            <div class="field consent">
+              <label class="check" for="hConsent">
+                <input id="hConsent" name="consent" type="checkbox" required aria-describedby="hConsentMsg">
+                <span>I agree to Lava Street Dental contacting me about opening and appointments, and I’ve read the <a href="privacy-policy/index.html">Privacy Policy</a>.</span>
+              </label>
+              <p class="msg" id="hConsentMsg"></p>
+            </div>
+
+            <!-- Spam trap: hidden from people, filled in by bots. -->
+            <div class="hp" aria-hidden="true">
+              <label for="hCompany">Company</label>
+              <input id="hCompany" name="company" type="text" tabindex="-1" autocomplete="off">
+            </div>
+            <input type="hidden" name="startedAt" id="hStartedAt" value="">
+
             <button class="btn-submit" type="submit">Reserve my place</button>
-            <p class="reassure">No spam &mdash; just opening news and your invitation.</p>
-            <p class="form-preview-note" role="note"><strong>Preview only.</strong> This form is not connected yet, so nothing you type is sent or stored. Please do not include detailed health information.</p>
+            <p class="form-status" id="heroStatus" role="alert" aria-live="assertive"></p>
+            <p class="reassure">No spam, just opening news and your invitation.</p>
           </form>
         </div>
       </div>
@@ -174,10 +189,11 @@
         <p>Lava Street Dental brings the warmth and familiarity of regional dental care together with modern clinical technology. The approach is personal and considered, and it is built around knowing the people we look after.</p>
         <p>Whether you are in for a routine check-up or something more involved, Dr Meg takes the time to understand what is worrying you, talks through your options in plain language, and helps you feel comfortable at every stage.</p>
 
+        <figure class="m-photo m-only"><img src="assets/images/lava-street-dental-treatment-room.webp" srcset="assets/images/lava-street-dental-treatment-room-480.webp 480w, assets/images/lava-street-dental-treatment-room-800.webp 800w, assets/images/lava-street-dental-treatment-room-1200.webp 1200w, assets/images/lava-street-dental-treatment-room-1600.webp 1600w, assets/images/lava-street-dental-treatment-room-2000.webp 2000w, assets/images/lava-street-dental-treatment-room.webp 2112w" sizes="189vw" alt="Treatment room with dental chair and sage cabinetry at Lava Street Dental, Warrnambool" width="2112" height="745" class="pano" style="--pos: 60% 50%" loading="lazy" decoding="async"></figure>
         <div class="meg">
           <h3 class="d3">Meet <em>Dr Meg</em></h3>
-          <p>Dr Meg Takiguchi grew up on the outskirts of Tokyo and has spent the last ten years in dentistry, most of it in regional Western Australia. She graduated with a Doctor of Dental Medicine from the University of Western Australia in 2016, after a Bachelor of Science in Biochemistry in Canada and a PhD in Medical Oncology at the University of Oxford.</p>
-          <p>Working in towns with limited access to specialists shaped how she practises. She is comfortable across a broad range of dentistry — implants, root canal treatment, difficult extractions, crowns, bridges and dentures — and she is known for a gentle hand and a very light touch with injections.</p>
+          <p class="m-hide">Dr Meg Takiguchi grew up on the outskirts of Tokyo and has spent the last ten years in dentistry, most of it in regional Western Australia. She graduated with a Doctor of Dental Medicine from the University of Western Australia in 2016, after a Bachelor of Science in Biochemistry in Canada and a PhD in Medical Oncology at the University of Oxford.</p>
+          <p class="m-hide">Working in towns with limited access to specialists shaped how she practises. She is comfortable across a broad range of dentistry — implants, root canal treatment, difficult extractions, crowns, bridges and dentures — and she is known for a gentle hand and a very light touch with injections.</p>
           <p>Her hope for Lava Street Dental is simple: to become the dentist you keep coming back to, year after year.</p>
           <ul class="chips">
             <li>DMD, UWA</li>
@@ -187,8 +203,8 @@
             <li>ADA Victoria member</li>
           </ul>
           <p class="fine">Dr Meg is a general dentist. Her PhD in Medical Oncology is a research qualification and is not a dental specialist registration.</p>
-          <!-- TODO: link to a dedicated Dr Meg profile page once it exists. -->
-          <a class="textlink" href="#waitlist">Join the waitlist to meet her</a>
+          <a class="textlink m-only" href="meet-the-team/dr-meg-takiguchi/index.html">Read Dr Meg’s story</a>
+          <a class="textlink m-hide" href="#waitlist">Join the waitlist to meet her</a>
         </div>
       </div>
     </div>
@@ -248,6 +264,8 @@
         <h2 class="d2">Opening soon in <em>Warrnambool</em>.</h2>
         <p class="lead">We are fitting out a space in the middle of town, close to Coles, with parking a short walk away.</p>
       </div>
+
+      <figure class="m-photo m-only rise"><img src="assets/images/lava-street-dental-reception-hallway.webp" srcset="assets/images/lava-street-dental-reception-hallway-480.webp 480w, assets/images/lava-street-dental-reception-hallway-800.webp 800w, assets/images/lava-street-dental-reception-hallway-1200.webp 1200w, assets/images/lava-street-dental-reception-hallway-1600.webp 1600w, assets/images/lava-street-dental-reception-hallway-2000.webp 2000w, assets/images/lava-street-dental-reception-hallway.webp 2100w" sizes="189vw" alt="Curved tiled reception desk and corridor to the treatment rooms at Lava Street Dental, Warrnambool" width="2100" height="749" class="pano" style="--pos: 36% 50%" loading="lazy" decoding="async"></figure>
 
       <ol class="steps rise">
         <li>
@@ -405,7 +423,7 @@
         <p class="blurb">A dental practice in the middle of Warrnambool, looking after families across Warrnambool, Port Fairy and the surrounding districts.</p>
       </div>
       <div>
-        <h4>Explore</h4>
+        <h2 class="foot-h">Explore</h2>
         <ul>
           <li><a href="about/index.html">About</a></li>
           <li><a href="meet-the-team/index.html">Meet the Team</a></li>
@@ -414,19 +432,19 @@
         </ul>
       </div>
       <div>
-        <h4>Care</h4>
+        <h2 class="foot-h">Care</h2>
         <ul>
           <li><a href="services/general-dentistry/check-ups-and-cleans/index.html">Check-ups &amp; cleans</a></li><li><a href="services/general-dentistry/dental-fillings/index.html">Fillings</a></li><li><a href="services/dental-implants/index.html">Dental implants</a></li><li><a href="services/restorative-dentistry/root-canal-treatment/index.html">Root canal treatment</a></li><li><a href="services/general-dentistry/childrens-dentistry/index.html">Children’s dentistry</a></li><li><a href="services/restorative-dentistry/tooth-extractions/index.html">Extractions</a></li>
         </ul>
       </div>
       <div>
-        <h4>Areas We Serve</h4>
+        <h2 class="foot-h">Areas We Serve</h2>
         <ul>
           <li><a href="dentist-warrnambool/index.html">Warrnambool</a></li><li><a href="dentist-dennington/index.html">Dennington</a></li><li><a href="dentist-allansford/index.html">Allansford</a></li><li><a href="dentist-koroit/index.html">Koroit</a></li><li><a href="dentist-port-fairy/index.html">Port Fairy</a></li>
         </ul>
       </div>
       <div>
-        <h4>Visit</h4>
+        <h2 class="foot-h">Visit</h2>
         <ul>
           <li>{{addressStreet}}</li>
           <li>Warrnambool VIC 3280</li>
@@ -441,8 +459,7 @@
       <div class="foot-legal">
         <span>Copyright 2026 Lava Street Dental</span>
         <span>
-          <!-- TODO: link the Privacy Policy page once written. -->
-          <a href="#">Privacy Policy</a> — placeholder
+          <a href="privacy-policy/index.html">Privacy Policy</a>
         </span>
       </div>
     </div>
@@ -457,69 +474,119 @@
   var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- Hero capture form ----------
-       Inline validation, then the card swaps to a confirmation. Wire the
-       action= above and delete the preventDefault branch to go live. */
+       Inline validation, then a POST to /api/waitlist (Vercel function, emails
+       over SMTP). On success the card swaps to a confirmation. */
   var heroForm = document.getElementById('heroForm');
   var captureInner = document.getElementById('captureInner');
+  var heroStatus = document.getElementById('heroStatus');
+  var started = document.getElementById('hStartedAt');
+  if (started) { started.value = String(Date.now()); }
 
+  function auPhone(v) {
+    var d = v.replace(/[\s().-]/g, '');
+    if (d.indexOf('+61') === 0) { d = '0' + d.slice(3); }
+    return /^0[2-478]\d{8}$/.test(d);
+  }
   var RULES = [
-    { id: 'hFirst', msg: 'We just need a first name.', test: function (v) { return v.length > 0; } },
-    { id: 'hLast', msg: 'And a last name.', test: function (v) { return v.length > 0; } },
-    { id: 'hEmail', msg: 'Could you check that email address?', test: function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); } },
-    { id: 'hPhone', msg: 'That mobile number looks a little short.', test: function (v) { return v === '' || v.replace(/[^0-9]/g, '').length >= 8; } }
+    { id: 'hFirst', key: 'firstName', msg: 'We just need a first name.', test: function (v) { return v.length > 0; } },
+    { id: 'hLast', key: 'lastName', msg: 'And a last name.', test: function (v) { return v.length > 0; } },
+    { id: 'hEmail', key: 'email', msg: 'Could you check that email address?', test: function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); } },
+    { id: 'hPhone', key: 'phone', msg: 'Please enter an Australian number, for example 0412 345 678.', test: function (v) { return v === '' || auPhone(v); } },
+    { id: 'hConsent', key: 'consent', msg: 'Please tick the box so we can contact you.', check: true, test: function () { return document.getElementById('hConsent').checked; } }
   ];
-
-  function mark(rule, ok) {
+  function valueOf(rule) { var el = document.getElementById(rule.id); return rule.check ? '' : el.value.trim(); }
+  function mark(rule, ok, text) {
     var input = document.getElementById(rule.id);
     var msg = document.getElementById(rule.id + 'Msg');
     input.setAttribute('aria-invalid', ok ? 'false' : 'true');
-    msg.textContent = ok ? '' : rule.msg;
+    msg.textContent = ok ? '' : (text || rule.msg);
     return ok;
   }
-
   RULES.forEach(function (rule) {
     var input = document.getElementById(rule.id);
-    input.addEventListener('blur', function () {
-      if (input.value.trim() !== '' || input.getAttribute('aria-invalid') === 'true') {
-        mark(rule, rule.test(input.value.trim()));
+    input.addEventListener(rule.check ? 'change' : 'blur', function () {
+      if (rule.check || input.value.trim() !== '' || input.getAttribute('aria-invalid') === 'true') {
+        mark(rule, rule.test(valueOf(rule)));
       }
     });
-    input.addEventListener('input', function () {
-      if (input.getAttribute('aria-invalid') === 'true' && rule.test(input.value.trim())) { mark(rule, true); }
-    });
+    if (!rule.check) {
+      input.addEventListener('input', function () {
+        if (input.getAttribute('aria-invalid') === 'true' && rule.test(valueOf(rule))) { mark(rule, true); }
+      });
+    }
   });
 
-  heroForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var firstBad = null;
-    RULES.forEach(function (rule) {
-      var input = document.getElementById(rule.id);
-      var ok = mark(rule, rule.test(input.value.trim()));
-      if (!ok && !firstBad) { firstBad = input; }
-    });
-    if (firstBad) { firstBad.focus(); return; }
-
-    var name = document.getElementById('hFirst').value.trim();
+  function showDone(name) {
     captureInner.innerHTML = '';
     var done = document.createElement('div');
     done.className = 'capture-done';
     var h = document.createElement('h2');
     h.className = 'capture-h';
-    h.textContent = 'Preview only, ' + name + '.';
+    h.textContent = 'You\u2019re on the list, ' + name + '.';
     var p1 = document.createElement('p');
     p1.className = 'small';
-    p1.textContent = 'This form is not connected to a live system yet, so nothing was sent or saved. Once the practice\'s form endpoint is live, this is where the waitlist confirmation will appear.';
-    var p2 = document.createElement('p');
-    p2.className = 'reassure';
-    p2.textContent = 'Developer TODO: connect the waitlist endpoint, then restore the approved confirmation copy.';
+    p1.textContent = 'Thank you. We have sent a confirmation to your email, and you will hear from us before the books open publicly.';
     done.appendChild(h);
     done.appendChild(p1);
-    done.appendChild(p2);
     captureInner.appendChild(done);
     captureInner.setAttribute('role', 'status');
     h.setAttribute('tabindex', '-1');
     h.focus({ preventScroll: true });
+  }
+
+  var sending = false;
+  heroForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (sending) { return; }
+    heroStatus.textContent = '';
+    var firstBad = null;
+    RULES.forEach(function (rule) {
+      var ok = mark(rule, rule.test(valueOf(rule)));
+      if (!ok && !firstBad) { firstBad = document.getElementById(rule.id); }
+    });
+    if (firstBad) { firstBad.focus(); return; }
+
+    var button = heroForm.querySelector('.btn-submit');
+    var label = button.textContent;
+    sending = true;
+    button.disabled = true;
+    button.setAttribute('aria-busy', 'true');
+    button.textContent = 'Sending\u2026';
+    var payload = {
+      firstName: document.getElementById('hFirst').value.trim(),
+      lastName: document.getElementById('hLast').value.trim(),
+      email: document.getElementById('hEmail').value.trim(),
+      phone: document.getElementById('hPhone').value.trim(),
+      consent: document.getElementById('hConsent').checked,
+      company: document.getElementById('hCompany').value,
+      startedAt: started ? started.value : ''
+    };
+    fetch('/api/waitlist', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+      .then(function (r) { return r.json().catch(function () { return { ok: false }; }).then(function (data) { data.status = r.status; return data; }); })
+      .then(function (data) {
+        if (data.ok) { showDone(payload.firstName); return; }
+        if (data.fields) {
+          var first = null;
+          RULES.forEach(function (rule) {
+            if (data.fields[rule.key]) { mark(rule, false, data.fields[rule.key]); if (!first) { first = document.getElementById(rule.id); } }
+          });
+          if (first) { first.focus(); }
+        }
+        heroStatus.textContent = (data.error || 'Sorry, something went wrong.') + FALLBACK;
+      })
+      .catch(function () {
+        heroStatus.textContent = 'We could not reach the server. Please check your connection and try again.' + FALLBACK;
+      })
+      .then(function () {
+        sending = false;
+        if (document.body.contains(button)) {
+          button.disabled = false;
+          button.removeAttribute('aria-busy');
+          button.textContent = label;
+        }
+      });
   });
+  var FALLBACK = heroForm.getAttribute('data-fallback') || '';
 
   /* ---------- Smooth anchors, offset for the sticky masthead ---------- */
   document.addEventListener('click', function (e) {

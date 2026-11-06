@@ -45,7 +45,7 @@
     </nav>
     <div class="mast-actions">
       {{#phone}}<a class="mast-phone" href="{{phoneHref}}">{{phone}}</a>{{/phone}}
-      <a class="btn btn-primary" href="../contact/index.html">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
+      <a class="btn btn-primary" href="{{#preOpening}}../index.html#waitlist{{/preOpening}}{{^preOpening}}../contact/index.html{{/preOpening}}">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
       <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
         <i></i><i></i><i></i>
       </button>
@@ -68,7 +68,7 @@
     </details>
     <a class="dnav" href="../contact/index.html">Contact</a>
   </nav>
-  <a class="btn btn-primary" href="../contact/index.html">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
+  <a class="btn btn-primary" href="{{#preOpening}}../index.html#waitlist{{/preOpening}}{{^preOpening}}../contact/index.html{{/preOpening}}">{{#preOpening}}Join the waitlist{{/preOpening}}{{^preOpening}}Book an appointment{{/preOpening}}</a>
   {{#phone}}<p class="drawer-foot small">Prefer to talk it through? <a class="textlink" href="{{phoneHref}}">{{phone}}</a></p>{{/phone}}
 </div>
 <main id="main">
@@ -95,7 +95,7 @@
         <p class="blurb">A dental practice in the middle of Warrnambool, looking after families across Warrnambool, Port Fairy and the surrounding districts.</p>
       </div>
       <div>
-        <h4>Explore</h4>
+        <h2 class="foot-h">Explore</h2>
         <ul>
           <li><a href="../about/index.html">About</a></li>
           <li><a href="../meet-the-team/index.html">Meet the Team</a></li>
@@ -104,19 +104,19 @@
         </ul>
       </div>
       <div>
-        <h4>Care</h4>
+        <h2 class="foot-h">Care</h2>
         <ul>
           <li><a href="../services/general-dentistry/check-ups-and-cleans/index.html">Check-ups &amp; cleans</a></li><li><a href="../services/general-dentistry/dental-fillings/index.html">Fillings</a></li><li><a href="../services/dental-implants/index.html">Dental implants</a></li><li><a href="../services/restorative-dentistry/root-canal-treatment/index.html">Root canal treatment</a></li><li><a href="../services/general-dentistry/childrens-dentistry/index.html">Children’s dentistry</a></li><li><a href="../services/restorative-dentistry/tooth-extractions/index.html">Extractions</a></li>
         </ul>
       </div>
       <div>
-        <h4>Areas We Serve</h4>
+        <h2 class="foot-h">Areas We Serve</h2>
         <ul>
           <li><a href="../dentist-warrnambool/index.html">Warrnambool</a></li><li><a href="../dentist-dennington/index.html">Dennington</a></li><li><a href="../dentist-allansford/index.html">Allansford</a></li><li><a href="../dentist-koroit/index.html">Koroit</a></li><li><a href="../dentist-port-fairy/index.html">Port Fairy</a></li>
         </ul>
       </div>
       <div>
-        <h4>Visit</h4>
+        <h2 class="foot-h">Visit</h2>
         <ul>
           <li>{{addressStreet}}</li>
           <li>Warrnambool VIC 3280</li>
@@ -131,8 +131,7 @@
       <div class="foot-legal">
         <span>Copyright 2026 Lava Street Dental</span>
         <span>
-          <!-- TODO: link the Privacy Policy page once written. -->
-          <a href="#">Privacy Policy</a> — placeholder
+          <a href="../privacy-policy/index.html">Privacy Policy</a>
         </span>
       </div>
     </div>

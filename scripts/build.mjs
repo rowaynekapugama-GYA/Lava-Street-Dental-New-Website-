@@ -291,7 +291,7 @@ for (const file of pages) {
 
   // Editorial placeholders still visible to visitors (client to supply).
   const visible = s.replace(/<!--[\s\S]*?-->/g, "").replace(/<script[\s\S]*?<\/script>/g, "");
-  for (const m of visible.matchAll(/\[[A-Z][^\]<]{3,}\]/g)) notices.push(`${rel}: ${m[0].slice(0, 90)}`);
+  for (const m of visible.matchAll(/\[[A-Z][^\]<]{2,}\]/g)) notices.push(`${rel}: ${m[0].slice(0, 90)}`);
 }
 
 for (const [t, list] of titles) if (list.length > 1) err(`duplicate <title> "${t}" on ${list.join(", ")}`);
