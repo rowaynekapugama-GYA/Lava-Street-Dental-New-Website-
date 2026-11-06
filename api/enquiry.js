@@ -1,4 +1,4 @@
-// POST /api/enquiry
+// POST /api/enquiry/
 // General enquiry form on the contact page. Same email setup as the waitlist:
 // a notification to the practice inbox and a short acknowledgement to the
 // sender. The page asks people not to include health information.
@@ -39,7 +39,7 @@ export default async function handler(req, res) {
 
   const settings = mailSettings();
   if (!settings.ok) {
-    console.error("enquiry: SMTP_HOST, SMTP_USER, SMTP_PASS, WAITLIST_TO_EMAIL or WAITLIST_FROM_EMAIL is not set");
+    console.error("enquiry: SMTP2GO_API_KEY is not set");
     return send(res, 503, { ok: false, error: "Sorry, this form is not taking messages just now." });
   }
 

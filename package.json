@@ -1,16 +1,13 @@
 {
   "name": "lava-street-dental",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "private": true,
-  "description": "Lava Street Dental website. Static HTML built from src/ and site.config.mjs into dist/, plus Vercel functions in api/ that send the form emails over SMTP.",
+  "description": "Lava Street Dental website. Static HTML built from src/ and site.config.mjs into dist/, plus Vercel functions in api/ that send the form emails through SMTP2GO.",
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs"
   },
   "engines": {
     "node": ">=20"
-  },
-  "dependencies": {
-    "nodemailer": "10.2.1"
   }
 }

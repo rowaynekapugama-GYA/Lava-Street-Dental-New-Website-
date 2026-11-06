@@ -121,7 +121,7 @@
           <p class="badge">Founding patients waitlist</p>
           <h2 class="capture-h">Be first through the <em>door</em>.</h2>
           <p class="small"><span class="m-hide">Leave your details and you will hear from us before the books open publicly.</span><span class="m-only">Be first to hear when the books open.</span></p>
-          <form class="hero-form" id="heroForm" action="/api/waitlist" method="post" novalidate data-fallback=" You can also email us at {{email}}{{#phone}} or call {{phone}}{{/phone}}.">
+          <form class="hero-form" id="heroForm" action="/api/waitlist/" method="post" novalidate data-fallback=" You can also email us at {{email}}{{#phone}} or call {{phone}}{{/phone}}.">
             <div class="row2">
               <div class="field">
                 <label class="visually-hidden" for="hFirst">First name</label>
@@ -474,8 +474,8 @@
   var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- Hero capture form ----------
-       Inline validation, then a POST to /api/waitlist (Vercel function, emails
-       over SMTP). On success the card swaps to a confirmation. */
+       Inline validation, then a POST to /api/waitlist/ (Vercel function, emails
+       via SMTP2GO). On success the card swaps to a confirmation. */
   var heroForm = document.getElementById('heroForm');
   var captureInner = document.getElementById('captureInner');
   var heroStatus = document.getElementById('heroStatus');
@@ -561,7 +561,7 @@
       company: document.getElementById('hCompany').value,
       startedAt: started ? started.value : ''
     };
-    fetch('/api/waitlist', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+    fetch('/api/waitlist/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
       .then(function (r) { return r.json().catch(function () { return { ok: false }; }).then(function (data) { data.status = r.status; return data; }); })
       .then(function (data) {
         if (data.ok) { showDone(payload.firstName); return; }

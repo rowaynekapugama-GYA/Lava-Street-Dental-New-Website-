@@ -99,8 +99,8 @@
   }
 
   /* ---------- Contact enquiry form ----------
-     Inline validation, then a POST to /api/enquiry (Vercel function, emails
-     over SMTP). Errors show inline; the button is disabled while sending. */
+     Inline validation, then a POST to /api/enquiry/ (Vercel function, emails
+     via SMTP2GO). Errors show inline; the button is disabled while sending. */
   var enquiry = document.getElementById('enquiryForm');
   if (enquiry) {
     var note = document.getElementById('enquiryNote');
@@ -153,7 +153,7 @@
         company: document.getElementById('eqCompany').value,
         startedAt: startedAt ? startedAt.value : ''
       };
-      fetch('/api/enquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+      fetch('/api/enquiry/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
         .then(function (r) { return r.json().catch(function () { return { ok: false }; }); })
         .then(function (data) {
           if (data.ok) {

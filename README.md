@@ -3,7 +3,7 @@
 Static HTML site for Lava Street Dental, Warrnambool. Pages live in `src/`,
 business details live in `site.config.mjs`, and `npm run build` renders the
 finished site into `dist/`. The waitlist and contact forms post to two Vercel
-functions in `api/`, which send email over SMTP (SMTP2GO). Vercel runs the build
+functions in `api/`, which send email through the SMTP2GO API. Vercel runs the build
 and deploys the functions on every push.
 
 ## Structure
@@ -86,27 +86,21 @@ links). Redeploy after adding or changing them.
 
 | Variable | What it is |
 |---|---|
-| `SMTP_HOST` | SMTP server. For SMTP2GO: `mail.smtp2go.com` |
-| `SMTP_PORT` | `2525` (SMTP2GO's recommended port) or `587`, both STARTTLS; or `465` for SSL. Defaults to 587 if left out |
-| `SMTP_USER` | SMTP username, created in the SMTP2GO dashboard (an SMTP user, not your account login) |
-| `SMTP_PASS` | Password for that SMTP user |
-| `WAITLIST_TO_EMAIL` | Inboxes that receive waitlist sign-ups and contact enquiries, separated by commas. GYA standard: reception, the SmileOx intake address and rowayne@gyaclients.com |
-| `WAITLIST_FROM_EMAIL` | Sender shown on all form emails, on the domain verified in SMTP2GO, for example `Lava Street Dental <hello@lavastreetdental.com.au>` |
-
-If any of these is missing, the forms show a friendly error with the practice
-email and phone instead of failing silently.
+| `SMTP2GO_API_KEY` | Required. SMTP2GO API key (SMTP2GO > Sending > API Keys). Without it the forms show a friendly "not taking sign-ups" message with the practice email and phone |
+| `FORM_FROM` | Sender on the SMTP2GO-verified domain. Default: `Lava Street Dental <hello@lavastreetdental.com.au>` |
+| `FORM_TO` | Optional. Recipients, separated by commas (reception, the SmileOx intake address, rowayne@gyaclients.com). Without it the hard-coded fallback in `api/_lib/forms.js` is used: info@lavastreetdental.com.au and rowayne@gyaclients.com |
 
 ## Forms and email
 
-Each form posts JSON to its Vercel function, which validates it on the server
-and sends two emails over SMTP with nodemailer (pinned in `package.json`).
-Any SMTP service works; this site is set up for SMTP2GO, the GYA standard.
+Same setup as the other GYA sites. Each form posts JSON to its Vercel
+function (`/api/waitlist/`, `/api/enquiry/`), which validates it on the server
+and sends two emails through the SMTP2GO HTTP API (v3). No dependencies.
 
-- **Waitlist** (`/api/waitlist`, home page): a notification to
-  `WAITLIST_TO_EMAIL` (reply goes straight to the person), and a short
-  "You're on the list" confirmation to the person.
-- **Enquiry** (`/api/enquiry`, contact page): a notification with the message,
-  and a short acknowledgement to the sender.
+- **Waitlist** (`/api/waitlist/`, home page): a notification to the
+  recipients (reply goes straight to the person), and a short "You're on the
+  list" confirmation to the person.
+- **Enquiry** (`/api/enquiry/`, contact page): a notification with the
+  message, and a short acknowledgement to the sender.
 
 Fields: first and last name, email, optional Australian phone number, and a
 required consent tick box that links to the Privacy Policy. The enquiry form
@@ -119,35 +113,30 @@ best-effort).
 
 ### Setting up SMTP2GO (once)
 
-1. Use the GYA SMTP2GO account, or create one at smtp2go.com.
-2. Add `lavastreetdental.com.au` as a verified sender domain. SMTP2GO shows a
-   few CNAME records (for SPF/return path, DKIM and link tracking). Add them
-   exactly as shown at GoDaddy (DNS > DNS Records). They are CNAMEs on their
-   own names, so they do not touch the MX records for info@ and meg@.
-3. Wait for the domain to show as verified.
-4. Create an SMTP user for this website and copy its username and password.
-5. Add the six variables above in Vercel (Production, and Preview if wanted),
-   then redeploy.
-6. Test: join the waitlist on the live site with your own email. You should
-   get the confirmation, and the practice inbox the notification.
+1. In the GYA SMTP2GO account, add `lavastreetdental.com.au` as a verified
+   sender domain and add the CNAME records it shows at GoDaddy (DNS > DNS
+   Records). They do not touch the MX records for info@ and meg@.
+2. Create an API key (Sending > API Keys) with permission to send email.
+3. In Vercel > Settings > Environment Variables (Production, and Preview if
+   wanted) add `SMTP2GO_API_KEY`, plus `FORM_FROM` and `FORM_TO` if the
+   defaults above are not right. Redeploy.
+4. Test: join the waitlist on the live site with your own email. You should
+   get the confirmation, and the recipients the notification.
 
-SMTP2GO's free plan allows 1,000 emails a month and 200 a day (25 an hour
-until the sender domain is verified). Each sign-up uses two emails, plus one
-for each extra address in `WAITLIST_TO_EMAIL`.
+Each sign-up uses two emails, plus one for each extra recipient.
 
 ### Testing locally
 
 `npm run build` only builds the static pages. To run the functions locally,
-run `npm install`, copy `.env.example` to `.env.local`, fill it in, then run
-`vercel dev`.
+copy `.env.example` to `.env.local`, fill it in, then run `vercel dev`.
 
 ## Go-live checklist (open items)
 
 - [x] Phone number (03 5208 9006)
 - [x] Street address (116 Lava Street) and map embed
 - [x] Opening hours
-- [x] Waitlist and contact forms send email over SMTP (`api/`)
-- [ ] SMTP2GO sender domain verified, SMTP user created, and the six environment variables set in Vercel
+- [x] Waitlist and contact forms send email through SMTP2GO (`api/`)
+- [ ] SMTP2GO sender domain verified and `SMTP2GO_API_KEY` set in Vercel (plus `FORM_TO` with the SmileOx intake address)
 - [x] Privacy Policy page at /privacy-policy/
 - [x] Privacy Policy placeholders filled from site details (add the legal entity name and ABN if the client wants them shown)
 - [ ] Have the Privacy Policy checked against the practice management software and professional advice

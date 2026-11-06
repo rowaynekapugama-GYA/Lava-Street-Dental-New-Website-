@@ -1,7 +1,7 @@
-// POST /api/waitlist
+// POST /api/waitlist/
 // Founding patients waitlist on the home page. Sends a notification to the
 // practice inbox and a short confirmation to the person who signed up.
-// Email goes out over SMTP (see api/_lib/forms.js).
+// Email goes out through SMTP2GO (see api/_lib/forms.js).
 // No health information is collected: name, email, optional phone, consent.
 
 import {
@@ -41,7 +41,7 @@ export default async function handler(req, res) {
 
   const settings = mailSettings();
   if (!settings.ok) {
-    console.error("waitlist: SMTP_HOST, SMTP_USER, SMTP_PASS, WAITLIST_TO_EMAIL or WAITLIST_FROM_EMAIL is not set");
+    console.error("waitlist: SMTP2GO_API_KEY is not set");
     return send(res, 503, { ok: false, error: "Sorry, the waitlist is not taking sign-ups just now." });
   }
 

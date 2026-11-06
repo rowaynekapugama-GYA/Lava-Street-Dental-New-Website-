@@ -3,19 +3,15 @@
 // Files under api/_lib are not deployed as their own endpoints: Vercel skips
 // paths that start with an underscore.
 //
-// Email is sent over SMTP with nodemailer. Any SMTP service works; the GYA
-// standard is SMTP2GO (mail.smtp2go.com). Environment variables, set in
-// Vercel > Settings > Environment Variables:
-//   SMTP_HOST            SMTP server, for example mail.smtp2go.com
-//   SMTP_PORT            587 or 2525 (STARTTLS) or 465 (SSL). Defaults to 587
-//   SMTP_USER            SMTP username
-//   SMTP_PASS            SMTP password
-//   WAITLIST_TO_EMAIL    practice inbox for notifications; several addresses
-//                        can be given, separated by commas
-//   WAITLIST_FROM_EMAIL  sender on the domain verified with the SMTP service,
-//                        for example "Lava Street Dental <hello@lavastreetdental.com.au>"
-
-import nodemailer from "nodemailer";
+// Email goes through the SMTP2GO HTTP API (v3), the same relay as the other
+// GYA sites. No dependencies: Node's built-in fetch. Environment variables,
+// set in Vercel > Settings > Environment Variables:
+//   SMTP2GO_API_KEY  SMTP2GO API key (required; the forms return 503 without it)
+//   FORM_FROM        sender on the SMTP2GO-verified domain, for example
+//                    "Lava Street Dental <hello@lavastreetdental.com.au>"
+//   FORM_TO          optional: recipients, separated by commas. Without it the
+//                    hard-coded FALLBACK_TO list below is used.
+//   SMTP2GO_ENDPOINT optional: override the API address (testing only)
 import config from "../../site.config.mjs";
 
 export { config };
@@ -110,41 +106,43 @@ export function send(res, status, payload) {
   res.end(JSON.stringify(payload));
 }
 
+// Recipients when FORM_TO is not set: the practice inbox and GYA.
+// Add the practice's SmileOx intake address here (or in FORM_TO) once known.
+export const FALLBACK_TO = ["info@lavastreetdental.com.au", "rowayne@gyaclients.com"];
+const FALLBACK_FROM = "Lava Street Dental <hello@lavastreetdental.com.au>";
+
 export function mailSettings() {
-  const host = String(process.env.SMTP_HOST || "").trim();
-  const port = Number(process.env.SMTP_PORT || 587);
-  const user = String(process.env.SMTP_USER || "").trim();
-  const pass = String(process.env.SMTP_PASS || "");
-  const to = String(process.env.WAITLIST_TO_EMAIL || "")
+  const apiKey = String(process.env.SMTP2GO_API_KEY || "").trim();
+  const listed = String(process.env.FORM_TO || "")
     .split(",")
     .map((s) => s.trim())
     .filter(Boolean);
-  const from = String(process.env.WAITLIST_FROM_EMAIL || "").trim();
-  return { ok: Boolean(host && port && user && pass && to.length && from), host, port, user, pass, to, from };
-}
-
-// One transport per function instance, reused across requests.
-let transport = null;
-function getTransport(settings) {
-  if (!transport) {
-    transport = nodemailer.createTransport({
-      host: settings.host,
-      port: settings.port,
-      secure: settings.port === 465 || settings.port === 8465 || settings.port === 443,
-      requireTLS: !(settings.port === 465 || settings.port === 8465 || settings.port === 443),
-      auth: { user: settings.user, pass: settings.pass },
-      connectionTimeout: 10000,
-      greetingTimeout: 10000,
-      socketTimeout: 15000,
-    });
-  }
-  return transport;
+  const to = listed.length ? listed : FALLBACK_TO;
+  const from = String(process.env.FORM_FROM || "").trim() || FALLBACK_FROM;
+  const endpoint = String(process.env.SMTP2GO_ENDPOINT || "").trim() || "https://api.smtp2go.com/v3/email/send";
+  return { ok: Boolean(apiKey), apiKey, to, from, endpoint };
 }
 
 // message: { to, reply_to, subject, html, text }
 export async function sendEmail(settings, message) {
-  const { reply_to, ...rest } = message;
-  return getTransport(settings).sendMail({ from: settings.from, replyTo: reply_to, ...rest });
+  const r = await fetch(settings.endpoint, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "X-Smtp2go-Api-Key": settings.apiKey },
+    body: JSON.stringify({
+      sender: settings.from,
+      to: message.to,
+      subject: message.subject,
+      html_body: message.html,
+      text_body: message.text,
+      custom_headers: message.reply_to ? [{ header: "Reply-To", value: message.reply_to }] : [],
+    }),
+  });
+  const data = await r.json().catch(() => ({}));
+  // SMTP2GO can answer 200 with failures listed, so check both.
+  if (!r.ok || !data.data || data.data.failed > 0 || data.data.error) {
+    throw new Error(`SMTP2GO ${r.status}: ${JSON.stringify(data.data || data).slice(0, 300)}`);
+  }
+  return data.data;
 }
 
 // ---------------------------------------------------------------- email layout

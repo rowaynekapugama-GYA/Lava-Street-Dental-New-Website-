@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-06: forms use the SMTP2GO API (v1.2.2)
+
+- The waitlist and contact forms send through the SMTP2GO HTTP API with an
+  API key, the same setup as the other GYA sites, instead of an SMTP login.
+  nodemailer removed; no dependencies.
+- Env vars: `SMTP2GO_API_KEY` (required), `FORM_FROM` and `FORM_TO`
+  (optional). Without `FORM_TO`, recipients fall back to
+  info@lavastreetdental.com.au and rowayne@gyaclients.com.
+- Forms post to `/api/waitlist/` and `/api/enquiry/` (trailing slash, so no
+  redirect first).
+
 ## 2026-11-06: privacy policy details (v1.2.1)
 
 - Privacy Policy placeholders filled from the site's own details: the

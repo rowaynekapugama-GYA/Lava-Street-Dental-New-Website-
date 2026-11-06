@@ -76,10 +76,10 @@ export default {
   },
 
   // Waitlist and enquiry forms are live: they post to api/waitlist.js and
-  // api/enquiry.js, which send email over SMTP (SMTP2GO). The SMTP login,
-  // recipients and sender are Vercel environment variables (SMTP_HOST,
-  // SMTP_PORT, SMTP_USER, SMTP_PASS, WAITLIST_TO_EMAIL, WAITLIST_FROM_EMAIL),
-  // never values in this file. See README.md, "Forms and email".
+  // api/enquiry.js, which send email through the SMTP2GO API. The API key,
+  // sender and recipients are Vercel environment variables (SMTP2GO_API_KEY,
+  // FORM_FROM, FORM_TO), with fallbacks in api/_lib/forms.js. See README.md,
+  // "Forms and email".
 
   // Share image for Open Graph and Twitter cards, relative to the site root.
   shareImage: {
