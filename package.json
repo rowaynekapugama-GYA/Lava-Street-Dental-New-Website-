@@ -1,6 +1,6 @@
 {
   "name": "lava-street-dental",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": true,
   "description": "Lava Street Dental website. Static HTML built from src/ and site.config.mjs into dist/, plus Vercel functions in api/ that send the form emails over SMTP.",
   "type": "module",

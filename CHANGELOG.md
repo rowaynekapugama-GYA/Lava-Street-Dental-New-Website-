@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-06: privacy policy details (v1.2.1)
+
+- Privacy Policy placeholders filled from the site's own details: the
+  practice name (Lava Street Dental) and the privacy contact email
+  (info@lavastreetdental.com.au, from `site.config.mjs`). Phone and address
+  already came from the config.
+- The ABN is not on the site, so the ABN mention is removed rather than
+  guessed. The practice location (116 Lava Street, Warrnambool VIC 3280)
+  is used for "Who we are", the postal contact and the line on where patient
+  records are managed.
+
 ## 2026-11-06: go-live (v1.2.0): working forms, privacy policy, mobile refresh
 
 - Forms now send email. Before this, both forms were front-end only and

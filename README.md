@@ -149,7 +149,7 @@ run `npm install`, copy `.env.example` to `.env.local`, fill it in, then run
 - [x] Waitlist and contact forms send email over SMTP (`api/`)
 - [ ] SMTP2GO sender domain verified, SMTP user created, and the six environment variables set in Vercel
 - [x] Privacy Policy page at /privacy-policy/
-- [ ] Fill in the highlighted Privacy Policy placeholders (legal name, ABN, privacy contact email, where practice software stores data)
+- [x] Privacy Policy placeholders filled from site details (add the legal entity name and ABN if the client wants them shown)
 - [ ] Have the Privacy Policy checked against the practice management software and professional advice
 - [ ] Remaining editorial placeholders listed by `npm run build`
 - [x] Booking CTAs and "opened" wording switched to pre-opening (`preOpening`)
