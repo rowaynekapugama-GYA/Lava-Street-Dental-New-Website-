@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09: CC on form emails (v1.3.2)
+
+- Every waitlist and enquiry notification to the practice is now copied (CC) to
+  brett@generateyouraudience.com. The patient's confirmation email is unchanged and goes to them only.
+- Optional `FORM_CC` in Vercel overrides the CC list (comma separated, or `none`). No other changes.
+
 ## 2026-11-06: Blob photo columns migration (v1.3.1)
 
 - Fix: on Vercel (with `BLOB_READ_WRITE_TOKEN` set) the Blob storage plugin adds two columns to the

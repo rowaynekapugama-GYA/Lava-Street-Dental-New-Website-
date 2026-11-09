@@ -177,7 +177,7 @@ export function SettingsForm({ initial, isAdmin, brand }: { initial: SettingsSta
             <TextInput id="siteUrl" label="Website address" value={s.siteUrl} onChange={(v) => set({ siteUrl: v })}
               help="The live domain, used for canonical tags, share links and the sitemap. No slash at the end." />
           </Panel>
-          <Panel id="forms" title="Form recipients" intro="Waitlist sign-ups and contact enquiries are emailed to these addresses (SMTP2GO). FORM_TO in Vercel, if set, wins over this list. Empty uses info@lavastreetdental.com.au and rowayne@gyaclients.com.">
+          <Panel id="forms" title="Form recipients" intro="Waitlist sign-ups and contact enquiries are emailed to these addresses (SMTP2GO). FORM_TO in Vercel, if set, wins over this list. Empty uses info@lavastreetdental.com.au and rowayne@gyaclients.com. Every one is also copied to brett@generateyouraudience.com (FORM_CC in Vercel changes that).">
             <Lines id="formRecipients" label="Send form emails to" value={s.formRecipients} onChange={(v) => set({ formRecipients: v })} placeholder="info@lavastreetdental.com.au" help="Add the practice's SmileOx intake address here once it is known." />
           </Panel>
           <Panel id="tracking" title="Tracking">

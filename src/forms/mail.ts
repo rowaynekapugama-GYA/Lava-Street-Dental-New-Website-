@@ -9,6 +9,9 @@
  *                    "Lava Street Dental <hello@lavastreetdental.com.au>"
  *   FORM_TO          optional: recipients, separated by commas. Otherwise the list in Site Settings
  *                    (dashboard, GYA only), then FALLBACK_TO below.
+ *   FORM_CC          optional: copied on every practice notification, separated by commas. Otherwise
+ *                    FALLBACK_CC below. Set it to "none" to copy nobody. The person who filled in the form
+ *                    is never copied; their confirmation goes to them alone.
  *   SMTP2GO_ENDPOINT optional: override the API address (testing only)
  */
 import type { SiteSettings } from '@/lib/site'
@@ -74,21 +77,28 @@ export const send = (status: number, payload: unknown) =>
 
 /** Recipients when neither FORM_TO nor Site Settings name any: the practice inbox and GYA. */
 export const FALLBACK_TO = ['info@lavastreetdental.com.au', 'rowayne@gyaclients.com']
+/** Copied on every practice notification (GYA, 9 November 2026). */
+export const FALLBACK_CC = ['brett@generateyouraudience.com']
 const FALLBACK_FROM = 'Lava Street Dental <hello@lavastreetdental.com.au>'
 
-export type MailSettings = { ok: boolean; apiKey: string; to: string[]; from: string; endpoint: string }
+export type MailSettings = { ok: boolean; apiKey: string; to: string[]; cc: string[]; from: string; endpoint: string }
 
 export function mailSettings(s?: SiteSettings): MailSettings {
   const apiKey = String(process.env.SMTP2GO_API_KEY || '').trim()
   const listed = String(process.env.FORM_TO || '').split(',').map((x) => x.trim()).filter(Boolean)
   const fromSettings = (s?.formRecipients ?? []).map((x) => String(x).trim()).filter(isEmail)
   const to = listed.length ? listed : fromSettings.length ? fromSettings : FALLBACK_TO
+  const ccEnv = String(process.env.FORM_CC || '').trim()
+  const ccList = ccEnv.toLowerCase() === 'none' ? [] : ccEnv ? ccEnv.split(',').map((x) => x.trim()).filter(isEmail) : FALLBACK_CC
+  // nobody gets the same email twice
+  const lowerTo = new Set(to.map((x) => x.toLowerCase()))
+  const cc = [...new Set(ccList.map((x) => x.toLowerCase()))].filter((x) => !lowerTo.has(x))
   const from = String(process.env.FORM_FROM || '').trim() || FALLBACK_FROM
   const endpoint = String(process.env.SMTP2GO_ENDPOINT || '').trim() || 'https://api.smtp2go.com/v3/email/send'
-  return { ok: Boolean(apiKey), apiKey, to, from, endpoint }
+  return { ok: Boolean(apiKey), apiKey, to, cc, from, endpoint }
 }
 
-export type Message = { to: string[]; reply_to?: string; subject: string; html: string; text: string }
+export type Message = { to: string[]; cc?: string[]; reply_to?: string; subject: string; html: string; text: string }
 
 export async function sendEmail(settings: MailSettings, message: Message) {
   const r = await fetch(settings.endpoint, {
@@ -97,6 +107,7 @@ export async function sendEmail(settings: MailSettings, message: Message) {
     body: JSON.stringify({
       sender: settings.from,
       to: message.to,
+      ...(message.cc?.length ? { cc: message.cc } : {}),
       subject: message.subject,
       html_body: message.html,
       text_body: message.text,

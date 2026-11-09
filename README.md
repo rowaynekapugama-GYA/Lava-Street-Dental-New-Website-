@@ -68,7 +68,9 @@ Unchanged in behaviour since v1.2.2, now Next.js routes at the same addresses (`
 (`SMTP2GO_API_KEY`, optional `FORM_FROM`, `FORM_TO`). New in v1.3.0: each sign-up is also kept in the
 dashboard (Waitlist), and if the practice email fails the person is still on the list there.
 Recipients: `FORM_TO` if set, else Site Settings > Form recipients (GYA), else
-info@lavastreetdental.com.au and rowayne@gyaclients.com. Spam protection as before: honeypot, a
+info@lavastreetdental.com.au and rowayne@gyaclients.com. Every practice notification is also copied
+(CC) to brett@generateyouraudience.com, or to `FORM_CC` if set (`none` turns it off). The person who
+filled in the form only ever gets their own confirmation. Spam protection as before: honeypot, a
 two-second check and five posts per address per 10 minutes.
 
 ## Checks

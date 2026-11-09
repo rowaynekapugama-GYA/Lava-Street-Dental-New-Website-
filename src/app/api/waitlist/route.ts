@@ -53,6 +53,7 @@ export async function POST(req: Request) {
   try {
     await sendEmail(settings, {
       to: settings.to,
+      cc: settings.cc,
       reply_to: email,
       subject: `New waitlist sign-up: ${name}`,
       html: emailHtml('New founding patients waitlist sign-up', [
