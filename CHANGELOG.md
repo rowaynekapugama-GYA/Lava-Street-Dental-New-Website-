@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-09: demo address kept out of Google (v1.3.3)
+
+Client request: lava-street-dental.vercel.app was ranking first for "lava street dental".
+- Every address except the live domain (Site Settings > Website address: lavastreetdental.com.au) now
+  serves noindex copies of the pages (`public/_demo/`): robots meta `noindex, nofollow`, no canonical,
+  no og:url, no structured data or tracking; plus `X-Robots-Tag: noindex, nofollow` on every response,
+  an empty sitemap and a crawlable robots.txt. The live domain is unchanged (byte for byte).
+- "Hide the whole website from search engines" (SEO, GYA) now puts noindex on every page and keeps
+  crawling allowed, instead of `Disallow: /`, so Google can see the noindex.
+- README: "Search engines: demo address vs live domain".
+
 ## 2026-11-09: CC on form emails (v1.3.2)
 
 - Every waitlist and enquiry notification to the practice is now copied (CC) to

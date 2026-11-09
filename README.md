@@ -61,6 +61,43 @@ Publish website: every "Join the waitlist" button goes back to its booking wordi
 page. The home page waitlist section itself still needs new wording or an approved booking design
 (README-CMS.md, conflicts).
 
+## Search engines: demo address vs live domain
+
+Only the live domain may appear in Google. The switch is one setting: **Site Settings > Website address**
+(GYA tab), `https://lavastreetdental.com.au` (default in `site.config.mjs` as `siteUrl`). Requests on that
+host and its `www` form get the normal pages. **Every other address** (lava-street-dental.vercel.app, the
+`*-new-website.vercel.app` address, every Vercel preview) gets:
+
+- `<meta name="robots" content="noindex, nofollow">` at the top of every page (the copies in `public/_demo/`,
+  written by `scripts/render-site.ts`; design and words identical);
+- an `X-Robots-Tag: noindex, nofollow` header on every response (`src/proxy.ts`, and `next.config.mjs` for
+  `*.vercel.app` files such as images);
+- no canonical tag, no `og:url`, no structured data (Dentist, FAQ), no tracking or site verification tags;
+- an empty `sitemap.xml`, and a `robots.txt` that still **allows** crawling, with a comment saying why.
+  Do not add `Disallow: /`: Google must crawl a page to see its noindex, otherwise the old listing stays.
+
+### Going live: how to enable indexing
+
+The live domain is already indexable; nothing needs switching on for lavastreetdental.com.au. Indexing
+follows the Website address setting, so the only reason to touch it is a domain change.
+
+**Moving to a different domain later:** set the new address in Site Settings > Website address (or
+`siteUrl`), add the domain in Vercel, press Publish website (or redeploy), check
+`curl -sI https://<new domain> | grep -i x-robots` prints nothing and the old address now shows the
+header, then add the domain to Search Console and submit `https://<new domain>/sitemap.xml`.
+
+**Hiding everything** (emergency): Dashboard > SEO > "Hide the whole website from search engines" (GYA)
+puts noindex on every page on every address and empties the sitemap. Crawling stays allowed.
+
+Checks after a deploy:
+
+```
+curl -sI https://lava-street-dental.vercel.app | grep -i x-robots-tag     # x-robots-tag: noindex, nofollow
+curl -s  https://lava-street-dental.vercel.app | grep -i 'name="robots"'   # noindex, nofollow
+curl -sI https://lavastreetdental.com.au | grep -i x-robots-tag           # (nothing: the live site stays indexable)
+curl -s  https://lavastreetdental.com.au | grep -i 'name="robots"'         # (nothing)
+```
+
 ## Forms and email
 
 Unchanged in behaviour since v1.2.2, now Next.js routes at the same addresses (`/api/waitlist/`,

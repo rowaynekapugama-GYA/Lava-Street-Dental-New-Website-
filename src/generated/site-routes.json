@@ -108,5 +108,9 @@
    "to": "/services/laser-digital-dentistry/digital-scanning-cbct/",
    "type": "permanent"
   }
+ ],
+ "indexHosts": [
+  "lavastreetdental.com.au",
+  "www.lavastreetdental.com.au"
  ]
 }

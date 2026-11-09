@@ -3,7 +3,10 @@
  *
  *   content/pages/*.json + content/chrome.json + Site Settings  ->  public/index.html, public/about/index.html, ...
  *   sitemap.xml and robots.txt for the canonical domain
- *   src/generated/site-routes.json (the addresses and redirects src/proxy.ts serves)
+ *   public/_demo/: the same pages for every other address (the vercel.app demo, previews): noindex,
+ *     no canonical, no structured data, an empty sitemap and a crawlable robots.txt (see README, "Search
+ *     engines"). src/proxy.ts serves them whenever the address is not the live domain.
+ *   src/generated/site-routes.json (the addresses and redirects src/proxy.ts serves, and the live host)
  *
  * Then checks every page the way the v1.2.2 build did. Problems that would break the site stop the build
  * (the live site then stays as it was). Things the practice can cause by typing (a duplicate page title, a
@@ -37,7 +40,11 @@ const phone = String(settings.phone || '').trim()
 if (phone && !/\d{6,}/.test(phone.replace(/\D/g, ''))) errors.push(`Site Settings: phone must be a number or empty, not "${phone}"`)
 
 const files = new Map<string, string>()
-for (const page of pages) files.set(page.file, renderPageHtml(page, { chrome, settings, errors }))
+for (const page of pages) {
+  // "Hide the whole website from search engines" (SEO, GYA) puts noindex on every page
+  const p = seo.noindexSite ? { ...page, meta: { ...page.meta, noindex: true } } : page
+  files.set(page.file, renderPageHtml(p, { chrome, settings, errors }))
+}
 
 const indexed = pages
   .filter((p) => p.file !== '404.html' && !p.meta?.noindex)
@@ -47,7 +54,35 @@ const today = new Date().toISOString().slice(0, 10)
 files.set('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`
   + (seo.noindexSite ? '' : indexed.map((rel) => `  <url><loc>${urlFor(settings, rel)}</loc><lastmod>${today}</lastmod></url>`).join('\n') + '\n')
   + `</urlset>\n`)
-files.set('robots.txt', seo.noindexSite ? 'User-agent: *\nDisallow: /\n' : `User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`)
+// Never "Disallow: /": a page Google cannot crawl keeps its old listing, because Google never sees its noindex.
+const CRAWL_NOTE = '# Crawling stays allowed on purpose. Pages that must not be in Google say so with a\n'
+  + '# noindex meta tag and X-Robots-Tag header, and Google has to crawl a page to see that.\n'
+  + '# Do not add "Disallow: /": it would keep old listings in Google\'s results.\n'
+files.set('robots.txt', seo.noindexSite
+  ? `${CRAWL_NOTE}# The whole website is hidden from search engines (Dashboard > SEO, GYA).\nUser-agent: *\nAllow: /\n`
+  : `User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`)
+
+// ---------------------------------------------------------------- the demo and preview addresses
+/**
+ * Every address that is not the live domain (lava-street-dental.vercel.app, Vercel previews) gets these
+ * copies: noindex, nofollow at the top of <head>, and nothing that asks to be ranked (canonical tag,
+ * og:url, structured data, tracking, site verification). The design and words are identical.
+ */
+export function demoVariant(html: string): string {
+  return html
+    .replace(/<link rel="canonical"[^>]*>\n?/g, '')
+    .replace(/<meta property="og:url"[^>]*>\n?/g, '')
+    .replace(/<meta name="robots"[^>]*>\n?/g, '')
+    .replace(/<meta name="google-site-verification"[^>]*>\n?/g, '')
+    .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\n?/g, '')
+    .replace(/<script async src="https:\/\/www\.googletagmanager\.com\/gtag\/js[^"]*"><\/script>\n?<script>window\.dataLayer[\s\S]*?<\/script>\n?/g, '')
+    .replace(/<script>!function\(f,b,e,v,n,t,s\)[\s\S]*?<\/script>\n?/g, '')
+    .replace(/<meta charset="UTF-8">/i, (m) => `${m}\n<meta name="robots" content="noindex, nofollow">`)
+}
+const DEMO = '_demo'
+for (const page of pages) files.set(`${DEMO}/${page.file}`, demoVariant(files.get(page.file)!))
+files.set(`${DEMO}/sitemap.xml`, `<?xml version="1.0" encoding="UTF-8"?>\n<!-- Demo address: nothing to index here. The live site's sitemap is on the live domain. -->\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n</urlset>\n`)
+files.set(`${DEMO}/robots.txt`, `# Demo and preview address of the Lava Street Dental website (not the live domain).\n${CRAWL_NOTE}# Every page here answers noindex, nofollow, so Google drops it from its results.\nUser-agent: *\nAllow: /\n`)
 
 // ---------------------------------------------------------------- checks (as the v1.2.2 build)
 const j = (...p: string[]) => p.join('')
@@ -127,12 +162,16 @@ fs.writeFileSync(manifestPath, JSON.stringify([...files.keys()].sort(), null, 1)
 if (out === path.join(root, 'public')) {
   const routes = pages.filter((p) => p.file !== '404.html').map((p) => p.path).sort()
   fs.mkdirSync(path.join(root, 'src', 'generated'), { recursive: true })
-  fs.writeFileSync(path.join(root, 'src', 'generated', 'site-routes.json'), JSON.stringify({ routes, redirects: getRedirects() }, null, 1) + '\n')
+  // the only addresses search engines may index: the live domain from Site Settings, and its www form
+  const liveHost = new URL(origin).host.toLowerCase().replace(/^www\./, '')
+  const indexHosts = [liveHost, `www.${liveHost}`]
+  fs.writeFileSync(path.join(root, 'src', 'generated', 'site-routes.json'), JSON.stringify({ routes, redirects: getRedirects(), indexHosts }, null, 1) + '\n')
 }
 
 console.log(`render: ${pages.length} pages for ${origin} into ${path.relative(root, out) || '.'}`)
 console.log(`Phone: ${phone || '(empty, phone links hidden)'}   Email: ${settings.emails?.public || '(empty)'}   Hours: ${settings.hours?.length ? settings.hours.join('; ') : '(empty, hidden)'}`)
-console.log(`sitemap.xml: ${seo.noindexSite ? 0 : indexed.length} URLs   robots.txt: ${seo.noindexSite ? 'site hidden from search engines' : 'indexing allowed'}`)
+console.log(`sitemap.xml: ${seo.noindexSite ? 0 : indexed.length} URLs   robots.txt: ${seo.noindexSite ? 'site hidden from search engines' : 'indexing allowed'}   indexable only on ${new URL(origin).host}`)
+console.log(`demo and preview addresses: ${pages.length} noindex copies in ${DEMO}/, empty sitemap, crawlable robots.txt`)
 if (notices.length) {
   console.log(`\nContent notices: ${notices.length} editorial placeholder(s) still visible, for the client to supply:`)
   for (const n of notices) console.log(`  - ${n}`)
