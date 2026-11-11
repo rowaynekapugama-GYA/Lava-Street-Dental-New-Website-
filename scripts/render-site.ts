@@ -19,7 +19,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { getChrome, getPages, getRedirects, getSeoDefaults } from '../src/lib/content'
 import { getSettings } from '../src/lib/site'
-import { siteOrigin, urlFor } from '../src/lib/staticSite'
+import { gtmIdOf, siteOrigin, stripTracking, urlFor } from '../src/lib/staticSite'
 import { renderPageHtml } from '../src/dashboard/render'
 
 const root = process.cwd()
@@ -66,17 +66,16 @@ files.set('robots.txt', seo.noindexSite
 /**
  * Every address that is not the live domain (lava-street-dental.vercel.app, Vercel previews) gets these
  * copies: noindex, nofollow at the top of <head>, and nothing that asks to be ranked (canonical tag,
- * og:url, structured data, tracking, site verification). The design and words are identical.
+ * og:url, structured data, site verification) or counts a visit (Google Tag Manager, GA4, Meta Pixel).
+ * The design and words are identical.
  */
 export function demoVariant(html: string): string {
-  return html
+  return stripTracking(html)
     .replace(/<link rel="canonical"[^>]*>\n?/g, '')
     .replace(/<meta property="og:url"[^>]*>\n?/g, '')
     .replace(/<meta name="robots"[^>]*>\n?/g, '')
     .replace(/<meta name="google-site-verification"[^>]*>\n?/g, '')
     .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\n?/g, '')
-    .replace(/<script async src="https:\/\/www\.googletagmanager\.com\/gtag\/js[^"]*"><\/script>\n?<script>window\.dataLayer[\s\S]*?<\/script>\n?/g, '')
-    .replace(/<script>!function\(f,b,e,v,n,t,s\)[\s\S]*?<\/script>\n?/g, '')
     .replace(/<meta charset="UTF-8">/i, (m) => `${m}\n<meta name="robots" content="noindex, nofollow">`)
 }
 const DEMO = '_demo'
@@ -138,6 +137,16 @@ for (const page of pages) {
   const visible = s.replace(/<!--[\s\S]*?-->/g, '').replace(/<script[\s\S]*?<\/script>/g, '')
   for (const m of visible.matchAll(/\[[A-Z][^\]<]{2,}\]/g)) notices.push(`${rel}: ${m[0].slice(0, 90)}`)
 }
+// Google Tag Manager: exactly once per live page when the container ID is set, never on the demo copies
+const gtm = gtmIdOf(settings.tracking)
+if (String(settings.tracking?.gtmId || '').trim() && !gtm) errors.push(`Site Settings: Google Tag Manager ID must look like GTM-XXXXXXX (got "${settings.tracking.gtmId}")`)
+for (const [rel, s] of files) {
+  if (!rel.endsWith('.html')) continue
+  const heads = (s.match(/googletagmanager\.com\/gtm\.js\?id=/g) || []).length
+  const noscripts = (s.match(/googletagmanager\.com\/ns\.html\?id=/g) || []).length
+  const want = gtm && !rel.startsWith(`${DEMO}/`) ? 1 : 0
+  if (heads !== want || noscripts !== want) errors.push(`${rel}: ${heads} Google Tag Manager scripts and ${noscripts} noscripts (expected ${want})`)
+}
 for (const [t, list] of titles) if (list.length > 1) warnings.push(`duplicate <title> "${t}" on ${list.join(', ')}`)
 for (const [d, list] of descs) if (list.length > 1) warnings.push(`duplicate meta description on ${list.join(', ')}`)
 for (const p of [settings.shareImage.path, settings.logo]) {
@@ -171,7 +180,8 @@ if (out === path.join(root, 'public')) {
 console.log(`render: ${pages.length} pages for ${origin} into ${path.relative(root, out) || '.'}`)
 console.log(`Phone: ${phone || '(empty, phone links hidden)'}   Email: ${settings.emails?.public || '(empty)'}   Hours: ${settings.hours?.length ? settings.hours.join('; ') : '(empty, hidden)'}`)
 console.log(`sitemap.xml: ${seo.noindexSite ? 0 : indexed.length} URLs   robots.txt: ${seo.noindexSite ? 'site hidden from search engines' : 'indexing allowed'}   indexable only on ${new URL(origin).host}`)
-console.log(`demo and preview addresses: ${pages.length} noindex copies in ${DEMO}/, empty sitemap, crawlable robots.txt`)
+console.log(`demo and preview addresses: ${pages.length} noindex copies in ${DEMO}/, empty sitemap, crawlable robots.txt, no tracking`)
+console.log(`Google Tag Manager: ${gtm ? `${gtm} on all ${pages.length} pages of ${new URL(origin).host}` : 'off (no container ID in Site Settings)'}`)
 if (notices.length) {
   console.log(`\nContent notices: ${notices.length} editorial placeholder(s) still visible, for the client to supply:`)
   for (const n of notices) console.log(`  - ${n}`)

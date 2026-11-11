@@ -7,7 +7,8 @@
  *    anything whose value is empty is hidden.
  * 3. Canonical, Open Graph and Twitter tags go in place of the <!-- @seo --> marker, plus the Dentist
  *    structured data on the home, contact and location pages.
- * 4. GA4 and the Meta Pixel are added only when their IDs are set.
+ * 4. Google Tag Manager, GA4 and the Meta Pixel are added only when their IDs are set. The demo and preview
+ *    copies and the dashboard preview take them out again (stripTracking), so only the live domain loads them.
  */
 import type { Page } from './parts'
 import type { SiteSettings } from './site'
@@ -165,6 +166,44 @@ export function seoBlock(html: string, page: Page, s: SiteSettings, ctx: Ctx): s
   return lines.join('\n')
 }
 
+// ---------------------------------------------------------------- tracking
+
+export const GTM_ID_RE = /^GTM-[A-Z0-9]+$/
+
+/** The container ID from Site Settings, or '' when it is blank or not in the GTM-XXXXXXX format. */
+export const gtmIdOf = (t: { gtmId?: string } | undefined) => {
+  const id = String(t?.gtmId || '').trim().toUpperCase()
+  return GTM_ID_RE.test(id) ? id : ''
+}
+
+/** Google Tag Manager for the top of <head>: the snippet Google issues for new containers, as supplied. */
+export function gtmHead(id: string): string {
+  return `<script async src="https://www.googletagmanager.com/gtm.js?id=${id}"></script>\n`
+    + `<script>\n`
+    + `  window.dataLayer = window.dataLayer || [];\n`
+    + `  function gtag(){dataLayer.push(arguments);}\n`
+    + `  gtag('js', new Date());\n`
+    + `</script>\n`
+}
+
+/** Google Tag Manager for straight after <body> opens (browsers with JavaScript switched off). */
+export function gtmBody(id: string): string {
+  return `<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${id}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>\n`
+}
+
+/**
+ * Takes every tracking tag out of a finished page: Google Tag Manager (head and noscript), GA4 and the Meta
+ * Pixel. Used for the demo and preview copies (scripts/render-site.ts) and the dashboard's page preview,
+ * so test visits never reach Google Ads or Analytics.
+ */
+export function stripTracking(html: string): string {
+  return html
+    .replace(/<script async src="https:\/\/www\.googletagmanager\.com\/gtm\.js[^"]*"><\/script>\n?<script>\s*window\.dataLayer[\s\S]*?<\/script>\n?/g, '')
+    .replace(/<noscript><iframe src="https:\/\/www\.googletagmanager\.com\/ns\.html[^"]*"[^>]*><\/iframe><\/noscript>\n?/g, '')
+    .replace(/<script async src="https:\/\/www\.googletagmanager\.com\/gtag\/js[^"]*"><\/script>\n?<script>window\.dataLayer[\s\S]*?<\/script>\n?/g, '')
+    .replace(/<script>!function\(f,b,e,v,n,t,s\)[\s\S]*?<\/script>\n?/g, '')
+}
+
 /** GA4 and the Meta Pixel, only when their IDs are filled in (Site Settings, GYA only). */
 export function analyticsTags(t: { ga4?: string; metaPixel?: string } | undefined): string {
   const ga = String(t?.ga4 || '').trim()
@@ -192,5 +231,11 @@ export function finishPage(template: string, page: Page, s: SiteSettings, errors
   }
   const tags = analyticsTags(s.tracking)
   if (tags) html = html.replace('</head>', `${tags}</head>`)
+  // Google Tag Manager: first thing in <head>, and the noscript straight after <body> opens
+  const gtm = gtmIdOf(s.tracking)
+  if (gtm) {
+    html = html.replace(/<head>\n?/, (m) => `${m.endsWith('\n') ? m : `${m}\n`}${gtmHead(gtm)}`)
+    html = html.replace(/<body\b[^>]*>\n?/, (m) => `${m.endsWith('\n') ? m : `${m}\n`}${gtmBody(gtm)}`)
+  }
   return html
 }

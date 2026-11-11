@@ -109,8 +109,10 @@ export default {
   bookingUrl: "",
   // Health funds and HICAPS wording. Leave empty until the practice confirms it.
   healthFunds: "",
-  // Tracking, added to every page only when filled in (GYA only in the dashboard).
-  tracking: { ga4: "", metaPixel: "" },
+  // Tracking, added to every page of the live domain only when filled in (GYA only in the dashboard).
+  // gtmId: the Google Ads container (v1.3.4). The build also fills it into the dashboard when the field
+  // there is blank (scripts/content-fixes.ts), so to remove GTM, blank it here and in the dashboard.
+  tracking: { ga4: "", metaPixel: "", gtmId: "GTM-ML7789N3" },
   // Form emails go to these. Empty uses FORM_TO, then the fallback list in src/forms/mail.ts.
   formRecipients: [],
   // Dashboard features that need an approved design before they are switched on.

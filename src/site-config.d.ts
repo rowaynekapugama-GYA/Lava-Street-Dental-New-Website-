@@ -18,7 +18,7 @@ declare module '*/site.config.mjs' {
     mapsUrl: string
     bookingUrl: string
     healthFunds: string
-    tracking: { ga4: string; metaPixel: string }
+    tracking: { ga4: string; metaPixel: string; gtmId: string }
     formRecipients: string[]
     features: { blog: boolean; beforeAfter: boolean }
   }

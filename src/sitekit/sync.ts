@@ -234,7 +234,7 @@ export function settingsFileFromGlobal(g: G | null | undefined): Record<string, 
     mapsUrl: str(g.mapsUrl),
     bookingUrl: str(g.bookingUrl),
     healthFunds: str(g.healthFunds),
-    tracking: g.tracking ? { ga4: str(g.tracking.ga4) ?? '', metaPixel: str(g.tracking.metaPixel) ?? '' } : undefined,
+    tracking: g.tracking ? { ga4: str(g.tracking.ga4) ?? '', metaPixel: str(g.tracking.metaPixel) ?? '', gtmId: str(g.tracking.gtmId) ?? '' } : undefined,
     formRecipients: g.formRecipients !== undefined ? lines(g.formRecipients) : undefined,
     features: g.features ? { blog: !!g.features.blog, beforeAfter: !!g.features.beforeAfter } : undefined,
   }

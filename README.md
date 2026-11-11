@@ -38,8 +38,9 @@ tools/extract-static-site/  the one-off extractor that turned tools/v122 into co
 Vercel builds it as a Next.js project (`vercel.json`): install `npm ci`, build `npm run build`,
 output `.next`. No other project settings are needed. `npm run build` (scripts/build.mjs):
 
-1. with `DATABASE_URL`: migrate the database, load the website into it the first time, and pull what
-   the dashboard holds into `content/`. If the database cannot be reached, this step is skipped and
+1. with `DATABASE_URL`: migrate the database, load the website into it the first time, fill in anything
+   a release adds to Site Settings while that field is still blank (`scripts/content-fixes.ts`), and pull
+   what the dashboard holds into `content/`. If the database cannot be reached, this step is skipped and
    the files in the repository are used.
 2. `scripts/render-site.ts`: write every page, `sitemap.xml` and `robots.txt` into `public/`, and run
    the v1.2.2 checks (tokens, structured data, canonical tags, image sizes, links). Problems that would
@@ -98,6 +99,49 @@ curl -sI https://lavastreetdental.com.au | grep -i x-robots-tag           # (not
 curl -s  https://lavastreetdental.com.au | grep -i 'name="robots"'         # (nothing)
 ```
 
+## Tracking: Google Tag Manager
+
+Added in v1.3.4 for the Google Ads campaign. Container **GTM-ML7789N3**.
+
+- **Where it loads:** every public page of the live domain (lavastreetdental.com.au and www), including
+  the 404 page, the privacy policy and the location pages. The `gtm.js` snippet is the first thing in
+  `<head>`, exactly as Google supplied it, and the `<noscript>` iframe sits straight after `<body>`
+  opens. Both are in the HTML the server sends (`finishPage` in `src/lib/staticSite.ts`).
+- **Where it does not:** the demo address, Vercel previews (`stripTracking` in the `_demo/` copies) and
+  the dashboard, including its page preview. Test visits never reach Google Ads.
+- **The setting:** Dashboard > Site Settings > GYA > Tracking > Google Tag Manager ID (GYA only; it must
+  look like `GTM-` followed by letters and numbers). Default in `site.config.mjs` (`tracking.gtmId`).
+  The live value comes from the database, so the build fills the default in once while the dashboard
+  field is blank (`scripts/content-fixes.ts`, build log line `[content-fixes] Google Tag Manager ...`). A
+  different ID typed in the dashboard is kept. **To remove GTM:** blank `tracking.gtmId` in
+  `site.config.mjs` and in the dashboard, otherwise the next build puts it back.
+- **GA4 and the Meta Pixel** still have their own fields and load directly when filled in. If the GTM
+  container also fires GA4 (or the same Google Ads conversion), clear the direct field in Site Settings
+  and press Publish website, or visits are counted twice.
+- **The render check** stops the build if a live page does not have exactly one GTM script and one
+  noscript, or if a demo copy has any.
+
+### dataLayer events
+
+Pushed by `public/assets/js/site.js`. No personal details are ever included (no names, emails, phone
+numbers or message text). GTM itself has no tags yet; the Google Ads team builds those.
+
+| Event | When | Parameters |
+|---|---|---|
+| `generate_lead` | a form is sent and the function confirms the practice email went out through SMTP2GO (`{ ok: true, sent: true }`). Never on a failed send, a validation error, a server error or the spam trap | `form_name`: `waitlist` (home page) or `contact_enquiry` (contact page) |
+| `click_to_call` | any `tel:` link | `link_location` |
+| `click_email` | any `mailto:` link | `link_location` |
+| `book_online` | a link with `data-book`, a link to a booking platform (HotDoc, HealthEngine, Centaur, D4W, Cliniko, Core Practice, Dentally), or an outside link whose path starts with `/book` | `link_location` |
+| `get_directions` | a link with `data-directions`, or a Google Maps or Apple Maps link | `link_location` |
+
+`link_location` is `header`, `mobile_menu`, `footer`, `sticky_mobile_bar` or `page_body`
+(`data-track-location="..."` on a link or a parent overrides it). The site has no booking or directions
+links yet (opening-soon mode); those two events start firing as soon as such links are added. The map on
+the contact and location pages is an embedded Google map, which cannot report clicks.
+
+Check after a deploy: `bash lava-street-dental-gtm.sh check`, then Google Tag Assistant
+(tagassistant.google.com) on https://lavastreetdental.com.au.
+
 ## Forms and email
 
 Unchanged in behaviour since v1.2.2, now Next.js routes at the same addresses (`/api/waitlist/`,
@@ -132,3 +176,5 @@ DATABASE_URL=<empty test database> npx tsx scripts/qa-roundtrip.ts   seed, pull,
 - [ ] Instagram and Facebook links once the accounts exist
 - [ ] Opening day: switch off Opening soon mode and agree the home page's booking wording or design
 - [ ] Search Console property and sitemap submitted
+- [ ] Privacy Policy updated for Google Tag Manager, Google Analytics and Google Ads (wording sent to the client with v1.3.4; it still says the site has no analytics or advertising tracking)
+- [ ] Google Ads team: tags and conversions built in GTM-ML7789N3, and no GA4 counted twice

@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-11-11: Google Tag Manager for Google Ads (v1.3.4)
+
+- Container GTM-ML7789N3 on every public page of the live domain: the `gtm.js` snippet as supplied, first
+  in `<head>`, and the `<noscript>` iframe straight after `<body>`. Not on the demo address, previews or
+  the dashboard (the demo copies and the editor preview strip it, with GA4 and the Meta Pixel).
+- Site Settings > Tracking: new "Google Tag Manager ID" field (GYA only, validated). Default in
+  `site.config.mjs`; `scripts/content-fixes.ts` (new build step) fills it into the dashboard once while
+  blank. Migration `20261111_023444_gtm_container_id` adds the column (`IF NOT EXISTS`).
+- dataLayer events in `site.js`: `generate_lead` (only after a confirmed SMTP2GO send, which the form
+  functions now report as `sent: true`), `click_to_call`, `click_email`, `book_online`,
+  `get_directions`, with `form_name` or `link_location`. No personal details.
+- The render step stops the build unless every live page has exactly one GTM script and noscript and
+  the demo copies have none. `qa:parity` and `qa:editor` compare pages with tracking taken out.
+- README: "Tracking: Google Tag Manager". Open item: the Privacy Policy still says the site has no
+  analytics or advertising tracking (suggested wording sent for the client to approve).
+
 ## 2026-11-09: demo address kept out of Google (v1.3.3)
 
 Client request: lava-street-dental.vercel.app was ranking first for "lava street dental".

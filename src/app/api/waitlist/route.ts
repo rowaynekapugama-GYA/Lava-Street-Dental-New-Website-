@@ -93,5 +93,7 @@ export async function POST(req: Request) {
   } catch (e) {
     console.error('waitlist: confirmation email failed', (e as Error).message)
   }
-  return send(200, { ok: true })
+  // sent: the practice notification went through SMTP2GO; the website's Google Ads tracking counts a lead
+  // only then (not for the honeypot or a sign-up kept after a failed email)
+  return send(200, { ok: true, sent: true })
 }

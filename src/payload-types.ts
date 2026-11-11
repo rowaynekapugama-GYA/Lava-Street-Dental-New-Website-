@@ -567,6 +567,7 @@ export interface SiteSetting {
   tracking?: {
     ga4?: string | null;
     metaPixel?: string | null;
+    gtmId?: string | null;
   };
   features?: {
     blog?: boolean | null;
@@ -659,6 +660,7 @@ export interface SiteSettingsSelect<T extends boolean = true> {
     | {
         ga4?: T;
         metaPixel?: T;
+        gtmId?: T;
       };
   features?:
     | T

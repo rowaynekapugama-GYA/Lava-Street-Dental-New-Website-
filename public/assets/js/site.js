@@ -179,4 +179,67 @@
         });
     });
   }
+
+  /* ---------- Google Tag Manager events (v1.3.4) ----------
+     Pushed to the dataLayer for the Google Ads team to build conversions on in GTM.
+     No personal details ever go in: no names, emails, phone numbers or message text.
+     Harmless where GTM is not loaded (demo address, previews, the dashboard). */
+  var track = function (data) { (window.dataLayer = window.dataLayer || []).push(data); };
+
+  // generate_lead: only when the form function confirms the practice email went out through SMTP2GO
+  // (response { ok: true, sent: true }). A failed send, a validation error or the spam trap pushes nothing.
+  var LEAD_FORMS = { '/api/waitlist/': 'waitlist', '/api/enquiry/': 'contact_enquiry' };
+  if (window.fetch) {
+    var nativeFetch = window.fetch;
+    window.fetch = function (input, init) {
+      var request = nativeFetch.apply(this, arguments);
+      var url = typeof input === 'string' ? input : (input && input.url) || '';
+      var method = String((init && init.method) || (input && input.method) || 'GET').toUpperCase();
+      var path = '';
+      try { path = new URL(url, window.location.href).pathname.replace(/\/?$/, '/'); } catch (e) { path = ''; }
+      var form = LEAD_FORMS[path];
+      if (form && method === 'POST') {
+        request.then(function (res) {
+          if (!res.ok) { return; }
+          res.clone().json().then(function (d) {
+            if (d && d.ok === true && d.sent === true) { track({ event: 'generate_lead', form_name: form }); }
+          }).catch(function () {});
+        }).catch(function () {});
+      }
+      return request;
+    };
+  }
+
+  // Where on the page a link sits. A data-track-location attribute on the link or a parent wins.
+  var whereIs = function (a) {
+    var marked = a.closest('[data-track-location]');
+    if (marked) { return marked.getAttribute('data-track-location'); }
+    if (a.closest('.sticky-bar, .mobile-bar, .call-bar')) { return 'sticky_mobile_bar'; }
+    if (a.closest('#drawer')) { return 'mobile_menu'; }
+    if (a.closest('#masthead, header.masthead')) { return 'header'; }
+    if (a.closest('footer')) { return 'footer'; }
+    return 'page_body';
+  };
+  var BOOKING = /(^|\.)(hotdoc\.com\.au|healthengine\.com\.au|centaurportal\.com|d4w\.com\.au|dentalbookings\.com\.au|cliniko\.com|corepractice\.io|dentally\.co)$/i;
+  var MAPS = /(^|\.)(maps\.google\.[a-z.]+|maps\.app\.goo\.gl|maps\.apple\.com)$|^(www\.)?google\.[a-z.]+$/i;
+  var kindOf = function (a) {
+    var href = a.getAttribute('href') || '';
+    if (/^tel:/i.test(href)) { return 'click_to_call'; }
+    if (/^mailto:/i.test(href)) { return 'click_email'; }
+    if (a.hasAttribute('data-book')) { return 'book_online'; }
+    if (a.hasAttribute('data-directions')) { return 'get_directions'; }
+    var u;
+    try { u = new URL(href, window.location.href); } catch (e) { return ''; }
+    if (BOOKING.test(u.hostname) || (u.hostname !== window.location.hostname && /\/book/i.test(u.pathname))) { return 'book_online'; }
+    if (MAPS.test(u.hostname) && (u.hostname.indexOf('maps') !== -1 || /^\/maps/.test(u.pathname))) { return 'get_directions'; }
+    if (u.hostname === 'goo.gl' && /^\/maps/.test(u.pathname)) { return 'get_directions'; }
+    return '';
+  };
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) { return; }
+    var kind = kindOf(a);
+    if (!kind) { return; }
+    track({ event: kind, link_location: whereIs(a) });
+  }, true);
 }());

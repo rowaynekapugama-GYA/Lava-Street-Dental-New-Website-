@@ -45,7 +45,14 @@ export const SiteSettings: GlobalConfig = {
     { name: 'formRecipients', type: 'array', label: 'Form emails go to', access: gya, fields: [{ name: 'email', type: 'email', required: true }] },
     {
       name: 'tracking', type: 'group', access: gya,
-      fields: [{ name: 'ga4', type: 'text', label: 'GA4 measurement ID' }, { name: 'metaPixel', type: 'text', label: 'Meta Pixel ID' }],
+      fields: [
+        { name: 'ga4', type: 'text', label: 'GA4 measurement ID' },
+        { name: 'metaPixel', type: 'text', label: 'Meta Pixel ID' },
+        {
+          name: 'gtmId', type: 'text', label: 'Google Tag Manager ID',
+          validate: (v: unknown) => !v || /^GTM-[A-Z0-9]+$/.test(String(v).trim()) || 'Use the container ID from Google Tag Manager, for example GTM-ML7789N3.',
+        },
+      ],
     },
     {
       name: 'features', type: 'group', access: gya,

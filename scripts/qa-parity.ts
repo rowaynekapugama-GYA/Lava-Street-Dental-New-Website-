@@ -5,12 +5,15 @@
  *
  *   npm run qa:parity
  *
- * Only the <lastmod> dates in sitemap.xml may differ (they are the build date).
+ * Only the <lastmod> dates in sitemap.xml may differ (they are the build date), and Google Tag Manager (v1.3.4,
+ * not in v1.2.2) is taken out of this release's pages before comparing. render-site.ts checks it is on
+ * every live page exactly once.
  */
 import { spawnSync } from 'node:child_process'
 import fs from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
+import { stripTracking } from '../src/lib/staticSite'
 
 const root = process.cwd()
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'lsd-parity-'))
@@ -42,6 +45,7 @@ for (const f of want) {
   const p = path.join(mine, f)
   if (!fs.existsSync(p)) { console.log(`missing: ${f}`); bad++; continue }
   let y = fs.readFileSync(p, 'utf8')
+  if (f.endsWith('.html')) y = stripTracking(y)
   const norm = (s: string) => (f === 'sitemap.xml' ? s.replace(/<lastmod>[^<]*<\/lastmod>/g, '') : s)
   if (norm(x) !== norm(y)) {
     bad++

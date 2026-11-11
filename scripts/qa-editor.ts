@@ -1,5 +1,6 @@
 /**
- * The page editor's preview must be the live page plus markers and nothing else.
+ * The page editor's preview must be the live page plus markers and nothing else (and no tracking tags:
+ * the live page is compared with its tracking taken out, and the preview must have none of its own).
  * Renders every page twice (as the website, and marked for editing as GYA would see it), removes the
  * markers, and compares. Also counts what can be edited.
  *
@@ -9,6 +10,7 @@ import './load-env'
 import { getChrome, getPages } from '../src/lib/content'
 import { getSettings } from '../src/lib/site'
 import { renderPageHtml } from '../src/dashboard/render'
+import { stripTracking } from '../src/lib/staticSite'
 
 const settings = getSettings()
 const chrome = getChrome()
@@ -25,8 +27,9 @@ let bad = 0
 const totals = { words: 0, locked: 0, photos: 0, links: 0, items: 0 }
 for (const admin of [true, false]) {
   for (const page of getPages()) {
-    const plain = renderPageHtml(page, { chrome, settings })
+    const plain = stripTracking(renderPageHtml(page, { chrome, settings }))
     const marked = renderPageHtml(page, { chrome, settings, editable: true, admin })
+    if (/googletagmanager|fbevents/.test(marked)) { bad++; console.log(`tracking tag in the editor preview: ${page.file}`) }
     if (strip(marked) !== plain) {
       bad++
       const a = strip(marked)

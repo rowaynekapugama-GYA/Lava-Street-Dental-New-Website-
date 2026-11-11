@@ -51,6 +51,10 @@ if (process.env.DATABASE_URL) {
     if (quiet('npx', ['tsx', 'scripts/seed.ts', '--if-empty']) !== 0) {
       console.log('> could not load the website into the dashboard; GYA can press Import on the Dashboard')
     }
+    // fills in anything a release adds to Site Settings while the dashboard field is still blank
+    if (quiet('npx', ['tsx', 'scripts/content-fixes.ts']) !== 0) {
+      console.log('> content fixes could not run; the site builds with the dashboard as it is')
+    }
     console.log('> pulling content from the dashboard')
     if (quiet('npx', ['tsx', 'scripts/pull-content.ts']) !== 0) {
       console.log('> could not pull content, building from the files already in the repository')

@@ -1,6 +1,6 @@
 {
   "name": "lava-street-dental",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "private": true,
   "type": "module",
   "description": "Lava Street Dental website: static pages built from content/ at deploy time, with the GYA website dashboard at /admin (Payload, Neon Postgres, Vercel Blob).",

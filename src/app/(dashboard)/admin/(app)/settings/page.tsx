@@ -31,7 +31,7 @@ export default async function SettingsPage() {
         bookingUrl: m.bookingUrl, healthFunds: m.healthFunds,
         siteUrl: isAdmin ? m.siteUrl : '', preOpening: m.preOpening, hoursSchema: isAdmin ? [...m.hoursSchema] : [],
         paymentAccepted: isAdmin ? [...m.paymentAccepted] : [], formRecipients: isAdmin ? [...m.formRecipients] : [],
-        tracking: isAdmin ? { ...m.tracking } : { ga4: '', metaPixel: '' }, features: { ...m.features },
+        tracking: isAdmin ? { ...m.tracking } : { ga4: '', metaPixel: '', gtmId: '' }, features: { ...m.features },
       }} />
     </>
   )

@@ -17,7 +17,7 @@
  */
 import type { Chrome, Field, Page, Part } from '@/lib/parts'
 import { FIELD, ITEM_MARK, fillTemplate, openTag, resolvedFields, visibleSections, withFocal, withNewTabs } from '@/lib/parts'
-import { escHtml, finishPage } from '@/lib/staticSite'
+import { escHtml, finishPage, stripTracking } from '@/lib/staticSite'
 import type { SiteSettings } from '@/lib/site'
 
 const RAW = new Set(['script', 'style', 'title', 'textarea', 'option'])
@@ -227,6 +227,8 @@ export function renderPageHtml(page: Page, o: RenderOptions): string {
   const { html } = pageTemplate(page, o)
   let out = finishPage(html, page, o.settings, o.errors)
   if (o.editable) {
+    // no Google Tag Manager, GA4 or Pixel in the dashboard: editing a page is not a visit
+    out = stripTracking(out)
     // relative links and photos resolve against the page's own address, as on the website
     const base = page.path === '/404' ? '/' : page.path
     out = out.replace(/<head>/, `<head><base href="${escHtml(base)}">`)

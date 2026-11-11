@@ -32,7 +32,7 @@ export type SettingsState = {
   hoursSchema: string[]
   paymentAccepted: string[]
   formRecipients: string[]
-  tracking: { ga4: string; metaPixel: string }
+  tracking: { ga4: string; metaPixel: string; gtmId: string }
   features: { blog: boolean; beforeAfter: boolean }
 }
 
@@ -78,6 +78,7 @@ export function SettingsForm({ initial, isAdmin, brand }: { initial: SettingsSta
   const set = (patch: Partial<SettingsState>) => { setS((x) => ({ ...x, ...patch })); setDirty(true) }
   const empty = (v: string | string[]) => (Array.isArray(v) ? !v.filter((x) => x.trim()).length : !v.trim())
   const ph = (v: string | string[], extra?: React.ReactNode) => (empty(v) ? <><span className="chip warn">{PH}</span> {extra}</> : extra)
+  const gtmBad = !!s.tracking.gtmId.trim() && !/^GTM-[A-Z0-9]+$/.test(s.tracking.gtmId.trim().toUpperCase())
 
   async function save() {
     if (s.publicEmail.trim() && !EMAIL.test(s.publicEmail.trim())) { toast('The email address does not look right.', 'bad'); return }
@@ -87,6 +88,7 @@ export function SettingsForm({ initial, isAdmin, brand }: { initial: SettingsSta
     }
     const badEmail = s.formRecipients.find((e) => e.trim() && !EMAIL.test(e.trim()))
     if (badEmail) { toast(`This address does not look right: ${badEmail}`, 'bad'); return }
+    if (isAdmin && gtmBad) { toast('The Google Tag Manager ID should look like GTM-ML7789N3.', 'bad'); return }
     setBusy(true)
     const lines = (a: string[]) => a.map((x) => x.trim()).filter(Boolean).map((line) => ({ line }))
     const body: Record<string, unknown> = {
@@ -100,7 +102,7 @@ export function SettingsForm({ initial, isAdmin, brand }: { initial: SettingsSta
       Object.assign(body, {
         region: s.region.trim(), siteUrl: s.siteUrl.trim().replace(/\/+$/, ''), preOpening: s.preOpening, hoursSchema: lines(s.hoursSchema),
         paymentAccepted: lines(s.paymentAccepted), formRecipients: s.formRecipients.map((x) => x.trim()).filter(Boolean).map((email) => ({ email })),
-        tracking: { ga4: s.tracking.ga4.trim(), metaPixel: s.tracking.metaPixel.trim() },
+        tracking: { ga4: s.tracking.ga4.trim(), metaPixel: s.tracking.metaPixel.trim(), gtmId: s.tracking.gtmId.trim().toUpperCase() },
       })
     }
     try {
@@ -184,8 +186,10 @@ export function SettingsForm({ initial, isAdmin, brand }: { initial: SettingsSta
             <div className="grid-2" style={{ gap: 14 }}>
               <TextInput label="GA4 measurement ID" value={s.tracking.ga4} onChange={(v) => set({ tracking: { ...s.tracking, ga4: v } })} placeholder="G-XXXXXXXXXX" />
               <TextInput label="Meta Pixel ID" value={s.tracking.metaPixel} onChange={(v) => set({ tracking: { ...s.tracking, metaPixel: v } })} placeholder="Numbers only" />
+              <TextInput id="gtmId" label="Google Tag Manager ID" value={s.tracking.gtmId} onChange={(v) => set({ tracking: { ...s.tracking, gtmId: v } })} placeholder="GTM-XXXXXXX"
+                help={gtmBad ? 'Use the container ID from Google Tag Manager: GTM- followed by letters and numbers.' : 'The Google Ads container. Blank turns it off, but the next build puts GTM-ML7789N3 back unless GYA also removes it from the code.'} />
             </div>
-            <p className="help">Added to every page only once filled in. The privacy policy names Google; add Meta to it before switching the Pixel on.</p>
+            <p className="help">Added to every page of the live domain only once filled in, never to the demo address, previews or this dashboard. The privacy policy names Google; add Meta to it before switching the Pixel on. If Google Tag Manager also loads GA4, clear the GA4 field here so page views are not counted twice.</p>
           </Panel>
           <Panel id="brand" title="Brand" intro="The logo and colours are part of the approved design and come from the website's own files. They are shown here for reference; GYA changes them in the code so every page stays consistent.">
             <div className="actions" style={{ marginBottom: 14 }}>
