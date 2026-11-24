@@ -41,7 +41,7 @@ Set in Vercel > Settings > Environment Variables, for Production and Preview.
 | `ALLOW_FIRST_USER` | `true` only for the very first sign in. Delete it and redeploy straight after. |
 | `SMTP2GO_API_KEY` | SMTP2GO API key, unchanged from v1.2.2. |
 | `FORM_FROM` | Optional sender, unchanged: `Lava Street Dental <hello@lavastreetdental.com.au>`. |
-| `FORM_TO` | Optional recipients, comma separated. Wins over Site Settings > Form recipients. |
+| `FORM_TO` | Optional recipients, comma separated. Wins over Site Settings > Form recipients. Set aside while Email address is working is off (README.md, "The practice email address"). |
 | `FORM_CC` | Optional. Copied on every practice notification, comma separated. Without it, brett@generateyouraudience.com is copied; `none` copies nobody. |
 
 No real values are in the repo. `.env.example` lists them all.

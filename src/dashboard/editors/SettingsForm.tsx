@@ -29,6 +29,8 @@ export type SettingsState = {
   // GYA
   siteUrl: string
   preOpening: boolean
+  onlineBooking: boolean
+  emailActive: boolean
   hoursSchema: string[]
   paymentAccepted: string[]
   formRecipients: string[]
@@ -100,7 +102,7 @@ export function SettingsForm({ initial, isAdmin, brand }: { initial: SettingsSta
     }
     if (isAdmin) {
       Object.assign(body, {
-        region: s.region.trim(), siteUrl: s.siteUrl.trim().replace(/\/+$/, ''), preOpening: s.preOpening, hoursSchema: lines(s.hoursSchema),
+        region: s.region.trim(), siteUrl: s.siteUrl.trim().replace(/\/+$/, ''), preOpening: s.preOpening, onlineBooking: s.onlineBooking, emailActive: s.emailActive, hoursSchema: lines(s.hoursSchema),
         paymentAccepted: lines(s.paymentAccepted), formRecipients: s.formRecipients.map((x) => x.trim()).filter(Boolean).map((email) => ({ email })),
         tracking: { ga4: s.tracking.ga4.trim(), metaPixel: s.tracking.metaPixel.trim(), gtmId: s.tracking.gtmId.trim().toUpperCase() },
       })
@@ -163,7 +165,7 @@ export function SettingsForm({ initial, isAdmin, brand }: { initial: SettingsSta
               help={ph(s.socials.facebook, 'Not yet created? Leave it empty.')} />
             <TextInput id="google" label="Google Business Profile" value={s.socials.google} onChange={(v) => set({ socials: { ...s.socials, google: v } })} />
             <TextInput id="bookingUrl" label="Booking link" value={s.bookingUrl} onChange={(v) => set({ bookingUrl: v })} placeholder="https://"
-              help="For after opening, once online booking is set up. Not shown on the website yet." />
+              help="The online booking portal. The buttons use it only while Online booking buttons is switched on (GYA tab). Must start with https://" />
             <TextArea label="Health funds and HICAPS" value={s.healthFunds} onChange={(v) => set({ healthFunds: v })}
               help="Leave empty until the practice confirms its health fund arrangements. Not shown on the website yet; the pages' own wording covers payments today." />
           </Panel>
@@ -173,13 +175,19 @@ export function SettingsForm({ initial, isAdmin, brand }: { initial: SettingsSta
           <Panel id="mode" title="Opening mode">
             <Toggle label="Opening soon (waitlist) mode" checked={s.preOpening} onChange={(v) => set({ preOpening: v })}
               help="On: every booking button says Join the waitlist and goes to the waitlist form. Off: they switch back to Book an appointment and the contact page. Switch off on opening day, then Publish website." />
+            <Toggle label="Online booking buttons" checked={s.onlineBooking} onChange={(v) => set({ onlineBooking: v })}
+              help={s.bookingUrl.trim()
+                ? 'On: every booking button reads Book an appointment (or its own Book wording) and opens the booking link in a new tab, whether or not Opening soon mode is on. The waitlist form stays on the home page. Off: the buttons follow Opening soon mode. Then Publish website.'
+                : 'There is no booking link yet (Practice details tab), so the buttons follow Opening soon mode whatever this says.'} />
+            <Toggle label="Email address is working" checked={s.emailActive} onChange={(v) => set({ emailActive: v })}
+              help={`Off: ${s.publicEmail.trim() || 'the email address'} is hidden everywhere on the website and form emails go to meg@lavastreetdental.com.au and rowayne@gyaclients.com instead. Form emails follow this switch as soon as it is saved; the pages change on Publish website. Switch on when the practice confirms the inbox receives mail.`} />
             <Lines id="hoursSchema" label="Opening hours for Google" value={s.hoursSchema} onChange={(v) => set({ hoursSchema: v })} placeholder="Mo,Tu,We,Fr 08:30-17:30"
               help="The same hours in the format search engines read (schema.org). Update them with the hours above." />
             <Lines id="paymentAccepted" label="Payments accepted (for Google)" value={s.paymentAccepted} onChange={(v) => set({ paymentAccepted: v })} />
             <TextInput id="siteUrl" label="Website address" value={s.siteUrl} onChange={(v) => set({ siteUrl: v })}
               help="The live domain, used for canonical tags, share links and the sitemap. No slash at the end." />
           </Panel>
-          <Panel id="forms" title="Form recipients" intro="Waitlist sign-ups and contact enquiries are emailed to these addresses (SMTP2GO). FORM_TO in Vercel, if set, wins over this list. Empty uses info@lavastreetdental.com.au and rowayne@gyaclients.com. Every one is also copied to brett@generateyouraudience.com (FORM_CC in Vercel changes that).">
+          <Panel id="forms" title="Form recipients" intro="Waitlist sign-ups and contact enquiries are emailed to these addresses (SMTP2GO). FORM_TO in Vercel, if set, wins over this list. Empty uses info@lavastreetdental.com.au and rowayne@gyaclients.com. Every one is also copied to brett@generateyouraudience.com (FORM_CC in Vercel changes that). While Email address is working is off (Opening mode, above), all of this is set aside: form emails go to meg@lavastreetdental.com.au and rowayne@gyaclients.com, never to the address that is switched off.">
             <Lines id="formRecipients" label="Send form emails to" value={s.formRecipients} onChange={(v) => set({ formRecipients: v })} placeholder="info@lavastreetdental.com.au" help="Add the practice's SmileOx intake address here once it is known." />
           </Panel>
           <Panel id="tracking" title="Tracking">

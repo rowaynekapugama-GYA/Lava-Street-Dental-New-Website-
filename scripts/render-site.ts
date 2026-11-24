@@ -13,20 +13,27 @@
  * link to a page that does not exist) are reported as warnings so a publish still goes through.
  *
  * `npm run render -- <folder>` writes to another folder instead (the parity check uses it).
+ * LSD_QA_SETTINGS='{"onlineBooking":false}' puts those values over Site Settings for that one run. It is for
+ * the checks only (qa:parity, qa:switches) and is refused when writing the real site into public/.
  */
 import './load-env'
 import fs from 'node:fs'
 import path from 'node:path'
 import { getChrome, getPages, getRedirects, getSeoDefaults } from '../src/lib/content'
 import { getSettings } from '../src/lib/site'
-import { gtmIdOf, siteOrigin, stripTracking, urlFor } from '../src/lib/staticSite'
+import { bookingLink, gtmIdOf, publicEmail, siteOrigin, stripTracking, urlFor } from '../src/lib/staticSite'
 import { renderPageHtml } from '../src/dashboard/render'
 
 const root = process.cwd()
 const out = path.resolve(process.argv[2] || path.join(root, 'public'))
 const manifestPath = path.join(out, '.generated.json')
 
-const settings = getSettings()
+const qaSettings = String(process.env.LSD_QA_SETTINGS || '').trim()
+if (qaSettings && out === path.join(root, 'public')) {
+  console.error('\nBUILD FAILED: LSD_QA_SETTINGS is for the checks only and cannot be used to build the real site. Remove it.')
+  process.exit(1)
+}
+const settings = qaSettings ? { ...getSettings(), ...(JSON.parse(qaSettings) as object) } : getSettings()
 const seo = getSeoDefaults()
 const chrome = getChrome()
 const pages = getPages()
@@ -147,6 +154,26 @@ for (const [rel, s] of files) {
   const want = gtm && !rel.startsWith(`${DEMO}/`) ? 1 : 0
   if (heads !== want || noscripts !== want) errors.push(`${rel}: ${heads} Google Tag Manager scripts and ${noscripts} noscripts (expected ${want})`)
 }
+// Online booking (v1.4.0): with the switch on and a link set, no booking button may still point at the waitlist
+// form or the contact page, and each one opens the portal in a new tab.
+const portal = bookingLink(settings)
+if (settings.onlineBooking && !portal) warnings.push('Site Settings: Online booking buttons is on but the booking link is empty or does not start with https://, so the buttons are unchanged')
+let bookingButtonCount = 0
+// Email address switched off (v1.4.0): it must not be anywhere on the site. Wording typed into a page in the
+// dashboard is the practice's to fix, so that is a warning; an empty or broken mailto link is ours.
+const hiddenEmail = publicEmail(settings) ? '' : String(settings.emails?.public || '').trim()
+for (const page of pages) {
+  const s = files.get(page.file)!
+  const buttons = s.match(/<a [^>]*\bdata-book\b[^>]*>/g) || []
+  bookingButtonCount += buttons.length
+  for (const b of buttons) {
+    if (!portal || !b.includes(`href="${portal.replace(/&/g, '&amp;')}"`) || !b.includes('target="_blank"') || !b.includes('rel="noopener"')) errors.push(`${page.file}: booking button is not a new-tab link to the booking portal: ${b.slice(0, 120)}`)
+  }
+  if (portal && /<a [^>]*class="btn[^>]*href="[^"]*#waitlist"[^>]*>\s*(Join the waitlist|Book)/.test(s.replace(/<a class="btn btn-cream"[^>]*>[^<]*<\/a>/g, ''))) errors.push(`${page.file}: a booking button still goes to the waitlist form while online booking is on`)
+  if (hiddenEmail && s.toLowerCase().includes(hiddenEmail.toLowerCase())) warnings.push(`${page.file}: still shows ${hiddenEmail}, which is switched off in Site Settings (edit that wording in the dashboard)`)
+  if (/href="mailto:"/.test(s) || /<a\b[^>]*href="mailto:[^"]*"[^>]*>\s*<\/a>/.test(s)) errors.push(`${page.file}: an email link with no address`)
+}
+if (portal && !bookingButtonCount) errors.push('Online booking is on but no page has a booking button')
 for (const [t, list] of titles) if (list.length > 1) warnings.push(`duplicate <title> "${t}" on ${list.join(', ')}`)
 for (const [d, list] of descs) if (list.length > 1) warnings.push(`duplicate meta description on ${list.join(', ')}`)
 for (const p of [settings.shareImage.path, settings.logo]) {
@@ -181,6 +208,8 @@ console.log(`render: ${pages.length} pages for ${origin} into ${path.relative(ro
 console.log(`Phone: ${phone || '(empty, phone links hidden)'}   Email: ${settings.emails?.public || '(empty)'}   Hours: ${settings.hours?.length ? settings.hours.join('; ') : '(empty, hidden)'}`)
 console.log(`sitemap.xml: ${seo.noindexSite ? 0 : indexed.length} URLs   robots.txt: ${seo.noindexSite ? 'site hidden from search engines' : 'indexing allowed'}   indexable only on ${new URL(origin).host}`)
 console.log(`demo and preview addresses: ${pages.length} noindex copies in ${DEMO}/, empty sitemap, crawlable robots.txt, no tracking`)
+console.log(`Online booking: ${portal ? `on, ${bookingButtonCount} buttons open ${portal} in a new tab` : `off, booking buttons follow opening-soon mode (${settings.preOpening ? 'Join the waitlist' : 'the contact page'})`}`)
+console.log(`Email address: ${hiddenEmail ? `${hiddenEmail} is switched off and hidden on every page` : publicEmail(settings) ? `${publicEmail(settings)} shown` : 'none set'}`)
 console.log(`Google Tag Manager: ${gtm ? `${gtm} on all ${pages.length} pages of ${new URL(origin).host}` : 'off (no container ID in Site Settings)'}`)
 if (notices.length) {
   console.log(`\nContent notices: ${notices.length} editorial placeholder(s) still visible, for the client to supply:`)

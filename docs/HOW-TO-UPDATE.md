@@ -58,6 +58,13 @@ practice details, so the dashboard explains where those are set instead.
 To replace a photo everywhere it is used, open it in the **Media Library** and press **Upload a
 replacement**. A photo that is not used on any page can be deleted there.
 
+### Team headshots
+
+Open **Pages**, then **Our Support Team**, and swap each person's photo as above. Use a portrait photo,
+ideally 4:5 (800 by 1000 pixels or larger). The frame keeps that shape whatever you upload, so set the
+**Focal point** on the face. Keep the photo description as "Name, role at Lava Street Dental". Only add
+a team member's photo once Dr Meg has sent it for the website.
+
 ## Move, hide or add sections and items
 
 On a page, open the **Sections** tab.

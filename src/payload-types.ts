@@ -552,6 +552,8 @@ export interface SiteSetting {
   healthFunds?: string | null;
   siteUrl?: string | null;
   preOpening?: boolean | null;
+  onlineBooking?: boolean | null;
+  emailActive?: boolean | null;
   paymentAccepted?:
     | {
         line: string;
@@ -643,6 +645,8 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   healthFunds?: T;
   siteUrl?: T;
   preOpening?: T;
+  onlineBooking?: T;
+  emailActive?: T;
   paymentAccepted?:
     | T
     | {

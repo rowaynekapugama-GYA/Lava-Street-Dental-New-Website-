@@ -41,6 +41,9 @@ export const SiteSettings: GlobalConfig = {
     // GYA only
     { name: 'siteUrl', type: 'text', label: 'Website address', access: gya },
     { name: 'preOpening', type: 'checkbox', label: 'Opening soon mode', access: gya },
+    // v1.4.0. No default on purpose: until GYA saves a choice the column is empty and site.config.mjs decides.
+    { name: 'onlineBooking', type: 'checkbox', label: 'Online booking buttons', access: gya },
+    { name: 'emailActive', type: 'checkbox', label: 'Email address is working', access: gya },
     { name: 'paymentAccepted', type: 'array', access: gya, fields: [{ name: 'line', type: 'text', required: true }] },
     { name: 'formRecipients', type: 'array', label: 'Form emails go to', access: gya, fields: [{ name: 'email', type: 'email', required: true }] },
     {

@@ -13,6 +13,11 @@
  *                    FALLBACK_CC below. Set it to "none" to copy nobody. The person who filled in the form
  *                    is never copied; their confirmation goes to them alone.
  *   SMTP2GO_ENDPOINT optional: override the API address (testing only)
+ *
+ * While the public address is switched off (Site Settings > Email address is working, emailActive in
+ * site.config.mjs; v1.4.0), none of the recipient settings above apply: practice notifications go to
+ * Dr Meg's address and GYA (HOLDING_TO below), never to the public address, and the patient's
+ * confirmation carries Dr Meg's address as its Reply-To. FORM_CC and FORM_FROM work as always.
  */
 import type { SiteSettings } from '@/lib/site'
 
@@ -79,20 +84,35 @@ export const send = (status: number, payload: unknown) =>
 export const FALLBACK_TO = ['info@lavastreetdental.com.au', 'rowayne@gyaclients.com']
 /** Copied on every practice notification (GYA, 9 November 2026). */
 export const FALLBACK_CC = ['brett@generateyouraudience.com']
+/** GYA's address on the holding list used while the public address is switched off. */
+const HOLDING_GYA = 'rowayne@gyaclients.com'
 const FALLBACK_FROM = 'Lava Street Dental <hello@lavastreetdental.com.au>'
 
 export type MailSettings = { ok: boolean; apiKey: string; to: string[]; cc: string[]; from: string; endpoint: string }
+
+/** False only when Site Settings say the public address is not receiving mail. */
+export const emailIsActive = (s?: SiteSettings) => !s || s.emailActive !== false
+
+/** Where practice notifications go while the public address is off: Dr Meg and GYA. */
+export function holdingRecipients(s: SiteSettings): string[] {
+  const off = String(s.emails?.public || '').trim().toLowerCase()
+  const list = [String(s.emails?.meg || '').trim(), HOLDING_GYA].filter(isEmail)
+  return [...new Map(list.map((x) => [x.toLowerCase(), x])).values()].filter((x) => x.toLowerCase() !== off)
+}
 
 export function mailSettings(s?: SiteSettings): MailSettings {
   const apiKey = String(process.env.SMTP2GO_API_KEY || '').trim()
   const listed = String(process.env.FORM_TO || '').split(',').map((x) => x.trim()).filter(Boolean)
   const fromSettings = (s?.formRecipients ?? []).map((x) => String(x).trim()).filter(isEmail)
-  const to = listed.length ? listed : fromSettings.length ? fromSettings : FALLBACK_TO
+  const active = emailIsActive(s)
+  // public address off: FORM_TO and the dashboard list are set aside, so nothing can route mail to it
+  const to = !active && s ? holdingRecipients(s) : listed.length ? listed : fromSettings.length ? fromSettings : FALLBACK_TO
   const ccEnv = String(process.env.FORM_CC || '').trim()
   const ccList = ccEnv.toLowerCase() === 'none' ? [] : ccEnv ? ccEnv.split(',').map((x) => x.trim()).filter(isEmail) : FALLBACK_CC
-  // nobody gets the same email twice
-  const lowerTo = new Set(to.map((x) => x.toLowerCase()))
-  const cc = [...new Set(ccList.map((x) => x.toLowerCase()))].filter((x) => !lowerTo.has(x))
+  // nobody gets the same email twice, and a switched-off address is never copied either
+  const skip = new Set(to.map((x) => x.toLowerCase()))
+  if (!active && s) skip.add(String(s.emails?.public || '').trim().toLowerCase())
+  const cc = [...new Set(ccList.map((x) => x.toLowerCase()))].filter((x) => !skip.has(x))
   const from = String(process.env.FORM_FROM || '').trim() || FALLBACK_FROM
   const endpoint = String(process.env.SMTP2GO_ENDPOINT || '').trim() || 'https://api.smtp2go.com/v3/email/send'
   return { ok: Boolean(apiKey), apiKey, to, cc, from, endpoint }
@@ -129,6 +149,8 @@ export function practiceFor(s: SiteSettings) {
     name: s.name,
     phone: s.phone,
     email: s.emails.public,
+    // Reply-To on the patient's confirmation: the public address, or Dr Meg's while that one is off
+    replyTo: emailIsActive(s) ? s.emails.public : (String(s.emails?.meg || '').trim() || undefined),
     address: [a.streetAddress || a.streetFallback, `${a.locality} ${a.region} ${a.postcode}`].join(', '),
     openingDate: s.openingDate,
     site,

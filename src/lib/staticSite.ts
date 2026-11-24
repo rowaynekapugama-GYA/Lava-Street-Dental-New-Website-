@@ -9,6 +9,13 @@
  *    structured data on the home, contact and location pages.
  * 4. Google Tag Manager, GA4 and the Meta Pixel are added only when their IDs are set. The demo and preview
  *    copies and the dashboard preview take them out again (stripTracking), so only the live domain loads them.
+ *
+ * Two switches from Site Settings act on the page before step 2 (v1.4.0), so they work on whatever wording
+ * the dashboard holds, with no page edits:
+ *    onlineBooking: with a booking link set, every booking button opens the booking portal in a new tab under
+ *      its open-practice label ("Book an appointment"), in or out of opening-soon mode (bookingButtons).
+ *    emailActive: while off, the public email address is treated as empty, so everything that depends on it
+ *      is hidden, and the few sentences built around it fall back to the phone number (emailOffFallbacks).
  */
 import type { Page } from './parts'
 import type { SiteSettings } from './site'
@@ -28,6 +35,58 @@ export function telHref(phone: string): string {
 
 export type Ctx = Record<string, string>
 
+/** The booking portal address, or '' unless online booking is switched on and the link is a real https address. */
+export function bookingLink(s: SiteSettings): string {
+  const url = String(s.bookingUrl || '').trim()
+  return s.onlineBooking && /^https:\/\/[^\s"'<>]+$/.test(url) ? url : ''
+}
+
+/** The public email address, or '' while it is switched off (Site Settings > Email address is working). */
+export const publicEmail = (s: SiteSettings) => (s.emailActive ? String(s.emails?.public || '').trim() : '')
+
+// A booking button as every page has it: in opening-soon mode it goes to the waitlist form, otherwise to the
+// contact page, and its label switches the same way.
+const BOOK_BUTTON = /<a ([^>]*?)href="\{\{#preOpening\}\}[^"{}]*#waitlist\{\{\/preOpening\}\}\{\{\^preOpening\}\}[^"{}]*\{\{\/preOpening\}\}"([^>]*)>\{\{#preOpening\}\}(?:(?!<\/a>)[\s\S])*?\{\{\/preOpening\}\}\{\{\^preOpening\}\}((?:(?!<\/a>)[\s\S])*?)\{\{\/preOpening\}\}<\/a>/g
+
+/**
+ * Online booking on: every booking button opens the portal in a new tab, with its open-practice label.
+ * Nothing else about opening-soon mode changes (the waitlist form and its own links stay).
+ * data-book is what site.js reports as the book_online event.
+ */
+export function bookingButtons(template: string, s: SiteSettings): string {
+  const url = bookingLink(s)
+  if (!url) return template
+  return template.replace(BOOK_BUTTON, (_all, before: string, after: string, label: string) =>
+    `<a ${before}href="${escHtml(url)}" target="_blank" rel="noopener" data-book${after}>${label}</a>`)
+}
+
+const reEsc = (v: string) => v.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+
+/**
+ * Email address switched off: the footer line and the structured data already disappear with an empty
+ * address, the same rule as an empty phone number. These are the places written around the address:
+ *   a list row holding the address (contact page, "Email")            the row goes
+ *   a labelled line between line breaks (privacy contact, "Email:")    the line goes
+ *   "... or email <address>" (contact page, feedback)                  those words go
+ *   the forms' error hint "You can also email us at ... or call ..."   becomes "You can also call ..."
+ *   any other sentence ending in the address ("get in touch at ...")   shows the phone number instead
+ * In the page editor, words that hold the address cannot be clicked into while it is off, so saving a
+ * page can never drop the address from them for good.
+ */
+export function emailOffFallbacks(template: string, address = ''): string {
+  // the link as the pages have it, or with the address typed out (a paragraph edited in the dashboard)
+  const addr = address ? `(?:\\{\\{email\\}\\}|${reEsc(address)})` : '\\{\\{email\\}\\}'
+  const link = `<a\\b[^>]*href="mailto:${addr}"[^>]*>(?:<span class="pd-tok"[^>]*>)?${addr}(?:</span>)?</a>`
+  const inside = (close: string) => `(?:(?!${close})[\\s\\S])*?`
+  return template
+    .replace(new RegExp(`<pd-e data-pde="[^"]*" data-t="(?:text|rich)"(?: data-lock="1")?>(${inside('</pd-e>')}${link}${inside('</pd-e>')})</pd-e>`, 'g'), '$1')
+    .replace(new RegExp(`<li>${inside('</li>')}${link}${inside('</li>')}</li>`, 'g'), '')
+    .replace(new RegExp(`<br>(?:(?!<br>|</p>|<p[\\s>])[\\s\\S])*?${link}(?=(?:\\{\\{#phone\\}\\})?<br>|</p>)`, 'g'), '')
+    .replace(new RegExp(` or email ${link}`, 'g'), '')
+    .replace(/ You can also email us at \{\{email\}\}\{\{#phone\}\} or call \{\{phone\}\}\{\{\/phone\}\}\./g, '{{#phone}} You can also call {{phone}}.{{/phone}}')
+    .replace(new RegExp(link, 'g'), '{{#phone}}<a class="textlink" href="{{phoneHref}}">{{phone}}</a>{{/phone}}{{^phone}}<a class="textlink" href="/contact/">our contact page</a>{{/phone}}')
+}
+
 /** The values the page tokens resolve to. Same names as the v1.2.2 build, plus localityLine (footer). */
 export function ctxFor(s: SiteSettings): Ctx {
   const a = s.address
@@ -38,7 +97,7 @@ export function ctxFor(s: SiteSettings): Ctx {
     name: s.name,
     phone,
     phoneHref: telHref(phone),
-    email: String(s.emails?.public || '').trim(),
+    email: publicEmail(s),
     streetAddress: String(a.streetAddress || '').trim(),
     addressStreet,
     addressLine: `${addressStreet}, ${a.locality} ${a.region} ${a.postcode}`,
@@ -224,7 +283,9 @@ const SEO_MARK = /<!-- @seo:[^>]*-->/
 /** The finished page: details filled in, SEO tags added, tracking added when set. */
 export function finishPage(template: string, page: Page, s: SiteSettings, errors?: string[]): string {
   const ctx = ctxFor(s)
-  let html = fillDetails(template, ctx, errors, page.file)
+  let source = bookingButtons(template, s)
+  if (!ctx.email) source = emailOffFallbacks(source, String(s.emails?.public || '').trim())
+  let html = fillDetails(source, ctx, errors, page.file)
   if (page.file !== '404.html') {
     if (!SEO_MARK.test(html)) errors?.push(`${page.file}: missing the <!-- @seo --> marker in <head>`)
     html = html.replace(SEO_MARK, () => seoBlock(html, page, s, ctx))

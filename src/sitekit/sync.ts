@@ -207,7 +207,7 @@ export function globalFromSettings(s: SiteSettings): G {
     postalAddress: s.postalAddress, mapsUrl: s.mapsUrl,
     hours: rows(s.hours), hoursSchema: rows(s.hoursSchema), openingDate: s.openingDate,
     socials: { ...s.socials }, bookingUrl: s.bookingUrl, healthFunds: s.healthFunds,
-    siteUrl: s.siteUrl, preOpening: s.preOpening, paymentAccepted: rows(s.paymentAccepted),
+    siteUrl: s.siteUrl, preOpening: s.preOpening, onlineBooking: s.onlineBooking, emailActive: s.emailActive, paymentAccepted: rows(s.paymentAccepted),
     formRecipients: rows(s.formRecipients, 'email'), tracking: { ...s.tracking }, features: { ...s.features },
   }
 }
@@ -228,6 +228,8 @@ export function settingsFileFromGlobal(g: G | null | undefined): Record<string, 
     hoursSchema: g.hoursSchema !== undefined ? lines(g.hoursSchema) : undefined,
     openingDate: str(g.openingDate),
     preOpening: typeof g.preOpening === 'boolean' ? g.preOpening : undefined,
+    onlineBooking: typeof g.onlineBooking === 'boolean' ? g.onlineBooking : undefined,
+    emailActive: typeof g.emailActive === 'boolean' ? g.emailActive : undefined,
     paymentAccepted: g.paymentAccepted !== undefined ? lines(g.paymentAccepted) : undefined,
     socials: g.socials ? { instagram: str(g.socials.instagram) ?? '', facebook: str(g.socials.facebook) ?? '', google: str(g.socials.google) ?? '' } : undefined,
     postalAddress: str(g.postalAddress),

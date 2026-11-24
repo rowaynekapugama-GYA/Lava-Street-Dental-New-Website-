@@ -27,9 +27,19 @@ export default {
   emails: {
     // Public contact address: header, footer, contact page, mailto links, JSON-LD.
     public: "info@lavastreetdental.com.au",
-    // Dr Meg's address. Kept here for reference; not published on the site.
+    // Dr Meg's address. Never published on the site. While emailActive is off it
+    // receives the form emails and is the Reply-To on patient confirmations.
     meg: "meg@lavastreetdental.com.au",
   },
+
+  // Is the public address above receiving mail? (v1.4.0, GYA only in the dashboard.)
+  // false: the address and its mailto links are hidden everywhere on the site (the
+  // same rule as an empty phone number), it is left out of the JSON-LD, and form
+  // emails go to Dr Meg's address and GYA instead of it.
+  // true: everything shows and sends as before, with no page edits.
+  // 23 Nov 2026: the inbox is not active yet (domain and Microsoft 365 are being
+  // moved from GoDaddy). Switch on in the dashboard when Meg confirms it works.
+  emailActive: false,
 
   address: {
     // Full street line once confirmed, for example "12 Lava Street".
@@ -105,8 +115,16 @@ export default {
   // Google Maps link for the practice. The contact page map is built from the
   // street address; this link is kept for when a "Get directions" link is added.
   mapsUrl: "",
-  // Online booking link, for after opening. Not shown on the site yet.
-  bookingUrl: "",
+  // Online booking portal (Principle), supplied by Dr Meg on 23 Nov 2026. The
+  // build also fills it into the dashboard while the field there is blank
+  // (scripts/content-fixes.ts); a different link typed in the dashboard is kept.
+  bookingUrl: "https://app.principle.dental/portal/booking/Lp8f7z5YyIlPS9W1TYPQ",
+  // Online booking switch (v1.4.0, GYA only in the dashboard), separate from
+  // preOpening. true, with a link above: every booking button reads as it does for
+  // an open practice ("Book an appointment") and opens the portal in a new tab.
+  // false, or no link: buttons follow preOpening as before (waitlist form, or the
+  // contact page once open). Nothing else about opening-soon mode changes.
+  onlineBooking: true,
   // Health funds and HICAPS wording. Leave empty until the practice confirms it.
   healthFunds: "",
   // Tracking, added to every page of the live domain only when filled in (GYA only in the dashboard).

@@ -59,8 +59,98 @@ everything that depends on it. `site.config.mjs` keeps the approved defaults.
 
 On opening day GYA switches off **Opening soon (waitlist) mode** (Site Settings, GYA tab) and presses
 Publish website: every "Join the waitlist" button goes back to its booking wording and the contact
-page. The home page waitlist section itself still needs new wording or an approved booking design
-(README-CMS.md, conflicts).
+page (or stays on the booking portal, if Online booking buttons is on, below). The home page waitlist
+section itself still needs new wording or an approved booking design (README-CMS.md, conflicts).
+
+## Online booking buttons (`onlineBooking`)
+
+Added in v1.4.0. The booking portal is Principle: `https://app.principle.dental/portal/booking/Lp8f7z5YyIlPS9W1TYPQ`
+(from Dr Meg, 23 Nov 2026). It is linked, never embedded.
+
+- **The link:** Site Settings > Practice details > Booking link (default `bookingUrl` in `site.config.mjs`).
+  The build fills it into the dashboard once while that field is blank (`scripts/content-fixes.ts`); a
+  different link typed in the dashboard is kept.
+- **The switch:** Site Settings > GYA > Opening mode > **Online booking buttons** (default `onlineBooking`
+  in `site.config.mjs`, shipped **on**). It is separate from Opening soon mode.
+
+| Online booking | Opening soon mode | Booking buttons |
+|---|---|---|
+| on, with a link | on or off | "Book an appointment" and each page's own wording ("Book a consultation", "Book with Dr Meg" ...), opening the portal in a new tab (`target="_blank" rel="noopener"`) |
+| off, or no link | on | "Join the waitlist", to the waitlist form on the home page (as before v1.4.0) |
+| off, or no link | off | the "Book ..." wording, to the contact page (as before v1.4.0) |
+
+Nothing else follows the switch: the opening wording, the home page waitlist form and its own two links,
+the contact form, and the emergency page (which has no booking button in the page and says emergency
+appointments cannot be booked online) are all untouched. No page is edited: the rule is applied when the
+pages are written (`bookingButtons` in `src/lib/staticSite.ts`), so it works on whatever wording the
+dashboard holds. Each button carries `data-book`, which `site.js` reports as the `book_online` event.
+
+To turn the buttons off: untick Online booking buttons, Save, Publish website. Until GYA saves that page
+in the dashboard once, the value comes from `site.config.mjs`.
+
+## The practice email address (`emailActive`)
+
+Added in v1.4.0 because info@lavastreetdental.com.au was not receiving mail (the domain and Microsoft 365
+were being moved away from GoDaddy). Site Settings > GYA > Opening mode > **Email address is working**
+(default `emailActive` in `site.config.mjs`, shipped **off**).
+
+**Off:**
+- The address and its mailto links are hidden on every page, by the same rule as an empty phone number:
+  the footer line, the contact page's Email row and the `email` in the Dentist structured data go.
+- Wording written around the address falls back (`emailOffFallbacks` in `src/lib/staticSite.ts`):
+  the privacy contact keeps Phone and Post; the contact page's feedback line reads "Speak to Jaimee
+  Griffiths and we will look into it."; "get in touch at" on Our Support Team shows the phone number; the
+  forms' error hint reads "You can also call 03 5208 9006."
+- Form emails (`src/forms/mail.ts`): practice notifications go to meg@lavastreetdental.com.au and
+  rowayne@gyaclients.com, never to the switched-off address, **whatever `FORM_TO` or Site Settings > Form
+  recipients say**. The CC is unchanged (brett@generateyouraudience.com, or `FORM_CC`). The patient's
+  confirmation has meg@lavastreetdental.com.au as its Reply-To.
+- In the page editor, the few paragraphs that hold the address cannot be clicked into while it is off,
+  so saving a page cannot drop the address from them. The build warns if a page still shows the address
+  because someone typed it into a paragraph.
+
+**On:** everything shows and sends exactly as before v1.4.0, with no page edits. The address is the first
+recipient again (`FORM_TO`, then Form recipients, then info@ and rowayne@) and the Reply-To.
+
+To switch it on when Dr Meg confirms the inbox works: tick Email address is working, Save, send a test
+enquiry (form emails follow the switch as soon as it is saved), then Publish website for the pages.
+
+## Team photos (headshots)
+
+Jaimee and Dilla show initials placeholders until their headshots arrive. **They are not dentists, so
+their photos go on the website only once Dr Meg has sent them for the website.** No stock or stand-in
+photos. Each photo is replaced in the dashboard, with no release:
+
+1. Prepare the photo: portrait, 4:5 (for example 800 x 1000 or 1200 x 1500 pixels), JPG or PNG, face
+   in the upper middle. Any shape works, since the frame crops to 4:5, but 4:5 avoids surprises.
+2. Dashboard > Pages > **Our Support Team**. Click the photo (or Replace under "Photos on this page"),
+   Upload, and choose the file.
+3. Photo description: `Jaimee Griffiths, Practice Manager at Lava Street Dental` or
+   `Dilla Shauqy, Senior Dental Assistant at Lava Street Dental` (they are already filled in; keep them).
+4. Focal point: click the face, so it stays in view in the 4:5 frame.
+5. Save changes, then Publish website.
+
+Dr Meg's own portrait (`assets/images/dr-meg.webp`, on her page, the Meet the Team card and the home
+page) is replaced the same way, or everywhere at once from Media Library > the photo > Upload a
+replacement. The striped "IMAGE: Support team portrait" box on Meet the Team is hidden (v1.4.0); it
+needs a release to become a photo.
+
+## If the domain or its DNS moves (GoDaddy, Microsoft 365)
+
+The website and the form emails depend on DNS records in the lavastreetdental.com.au zone. If the
+nameservers change or the zone is rebuilt somewhere else, copy these across first, with the exact
+values from the current zone (GoDaddy > DNS) or the services named. No secret values are involved.
+
+| What | Type | Host | Points to | Breaks without it |
+|---|---|---|---|---|
+| Website | A | `@` (lavastreetdental.com.au) | the Vercel address shown in Vercel > lava-street-dental-new-website > Settings > Domains | the whole website |
+| Website | CNAME | `www` | the Vercel target shown on the same screen | www.lavastreetdental.com.au |
+| Form emails (SMTP2GO sender domain) | CNAME x 3 | the three hosts shown in SMTP2GO > Sending > Verified Senders > lavastreetdental.com.au (one `em...`, one `s...._domainkey`, one `link`) | the three smtp2go.net targets shown there | waitlist and enquiry emails (they are sent from hello@lavastreetdental.com.au) |
+| Google Search Console, if the domain was verified by DNS | TXT | `@` | the `google-site-verification=...` value in the current zone | Search Console access (the site itself keeps working) |
+
+Microsoft 365 adds its own records (MX, autodiscover, an SPF TXT). They sit alongside the ones above
+and must not replace them. Moving only the registration (same nameservers and zone) changes nothing.
+After any change: `bash lava-street-dental-v1.4.0.sh check`, and a test enquiry from the contact page.
 
 ## Search engines: demo address vs live domain
 
@@ -146,10 +236,13 @@ Check after a deploy: `bash lava-street-dental-gtm.sh check`, then Google Tag As
 
 Unchanged in behaviour since v1.2.2, now Next.js routes at the same addresses (`/api/waitlist/`,
 `/api/enquiry/`). Each sends a notification and a confirmation through the SMTP2GO HTTP API
-(`SMTP2GO_API_KEY`, optional `FORM_FROM`, `FORM_TO`). New in v1.3.0: each sign-up is also kept in the
+(`SMTP2GO_API_KEY`, optional `FORM_FROM`, `FORM_TO`). The sender is on the practice's own domain
+(hello@lavastreetdental.com.au), verified in SMTP2GO by DNS records (see the domain section above). New in v1.3.0: each sign-up is also kept in the
 dashboard (Waitlist), and if the practice email fails the person is still on the list there.
-Recipients: `FORM_TO` if set, else Site Settings > Form recipients (GYA), else
-info@lavastreetdental.com.au and rowayne@gyaclients.com. Every practice notification is also copied
+While the practice address is switched off (`emailActive`, above) notifications go to
+meg@lavastreetdental.com.au and rowayne@gyaclients.com instead and the rest of this paragraph's
+recipient rules are set aside. Otherwise, recipients: `FORM_TO` if set, else Site Settings > Form
+recipients (GYA), else info@lavastreetdental.com.au and rowayne@gyaclients.com. Every practice notification is also copied
 (CC) to brett@generateyouraudience.com, or to `FORM_CC` if set (`none` turns it off). The person who
 filled in the form only ever gets their own confirmation. Spam protection as before: honeypot, a
 two-second check and five posts per address per 10 minutes.
@@ -160,6 +253,7 @@ two-second check and five posts per address per 10 minutes.
 npm run typecheck     TypeScript
 npm run qa:parity     content/ renders byte for byte as the v1.2.2 build (39 of 39 files)
 npm run qa:editor     the editor's preview is the live page plus markers, nothing else
+npm run qa:switches   opening-soon mode, online booking and the email switch in all 8 combinations
 npm run qa:banned     em dashes and AHPRA wording in everything GYA wrote (not the approved copy)
 npm run qa:secrets    keys, tokens and database addresses
 DATABASE_URL=<empty test database> npx tsx scripts/qa-roundtrip.ts   seed, pull, compare
@@ -172,9 +266,14 @@ DATABASE_URL=<empty test database> npx tsx scripts/qa-roundtrip.ts   seed, pull,
 - [ ] Dashboard set up: Neon, Blob, `PAYLOAD_SECRET`, deploy hook, first login, photos imported (README-CMS.md)
 - [ ] Logins for Dr Meg and the front desk (Users, as Editors)
 - [ ] Have the Privacy Policy checked against the practice management software and professional advice
-- [ ] Editorial placeholders (the Dashboard's "Before opening day" list): wisdom tooth note, support team portrait box, the "Compliance note (must appear on page):" label
+- [ ] Editorial placeholders (the Dashboard's "Before opening day" list): wisdom tooth note, the "Compliance note (must appear on page):" label (still showing on Meet the Team). The support team portrait box is hidden since v1.4.0
 - [ ] Instagram and Facebook links once the accounts exist
 - [ ] Opening day: switch off Opening soon mode and agree the home page's booking wording or design
 - [ ] Search Console property and sitemap submitted
 - [ ] Privacy Policy updated for Google Tag Manager, Google Analytics and Google Ads (wording sent to the client with v1.3.4; it still says the site has no analytics or advertising tracking)
 - [ ] Google Ads team: tags and conversions built in GTM-ML7789N3, and no GA4 counted twice
+- [ ] info@lavastreetdental.com.au: when Dr Meg confirms it receives mail, switch on Email address is working (Site Settings, GYA), send a test enquiry, Publish website
+- [ ] Before the domain or Microsoft 365 moves from GoDaddy: pass on the DNS records in "If the domain or its DNS moves"
+- [ ] Headshots for Jaimee and Dilla: add in the dashboard once Dr Meg sends them for the website (they are not dentists; "Team photos" above)
+- [ ] Dr Meg to confirm: the portal is ready to take bookings; Jaimee's title (Practice Manager on the site, dental assistant in her new bio); "both worked with Dr Meg before" for Jaimee; whether her own bio changes
+- [ ] Next.js 16.4.4 has moderate security advisories fixed in 16.4.6 (none in features this site uses); upgrade in its own small release

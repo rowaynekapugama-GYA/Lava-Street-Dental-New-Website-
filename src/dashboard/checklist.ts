@@ -21,6 +21,7 @@ export async function openingChecklist(payload: Payload, s: SiteSettings): Promi
   need(s.phone, 'Phone number', 'phone', 'Call buttons and phone links are hidden until it is filled in.')
   need(s.emails.public, 'Email address', 'publicEmail')
   need(s.hours, 'Opening hours', 'hours', 'The hours line is hidden until they are filled in.')
+  if (s.emails.public && !s.emailActive) out.push({ label: 'Email address is switched off', detail: `${s.emails.public} is hidden on the website and form emails go to ${s.emails.meg} instead. Switch "Email address is working" on once the practice confirms the inbox receives mail.`, href: '/admin/settings#mode', gya: true })
   need(s.openingDate, 'Opening date', 'openingDate', 'The home page says "Opening soon" until it is filled in.')
   need(s.socials.instagram, 'Instagram link', 'instagram', 'Add it once the account exists. Google reads it from the website.')
   need(s.socials.facebook, 'Facebook link', 'facebook', 'Add it once the page exists. Google reads it from the website.')

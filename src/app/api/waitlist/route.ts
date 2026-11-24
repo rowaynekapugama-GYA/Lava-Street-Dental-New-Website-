@@ -80,7 +80,7 @@ export async function POST(req: Request) {
   try {
     await sendEmail(settings, {
       to: [email],
-      reply_to: practice.email,
+      reply_to: practice.replyTo,
       subject: "You're on the list at Lava Street Dental",
       html: emailHtml(`You're on the list, ${escapeHtml(firstName)}.`, [
         'Thank you for joining the founding patients waitlist at Lava Street Dental.',

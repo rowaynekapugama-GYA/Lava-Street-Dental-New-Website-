@@ -29,7 +29,7 @@ export default async function SettingsPage() {
         region: m.address.region, postcode: m.address.postcode, postalAddress: m.postalAddress, mapsUrl: m.mapsUrl, hours: [...m.hours],
         openingDate: m.openingDate, socials: { instagram: m.socials.instagram, facebook: m.socials.facebook, google: m.socials.google },
         bookingUrl: m.bookingUrl, healthFunds: m.healthFunds,
-        siteUrl: isAdmin ? m.siteUrl : '', preOpening: m.preOpening, hoursSchema: isAdmin ? [...m.hoursSchema] : [],
+        siteUrl: isAdmin ? m.siteUrl : '', preOpening: m.preOpening, onlineBooking: m.onlineBooking, emailActive: m.emailActive, hoursSchema: isAdmin ? [...m.hoursSchema] : [],
         paymentAccepted: isAdmin ? [...m.paymentAccepted] : [], formRecipients: isAdmin ? [...m.formRecipients] : [],
         tracking: isAdmin ? { ...m.tracking } : { ga4: '', metaPixel: '', gtmId: '' }, features: { ...m.features },
       }} />

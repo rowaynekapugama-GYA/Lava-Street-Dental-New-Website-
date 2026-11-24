@@ -997,6 +997,8 @@ p { max-width: 62ch; }
   text-align: center;
 }
 .img-ph.tall { aspect-ratio: 4 / 5; }
+/* A placeholder box that is switched off until its photo arrives (the hidden attribute alone loses to display: grid above). */
+.img-ph[hidden] { display: none; }
 
 /* --- Real photographs ------------------------------------------------------ */
 .photo-fig { margin: 0; }
@@ -1138,6 +1140,10 @@ p { max-width: 62ch; }
 }
 .team-card .img-ph, .team-card .photo { max-width: 15rem; margin-bottom: 1.25rem; }
 .team-card .photo { border-radius: var(--r-lg); border: 1px solid var(--line); overflow: hidden; }
+/* Team portraits keep their 4:5 frame whatever shape is uploaded in the dashboard, and the focal point
+   chosen there (object-position, set inline on the photo) decides what stays in view. The photos the site
+   shipped with are already 4:5, so they look exactly as before. */
+.team-card .photo img, .ph-side .photo img:not(.pano) { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
 .team-card h3 { font-size: 1.35rem; margin-bottom: 0.35rem; }
 .team-card .role {
   font-size: 0.6875rem;
@@ -1277,6 +1283,16 @@ p { max-width: 62ch; }
 /* 400-859px: compact, single line. */
 @media (min-width: 400px) and (max-width: 859px) {
   .mast-actions .btn { white-space: nowrap; padding: 0.7rem 0.95rem; font-size: 0.8125rem; }
+}
+
+/* 2b. 860-939px, online booking on (v1.4.0): the header button reads "Book an appointment" again, 38px wider
+       than "Join the waitlist". At the narrowest desktop widths that pushed "Meet the Team" onto a third line
+       and made the header 3px taller. The booking button gets the same compact size as at 400-859px and the
+       menu sits slightly closer, so the header is the height it was. Only applies to the portal button
+       (data-book), so nothing moves while online booking is off. */
+@media (min-width: 860px) and (max-width: 939px) {
+  .mast-actions .btn[data-book] { white-space: nowrap; padding: 0.7rem 0.95rem; font-size: 0.8125rem; }
+  .masthead:has(.mast-actions .btn[data-book]) .mast-nav { gap: 1.4rem; }
 }
 
 /* 3. With the header CTA hidden on small screens the drawer's CTA becomes the

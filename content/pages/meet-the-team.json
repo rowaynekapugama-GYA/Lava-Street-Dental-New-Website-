@@ -62,7 +62,7 @@
     "class": "band"
    },
    "before": "\n",
-   "template": "<div class=\"wrap flow\"><div class=\"team-grid\">{{[L1]}}<div class=\"team-card rise\"><div class=\"photo\"><img src=\"{{f1}}\" alt=\"{{f2}}\" width=\"856\" height=\"1070\" loading=\"lazy\"></div><h3>{{f3}}</h3><p>{{f4}}</p><p>{{f5}}</p><a class=\"cardlink\" href=\"{{f6}}\">{{f7}}</a></div>{{[/L1]}}{{[L1]}}<div class=\"team-card rise\"><div class=\"img-ph tall\" role=\"img\" aria-label=\"The support team at Lava Street Dental, Warrnambool\">{{f8}}</div><h3>{{f9}}</h3><p>{{f10}}</p><p class=\"note-fine\">{{f11}}</p><a class=\"cardlink\" href=\"{{f12}}\">{{f13}}</a></div>{{[/L1]}}</div><p class=\"note-fine\">{{f14}}</p></div>",
+   "template": "<div class=\"wrap flow\"><div class=\"team-grid\">{{[L1]}}<div class=\"team-card rise\"><div class=\"photo\"><img src=\"{{f1}}\" alt=\"{{f2}}\" width=\"856\" height=\"1070\" loading=\"lazy\"></div><h3>{{f3}}</h3><p>{{f4}}</p><p>{{f5}}</p><a class=\"cardlink\" href=\"{{f6}}\">{{f7}}</a></div>{{[/L1]}}{{[L1]}}<div class=\"team-card rise\"><div class=\"img-ph tall\" hidden role=\"img\" aria-label=\"The support team at Lava Street Dental, Warrnambool\">{{f8}}</div><h3>{{f9}}</h3><p>{{f10}}</p><p class=\"note-fine\">{{f11}}</p><a class=\"cardlink\" href=\"{{f12}}\">{{f13}}</a></div>{{[/L1]}}</div><p class=\"note-fine\">{{f14}}</p></div>",
    "fields": [
     {
      "id": "f1",

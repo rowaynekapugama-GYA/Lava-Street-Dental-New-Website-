@@ -220,7 +220,7 @@
     if (a.closest('footer')) { return 'footer'; }
     return 'page_body';
   };
-  var BOOKING = /(^|\.)(hotdoc\.com\.au|healthengine\.com\.au|centaurportal\.com|d4w\.com\.au|dentalbookings\.com\.au|cliniko\.com|corepractice\.io|dentally\.co)$/i;
+  var BOOKING = /(^|\.)(principle\.dental|hotdoc\.com\.au|healthengine\.com\.au|centaurportal\.com|d4w\.com\.au|dentalbookings\.com\.au|cliniko\.com|corepractice\.io|dentally\.co)$/i;
   var MAPS = /(^|\.)(maps\.google\.[a-z.]+|maps\.app\.goo\.gl|maps\.apple\.com)$|^(www\.)?google\.[a-z.]+$/i;
   var kindOf = function (a) {
     var href = a.getAttribute('href') || '';

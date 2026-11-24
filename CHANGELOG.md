@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-11-24: booking portal, staff bios, email switch (v1.4.0)
+
+From Dr Meg's email of 23 Nov 2026.
+- **Online booking.** New switch `onlineBooking` (Site Settings > GYA > Online booking buttons, default on),
+  separate from Opening soon mode. With the booking link set, all 99 booking buttons (header and mobile
+  menu on every page, plus the page buttons) read "Book an appointment" or their own "Book ..." wording
+  and open the Principle portal in a new tab. Off, or no link: exactly as v1.3.4. The link is in
+  `site.config.mjs` and is filled into the dashboard once while blank. `book_online` now fires.
+- **Staff bios.** Dilla's and Jaimee's bios on Our Support Team, in Dr Meg's wording (three and two
+  paragraphs). Names, role lines and photos unchanged. A content fix puts them into the dashboard's copy
+  only where the old wording still stands. The reference templates in `tools/v122` carry them too.
+- **Email address switch.** New switch `emailActive` (Site Settings > GYA > Email address is working,
+  default off): info@lavastreetdental.com.au is hidden everywhere and left out of the structured data,
+  form notifications go to meg@lavastreetdental.com.au and rowayne@gyaclients.com (CC unchanged), and
+  the patient confirmation's Reply-To is meg@. On: exactly as v1.3.4.
+- **Meet the Team.** The striped "IMAGE: Support team portrait" placeholder box was visible to visitors;
+  it is hidden until photos arrive. The compliance sentence and its label are untouched.
+- **Team photos.** Portrait frames now hold 4:5 whatever is uploaded, so headshots can be added in the
+  dashboard with a focal point (no visible change to today's photos).
+- Migration `20261124_011407_booking_and_email_switches` (`IF NOT EXISTS`, no defaults: `site.config.mjs`
+  decides until a choice is saved). New check `npm run qa:switches` (all 8 switch combinations).
+- README: "Online booking buttons", "The practice email address", "Team photos (headshots)", "If the
+  domain or its DNS moves". Open items added to the go-live checklist.
+
 ## 2026-11-11: Google Tag Manager for Google Ads (v1.3.4)
 
 - Container GTM-ML7789N3 on every public page of the live domain: the `gtm.js` snippet as supplied, first

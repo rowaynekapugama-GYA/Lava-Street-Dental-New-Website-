@@ -5,6 +5,10 @@
  *
  *   npm run qa:parity
  *
+ * The two switches added in v1.4.0 are put to their v1.2.2 state for this comparison (online booking off, the
+ * email address shown), because v1.2.2 had neither; scripts/qa-switches.ts checks what each switch changes.
+ * The reference templates in tools/v122 carry the staff bios of 23 Nov 2026 and the hidden placeholder box.
+ *
  * Only the <lastmod> dates in sitemap.xml may differ (they are the build date), and Google Tag Manager (v1.3.4,
  * not in v1.2.2) is taken out of this release's pages before comparing. render-site.ts checks it is on
  * every live page exactly once.
@@ -33,7 +37,7 @@ if (a.status !== 0) { console.error(a.stdout, a.stderr); process.exit(1) }
 
 // this release, from content/ as committed (no dashboard changes: content/site-settings.json is {})
 const mine = path.join(tmp, 'mine')
-const b = spawnSync('npx', ['tsx', 'scripts/render-site.ts', mine], { cwd: root, encoding: 'utf8' })
+const b = spawnSync('npx', ['tsx', 'scripts/render-site.ts', mine], { cwd: root, encoding: 'utf8', env: { ...process.env, LSD_QA_SETTINGS: JSON.stringify({ onlineBooking: false, emailActive: true }) } })
 if (b.status !== 0) { console.error(b.stdout, b.stderr); process.exit(1) }
 
 const walk = (d: string, base = d): string[] => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) =>
